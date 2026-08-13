@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dg6v5ox2es4c8"]
+
+[ext_resource type="PackedScene" uid="uid://c16ecmtrbau5f" path="res://scenes/world/nature/trees/models/tree26.fbx" id="1_4v8mj"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://scenes/world/shading/vegetation.gdshader" id="2_0bq8n"]
+[ext_resource type="Texture2D" uid="uid://bmunnu6uatjsx" path="res://scenes/world/nature/trees/textures/tree26.png" id="3_qbcbo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wk8lk"]
+render_priority = 0
+shader = ExtResource("2_0bq8n")
+shader_parameter/color_texture = ExtResource("3_qbcbo")
+shader_parameter/vertex_wobble = 1.0
+shader_parameter/affine_mapping = 0.0999999977648
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[node name="tree26" unique_id=23339096 instance=ExtResource("1_4v8mj")]
+
+[node name="tree26" parent="." index="0" unique_id=1886656700]
+material_override = SubResource("ShaderMaterial_wk8lk")

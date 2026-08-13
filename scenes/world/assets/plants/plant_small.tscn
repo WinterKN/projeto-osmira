@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cv31xj27njfin"]
+
+[ext_resource type="PackedScene" uid="uid://dpt7qx6ctcvlc" path="res://scenes/world/nature/plants/plant_small.fbx" id="1_noph4"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://scenes/world/shading/vegetation.gdshader" id="2_q7htu"]
+[ext_resource type="Texture2D" uid="uid://cl6a2jufjnymh" path="res://scenes/world/nature/plants/small_plant.tga" id="3_1yfx6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lg1hm"]
+render_priority = 0
+shader = ExtResource("2_q7htu")
+shader_parameter/color_texture = ExtResource("3_1yfx6")
+shader_parameter/vertex_wobble = 0.999999977648
+shader_parameter/affine_mapping = 0.01999999955296
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.38999996893072
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[node name="plant_small" unique_id=1580918714 instance=ExtResource("1_noph4")]
+
+[node name="plant_small" parent="." index="0" unique_id=847816612]
+material_override = SubResource("ShaderMaterial_lg1hm")

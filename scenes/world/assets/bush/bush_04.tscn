@@ -1,0 +1,59 @@
+[gd_scene format=4 uid="uid://cuw22u87pk7e1"]
+
+[ext_resource type="PackedScene" uid="uid://dwtbaib2i8kpw" path="res://scenes/world/nature/bush/models/bush04.fbx" id="1_eb8ni"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://scenes/world/shading/vegetation.gdshader" id="2_j0yx6"]
+[ext_resource type="Texture2D" uid="uid://bhrodo3skyoqo" path="res://scenes/world/nature/bush/textures/bush04.png" id="3_qhpeq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_attm5"]
+render_priority = 0
+shader = ExtResource("2_j0yx6")
+shader_parameter/color_texture = ExtResource("3_qhpeq")
+shader_parameter/vertex_wobble = 1.0
+shader_parameter/affine_mapping = 0.0
+shader_parameter/wind_strength = 0.0499999988824
+shader_parameter/wind_speed = 1.5999999642368001
+shader_parameter/wind_direction = Vector2(1.2, 0.35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfwm4"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("3_qhpeq")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fu4fe"]
+_surfaces = [{
+"aabb": AABB(-4.5, 0, -4.5, 9, 7.5, 9),
+"format": 34359742465,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAQADAAIABAAFAAYABQAHAAYACAAJAAoACQALAAoADAANAA4ADQAPAA4AEAARABIAEQATABIAFAAVABYAFQAXABYAGAAZABoAGQAbABoAHAAdAB4AHQAfAB4A"),
+"name": "bush04",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AACQQAAAAAAkxHW8AACQQAAA8ECvxHW8AACQwAAAAADWwHW8AACQwAAA8EBkwXW8AACQwAAAAABhxXU8AACQwAAA8EDsxXU8AACQQAAAAADGvnU8AACQQAAA8EBUv3U8Wr91PAAAAAABAJBA2sB1PAAA8EAAAJBAJsR1PAAAADX//4/ApsV1PAAA8EAAAJDA2sB1vAAAADX//4/AWsJ1vAAA8EAAAJDApsJ1vAAAAAABAJBAJsR1vAAA8EAAAJBAWFNMwAAAAADK90rAWlNMwAAA8EDK90rAyvdKQAAAADVaU0xAyvdKQAAA8EBbU0xAWlNMQAAA8EDK90pAyvdKwAAA8EBYU0zAWlNMQAAAADXM90pAzPdKwAAAAABWU0zAyvdKQAAAADVWU0zAzPdKQP3/70BaU0zAWFNMwAAAADXM90pAW1NMwAAA8EDK90pAzPdKwAAAADVbU0xAyPdKwAAA8EBaU0xAVlNMQAAAADXK90rAWFNMQP3/70DK90rA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4krvl"]
+resource_name = "bush04"
+_surfaces = [{
+"aabb": AABB(-4.5, 0, -4.5, 9, 7.5, 9),
+"attribute_data": PackedByteArray("gK0wPD1zZj+ArTA84K3fPedqfT89c2Y/52p9P+Ct3z3VW30/PXNmP9VbfT8Art89wHE0PD1zZj/AcTQ8AK7fPYCtMDw9c2Y/gK0wPOCt3z3nan0/PXNmP+dqfT/grd891Vt9Pz1zZj/VW30/AK7fPcBxNDw9c2Y/wHE0PACu3z2ArTA8PXNmP4CtMDzgrd8952p9Pz1zZj/nan0/4K3fPdVbfT8Art89wHE0PACu3z3VW30/PXNmP8BxNDw9c2Y/gK0wPD1zZj+ArTA84K3fPedqfT89c2Y/52p9P+Ct3z3VW30/PXNmP9VbfT8Art89wHE0PD1zZj/AcTQ8AK7fPQ=="),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAQADAAIABAAFAAYABQAHAAYACAAJAAoACQALAAoADAANAA4ADQAPAA4AEAARABIAEQATABIAFAAVABYAFQAXABYAGAAZABoAGQAbABoAHAAdAB4AHQAfAB4A"),
+"material": SubResource("StandardMaterial3D_lfwm4"),
+"name": "bush04",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AACQQAAAAAAkxHW8AACQQAAA8ECvxHW8AACQwAAAAADWwHW8AACQwAAA8EBkwXW8AACQwAAAAABhxXU8AACQwAAA8EDsxXU8AACQQAAAAADGvnU8AACQQAAA8EBUv3U8Wr91PAAAAAABAJBA2sB1PAAA8EAAAJBAJsR1PAAAADX//4/ApsV1PAAA8EAAAJDA2sB1vAAAADX//4/AWsJ1vAAA8EAAAJDApsJ1vAAAAAABAJBAJsR1vAAA8EAAAJBAWFNMwAAAAADK90rAWlNMwAAA8EDK90rAyvdKQAAAADVaU0xAyvdKQAAA8EBbU0xAWlNMQAAA8EDK90pAyvdKwAAA8EBYU0zAWlNMQAAAADXM90pAzPdKwAAAAABWU0zAyvdKQAAAADVWU0zAzPdKQP3/70BaU0zAWFNMwAAAADXM90pAW1NMwAAA8EDK90pAzPdKwAAAADVbU0xAyPdKwAAA8EBaU0xAVlNMQAAAADXK90rAWFNMQP3/70DK90rAAAAAAAAA/78AAAAAAAD/vwAAAAAAAP+/AAAAAAAA/7//f/9/AAD/P/9//38AAP8//3//fwAA/z//f/9/AAD/P/7//3///////v//f//////+//9///////7//3///wCAAAD/f///AAAAAP9///8AAAAA/3///wAAAAD/f///AAD/P/9//7//v/8//3//v/+//z//f/+//7//P/9//7//v////z//v/8/////P/+//z////8//7//P////z//v/8/AAD/P/8//78AAP8//z//vwAA/z//P/+/AAD/P/8//7//v/9//z//P/+//3//P/8//7//f/8//z//v/9//z//Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_fu4fe")
+
+[node name="bush04" unique_id=902136107 instance=ExtResource("1_eb8ni")]
+
+[node name="bush04" parent="." index="0" unique_id=295516637]
+transform = Transform3D(0.30353922, 0, 0, 0, 0.30353922, 4.945281e-08, 0, -4.945281e-08, 0.30353922, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_attm5")
+mesh = SubResource("ArrayMesh_4krvl")

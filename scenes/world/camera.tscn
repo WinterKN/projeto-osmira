@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cq3clh3incor4"]
+
+[ext_resource type="Shader" uid="uid://b1mpnhabakj73" path="res://scenes/world/shading/camera.gdshader" id="1_yiqym"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_waqq6"]
+render_priority = 0
+shader = ExtResource("1_yiqym")
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0.556953, 0.556953, 0.556953, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 1067.5810506625976
+shader_parameter/fog_fade_range = 50.0
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 32
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.3
+
+[sub_resource type="QuadMesh" id="QuadMesh_48euw"]
+material = SubResource("ShaderMaterial_waqq6")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Camera" type="Node3D" unique_id=399073074]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=438426846]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1354330281]
+mesh = SubResource("QuadMesh_48euw")

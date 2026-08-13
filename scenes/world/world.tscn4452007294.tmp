@@ -1,0 +1,477 @@
+[gd_scene format=3 uid="uid://bxwtwvq0lk76s"]
+
+[ext_resource type="Shader" uid="uid://c7dhsbe1s7mgu" path="res://scenes/world/shading/post_processing.gdshader" id="2_1fp7r"]
+[ext_resource type="Texture2D" uid="uid://0tn5t0ebns2w" path="res://scenes/world/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_t5ptc"]
+[ext_resource type="PackedScene" uid="uid://dpaa6heuj6rs4" path="res://scenes/characters/assets/Player.tscn" id="2_wbwoo"]
+[ext_resource type="Animation" uid="uid://b7dly67qilh4f" path="res://scenes/characters/animations/player_idle.tres" id="3_x0nq1"]
+[ext_resource type="Animation" uid="uid://x7cytrpm6spa" path="res://scenes/characters/animations/player_jump.tres" id="4_rwifv"]
+[ext_resource type="Animation" uid="uid://cabdqobjypav4" path="res://scenes/characters/animations/player_running.tres" id="5_x0nq1"]
+[ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://scenes/world/shading/crt.gdshader" id="6_bq33v"]
+[ext_resource type="Animation" uid="uid://bv2ytw6ielg5v" path="res://scenes/characters/animations/player_walking.tres" id="6_rwifv"]
+[ext_resource type="Script" uid="uid://boeryrrfpq7o3" path="res://scripts/player/player.gd" id="6_t5ptc"]
+[ext_resource type="PackedScene" uid="uid://bldj6t83b4an8" path="res://scenes/world/assets/bush/bush_02.tscn" id="8_bt7bg"]
+[ext_resource type="PackedScene" uid="uid://cuw22u87pk7e1" path="res://scenes/world/assets/bush/bush_04.tscn" id="9_wbwoo"]
+[ext_resource type="PackedScene" uid="uid://c1kkh73lu7d6j" path="res://scenes/world/assets/bush/bush_06.tscn" id="10_tytul"]
+[ext_resource type="PackedScene" uid="uid://c7eon8kr4fvia" path="res://scenes/world/assets/bush/bush_08.tscn" id="11_t634p"]
+[ext_resource type="Texture2D" uid="uid://dfsgsburktan7" path="res://scenes/world/nature/ground/grass_ground.png" id="12_tytul"]
+[ext_resource type="PackedScene" uid="uid://bj1brq5wplr1n" path="res://scenes/world/assets/rocks/rock_1.tscn" id="16_m114p"]
+[ext_resource type="PackedScene" uid="uid://c4i6mwexa5w8w" path="res://scenes/world/assets/rocks/rock_2.tscn" id="17_t634p"]
+[ext_resource type="PackedScene" uid="uid://dhkut8j4p1y20" path="res://scenes/world/assets/plants/plant_fern.tscn" id="18_6hctx"]
+[ext_resource type="PackedScene" uid="uid://cv31xj27njfin" path="res://scenes/world/assets/plants/plant_small.tscn" id="19_ues17"]
+[ext_resource type="PackedScene" uid="uid://cpg1w6n8r5ahr" path="res://scenes/world/assets/plants/plant_tall.tscn" id="20_xq18t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_48euw"]
+height = 1.85
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t5ptc"]
+height = 1.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wnndm"]
+_data = {
+&"player_idle": ExtResource("3_x0nq1"),
+&"player_jump": ExtResource("4_rwifv"),
+&"player_running": ExtResource("5_x0nq1"),
+&"player_walking": ExtResource("6_rwifv")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x0nq1"]
+animation = &"Animações/player_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rwifv"]
+switch_mode = 1
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ckok1"]
+states/End/position = Vector2(503, 246)
+states/Player_idle/node = SubResource("AnimationNodeAnimation_x0nq1")
+states/Player_idle/position = Vector2(503, 100)
+transitions = ["Start", "Player_idle", SubResource("AnimationNodeStateMachineTransition_rwifv")]
+graph_offset = Vector2(0, 58.19246)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2x71e"]
+animation = &"Animações/player_jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wnndm"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_26xou"]
+states/Player_jump/node = SubResource("AnimationNodeAnimation_2x71e")
+states/Player_jump/position = Vector2(440, 100)
+transitions = ["Start", "Player_jump", SubResource("AnimationNodeStateMachineTransition_wnndm")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jyr8v"]
+animation = &"Animações/player_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5o5dd"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_d0ajt"]
+states/Player_run/node = SubResource("AnimationNodeAnimation_jyr8v")
+states/Player_run/position = Vector2(442, 100)
+transitions = ["Start", "Player_run", SubResource("AnimationNodeStateMachineTransition_5o5dd")]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fymcc"]
+animation = &"Animações/player_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lbnhc"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_sygq6"]
+states/Player_walk/node = SubResource("AnimationNodeAnimation_fymcc")
+states/Player_walk/position = Vector2(443, 100)
+transitions = ["Start", "Player_walk", SubResource("AnimationNodeStateMachineTransition_lbnhc")]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sh7a8"]
+xfade_time = 0.1
+switch_mode = 1
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7mx70"]
+switch_mode = 1
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1cxds"]
+switch_mode = 1
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2m0ga"]
+switch_mode = 1
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ovomx"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x0nq1"]
+switch_mode = 1
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_l6p5f"]
+states/End/position = Vector2(877, 81)
+states/Idle/node = SubResource("AnimationNodeStateMachine_ckok1")
+states/Idle/position = Vector2(276, 81)
+states/Jump/node = SubResource("AnimationNodeStateMachine_26xou")
+states/Jump/position = Vector2(390, 211)
+states/Run/node = SubResource("AnimationNodeStateMachine_d0ajt")
+states/Run/position = Vector2(587, 211)
+states/Start/position = Vector2(134, 81)
+states/Walk/node = SubResource("AnimationNodeStateMachine_sygq6")
+states/Walk/position = Vector2(474, 81)
+transitions = ["Run", "Walk", SubResource("AnimationNodeStateMachineTransition_sh7a8"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_7mx70"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_1cxds"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_2m0ga"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ovomx"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_x0nq1")]
+graph_offset = Vector2(0, -9.686169)
+
+[sub_resource type="Animation" id="Animation_t5ptc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1yooq"]
+resource_name = "hard_landing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.6981317, 0, -0.08726646), Vector3(-0.34906584, 0, -0.08726646), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.3, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bq33v"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.05235988, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j2gmx"]
+resource_name = "landing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.05235988, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2gmx"]
+_data = {
+&"RESET": SubResource("Animation_t5ptc"),
+&"hard_landing": SubResource("Animation_1yooq"),
+&"jump": SubResource("Animation_bq33v"),
+&"landing": SubResource("Animation_j2gmx")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48euw"]
+albedo_color = Color(0.5729883, 0.5729883, 0.5729883, 1)
+albedo_texture = ExtResource("12_tytul")
+metallic_specular = 0.0
+normal_enabled = true
+uv1_scale = Vector3(50, 50, 50)
+texture_filter = 0
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_48euw"]
+panorama = ExtResource("2_t5ptc")
+energy_multiplier = 1.2
+
+[sub_resource type="Sky" id="Sky_rwgxs"]
+sky_material = SubResource("PanoramaSkyMaterial_48euw")
+radiance_size = 4
+
+[sub_resource type="Environment" id="Environment_4wyf3"]
+background_mode = 2
+sky = SubResource("Sky_rwgxs")
+fog_depth_curve = 0.40612638
+fog_depth_begin = 1.0
+fog_depth_end = 20.0
+adjustment_enabled = true
+adjustment_contrast = 1.04
+adjustment_saturation = 0.77
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rebo8"]
+render_priority = 0
+shader = ExtResource("2_1fp7r")
+shader_parameter/dither_amount = 0.499999988824
+
+[sub_resource type="QuadMesh" id="QuadMesh_48euw"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j2gmx"]
+shader = ExtResource("6_bq33v")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.0
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = false
+shader_parameter/roll_speed = 5.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.10000000149012
+shader_parameter/distort_intensity = 0.006000000285
+shader_parameter/noise_opacity = 0.070000003325
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06000000285
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.2
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.30000001425
+
+[node name="World" type="Node3D" unique_id=1464760528]
+
+[node name="player" type="CharacterBody3D" parent="." unique_id=28328767]
+script = ExtResource("6_t5ptc")
+walking_speed = 4.0
+crounching_speed = 2.0
+
+[node name="standing_collision_shape" type="CollisionShape3D" parent="player" unique_id=985473294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42, 0)
+shape = SubResource("CapsuleShape3D_48euw")
+
+[node name="crounching_collision_shape" type="CollisionShape3D" parent="player" unique_id=1149909951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_t5ptc")
+disabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="player" unique_id=196164487]
+target_position = Vector3(0, 2, 0)
+
+[node name="body" type="Node3D" parent="player" unique_id=2850084]
+
+[node name="Player" parent="player/body" unique_id=1372736054 instance=ExtResource("2_wbwoo")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.5, 0)
+
+[node name="Armature" parent="player/body/Player" index="0" unique_id=480337336]
+transform = Transform3D(99.98157, 1.3277947, 1.3860329, -1.327921, -4.2896943, 99.89912, 1.3859122, -99.89912, -4.2712717, -0.046040278, -0.020764535, 0.035422567)
+
+[node name="Skeleton3D" parent="player/body/Player/Armature" index="0" unique_id=197466285]
+bones/2/rotation = Quaternion(-0.09628958, -0.0033434783, 0.0028042349, 0.9953438)
+bones/3/rotation = Quaternion(0.08997608, -0.041763566, -0.0046444247, 0.9950571)
+bones/4/rotation = Quaternion(-0.018500842, 0.016087173, -0.015899278, 0.999573)
+bones/7/rotation = Quaternion(0.23742251, 0.08983996, -0.95646304, 0.14400665)
+bones/8/rotation = Quaternion(0.26628807, -0.0004593701, -0.00010239156, 0.9638934)
+bones/9/rotation = Quaternion(-0.12182181, 0.033401072, -0.09007082, 0.98789227)
+bones/12/rotation = Quaternion(0.19109946, -0.07124034, 0.97009027, 0.13164602)
+bones/13/rotation = Quaternion(0.25379017, 0.0004609949, 9.7603195e-05, 0.9672592)
+bones/14/rotation = Quaternion(-0.13491695, 0.029717125, -0.003789952, 0.99040395)
+bones/17/rotation = Quaternion(0.041648142, 0.13923973, 0.98756, -0.060026713)
+bones/18/rotation = Quaternion(-0.2920824, -0.079757825, 0.0048521305, 0.95304936)
+bones/19/rotation = Quaternion(0.6570231, -0.030568993, -0.03736972, 0.7523229)
+bones/22/rotation = Quaternion(-0.079162225, 0.14443873, 0.9859069, 0.029301358)
+bones/23/rotation = Quaternion(-0.28538716, 0.03283548, 0.0016487837, 0.95784837)
+bones/24/rotation = Quaternion(0.6524247, 0.027828544, 0.012497283, 0.75723946)
+bones/30/rotation = Quaternion(-0.019486329, 0.70683825, 0.7068382, -0.019486325)
+bones/33/rotation = Quaternion(0.013670929, 0.7069746, -0.7069746, -0.013670929)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/body/Player" unique_id=500377304]
+"libraries/Animações" = SubResource("AnimationLibrary_wnndm")
+
+[node name="AnimationTree" type="AnimationTree" parent="player/body/Player" unique_id=457178109]
+tree_root = SubResource("AnimationNodeStateMachine_l6p5f")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="neck" type="Node3D" parent="player" unique_id=683264043]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 2.1, -0.01)
+
+[node name="head" type="Node3D" parent="player/neck" unique_id=1872074264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.18)
+
+[node name="eyes" type="Node3D" parent="player/neck/head" unique_id=875014590]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
+
+[node name="Camera3D" type="Camera3D" parent="player/neck/head/eyes" unique_id=868962145]
+cull_mask = 1047553
+fov = 70.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="player/neck/head/eyes" unique_id=265470424]
+libraries/ = SubResource("AnimationLibrary_j2gmx")
+
+[node name="Stage" type="Node3D" parent="." unique_id=156095015]
+
+[node name="Nature" type="Node" parent="Stage" unique_id=1412965896]
+
+[node name="Trees" type="Node" parent="Stage/Nature" unique_id=1299450024]
+
+[node name="Bush" type="Node" parent="Stage/Nature" unique_id=475916189]
+
+[node name="bush02_model" type="Node" parent="Stage/Nature/Bush" unique_id=1838819223]
+
+[node name="bush02" parent="Stage/Nature/Bush/bush02_model" unique_id=645379711 instance=ExtResource("8_bt7bg")]
+transform = Transform3D(0.733653, 0, 0, 0, 0.733653, 0, 0, 0, 0.733653, 17.701633, -0.1923225, -8.632234)
+
+[node name="bush04" parent="Stage/Nature/Bush/bush02_model" unique_id=713762435 instance=ExtResource("8_bt7bg")]
+transform = Transform3D(0.5482519, 0, 0, 0, 0.5482519, 0, 0, 0, 0.5482519, 12.467323, -0.0772928, -4.3672404)
+
+[node name="bush03" parent="Stage/Nature/Bush/bush02_model" unique_id=385700012 instance=ExtResource("8_bt7bg")]
+transform = Transform3D(0.89317447, 0, 0, 0, 0.89317447, 0, 0, 0, 0.89317447, 13.393785, -0.27138662, -15.636377)
+
+[node name="bush05" parent="Stage/Nature/Bush/bush02_model" unique_id=1790115497 instance=ExtResource("8_bt7bg")]
+transform = Transform3D(0.89317447, 0, 0, 0, 0.89317447, 0, 0, 0, 0.89317447, -5.6344423, -0.27138662, -7.112588)
+
+[node name="bush04_model" type="Node" parent="Stage/Nature/Bush" unique_id=927015401]
+
+[node name="bush04" parent="Stage/Nature/Bush/bush04_model" unique_id=902136107 instance=ExtResource("9_wbwoo")]
+transform = Transform3D(0.47212422, 0, 0, 0, 0.47212422, 0, 0, 0, 0.47212422, 5.345395, 0, -17.400627)
+
+[node name="bush05" parent="Stage/Nature/Bush/bush04_model" unique_id=1611433818 instance=ExtResource("9_wbwoo")]
+transform = Transform3D(0.48277685, 0, 0.2917113, 0, 0.5215334, 0, -0.2917113, 0, 0.48277685, 9.016881, 0, -14.811419)
+
+[node name="bush06_model" type="Node" parent="Stage/Nature/Bush" unique_id=132512764]
+
+[node name="bush06" parent="Stage/Nature/Bush/bush06_model" unique_id=1398645835 instance=ExtResource("10_tytul")]
+transform = Transform3D(0.70066017, 0, 0, 0, 0.5015996, 0, 0, 0, 0.70066017, -4.5792027, -0.2824607, -2.1651607)
+
+[node name="bush07" parent="Stage/Nature/Bush/bush06_model" unique_id=659240545 instance=ExtResource("10_tytul")]
+transform = Transform3D(0.85705626, 0, 0, 0, 0.735607, 0, 0, 0, 0.85705626, -7.772291, -0.2824607, -0.3610965)
+
+[node name="bush08" parent="Stage/Nature/Bush/bush06_model" unique_id=429118340 instance=ExtResource("10_tytul")]
+transform = Transform3D(0.75779325, 0, 0, 0, 0.6699083, 0, 0, 0, 0.75779325, -4.1104584, -0.2824607, 8.960765)
+
+[node name="bush08_model" type="Node" parent="Stage/Nature/Bush" unique_id=932379199]
+
+[node name="bush08" parent="Stage/Nature/Bush/bush08_model" unique_id=430934104 instance=ExtResource("11_t634p")]
+transform = Transform3D(0.8085294, 0, 0, 0, 0.8085294, 0, 0, 0, 0.8085294, 11.5697365, 0, 1.2660055)
+
+[node name="bush09" parent="Stage/Nature/Bush/bush08_model" unique_id=293323677 instance=ExtResource("11_t634p")]
+transform = Transform3D(0.7361116, 0, 0, 0, 0.61627483, 0, 0, 0, 0.7361116, -0.56663036, -0.17178035, -10.732232)
+
+[node name="Rocks" type="Node" parent="Stage/Nature" unique_id=451586967]
+
+[node name="rock01_model" type="Node" parent="Stage/Nature/Rocks" unique_id=1758921516]
+
+[node name="rock_1" parent="Stage/Nature/Rocks/rock01_model" unique_id=1891402043 instance=ExtResource("16_m114p")]
+transform = Transform3D(-0.6136518, 0, -0.23362944, 0, 0.6566211, 0, 0.23362944, 0, -0.6136518, -0.25826645, 0.8671011, -4.7332983)
+
+[node name="rock02_model" type="Node" parent="Stage/Nature/Rocks" unique_id=1074024106]
+
+[node name="rock_2" parent="Stage/Nature/Rocks/rock02_model" unique_id=2092387074 instance=ExtResource("17_t634p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.349715, 0.89924604, -0.55778885)
+
+[node name="Plants" type="Node" parent="Stage/Nature" unique_id=2138271799]
+
+[node name="plant_fern_model" type="Node" parent="Stage/Nature/Plants" unique_id=263082589]
+
+[node name="plant_fern" parent="Stage/Nature/Plants/plant_fern_model" unique_id=35575151 instance=ExtResource("18_6hctx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3420305, 0.5036351, 2.0186439)
+
+[node name="plant_fern2" parent="Stage/Nature/Plants/plant_fern_model" unique_id=1908296830 instance=ExtResource("18_6hctx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37994218, 0.5036351, -2.416947)
+
+[node name="plant_small_model" type="Node" parent="Stage/Nature/Plants" unique_id=1873968686]
+
+[node name="plant_small" parent="Stage/Nature/Plants/plant_small_model" unique_id=1580918714 instance=ExtResource("19_ues17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89225096, 0.61092794, -12.180742)
+
+[node name="plant_tall_model" type="Node" parent="Stage/Nature/Plants" unique_id=1029475338]
+
+[node name="plant_tall" parent="Stage/Nature/Plants/plant_tall_model" unique_id=506697369 instance=ExtResource("20_xq18t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7417777, 0.6478809, 2.9090996)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Stage" unique_id=1193978740]
+use_collision = true
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_48euw")
+
+[node name="env" type="Node3D" parent="." unique_id=746275180]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env" unique_id=1690325914]
+environment = SubResource("Environment_4wyf3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=236236487]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="post_processing" type="MeshInstance3D" parent="env" unique_id=1697091241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.099163, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_rebo8")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_48euw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="env" unique_id=758101121]
+
+[node name="CRT" type="ColorRect" parent="env/CanvasLayer" unique_id=2092297604]
+material = SubResource("ShaderMaterial_j2gmx")
+offset_right = 1283.0
+offset_bottom = 965.0
+
+[editable path="player/body/Player"]

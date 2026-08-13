@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c7jf7v40gohcw"]
+
+[ext_resource type="PackedScene" uid="uid://1gkkx8v3exhs" path="res://scenes/world/buildings/bonfire/Campfire.fbx" id="1_fsmls"]
+
+[node name="Campfire" unique_id=403174239 instance=ExtResource("1_fsmls")]

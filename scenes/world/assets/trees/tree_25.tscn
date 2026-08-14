@@ -21,6 +21,7 @@ data = PackedVector3Array(-0.471, 2, -0.2719, -0.75879997, 0, -0.43809998, 0, 0,
 
 [node name="tree25" parent="." index="0" unique_id=1646137954]
 material_override = SubResource("ShaderMaterial_1jxfi")
+visibility_range_end = 120.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree25" index="0" unique_id=2086757422]
 

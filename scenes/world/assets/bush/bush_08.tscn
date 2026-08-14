@@ -56,4 +56,5 @@ shadow_mesh = SubResource("ArrayMesh_hm3t4")
 [node name="bush08" parent="." index="0" unique_id=43111896]
 transform = Transform3D(0.33476502, 0, 0, 0, 0.33476502, 5.454014e-08, 0, -5.454014e-08, 0.33476502, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_jueii")
+lod_bias = 0.4
 mesh = SubResource("ArrayMesh_lpuo4")

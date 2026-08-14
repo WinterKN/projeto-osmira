@@ -21,6 +21,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=960
 window/stretch/mode="viewport"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/lowpolyterrain/plugin.cfg")
+
 [input]
 
 forward={
@@ -69,6 +73,7 @@ rendering_device/driver.windows="d3d12"
 renderer/rendering_method.mobile="forward_plus"
 shading/overrides/force_vertex_shading=true
 anti_aliasing/screen_space_roughness_limiter/enabled=false
+occlusion_culling/use_occlusion_culling=true
 
 [shader_globals]
 

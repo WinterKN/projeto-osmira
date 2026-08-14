@@ -56,4 +56,5 @@ shadow_mesh = SubResource("ArrayMesh_in2sn")
 [node name="bush02" parent="." index="0" unique_id=4368852]
 transform = Transform3D(0.30209458, 0, 0, 0, 0.30209458, 4.921745e-08, 0, -4.921745e-08, 0.30209458, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_cholg")
+lod_bias = 0.3
 mesh = SubResource("ArrayMesh_cholg")

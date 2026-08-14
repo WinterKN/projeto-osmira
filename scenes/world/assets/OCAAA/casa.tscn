@@ -35,11 +35,15 @@ data = PackedVector3Array(-0.019, -0.0284, 0.013599999, -0.0243, -0.0243, 0.0135
 
 [node name="casa" unique_id=1265653124 instance=ExtResource("1_gurlh")]
 
-[node name="Cube" parent="." index="0" unique_id=1344553556]
+[node name="Cube" parent="." index="0" unique_id=697230702]
 material_override = SubResource("ShaderMaterial_1yqdi")
+lod_bias = 0.05
+visibility_range_end = 125.0
 
-[node name="Cylinder" parent="." index="1" unique_id=170668316]
+[node name="Cylinder" parent="." index="1" unique_id=289480179]
 material_override = SubResource("ShaderMaterial_rtqun")
+lod_bias = 0.1
+visibility_range_end = 125.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" index="0" unique_id=2033295247]
 
@@ -47,8 +51,10 @@ material_override = SubResource("ShaderMaterial_rtqun")
 transform = Transform3D(1, 0, 0, 0, 1.0000002, -4.5474735e-13, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_gurlh")
 
-[node name="HUt_001" parent="." index="2" unique_id=1626890029]
+[node name="HUt_001" parent="." index="2" unique_id=671940667]
 material_override = SubResource("ShaderMaterial_eho2t")
+lod_bias = 0.05
+visibility_range_end = 125.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="HUt_001" index="0" unique_id=934162192]
 

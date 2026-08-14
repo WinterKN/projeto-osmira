@@ -19,14 +19,18 @@ data = PackedVector3Array(-0.019, -0.0284, 0.013599999, -0.0243, -0.0243, 0.0135
 
 [node name="oca_principal" unique_id=755429762 instance=ExtResource("1_i8pph")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder_001" parent_id_path=PackedInt32Array(1054498864) index="0" unique_id=2072832939]
+[node name="Cylinder_001" parent="." index="0" unique_id=33380446]
+visibility_range_end = 150.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder_001" index="0" unique_id=2072832939]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder_001/StaticBody3D" index="0" unique_id=110088951]
 transform = Transform3D(1.0000002, 0, -2.842171e-14, -2.9802322e-08, 1.0000002, 0, 0, -1.7763568e-15, 1.0000002, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_i8pph")
 
-[node name="HUt" parent="." index="1" unique_id=926691847]
+[node name="HUt" parent="." index="1" unique_id=1319579053]
 material_override = SubResource("ShaderMaterial_td21f")
+visibility_range_end = 150.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="HUt" index="0" unique_id=395403287]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpaa6heuj6rs4" path="res://scenes/characters/assets/player.tscn" id="1_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://fxmxv6osob4l" path="res://scenes/world/assets/camera/fixed_camera.tscn" id="1_lakw3"]
-[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://scenes/world/shading/psx_camera_shader.gdshader" id="2_lakw3"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://shaders/psx_camera_shader.gdshader" id="2_lakw3"]
 [ext_resource type="PackedScene" uid="uid://dsxt0b73qlglm" path="res://scenes/world/assets/OCAAA/casa.tscn" id="3_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cixo8agg5vmey" path="res://scenes/world/assets/OCAAA/oca_principal.tscn" id="4_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://o5kfx3t2cmoo" path="res://scenes/world/assets/trees/tree_27.tscn" id="5_7iits"]
@@ -15,11 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dprnm1f1ha2bf" path="res://scenes/world/nature/ground/forrest_ground_01_nor_gl_256x.exr" id="12_0nbtd"]
 [ext_resource type="Texture2D" uid="uid://ug1tdweov6a6" path="res://scenes/world/nature/ground/forrest_ground_01_rough_256x.exr" id="13_37qwj"]
 [ext_resource type="Texture2D" uid="uid://0tn5t0ebns2w" path="res://scenes/world/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_navra"]
-[ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://scenes/world/shading/crt.gdshader" id="16_fh13f"]
+[ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://shaders/crt.gdshader" id="16_fh13f"]
 [ext_resource type="ArrayOccluder3D" uid="uid://qxh71vx8qjg0" path="res://scenes/world/world.occ" id="17_rup4s"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7t5mc"]
-size = Vector3(15.000123, 0.84399414, 16.709229)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48euw"]
 albedo_color = Color(0.5729883, 0.5729883, 0.5729883, 1)
@@ -102,6 +99,9 @@ material = SubResource("ShaderMaterial_71ii3")
 flip_faces = true
 size = Vector2(2, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7t5mc"]
+size = Vector3(15.000123, 0.84399414, 16.709229)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6p5f"]
 size = Vector3(13.115631, 1.8438721, 9.850983)
 
@@ -109,16 +109,6 @@ size = Vector3(13.115631, 1.8438721, 9.850983)
 size = Vector3(12.021912, 1, 13.645752)
 
 [node name="World" type="Node3D" unique_id=1464760528]
-
-[node name="fixedCamera" parent="." unique_id=1346389857 instance=ExtResource("1_lakw3")]
-transform = Transform3D(0.9445968, 0, 0.32823297, 0, 1, 0, -0.32823297, 0, 0.9445968, -61.227417, 4.0631433, -100.79589)
-
-[node name="Trigger" parent="fixedCamera" index="0" unique_id=942678734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fixedCamera/Trigger" index="0" unique_id=809072126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3204689, -0.84606934, -11.253281)
-shape = SubResource("BoxShape3D_7t5mc")
 
 [node name="Player" parent="." unique_id=1372736054 instance=ExtResource("1_7t5mc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.808075, 0.4, -112.9032)
@@ -915,6 +905,16 @@ mesh = SubResource("QuadMesh_l6p5f")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1455936172]
 occluder = ExtResource("17_rup4s")
 
+[node name="fixedCamera" parent="." unique_id=1346389857 instance=ExtResource("1_lakw3")]
+transform = Transform3D(0.9445968, 0, 0.32823297, 0, 1, 0, -0.32823297, 0, 0.9445968, -61.227417, 4.0631433, -100.79589)
+
+[node name="Trigger" parent="fixedCamera" index="0" unique_id=942678734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fixedCamera/Trigger" index="0" unique_id=809072126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3204689, -0.84606934, -11.253281)
+shape = SubResource("BoxShape3D_7t5mc")
+
 [node name="fixedCamera2" parent="." unique_id=999320916 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.17364821, 0, 0.9848078, 0, 1, 0, -0.9848078, 0, -0.17364821, -72.60021, 2.2096124, -120.10991)
 follow_player = true
@@ -931,9 +931,9 @@ follow_player = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34535217, -2.6327362, -7.840561)
 shape = SubResource("BoxShape3D_48euw")
 
-[editable path="fixedCamera"]
 [editable path="Player"]
 [editable path="Player/model"]
 [editable path="Stage/Nature/Trees/tree27"]
+[editable path="fixedCamera"]
 [editable path="fixedCamera2"]
 [editable path="fixedCamera3"]

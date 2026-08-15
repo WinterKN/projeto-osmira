@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://o5kfx3t2cmoo"]
 
 [ext_resource type="PackedScene" uid="uid://8yy3k04nwdhw" path="res://scenes/world/nature/trees/models/tree27.fbx" id="1_cxok6"]
-[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://scenes/world/shading/vegetation.gdshader" id="2_kynxt"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_kynxt"]
 [ext_resource type="Texture2D" uid="uid://b7f7yrtamxtsr" path="res://scenes/world/nature/trees/textures/tree27.png" id="3_vvo3m"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3k6mu"]
@@ -19,7 +19,7 @@ data = PackedVector3Array(-0.2122, 1.9964999, -0.122499995, -0.3464, 0, -0.19999
 
 [node name="tree27" unique_id=722253356 instance=ExtResource("1_cxok6")]
 
-[node name="tree27" parent="." index="0" unique_id=1031601150]
+[node name="tree27" parent="." index="0" unique_id=233230327]
 material_override = SubResource("ShaderMaterial_3k6mu")
 visibility_range_end = 120.0
 

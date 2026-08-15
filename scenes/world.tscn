@@ -121,7 +121,6 @@ size = Vector2(2, 2)
 [node name="Player" parent="." unique_id=1372736054 instance=ExtResource("1_7t5mc")]
 transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.74479, 0.4, 107.27879)
 collision_layer = 5
-quick_turn_speed = 0.25
 
 [node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=2052385024]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)

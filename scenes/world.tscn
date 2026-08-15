@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpaa6heuj6rs4" path="res://scenes/characters/assets/player.tscn" id="1_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://fxmxv6osob4l" path="res://scenes/world/assets/camera/fixed_camera.tscn" id="1_lakw3"]
-[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://scenes/world/shading/psx_camera_shader.gdshader" id="2_lakw3"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://shaders/psx_camera_shader.gdshader" id="2_lakw3"]
 [ext_resource type="PackedScene" uid="uid://dsxt0b73qlglm" path="res://scenes/world/assets/OCAAA/casa.tscn" id="3_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cixo8agg5vmey" path="res://scenes/world/assets/OCAAA/oca_principal.tscn" id="4_2lf6f"]
 [ext_resource type="PackedScene" uid="uid://o5kfx3t2cmoo" path="res://scenes/world/assets/trees/tree_27.tscn" id="5_7iits"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cv31xj27njfin" path="res://scenes/world/assets/plants/plant_small.tscn" id="12_ctatt"]
 [ext_resource type="Texture2D" uid="uid://ug1tdweov6a6" path="res://scenes/world/nature/ground/forrest_ground_01_rough_256x.exr" id="13_37qwj"]
 [ext_resource type="Texture2D" uid="uid://0tn5t0ebns2w" path="res://scenes/world/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_navra"]
-[ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://scenes/world/shading/crt.gdshader" id="16_fh13f"]
+[ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://shaders/crt.gdshader" id="16_fh13f"]
 [ext_resource type="ArrayOccluder3D" uid="uid://qxh71vx8qjg0" path="res://scenes/world/world.occ" id="17_rup4s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48euw"]
@@ -115,8 +115,6 @@ size = Vector3(12.021912, 1, 13.645752)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pwhxm"]
 size = Vector3(7.9539948, 2.0925446, 18.601654)
-
-[node name="World" type="Node3D" unique_id=1464760528]
 
 [node name="Player" parent="." unique_id=1372736054 instance=ExtResource("1_7t5mc")]
 transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.74479, 0.4, 107.27879)
@@ -2153,19 +2151,17 @@ mesh = SubResource("QuadMesh_l6p5f")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1455936172]
 occluder = ExtResource("17_rup4s")
 
-[node name="cameras" type="Node" parent="." unique_id=569912532]
-
-[node name="fixedCamera" parent="cameras" unique_id=635814102 instance=ExtResource("1_lakw3")]
+[node name="fixedCamera" parent="." unique_id=1346389857 instance=ExtResource("1_lakw3")]
 transform = Transform3D(0.9445968, 0, 0.32823297, 0, 1, 0, -0.32823297, 0, 0.9445968, -61.227417, 4.0631433, -100.79589)
 
-[node name="Trigger" parent="cameras/fixedCamera" index="0" unique_id=942678734]
+[node name="Trigger" parent="fixedCamera" index="0" unique_id=942678734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera/Trigger" index="0" unique_id=809072126]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fixedCamera/Trigger" index="0" unique_id=809072126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3204689, -0.84606934, -11.253281)
 shape = SubResource("BoxShape3D_7t5mc")
 
-[node name="fixedCamera2" parent="cameras" unique_id=999320916 instance=ExtResource("1_lakw3")]
+[node name="fixedCamera2" parent="." unique_id=999320916 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.17364821, 0, 0.9848078, 0, 1, 0, -0.9848078, 0, -0.17364821, -72.60021, 2.2096124, -120.10991)
 follow_player = true
 
@@ -2181,74 +2177,9 @@ follow_player = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34535217, -2.6327362, -7.840561)
 shape = SubResource("BoxShape3D_48euw")
 
-[node name="fixedCamera4" parent="cameras" unique_id=1843497047 instance=ExtResource("1_lakw3")]
-transform = Transform3D(-0.27241212, -0.3484811, 0.8968571, 0.0073598805, 0.93132687, 0.36411005, -0.9621526, 0.1057887, -0.25114003, -1.0027995, 3.127688, 105.29527)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera4/Trigger" parent_id_path=PackedInt32Array(1843497047, 942678734) index="0" unique_id=757105353]
-transform = Transform3D(0.9960124, 0.0175526, -0.08726643, -0.04841222, 0.92949206, -0.36558685, 0.074693576, 0.3683596, 0.92666173, -0.3390274, -0.96167374, -5.3041344)
-shape = SubResource("BoxShape3D_pwhxm")
-
-[node name="fixedCamera5" parent="cameras" unique_id=621240304 instance=ExtResource("1_lakw3")]
-transform = Transform3D(-0.5727579, 0.30240035, -0.7619071, 0.0073598665, 0.93132687, 0.36411017, 0.8196915, 0.20293947, -0.53565043, -10.04024, 3.127688, 93.22075)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera5/Trigger" parent_id_path=PackedInt32Array(621240304, 942678734) index="0" unique_id=462679342]
-transform = Transform3D(0.66061664, 0.017127508, 0.75051206, 0.2589262, 0.9331783, -0.24920985, -0.70464087, 0.35896337, 0.6120498, 1.8202515, -0.28028297, -6.823841)
-shape = SubResource("BoxShape3D_pwhxm")
-
-[node name="fixedCamera6" parent="cameras" unique_id=746558623 instance=ExtResource("1_lakw3")]
-transform = Transform3D(-0.57275796, 0.30240035, -0.7619071, 0.007359867, 0.93132687, 0.36411017, 0.81969154, 0.20293947, -0.53565043, -10.04024, 3.127688, 86.03798)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera6/Trigger" parent_id_path=PackedInt32Array(746558623, 942678734) index="0" unique_id=120729006]
-transform = Transform3D(0.66061664, 0.017127508, 0.75051206, 0.2589262, 0.9331783, -0.24920985, -0.70464087, 0.35896337, 0.6120498, 1.8202515, -0.28028297, -6.823841)
-shape = SubResource("BoxShape3D_pwhxm")
-
-[node name="fixedCamera7" parent="cameras" unique_id=1346389857 instance=ExtResource("1_lakw3")]
-transform = Transform3D(-0.27241212, -0.3484811, 0.8968571, 0.007359892, 0.93132687, 0.3641101, -0.9621526, 0.10578877, -0.25113994, -1.0028048, 3.1276886, 79.306946)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera7/Trigger" parent_id_path=PackedInt32Array(1346389857, 942678734) index="0" unique_id=1968253019]
-transform = Transform3D(0.9960124, 0.0175526, -0.08726643, -0.04841222, 0.92949206, -0.36558685, 0.074693576, 0.3683596, 0.92666173, -0.3390274, -0.96167374, -5.3041344)
-shape = SubResource("BoxShape3D_pwhxm")
-
-[node name="fixedCamera8" parent="cameras" unique_id=1302315942 instance=ExtResource("1_lakw3")]
-transform = Transform3D(-0.9910462, -0.041751005, 0.12682381, 0.0073598763, 0.93132675, 0.3641101, -0.13331641, 0.36178333, -0.9226805, -2.9202275, 3.1276886, 61.386673)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera8/Trigger" parent_id_path=PackedInt32Array(1302315942, 942678734) index="0" unique_id=47387834]
-transform = Transform3D(0.38343516, 0.007973914, -0.9235187, -0.34871107, 0.92717224, -0.13677199, 0.8551851, 0.374487, 0.35829872, 1.2339811, 2.1317177, -13.248245)
-shape = SubResource("BoxShape3D_pwhxm")
-
-[node name="fixedCamera9" parent="cameras" unique_id=1807088245 instance=ExtResource("1_lakw3")]
-transform = Transform3D(-0.9968982, 0.035365757, -0.07030849, 0.007359872, 0.93132687, 0.36411014, 0.07835722, 0.36246327, -0.9286984, -7.951439, 3.1276886, 46.74764)
-follow_player = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera9/Trigger" parent_id_path=PackedInt32Array(1807088245, 942678734) index="0" unique_id=823001521]
-transform = Transform3D(0.072833076, 0.004419709, -0.9973207, -0.3734587, 0.9273344, -0.023159448, 0.92476356, 0.3741467, 0.06919047, 1.2287941, 2.1077347, -13.186775)
-shape = SubResource("BoxShape3D_pwhxm")
-
-[node name="fixedCamera10" parent="cameras" unique_id=1070573503 instance=ExtResource("1_lakw3")]
-transform = Transform3D(-0.9999548, 0.0046648253, 0.008280636, 0.006540867, 0.96988165, 0.24348906, -0.006895402, 0.24353224, -0.9698683, -3.1210501, 2.991339, 12.304363)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera10/Trigger" parent_id_path=PackedInt32Array(1070573503, 942678734) index="0" unique_id=907575207]
-transform = Transform3D(0.073523454, 0.0038092108, -0.99727243, -0.28195235, 0.9592523, -0.017118832, 0.956588, 0.282443, 0.07160053, 1.2130666, 1.2995915, -14.630504)
-shape = SubResource("BoxShape3D_pwhxm")
-
-[node name="fixedCamera11" parent="cameras" unique_id=1356132025 instance=ExtResource("1_lakw3")]
-transform = Transform3D(0.99996984, 0.005351954, 0.005641586, -0.0071211844, 0.92169374, 0.38785303, -0.0031240433, -0.3878815, 0.921704, -3.1210501, 5.68003, 14.37647)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cameras/fixedCamera11/Trigger" parent_id_path=PackedInt32Array(1356132025, 942678734) index="0" unique_id=1878574196]
-transform = Transform3D(0.09983715, -0.027843019, -0.9945938, -0.40043718, 0.9139368, -0.06577659, 0.9108489, 0.40484446, 0.08009513, -0.71510077, -4.54378, -4.4616356)
-shape = SubResource("BoxShape3D_pwhxm")
-
 [editable path="Player"]
 [editable path="Player/model"]
 [editable path="Stage/Nature/Trees/tree27"]
-[editable path="cameras/fixedCamera"]
-[editable path="cameras/fixedCamera2"]
-[editable path="cameras/fixedCamera3"]
-[editable path="cameras/fixedCamera4"]
-[editable path="cameras/fixedCamera5"]
-[editable path="cameras/fixedCamera6"]
-[editable path="cameras/fixedCamera7"]
-[editable path="cameras/fixedCamera8"]
-[editable path="cameras/fixedCamera9"]
-[editable path="cameras/fixedCamera10"]
-[editable path="cameras/fixedCamera11"]
+[editable path="fixedCamera"]
+[editable path="fixedCamera2"]
+[editable path="fixedCamera3"]

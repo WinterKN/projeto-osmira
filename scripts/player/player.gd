@@ -1,403 +1,99 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
-# Player Nodes
+@export_group("Movement Settings")
+@export var turn_speed := 180.0
+@export var quick_turn_speed := 0.2
+@export var walk_speed := 80.0
+@export var run_speed := 280.0
 
-@onready var neck = $neck
-@onready var head = $neck/head
-@onready var eyes = $neck/head/eyes
+@export_group("Animation Settings")
+@export var animation_player: AnimationPlayer
+@export var default_blend_time := 0.5
 
-@onready var standing_collision_shape = $standing_collision_shape
-@onready var crounching_collision_shape = $crounching_collision_shape
-@onready var ray_cast_3d = $RayCast3D
-@onready var camera_3d = $neck/head/eyes/Camera3D
-@onready var animation_player = $neck/head/eyes/AnimationPlayer
-@onready var player_head = $body/Player/Armature/Skeleton3D/PlayerHead
+const GRAVITY = -9.81
+var is_quick_turning := false
 
-@onready var animation_tree = $body/Player/AnimationTree
-@onready var state_machine = animation_tree["parameters/playback"]
+func handle_turn(delta):
+	var turn_dir = Input.get_axis("turn_left", "turn_right")
+	rotation_degrees.y -= turn_dir * turn_speed * delta
 
-
-# Speed Variables
-
-var current_speed = 5.0
-
-@export var walking_speed = 5.0
-@export var sprinting_speed = 8.0
-@export var crounching_speed = 3.0
-
-
-# States
-
-var walking = false
-var sprinting = false
-var crounching = false
-var landing = false
-
-# Tempo da animação de aterrissagem
-var landing_timer = 0.0
-
-# Ajuste esses valores conforme a duração real das suas animações
-@export var normal_landing_time = 0.7
-@export var hard_landing_time = 1.55
-
-
-# Head Bobbing Variables
-
-const head_bobbing_sprinting_speed = 18.0
-const head_bobbing_walking_speed = 12.0
-const head_bobbing_crounching_speed = 10.0
-
-const head_bobbing_sprinting_intensity = 0.2
-const head_bobbing_walking_intensity = 0.1
-const head_bobbing_crounching_intensity = 0.05
-
-var head_bobbing_vector = Vector2.ZERO
-var head_bobbing_index = 0.0
-var head_bobbing_current_intensity = 0.0
-
-
-# Movement Variables
-
-const jump_velocity = 4.5
-var crounching_depth = -0.8
-var lerp_speed = 10.0
-var air_lerp_speed = 3.0
-var last_velocity = Vector3.ZERO
-var fall_time = 0.0
-
-
-# Check Fall Speed
-
-var was_on_floor = true
-
-
-# Input Variables
-
-var direction = Vector3.ZERO
-const mouse_sens = 0.25
-
-
-func _ready():
-
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
-	player_head.visible = true
-	player_head.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
-
-	animation_tree.active = true
-
-
-func _input(event):
-
-	# Mouse Looking Logic
-
-	if event is InputEventMouseMotion:
-
-		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
-
-		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
-
-		head.rotation.x = clamp(
-			head.rotation.x,
-			deg_to_rad(-70),
-			deg_to_rad(80)
-		)
-
-
-func _physics_process(delta):
-
-	var input_dir = Input.get_vector(
-		"left",
-		"right",
-		"forward",
-		"backward"
+func handle_walk(delta):
+	var inpur_dir = Input.get_axis("move_backward", "move_forward")
+	var walk_velocity = basis.z * inpur_dir * walk_speed * delta
+	velocity.x = walk_velocity.x
+	velocity.z = walk_velocity.z
+	
+func handle_run(delta):
+	if Input.is_action_pressed("move_backward"):
+		handle_walk(delta)
+		return
+	
+	var input_strength = Input.get_action_strength("move_forward")
+	var walk_velocity = basis.z * input_strength * run_speed * delta
+	velocity.x = walk_velocity.x
+	velocity.z = walk_velocity.z
+	
+func handle_gravity(delta):
+	if is_on_floor():
+		velocity.y = -2
+	else:
+		velocity.y += GRAVITY * delta
+		
+func quick_turn():
+	is_quick_turning = true
+	
+	var target_y_rotation = rotation.y + PI
+	
+	var tween := create_tween()
+	tween.tween_property(self, "rotation:y", target_y_rotation, quick_turn_speed)
+	
+	tween.finished.connect(func():
+		is_quick_turning = false
+	)
+	
+func handle_animation():
+	var input_vector = Input.get_vector(
+		"turn_left",
+		"turn_right",
+		"move_backward",
+		"move_forward"
 	)
 
+	if input_vector == Vector2.ZERO:
+		animation_player.play("Animações/player_idle", default_blend_time)
 
-	# --------------------------------------------------
-	# LANDING TIMER
-	# --------------------------------------------------
-
-	if landing:
-
-		landing_timer -= delta
-
-		if landing_timer <= 0.0:
-
-			landing = false
-
-
-	# --------------------------------------------------
-	# MOVEMENT STATE
-	# --------------------------------------------------
-
-	# Crouching
-
-	if Input.is_action_pressed("crounch") and is_on_floor():
-
-		current_speed = lerp(
-			current_speed,
-			crounching_speed,
-			delta * lerp_speed
-		)
-
-		head.position.y = lerp(
-			head.position.y,
-			crounching_depth,
-			delta * lerp_speed
-		)
-
-		standing_collision_shape.disabled = true
-		crounching_collision_shape.disabled = false
-
-		walking = false
-		sprinting = false
-		crounching = true
-
-
-	elif !ray_cast_3d.is_colliding():
-
-		# Standing
-
-		standing_collision_shape.disabled = false
-		crounching_collision_shape.disabled = true
-
-		head.position.y = lerp(
-			head.position.y,
-			0.0,
-			delta * lerp_speed
-		)
-
-
-		if Input.is_action_pressed("sprint"):
-
-			# Sprinting
-
-			current_speed = lerp(
-				current_speed,
-				sprinting_speed,
-				delta * lerp_speed
-			)
-
-			walking = false
-			sprinting = true
-			crounching = false
-
-
+	elif input_vector.y > 0:
+		if Input.is_action_pressed("run") and not is_quick_turning:
+			animation_player.play("Animações/player_run", default_blend_time, 1.15)
 		else:
+			animation_player.play("Animações/player_walk", default_blend_time)
 
-			# Walking
+	elif input_vector.y < -0.2:
+		animation_player.play("Animações/player_walkBack", default_blend_time)
 
-			current_speed = lerp(
-				current_speed,
-				walking_speed,
-				delta * lerp_speed
-			)
-
-			walking = true
-			sprinting = false
-			crounching = false
-
-
-		# --------------------------------------------------
-		# HEAD BOBBING
-		# --------------------------------------------------
-
-		if sprinting:
-
-			head_bobbing_current_intensity = head_bobbing_sprinting_intensity
-			head_bobbing_index += head_bobbing_sprinting_speed * delta
-
-		elif walking:
-
-			head_bobbing_current_intensity = head_bobbing_walking_intensity
-			head_bobbing_index += head_bobbing_walking_speed * delta
-
-		elif crounching:
-
-			head_bobbing_current_intensity = head_bobbing_crounching_intensity
-			head_bobbing_index += head_bobbing_crounching_speed * delta
-
-
-		if is_on_floor() && input_dir != Vector2.ZERO:
-
-			head_bobbing_vector.y = sin(head_bobbing_index)
-			head_bobbing_vector.x = sin(head_bobbing_index / 2) + 0.5
-
-			eyes.position.y = lerp(
-				eyes.position.y,
-				head_bobbing_vector.y * (head_bobbing_current_intensity / 2.0),
-				delta * lerp_speed
-			)
-
-			eyes.position.x = lerp(
-				eyes.position.x,
-				head_bobbing_vector.x * head_bobbing_current_intensity,
-				delta * lerp_speed
-			)
-
-		else:
-
-			eyes.position.y = lerp(
-				eyes.position.y,
-				0.0,
-				delta * lerp_speed
-			)
-
-			eyes.position.x = lerp(
-				eyes.position.x,
-				0.0,
-				delta * lerp_speed
-			)
-
-
-	# --------------------------------------------------
-	# GRAVITY
-	# --------------------------------------------------
-
-	if not is_on_floor():
-
-		velocity += get_gravity() * delta
-
-		if velocity.y < 0:
-
-			fall_time += delta
-
+	elif input_vector.x != 0:
+		animation_player.play("Animações/player_walk", default_blend_time)
+	
+func _ready():
+	print(animation_player)
+	print(animation_player.get_animation_list())
+	
+func _physics_process(delta: float) -> void:
+	handle_turn(delta)
+	
+	if Input.is_action_pressed("run"):
+		handle_run(delta)
 	else:
-
-		fall_time = 0.0
-
-
-	# --------------------------------------------------
-	# JUMP
-	# --------------------------------------------------
-
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-
-		velocity.y = jump_velocity
-
-		# Efeito da câmera
-		animation_player.play("jump")
-
-
-	# --------------------------------------------------
-	# MOVEMENT
-	# --------------------------------------------------
-
-	if is_on_floor():
-
-		direction = lerp(
-			direction,
-			(transform.basis * Vector3(
-				input_dir.x,
-				0,
-				input_dir.y
-			)).normalized(),
-			delta * lerp_speed
-		)
-
-	else:
-
-		if input_dir != Vector2.ZERO:
-
-			direction = lerp(
-				direction,
-				(transform.basis * Vector3(
-					input_dir.x,
-					0,
-					input_dir.y
-				)).normalized(),
-				delta * air_lerp_speed
-			)
-
-
-	if direction:
-
-		velocity.x = direction.x * current_speed
-		velocity.z = direction.z * current_speed
-
-	else:
-
-		velocity.x = move_toward(
-			velocity.x,
-			0,
-			current_speed
-		)
-
-		velocity.z = move_toward(
-			velocity.z,
-			0,
-			current_speed
-		)
-
-
-	# Guarda a velocidade ANTES do move_and_slide
-	last_velocity = velocity
-
+		handle_walk(delta)
+	
+	if is_quick_turning:
+		velocity.x = 0
+		velocity.z = 0
+	
 	move_and_slide()
-
-
-	# --------------------------------------------------
-	# LANDING
-	# --------------------------------------------------
-
-	if is_on_floor() and not was_on_floor:
-
-		if last_velocity.y < -10.0:
-
-			landing = true
-			landing_timer = hard_landing_time
-
-			state_machine.travel("Hard Land")
-
-
-		elif last_velocity.y < -4.0:
-
-			landing = true
-			landing_timer = normal_landing_time
-
-			state_machine.travel("Land")
-
-
-	# --------------------------------------------------
-	# ANIMATION STATE
-	# --------------------------------------------------
-
-	if landing:
-
-		# Não sobrescreve a animação de aterrissagem
-		pass
-
-
-	elif not is_on_floor():
-
-		if velocity.y > 0:
-
-			state_machine.travel("Jump")
-
-		elif fall_time < 0.35:
-
-			state_machine.travel("JumpDown")
-
-		else:
-
-			state_machine.travel("Fall")
-
-
-	elif sprinting and input_dir != Vector2.ZERO:
-
-		state_machine.travel("Run")
-
-
-	elif input_dir != Vector2.ZERO:
-
-		state_machine.travel("Walk")
-
-
-	else:
-
-		state_machine.travel("Idle")
-
-
-	# Atualiza estado do chão
-	was_on_floor = is_on_floor()
+	
+	handle_animation()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("quick_turn") and not is_quick_turning:
+		quick_turn()

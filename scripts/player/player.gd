@@ -10,6 +10,13 @@ class_name Player extends CharacterBody3D
 @export var animation_player: AnimationPlayer
 @export var default_blend_time := 0.5
 
+@export_group("Idle Settings")
+@export var idle_start_time := 8.0
+@export var idle_pose_time := 6.0
+
+var idle_timer := 0.0
+var idle_state := 0
+
 const GRAVITY = -9.81
 var is_quick_turning := false
 
@@ -51,7 +58,7 @@ func quick_turn():
 		is_quick_turning = false
 	)
 	
-func handle_animation():
+func handle_animation(delta):
 	var input_vector = Input.get_vector(
 		"turn_left",
 		"turn_right",
@@ -60,23 +67,96 @@ func handle_animation():
 	)
 
 	if input_vector == Vector2.ZERO:
-		animation_player.play("Animações/player_idle", default_blend_time)
+		handle_idle(delta)
+		return
 
-	elif input_vector.y > 0:
+	# Se houve qualquer input, cancela o idle especial
+	idle_timer = 0.0
+	idle_state = 0
+
+	if input_vector.y > 0:
 		if Input.is_action_pressed("run") and not is_quick_turning:
-			animation_player.play("Animações/player_run", default_blend_time, 1.15)
+			animation_player.play(
+				"Animações/player_run",
+				default_blend_time,
+				1.15
+			)
 		else:
-			animation_player.play("Animações/player_walk", default_blend_time)
+			animation_player.play(
+				"Animações/player_walk",
+				default_blend_time
+			)
 
 	elif input_vector.y < -0.2:
-		animation_player.play("Animações/player_walkBack", default_blend_time)
+		animation_player.play(
+			"Animações/player_walkBack",
+			default_blend_time
+		)
 
-	elif input_vector.x != 0:
-		animation_player.play("Animações/player_walk", default_blend_time)
-	
-func _ready():
-	print(animation_player)
-	print(animation_player.get_animation_list())
+	elif input_vector.x < 0:
+		animation_player.play(
+			"Animações/player_turnLeft",
+			default_blend_time
+		)
+
+	elif input_vector.x > 0:
+		animation_player.play(
+			"Animações/player_turnRight",
+			default_blend_time
+		)
+		
+func handle_idle(delta):
+	idle_timer += delta
+
+	match idle_state:
+		# Idle padrão
+		0:
+			if animation_player.current_animation != "Animações/player_idle":
+				animation_player.play("Animações/player_idle", default_blend_time)
+
+			if idle_timer >= idle_start_time:
+				idle_timer = 0.0
+				idle_state = 1
+
+
+		# Apoiado na esquerda
+		1:
+			if animation_player.current_animation != "Animações/player_idle_twistL":
+				animation_player.play("Animações/player_idle_twistL", default_blend_time)
+
+			if idle_timer >= idle_pose_time:
+				idle_timer = 0.0
+				idle_state = 2
+
+				animation_player.play(
+					"Animações/player_idle_twistL_to_twistR", default_blend_time)
+
+
+		# Transição esquerda -> direita
+		2:
+			if not animation_player.is_playing():
+				idle_timer = 0.0
+				idle_state = 3
+
+
+		# Apoiado na direita
+		3:
+			if animation_player.current_animation != "Animações/player_idle_twistR":
+				animation_player.play("Animações/player_idle_twistR", default_blend_time)
+
+			if idle_timer >= idle_pose_time:
+				idle_timer = 0.0
+				idle_state = 4
+
+				animation_player.play(
+					"Animações/player_idle_twistR_to_twistL", default_blend_time)
+
+
+		# Transição direita -> esquerda
+		4:
+			if not animation_player.is_playing():
+				idle_timer = 0.0
+				idle_state = 1
 	
 func _physics_process(delta: float) -> void:
 	handle_turn(delta)
@@ -92,7 +172,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	handle_animation()
+	handle_animation(delta)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("quick_turn") and not is_quick_turning:

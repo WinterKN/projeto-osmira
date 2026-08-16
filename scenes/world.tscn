@@ -26,6 +26,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t5mc"]
 size = Vector3(15.000123, 0.84399414, 16.709229)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kpybi"]
+size = Vector3(15.000123, 0.84399414, 16.709229)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6p5f"]
 size = Vector3(13.115631, 1.8438721, 9.850983)
 
@@ -34,6 +37,9 @@ size = Vector3(12.021912, 1, 13.645752)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pwhxm"]
 size = Vector3(7.9539948, 2.0925446, 18.601654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oo54l"]
+size = Vector3(16.062412, 2.0925446, 18.601654)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48euw"]
 albedo_color = Color(0.5729883, 0.5729883, 0.5729883, 1)
@@ -122,10 +128,10 @@ size = Vector2(2, 2)
 transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.74479, 0.4, 107.27879)
 collision_layer = 5
 
-[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=2052385024]
+[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=1751469096]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)
 
-[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=2115887913]
+[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=173471642]
 bones/2/rotation = Quaternion(-0.06359446, -0.0036651148, 0.011258639, 0.9979056)
 bones/3/rotation = Quaternion(0.085057385, -0.0046582986, 0.0035399038, 0.996359)
 bones/4/rotation = Quaternion(-0.002165822, -0.0043975, 0.0038591037, 0.9999806)
@@ -159,6 +165,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera/Trigger" index="0" unique_id=809072126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3204689, -0.84606934, -11.253281)
 shape = SubResource("BoxShape3D_7t5mc")
+
+[node name="fixedCamera12" parent="Stage/Cameras/fixedCamera" unique_id=1346389857 instance=ExtResource("1_lakw3")]
+transform = Transform3D(0.9722259, 0, 0.23404503, 0, 1, 0, -0.23404503, 0, 0.9722259, -14.007965, -1.6616607, 223.00473)
+
+[node name="Trigger" parent="Stage/Cameras/fixedCamera/fixedCamera12" index="0" unique_id=942678734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera/fixedCamera12/Trigger" index="0" unique_id=101527046]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -7.1412354, 0.70567036, -0.5477524)
+shape = SubResource("BoxShape3D_kpybi")
 
 [node name="fixedCamera2" parent="Stage/Cameras" unique_id=999320916 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.17364821, 0, 0.9848078, 0, 1, 0, -0.9848078, 0, -0.17364821, -72.60021, 2.2096124, -120.10991)
@@ -197,10 +213,10 @@ transform = Transform3D(-0.57275796, 0.30240035, -0.7619071, 0.007359867, 0.9313
 transform = Transform3D(0.66061664, 0.017127508, 0.75051206, 0.2589262, 0.9331783, -0.24920985, -0.70464087, 0.35896337, 0.6120498, 1.8202515, -0.28028297, -6.823841)
 shape = SubResource("BoxShape3D_pwhxm")
 
-[node name="fixedCamera7" parent="Stage/Cameras" unique_id=1346389857 instance=ExtResource("1_lakw3")]
+[node name="fixedCamera7" parent="Stage/Cameras" unique_id=1320001405 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.27241212, -0.3484811, 0.8968571, 0.007359892, 0.93132687, 0.3641101, -0.9621526, 0.10578877, -0.25113994, -1.0028048, 3.1276886, 79.306946)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera7/Trigger" parent_id_path=PackedInt32Array(1346389857, 942678734) index="0" unique_id=1968253019]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera7/Trigger" parent_id_path=PackedInt32Array(1320001405, 942678734) index="0" unique_id=1968253019]
 transform = Transform3D(0.9960124, 0.0175526, -0.08726643, -0.04841222, 0.92949206, -0.36558685, 0.074693576, 0.3683596, 0.92666173, -0.3390274, -0.96167374, -5.3041344)
 shape = SubResource("BoxShape3D_pwhxm")
 
@@ -223,8 +239,8 @@ shape = SubResource("BoxShape3D_pwhxm")
 transform = Transform3D(-0.9999548, 0.0046648253, 0.008280636, 0.006540867, 0.96988165, 0.24348906, -0.006895402, 0.24353224, -0.9698683, -3.1210501, 2.991339, 12.304363)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera10/Trigger" parent_id_path=PackedInt32Array(1070573503, 942678734) index="0" unique_id=907575207]
-transform = Transform3D(0.073523454, 0.0038092108, -0.99727243, -0.28195235, 0.9592523, -0.017118832, 0.956588, 0.282443, 0.07160053, 1.2130666, 1.2995915, -14.630504)
-shape = SubResource("BoxShape3D_pwhxm")
+transform = Transform3D(0.07352318, 0.003809228, -0.99727243, -0.28195232, 0.9592523, -0.017118819, 0.956588, 0.282443, 0.071600474, 1.5111442, 0.15649986, -10.75229)
+shape = SubResource("BoxShape3D_oo54l")
 
 [node name="fixedCamera11" parent="Stage/Cameras" unique_id=1356132025 instance=ExtResource("1_lakw3")]
 transform = Transform3D(0.99996984, 0.005351954, 0.005641586, -0.0071211844, 0.92169374, 0.38785303, -0.0031240433, -0.3878815, 0.921704, -3.1210501, 5.68003, 14.37647)
@@ -2240,6 +2256,7 @@ offset_bottom = 965.0
 metadata/_edit_use_anchors_ = true
 
 [node name="shader" type="MeshInstance3D" parent="env" unique_id=140858374]
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_l6p5f")
 
@@ -2249,6 +2266,7 @@ occluder = ExtResource("22_oo54l")
 [editable path="Player"]
 [editable path="Player/model"]
 [editable path="Stage/Cameras/fixedCamera"]
+[editable path="Stage/Cameras/fixedCamera/fixedCamera12"]
 [editable path="Stage/Cameras/fixedCamera2"]
 [editable path="Stage/Cameras/fixedCamera3"]
 [editable path="Stage/Cameras/fixedCamera4"]

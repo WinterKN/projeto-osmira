@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://fxmxv6osob4l" path="res://scenes/world/assets/camera/fixed_camera.tscn" id="1_lakw3"]
 [ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://shaders/psx_camera_shader.gdshader" id="2_lakw3"]
 [ext_resource type="PackedScene" uid="uid://dsxt0b73qlglm" path="res://scenes/world/assets/OCAAA/casa.tscn" id="3_pm21f"]
-[ext_resource type="PackedScene" uid="uid://cixo8agg5vmey" path="res://scenes/world/assets/OCAAA/oca_principal.tscn" id="4_2lf6f"]
+[ext_resource type="PackedScene" uid="uid://b01e12ybmu1ac" path="res://scenes/world/assets/OCAAA/oca_oca_oca.tscn" id="4_oo54l"]
 [ext_resource type="PackedScene" uid="uid://o5kfx3t2cmoo" path="res://scenes/world/assets/trees/tree_27.tscn" id="5_7iits"]
 [ext_resource type="PackedScene" uid="uid://nfooupxx66cu" path="res://scenes/world/assets/trees/tree_17.tscn" id="6_oo54l"]
 [ext_resource type="PackedScene" uid="uid://b3kw08jitw1c1" path="res://scenes/world/assets/trees/tree_25.tscn" id="7_kpybi"]
@@ -123,10 +123,10 @@ transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.
 collision_layer = 5
 quick_turn_speed = 0.25
 
-[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=2052385024]
+[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=307449010]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)
 
-[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=2115887913]
+[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=1402934631]
 bones/2/rotation = Quaternion(-0.06359446, -0.0036651148, 0.011258639, 0.9979056)
 bones/3/rotation = Quaternion(0.085057385, -0.0046582986, 0.0035399038, 0.996359)
 bones/4/rotation = Quaternion(-0.002165822, -0.0043975, 0.0038591037, 0.9999806)
@@ -268,8 +268,8 @@ transform = Transform3D(-0.28564733, 0, 0.2104918, 0, 0.3548255, 0, -0.2104918, 
 [node name="casa" parent="Stage/Buildings/oca" unique_id=120893698 instance=ExtResource("3_pm21f")]
 transform = Transform3D(0.081280395, 0, -0.30315104, 0, 0.35529613, 0, 0.23881085, 0, 0.10317888, -81.96471, 1.1328447, -101.60783)
 
-[node name="oca_principal" parent="Stage/Buildings/oca" unique_id=755429762 instance=ExtResource("4_2lf6f")]
-transform = Transform3D(-5.211804, 0, -0.04883571, 0, 5.212033, 0, 0.04883571, 0, -5.211804, -6.2917237, -144.62396, -105.976395)
+[node name="oca_oca_oca" parent="Stage/Buildings/oca" unique_id=1154703749 instance=ExtResource("4_oo54l")]
+transform = Transform3D(4.7762403, 0, 0, 0, 2.3425612, 0, 0, 0, 4.7762403, -6.607436, 1.3223172, -106.403854)
 
 [node name="Nature" type="Node" parent="Stage" unique_id=1412965896]
 
@@ -295,8 +295,14 @@ transform = Transform3D(0.7033746, 0, 0, 0, 0.7033746, 0, 0, 0, 0.7033746, 8.594
 [node name="tree223" parent="Stage/Nature/Florest Avenue/Trees" unique_id=748874003 instance=ExtResource("6_oo54l")]
 transform = Transform3D(1.1908252, 0, 0, 0, 1.1908252, 0, 0, 0, 1.1908252, -14.813217, 0.5000019, 8.514268)
 
+[node name="tree406" parent="Stage/Nature/Florest Avenue/Trees" unique_id=467145139 instance=ExtResource("6_oo54l")]
+transform = Transform3D(1.1908252, 0, 0, 0, 1.1908252, 0, 0, 0, 1.1908252, -32.20266, 0.5000019, 2.2374144)
+
 [node name="tree224" parent="Stage/Nature/Florest Avenue/Trees" unique_id=396913791 instance=ExtResource("6_oo54l")]
 transform = Transform3D(1.1908252, 0, 0, 0, 1.1908252, 0, 0, 0, 1.1908252, 6.181718, 0.5000019, 10.378953)
+
+[node name="tree372" parent="Stage/Nature/Florest Avenue/Trees" unique_id=2603950 instance=ExtResource("6_oo54l")]
+transform = Transform3D(1.1908252, 0, 0, 0, 1.1908252, 0, 0, 0, 1.1908252, 13.907684, 0.5000019, 17.388578)
 
 [node name="tree225" parent="Stage/Nature/Florest Avenue/Trees" unique_id=438635879 instance=ExtResource("6_oo54l")]
 transform = Transform3D(1.1908252, 0, 0, 0, 1.1908252, 0, 0, 0, 1.1908252, -14.178724, 0.5000019, 17.088432)
@@ -423,6 +429,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.185225, 0.5000007, 27.44663
 
 [node name="tree239" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1008472102 instance=ExtResource("7_kpybi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.861792, 0.5000007, 17.38219)
+
+[node name="tree374" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1352420598 instance=ExtResource("7_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.786839, 0.5000007, 22.9098)
+
+[node name="tree375" parent="Stage/Nature/Florest Avenue/Trees" unique_id=88521081 instance=ExtResource("7_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.197708, 0.5000007, 28.409048)
+
+[node name="tree376" parent="Stage/Nature/Florest Avenue/Trees" unique_id=101841368 instance=ExtResource("7_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.619902, 0.5000007, 33.24123)
 
 [node name="tree240" parent="Stage/Nature/Florest Avenue/Trees" unique_id=53441104 instance=ExtResource("7_kpybi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8931, 0.5000007, 28.982048)
@@ -730,8 +745,98 @@ transform = Transform3D(-1.7175633, 0, 1.1241708, 0, 1.267414, 0, -1.1241708, 0,
 [node name="tree300" parent="Stage/Nature/Florest Avenue/Trees" unique_id=2106547676 instance=ExtResource("8_ctatt")]
 transform = Transform3D(-1.7175633, 0, 1.1241708, 0, 1.267414, 0, -1.1241708, 0, -1.7175633, 25.996393, 0.5000003, 57.894764)
 
+[node name="tree377" parent="Stage/Nature/Florest Avenue/Trees" unique_id=856973537 instance=ExtResource("6_oo54l")]
+transform = Transform3D(0.51752216, 0, -1.0724905, 0, 1.1908252, 0, 1.0724905, 0, 0.51752216, 32.3322, 0.50000215, 12.874792)
+
+[node name="tree378" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1207360647 instance=ExtResource("7_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 33.614414, 0.50000453, 2.7268112)
+
+[node name="tree379" parent="Stage/Nature/Florest Avenue/Trees" unique_id=983675616 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5063012, 0, -1.1440562, 0, 0.80447406, 0, 1.0492368, 0, 0.5520558, 17.754885, 0.49999958, 5.2994957)
+
+[node name="tree380" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1062485769 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5063012, 0, -1.1440562, 0, 0.80447406, 0, 1.0492368, 0, 0.5520558, 23.08068, 0.49999958, 2.1402688)
+
+[node name="tree381" parent="Stage/Nature/Florest Avenue/Trees" unique_id=299198071 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5063012, 0, -1.1440562, 0, 0.80447406, 0, 1.0492368, 0, 0.5520558, 40.803467, 0.49999958, -0.2360568)
+
+[node name="tree382" parent="Stage/Nature/Florest Avenue/Trees" unique_id=614945756 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5063012, 0, -1.1440562, 0, 0.80447406, 0, 1.0492368, 0, 0.5520558, 38.31957, 0.49999958, 7.7195787)
+
+[node name="tree383" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1095011495 instance=ExtResource("6_oo54l")]
+transform = Transform3D(0.15432245, 0, 1.1807833, 0, 1.1908251, 0, -1.1807833, 0, 0.15432245, 52.94018, 0.5000057, 1.2431874)
+
+[node name="tree384" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1052243113 instance=ExtResource("7_kpybi")]
+transform = Transform3D(0.1295928, 0, 0.99156743, 0, 1, 0, -0.99156743, 0, 0.1295928, 36.50482, 0.5000007, 17.013832)
+
+[node name="tree385" parent="Stage/Nature/Florest Avenue/Trees" unique_id=69210516 instance=ExtResource("7_kpybi")]
+transform = Transform3D(0.1295928, 0, 0.99156743, 0, 1, 0, -0.99156743, 0, 0.1295928, 22.320835, 0.5000007, 28.39865)
+
+[node name="tree386" parent="Stage/Nature/Florest Avenue/Trees" unique_id=678431832 instance=ExtResource("7_kpybi")]
+transform = Transform3D(0.1295928, 0, 0.99156743, 0, 1, 0, -0.99156743, 0, 0.1295928, 50.561928, 0.5000007, 18.417145)
+
+[node name="tree387" parent="Stage/Nature/Florest Avenue/Trees" unique_id=773549869 instance=ExtResource("7_kpybi")]
+transform = Transform3D(0.1295928, 0, 0.99156743, 0, 1, 0, -0.99156743, 0, 0.1295928, 46.092327, 0.5000005, 14.311356)
+
+[node name="tree388" parent="Stage/Nature/Florest Avenue/Trees" unique_id=514223115 instance=ExtResource("7_kpybi")]
+transform = Transform3D(0.1295928, 0, 0.99156743, 0, 1, 0, -0.99156743, 0, 0.1295928, 49.612053, 0.5000007, 8.111015)
+
+[node name="tree389" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1069622586 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.26602164, 0, 2.03544, 0, 1.267414, 0, -2.03544, 0, 0.26602164, 22.499891, 0.5000003, 18.908699)
+
+[node name="tree390" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1968094523 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.26602164, 0, 2.03544, 0, 1.267414, 0, -2.03544, 0, 0.26602164, 42.852585, 0.5000003, 22.153215)
+
+[node name="tree391" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1111907110 instance=ExtResource("6_oo54l")]
+transform = Transform3D(0.5489733, 0, 1.056737, 0, 1.1908252, 0, -1.056737, 0, 0.5489733, -42.950027, 0.50000215, 10.515011)
+
+[node name="tree392" parent="Stage/Nature/Florest Avenue/Trees" unique_id=479749595 instance=ExtResource("7_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -51.84489, 0.50000453, 15.565458)
+
+[node name="tree393" parent="Stage/Nature/Florest Avenue/Trees" unique_id=512104387 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5370706, 0, 1.1272517, 0, 0.80447406, 0, -1.0338249, 0, 0.5856055, -40.28679, 0.49999958, 26.725822)
+
+[node name="tree394" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1837445949 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5370706, 0, 1.1272517, 0, 0.80447406, 0, -1.0338249, 0, 0.5856055, -46.006298, 0.49999958, 24.352634)
+
+[node name="tree395" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1663325166 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5370706, 0, 1.1272517, 0, 0.80447406, 0, -1.0338249, 0, 0.5856055, -58.52299, 0.49999958, 11.582494)
+
+[node name="tree396" parent="Stage/Nature/Florest Avenue/Trees" unique_id=36898036 instance=ExtResource("8_ctatt")]
+transform = Transform3D(0.5370706, 0, 1.1272517, 0, 0.80447406, 0, -1.0338249, 0, 0.5856055, -50.664215, 0.49999958, 8.807337)
+
+[node name="tree397" parent="Stage/Nature/Florest Avenue/Trees" unique_id=293575044 instance=ExtResource("6_oo54l")]
+transform = Transform3D(-1.0380459, 0, -0.5835452, 0, 1.1908249, 0, 0.5835452, 0, -1.0380459, -64.60664, 0.5000057, 0.97696495)
+
+[node name="tree398" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1521126827 instance=ExtResource("7_kpybi")]
+transform = Transform3D(-0.87170315, 0, -0.49003458, 0, 1, 0, 0.49003458, 0, -0.87170315, -42.134144, 0.5000007, 4.6946363)
+
+[node name="tree405" parent="Stage/Nature/Florest Avenue/Trees" unique_id=503291421 instance=ExtResource("7_kpybi")]
+transform = Transform3D(-0.87170315, 0, -0.49003458, 0, 1, 0, 0.49003458, 0, -0.87170315, -31.841785, 0.5000007, 8.409743)
+
+[node name="tree399" parent="Stage/Nature/Florest Avenue/Trees" unique_id=939438411 instance=ExtResource("7_kpybi")]
+transform = Transform3D(-0.87170315, 0, -0.49003458, 0, 1, 0, 0.49003458, 0, -0.87170315, -24.522297, 0.5000007, 9.235836)
+
+[node name="tree400" parent="Stage/Nature/Florest Avenue/Trees" unique_id=31013612 instance=ExtResource("7_kpybi")]
+transform = Transform3D(-0.87170315, 0, -0.49003458, 0, 1, 0, 0.49003458, 0, -0.87170315, -49.428658, 0.5000007, -7.4033594)
+
+[node name="tree401" parent="Stage/Nature/Florest Avenue/Trees" unique_id=957836567 instance=ExtResource("7_kpybi")]
+transform = Transform3D(-0.87170315, 0, -0.49003458, 0, 1, 0, 0.49003458, 0, -0.87170315, -50.04007, 0.5000005, -1.3650646)
+
+[node name="tree402" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1083859781 instance=ExtResource("7_kpybi")]
+transform = Transform3D(-0.87170315, 0, -0.49003458, 0, 1, 0, 0.49003458, 0, -0.87170315, -57.11345, 0.5000007, -0.47063637)
+
+[node name="tree403" parent="Stage/Nature/Florest Avenue/Trees" unique_id=1749829834 instance=ExtResource("8_ctatt")]
+transform = Transform3D(-1.7893887, 0, -1.0059183, 0, 1.2674139, 0, 1.0059183, 0, -1.7893887, -32.229534, 0.5000003, 14.77567)
+
+[node name="tree404" parent="Stage/Nature/Florest Avenue/Trees" unique_id=297865387 instance=ExtResource("8_ctatt")]
+transform = Transform3D(-1.7893887, 0, -1.0059183, 0, 1.2674139, 0, 1.0059183, 0, -1.7893887, -41.819756, 0.5000003, -3.4667683)
+
 [node name="tree301" parent="Stage/Nature/Florest Avenue/Trees" unique_id=555356107 instance=ExtResource("8_ctatt")]
 transform = Transform3D(-1.7175633, 0, 1.1241708, 0, 1.267414, 0, -1.1241708, 0, -1.7175633, 28.224642, 0.5000003, 32.174984)
+
+[node name="tree373" parent="Stage/Nature/Florest Avenue/Trees" unique_id=832590530 instance=ExtResource("8_ctatt")]
+transform = Transform3D(-1.7175633, 0, 1.1241708, 0, 1.267414, 0, -1.1241708, 0, -1.7175633, 14.845492, 0.5000003, 32.072067)
 
 [node name="tree302" parent="Stage/Nature/Florest Avenue/Trees" unique_id=861272905 instance=ExtResource("8_ctatt")]
 transform = Transform3D(-1.7175633, 0, 1.1241708, 0, 1.267414, 0, -1.1241708, 0, -1.7175633, 40.445282, 0.5000003, 49.469673)
@@ -981,6 +1086,186 @@ transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 28.344782, 0.46777746
 [node name="bush25" parent="Stage/Nature/Florest Avenue/Bush" unique_id=593002716 instance=ExtResource("8_pm21f")]
 transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 31.64019, 0.46777746, 139.74779)
 
+[node name="bush136" parent="Stage/Nature/Florest Avenue/Bush" unique_id=441900326 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.80152947, 0, 0, 0, 0.80152947, 0, 0, 0, 0.80152947, 10.609863, 0.4677785, 22.758812)
+
+[node name="bush137" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1539189099 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.80152947, 0, 0, 0, 0.80152947, 0, 0, 0, 0.80152947, 8.036255, 0.4677785, 25.963463)
+
+[node name="bush138" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1085883313 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 6.3817253, 0.46777746, 23.703026)
+
+[node name="bush139" parent="Stage/Nature/Florest Avenue/Bush" unique_id=66808334 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 4.132677, 0.46777746, 26.546654)
+
+[node name="bush140" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1859486030 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 7.6868343, 0.46777746, 20.62426)
+
+[node name="bush141" parent="Stage/Nature/Florest Avenue/Bush" unique_id=986312009 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 10.982243, 0.46777746, 18.98838)
+
+[node name="bush142" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1572450899 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.80152947, 0, 0, 0, 0.80152947, 0, 0, 0, 0.80152947, 16.661846, 0.4677785, 27.929407)
+
+[node name="bush143" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1072408205 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.80152947, 0, 0, 0, 0.80152947, 0, 0, 0, 0.80152947, 14.088238, 0.4677785, 31.134058)
+
+[node name="bush144" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1578870295 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 12.433708, 0.46777746, 28.873621)
+
+[node name="bush145" parent="Stage/Nature/Florest Avenue/Bush" unique_id=414485946 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 10.18466, 0.46777746, 31.717249)
+
+[node name="bush146" parent="Stage/Nature/Florest Avenue/Bush" unique_id=694979055 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 13.738817, 0.46777746, 25.794855)
+
+[node name="bush147" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1066755161 instance=ExtResource("8_pm21f")]
+transform = Transform3D(1, 0, 0, 0, 0.8909441, 0, 0, 0, 1, 17.034225, 0.46777746, 24.158976)
+
+[node name="bush148" parent="Stage/Nature/Florest Avenue/Bush" unique_id=622448355 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.543624, 0, 0.58900124, 0, 0.80152947, 0, -0.58900124, 0, 0.543624, -12.362387, 0.4677785, 26.145416)
+
+[node name="bush149" parent="Stage/Nature/Florest Avenue/Bush" unique_id=333095959 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.543624, 0, 0.58900124, 0, 0.80152947, 0, -0.58900124, 0, 0.543624, -11.752968, 0.4677785, 30.210125)
+
+[node name="bush150" parent="Stage/Nature/Florest Avenue/Bush" unique_id=93201535 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 0.8909441, 0, -0.73484665, 0, 0.6782333, -14.5362, 0.46777746, 29.892847)
+
+[node name="bush151" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1263096613 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 0.8909441, 0, -0.73484665, 0, 0.6782333, -13.971948, 0.46777746, 33.474197)
+
+[node name="bush152" parent="Stage/Nature/Florest Avenue/Bush" unique_id=298275279 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 0.8909441, 0, -0.73484665, 0, 0.6782333, -15.913451, 0.46777746, 26.84567)
+
+[node name="bush153" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2050325862 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 0.8909441, 0, -0.73484665, 0, 0.6782333, -14.880516, 0.46777746, 23.314543)
+
+[node name="bush154" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1593479916 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6067628, 0, -0.52372545, 0, 0.8015296, 0, 0.52372545, 0, -0.6067628, -16.164444, 0.4677785, 41.36731)
+
+[node name="bush155" parent="Stage/Nature/Florest Avenue/Bush" unique_id=194040488 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6067628, 0, -0.52372545, 0, 0.8015296, 0, 0.52372545, 0, -0.6067628, -16.31015, 0.4677785, 37.259754)
+
+[node name="bush156" parent="Stage/Nature/Florest Avenue/Bush" unique_id=308946497 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -13.580673, 0.46777746, 37.889835)
+
+[node name="bush157" parent="Stage/Nature/Florest Avenue/Bush" unique_id=249039433 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -13.736178, 0.46777746, 34.267643)
+
+[node name="bush158" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1812137130 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -12.55696, 0.46777746, 41.073246)
+
+[node name="bush159" parent="Stage/Nature/Florest Avenue/Bush" unique_id=430352428 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -13.982709, 0.46777746, 44.464863)
+
+[node name="bush160" parent="Stage/Nature/Florest Avenue/Bush" unique_id=562948015 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6067628, 0, -0.52372545, 0, 0.8015296, 0, 0.52372545, 0, -0.6067628, -16.164444, 0.4677785, 52.321167)
+
+[node name="bush161" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1794526525 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6067628, 0, -0.52372545, 0, 0.8015296, 0, 0.52372545, 0, -0.6067628, -16.31015, 0.4677785, 48.21361)
+
+[node name="bush162" parent="Stage/Nature/Florest Avenue/Bush" unique_id=128810656 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -13.580673, 0.46777746, 48.843693)
+
+[node name="bush163" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2077065806 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -13.736178, 0.46777746, 45.2215)
+
+[node name="bush164" parent="Stage/Nature/Florest Avenue/Bush" unique_id=500273033 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -12.55696, 0.46777746, 52.027103)
+
+[node name="bush165" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1880910394 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -13.982709, 0.46777746, 55.41872)
+
+[node name="bush166" parent="Stage/Nature/Florest Avenue/Bush" unique_id=686881119 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6067628, 0, -0.52372545, 0, 0.8015296, 0, 0.52372545, 0, -0.6067628, -18.737125, 0.4677785, 19.226578)
+
+[node name="bush167" parent="Stage/Nature/Florest Avenue/Bush" unique_id=42888649 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6067628, 0, -0.52372545, 0, 0.8015296, 0, 0.52372545, 0, -0.6067628, -18.882832, 0.4677785, 15.119022)
+
+[node name="bush168" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1949289635 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -16.153355, 0.46777746, 15.749104)
+
+[node name="bush169" parent="Stage/Nature/Florest Avenue/Bush" unique_id=793776291 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -16.308859, 0.46777746, 12.126911)
+
+[node name="bush170" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1338632736 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -15.129641, 0.46777746, 18.932514)
+
+[node name="bush171" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1422738812 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 0.8909441, 0, 0.65340763, 0, -0.7570063, -16.55539, 0.46777746, 22.324131)
+
+[node name="bush118" parent="Stage/Nature/Florest Avenue/Bush" unique_id=933365943 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.68014073, 0, -0.4240967, 0, 0.8015296, 0, 0.4240967, 0, -0.68014073, 1.0349154, 0.4677785, 48.658733)
+
+[node name="bush119" parent="Stage/Nature/Florest Avenue/Bush" unique_id=750808827 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.68014073, 0, -0.4240967, 0, 0.8015296, 0, 0.4240967, 0, -0.68014073, 1.5231503, 0.4677785, 44.57769)
+
+[node name="bush120" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1560413598 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 4.123125, 0.46777746, 45.62037)
+
+[node name="bush121" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1910127122 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 4.5269737, 0.46777746, 42.017406)
+
+[node name="bush122" parent="Stage/Nature/Florest Avenue/Bush" unique_id=526514380 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 4.644674, 0.46777746, 48.923412)
+
+[node name="bush123" parent="Stage/Nature/Florest Avenue/Bush" unique_id=222490407 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 2.713903, 0.46777746, 52.055172)
+
+[node name="bush124" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1348897082 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.68014073, 0, -0.4240967, 0, 0.8015296, 0, 0.4240967, 0, -0.68014073, 3.1761813, 0.4677785, 41.84422)
+
+[node name="bush125" parent="Stage/Nature/Florest Avenue/Bush" unique_id=225506524 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.68014073, 0, -0.4240967, 0, 0.8015296, 0, 0.4240967, 0, -0.68014073, 3.6644163, 0.4677785, 37.763176)
+
+[node name="bush126" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1886292367 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 6.264391, 0.46777746, 38.805855)
+
+[node name="bush127" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1738155333 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 6.6682396, 0.46777746, 35.202892)
+
+[node name="bush128" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1115883621 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 6.7859397, 0.46777746, 42.1089)
+
+[node name="bush129" parent="Stage/Nature/Florest Avenue/Bush" unique_id=544243564 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 0.8909441, 0, 0.52910936, 0, -0.84855366, 4.855169, 0.46777746, 45.240658)
+
+[node name="bush130" parent="Stage/Nature/Florest Avenue/Bush" unique_id=684183338 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.13750356, 0, -0.78964686, 0, 0.8015296, 0, 0.78964686, 0, 0.13750356, 6.4121695, 0.4677785, 34.730255)
+
+[node name="bush131" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1379143235 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.13750356, 0, -0.78964686, 0, 0.8015296, 0, 0.78964686, 0, 0.13750356, 2.8135164, 0.4677785, 32.74456)
+
+[node name="bush132" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1799585001 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.17155147, 0, -0.9851752, 0, 0.8909441, 0, 0.9851752, 0, 0.17155147, 4.756609, 0.46777746, 30.726782)
+
+[node name="bush133" parent="Stage/Nature/Florest Avenue/Bush" unique_id=431564476 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.17155147, 0, -0.9851752, 0, 0.8909441, 0, 0.9851752, 0, 0.17155147, 1.5693111, 0.46777746, 28.998903)
+
+[node name="bush134" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1297211836 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.17155147, 0, -0.9851752, 0, 0.8909441, 0, 0.9851752, 0, 0.17155147, 8.013626, 0.46777746, 31.484375)
+
+[node name="bush135" parent="Stage/Nature/Florest Avenue/Bush" unique_id=995837325 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.17155147, 0, -0.9851752, 0, 0.8909441, 0, 0.9851752, 0, 0.17155147, 10.190582, 0.46777746, 34.45029)
+
+[node name="bush112" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1097127595 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.3882712, 0, 0.7012096, 0, 0.80152947, 0, -0.7012096, 0, 0.3882712, 3.4051828, 0.4677785, 54.86406)
+
+[node name="bush113" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1171876730 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.3882712, 0, 0.7012096, 0, 0.80152947, 0, -0.7012096, 0, 0.3882712, 4.962049, 0.4677785, 58.66793)
+
+[node name="bush114" parent="Stage/Nature/Florest Avenue/Bush" unique_id=546552509 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 0.8909441, 0, -0.8748395, 0, 0.4844129, 2.183054, 0.46777746, 59.020393)
+
+[node name="bush115" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1594556085 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 0.8909441, 0, -0.8748395, 0, 0.4844129, 3.5813036, 0.46777746, 62.36544)
+
+[node name="bush116" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2102653136 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 0.8909441, 0, -0.8748395, 0, 0.4844129, 0.12183952, 0.46777746, 56.387238)
+
+[node name="bush117" parent="Stage/Nature/Florest Avenue/Bush" unique_id=818711948 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 0.8909441, 0, -0.8748395, 0, 0.4844129, 0.28704596, 0.46777746, 52.71184)
+
 [node name="bush86" parent="Stage/Nature/Florest Avenue/Bush" unique_id=628618751 instance=ExtResource("9_2lf6f")]
 transform = Transform3D(0.80152947, 0, 0, 0, 0.80152947, 0, 0, 0, 0.80152947, -12.241035, 0.4677785, 60.052856)
 
@@ -1064,6 +1349,324 @@ transform = Transform3D(-0.3988141, 0, 0.91703176, 0, 0.8909441, 0, -0.91703176,
 
 [node name="bush84" parent="Stage/Nature/Florest Avenue/Bush" unique_id=628689533 instance=ExtResource("8_pm21f")]
 transform = Transform3D(-0.3988141, 0, 0.91703176, 0, 0.8909441, 0, -0.91703176, 0, -0.3988141, 5.3693514, 0.46777794, 69.36782)
+
+[node name="bush172" parent="Stage/Nature/Florest Avenue/Bush" unique_id=335629880 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.74926734, 0, 0.28468937, 0, 0.8015296, 0, -0.28468937, 0, 0.74926734, 15.428691, 0.4677785, 21.540895)
+
+[node name="bush173" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1073668219 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.74926734, 0, 0.28468937, 0, 0.8015296, 0, -0.28468937, 0, 0.74926734, 14.390024, 0.4677785, 17.871422)
+
+[node name="bush174" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1280025714 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.74926734, 0, 0.28468937, 0, 0.8015296, 0, -0.28468937, 0, 0.74926734, 8.560835, 0.4677785, 23.818552)
+
+[node name="bush175" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1960777484 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.74926734, 0, 0.28468937, 0, 0.8015296, 0, -0.28468937, 0, 0.74926734, 13.19907, 0.4677785, 23.392208)
+
+[node name="bush176" parent="Stage/Nature/Florest Avenue/Bush" unique_id=111485178 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.934797, 0, 0.35518265, 0, 0.8909441, 0, -0.35518265, 0, 0.934797, 8.03763, 0.46777746, 19.018347)
+
+[node name="bush177" parent="Stage/Nature/Florest Avenue/Bush" unique_id=353579573 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.934797, 0, 0.35518265, 0, 0.8909441, 0, -0.35518265, 0, 0.934797, 8.791346, 0.46777746, 14.596397)
+
+[node name="bush178" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2067906948 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.934797, 0, 0.35518265, 0, 0.8909441, 0, -0.35518265, 0, 0.934797, 13.055954, 0.46777746, 15.098097)
+
+[node name="bush179" parent="Stage/Nature/Florest Avenue/Bush" unique_id=341841846 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.934797, 0, 0.35518265, 0, 0.8909441, 0, -0.35518265, 0, 0.934797, 11.071114, 0.46777746, 20.510098)
+
+[node name="bush180" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1912487610 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.890944, 0, 0.90062773, 0, 0.4345911, 10.335585, 0.46777746, 35.167152)
+
+[node name="bush181" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1450484281 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.7921831, 0, 0.90062773, 0, 0.4345911, 1.1413841, 0.46777865, 11.98854)
+
+[node name="bush182" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1224820152 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.7921831, 0, 0.90062773, 0, 0.4345911, 3.5496597, 0.4677784, 8.460165)
+
+[node name="bush183" parent="Stage/Nature/Florest Avenue/Bush" unique_id=914622692 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.34833765, 0, -0.7218797, 0, 0.8015296, 0, 0.7218797, 0, 0.34833765, 61.77884, 0.4677785, -0.20156908)
+
+[node name="bush184" parent="Stage/Nature/Florest Avenue/Bush" unique_id=9553060 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.890944, 0, 0.90062773, 0, 0.4345911, 59.557144, 0.46777746, -3.4637904)
+
+[node name="bush185" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1335726709 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6775366, 0, 0.428245, 0, 0.8015297, 0, -0.428245, 0, -0.6775366, 40.32277, 0.4677785, -4.341686)
+
+[node name="bush186" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1944912063 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6775366, 0, 0.428245, 0, 0.8015297, 0, -0.428245, 0, -0.6775366, 44.210457, 0.4677785, -5.675554)
+
+[node name="bush187" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2027174713 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 44.401318, 0.46777746, -2.8808017)
+
+[node name="bush188" parent="Stage/Nature/Florest Avenue/Bush" unique_id=995205346 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 47.821754, 0.46777746, -4.0829024)
+
+[node name="bush189" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1155166573 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 41.653164, 0.46777746, -0.9756074)
+
+[node name="bush190" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1342023391 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 37.99352, 0.46777746, -1.353478)
+
+[node name="bush191" parent="Stage/Nature/Florest Avenue/Bush" unique_id=915327798 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6775366, 0, 0.428245, 0, 0.8015297, 0, -0.428245, 0, -0.6775366, 47.39069, 0.4677785, -5.3747287)
+
+[node name="bush192" parent="Stage/Nature/Florest Avenue/Bush" unique_id=714256353 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6775366, 0, 0.428245, 0, 0.8015297, 0, -0.428245, 0, -0.6775366, 51.278374, 0.4677785, -6.708593)
+
+[node name="bush193" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1001665823 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 51.46924, 0.46777746, -3.9138455)
+
+[node name="bush194" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1458236668 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 54.889668, 0.46777746, -5.1159463)
+
+[node name="bush195" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1107670446 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 48.721077, 0.46777746, -2.0086555)
+
+[node name="bush196" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1283698555 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8453044, 0, 0.5342847, 0, 0.890944, 0, -0.5342847, 0, -0.8453044, 45.06144, 0.46777746, -2.3865237)
+
+[node name="bush197" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1473350106 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6514201, 0, -0.46701312, 0, 0.8015296, 0, 0.46701312, 0, -0.6514201, 55.204056, 0.4677785, -5.551975)
+
+[node name="bush198" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1064324688 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.6514201, 0, -0.46701312, 0, 0.8015296, 0, 0.46701312, 0, -0.6514201, 55.428482, 0.4677785, -9.655985)
+
+[node name="bush199" parent="Stage/Nature/Florest Avenue/Bush" unique_id=988365411 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8127215, 0, -0.58265257, 0, 0.89094424, 0, 0.58265257, 0, -0.8127215, 58.090202, 0.46777746, -8.78289)
+
+[node name="bush200" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1797029696 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8127215, 0, -0.58265257, 0, 0.89094424, 0, 0.58265257, 0, -0.8127215, 58.2612, 0.46777746, -12.404383)
+
+[node name="bush201" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2020842424 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8127215, 0, -0.58265257, 0, 0.89094424, 0, 0.58265257, 0, -0.8127215, 58.823364, 0.46777746, -5.520287)
+
+[node name="bush202" parent="Stage/Nature/Florest Avenue/Bush" unique_id=740845885 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.8127215, 0, -0.58265257, 0, 0.89094424, 0, 0.58265257, 0, -0.8127215, 57.098263, 0.46777746, -2.270699)
+
+[node name="bush203" parent="Stage/Nature/Florest Avenue/Bush" unique_id=408248218 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.8002681, 0, -0.04494831, 0, 0.80152935, 0, 0.04494831, 0, 0.8002681, 35.76418, 0.4677785, 0.4898219)
+
+[node name="bush204" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1067771585 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.8002681, 0, -0.04494831, 0, 0.80152935, 0, 0.04494831, 0, 0.8002681, 33.014908, 0.4677785, 3.5451112)
+
+[node name="bush205" parent="Stage/Nature/Florest Avenue/Bush" unique_id=54291071 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.9984265, 0, -0.056078196, 0, 0.8909441, 0, 0.056078196, 0, 0.9984265, 31.489744, 0.46777746, 1.1954465)
+
+[node name="bush206" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1452337682 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.9984265, 0, -0.056078196, 0, 0.8909441, 0, 0.056078196, 0, 0.9984265, 29.084768, 0.46777746, 3.9084764)
+
+[node name="bush207" parent="Stage/Nature/Florest Avenue/Bush" unique_id=57866000 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.9984265, 0, -0.056078196, 0, 0.8909441, 0, 0.056078196, 0, 0.9984265, 32.96545, 0.46777746, -1.8052864)
+
+[node name="bush208" parent="Stage/Nature/Florest Avenue/Bush" unique_id=646560931 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.9984265, 0, -0.056078196, 0, 0.8909441, 0, 0.056078196, 0, 0.9984265, 36.347412, 0.46777746, -3.2537913)
+
+[node name="bush209" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1700668761 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.34833765, 0, -0.7218797, 0, 0.8015296, 0, 0.7218797, 0, 0.34833765, 9.970644, 0.4677785, 15.62693)
+
+[node name="bush210" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1098846341 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.34833765, 0, -0.7218797, 0, 0.8015296, 0, 0.7218797, 0, 0.34833765, 13.536707, 0.4677785, 14.2752285)
+
+[node name="bush211" parent="Stage/Nature/Florest Avenue/Bush" unique_id=629732794 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.34833765, 0, -0.7218797, 0, 0.8015296, 0, 0.7218797, 0, 0.34833765, 7.1083374, 0.4677785, 8.981451)
+
+[node name="bush212" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1614579054 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.34833765, 0, -0.7218797, 0, 0.8015296, 0, 0.7218797, 0, 0.34833765, 7.933687, 0.4677785, 13.565533)
+
+[node name="bush213" parent="Stage/Nature/Florest Avenue/Bush" unique_id=396564400 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.890944, 0, 0.90062773, 0, 0.4345911, 11.845423, 0.46777746, 8.045624)
+
+[node name="bush214" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1908986217 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.890944, 0, 0.90062773, 0, 0.4345911, 16.315947, 0.46777746, 8.41461)
+
+[node name="bush215" parent="Stage/Nature/Florest Avenue/Bush" unique_id=397220972 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.890944, 0, 0.90062773, 0, 0.4345911, 16.184443, 0.46777746, 12.706614)
+
+[node name="bush216" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1854593003 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.4345911, 0, -0.90062773, 0, 0.890944, 0, 0.90062773, 0, 0.4345911, 10.621235, 0.46777746, 11.196611)
+
+[node name="bush217" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1571203576 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.52306473, 0, 0.60733235, 0, 0.8015295, 0, -0.60733235, 0, 0.52306473, 27.877514, 0.46777898, 7.3917556)
+
+[node name="bush218" parent="Stage/Nature/Florest Avenue/Bush" unique_id=684675114 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.52306473, 0, 0.60733235, 0, 0.8015295, 0, -0.60733235, 0, 0.52306473, 25.215763, 0.46777898, 4.6606417)
+
+[node name="bush219" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1957272797 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.52306473, 0, 0.60733235, 0, 0.8015295, 0, -0.60733235, 0, 0.52306473, 22.924923, 0.46777898, 12.666891)
+
+[node name="bush220" parent="Stage/Nature/Florest Avenue/Bush" unique_id=919985512 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.52306473, 0, 0.60733235, 0, 0.8015295, 0, -0.60733235, 0, 0.52306473, 26.799515, 0.46777898, 10.08182)
+
+[node name="bush221" parent="Stage/Nature/Florest Avenue/Bush" unique_id=716021643 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 0.89094424, 0, -0.757717, 0, 0.65258324, 20.177525, 0.46777794, 8.696058)
+
+[node name="bush222" parent="Stage/Nature/Florest Avenue/Bush" unique_id=206283852 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 0.89094424, 0, -0.757717, 0, 0.65258324, 18.732994, 0.46777794, 4.449287)
+
+[node name="bush223" parent="Stage/Nature/Florest Avenue/Bush" unique_id=244306838 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 0.89094424, 0, -0.757717, 0, 0.65258324, 22.721336, 0.46777794, 2.8581674)
+
+[node name="bush224" parent="Stage/Nature/Florest Avenue/Bush" unique_id=705287589 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 0.89094424, 0, -0.757717, 0, 0.65258324, 23.555298, 0.46777794, 8.562014)
+
+[node name="bush225" parent="Stage/Nature/Florest Avenue/Bush" unique_id=393067413 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.67670536, 0, 0.42955723, 0, 0.8015295, 0, -0.42955723, 0, -0.67670536, -25.886824, 0.4677785, 18.862284)
+
+[node name="bush226" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1328917610 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.67670536, 0, 0.42955723, 0, 0.8015295, 0, -0.42955723, 0, -0.67670536, -28.203484, 0.4677785, 21.891632)
+
+[node name="bush227" parent="Stage/Nature/Florest Avenue/Bush" unique_id=933910457 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.67670536, 0, 0.42955723, 0, 0.8015295, 0, -0.42955723, 0, -0.67670536, -19.949825, 0.4677785, 22.998371)
+
+[node name="bush228" parent="Stage/Nature/Florest Avenue/Bush" unique_id=297129284 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.67670536, 0, 0.42955723, 0, 0.8015295, 0, -0.42955723, 0, -0.67670536, -23.068956, 0.4677785, 19.539177)
+
+[node name="bush229" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2059064441 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84426767, 0, 0.53592193, 0, 0.8909441, 0, -0.53592193, 0, -0.84426767, -23.480722, 0.46777746, 26.292072)
+
+[node name="bush230" parent="Stage/Nature/Florest Avenue/Bush" unique_id=419507182 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84426767, 0, 0.53592193, 0, 0.8909441, 0, -0.53592193, 0, -0.84426767, -27.473406, 0.46777746, 28.336628)
+
+[node name="bush231" parent="Stage/Nature/Florest Avenue/Bush" unique_id=479806024 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84426767, 0, 0.53592193, 0, 0.8909441, 0, -0.53592193, 0, -0.84426767, -29.62556, 0.46777746, 24.620872)
+
+[node name="bush232" parent="Stage/Nature/Florest Avenue/Bush" unique_id=603392596 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.84426767, 0, 0.53592193, 0, 0.8909441, 0, -0.53592193, 0, -0.84426767, -24.102716, 0.46777746, 22.96935)
+
+[node name="bush233" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1004361030 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100232, 0, 0.8873987, 0, 0.89094394, 0, -0.8873987, 0, 0.46100232, -11.924168, 0.46777746, 14.780747)
+
+[node name="bush234" parent="Stage/Nature/Florest Avenue/Bush" unique_id=677796406 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100235, 0, 0.8873988, 0, 0.79218304, 0, -0.8873988, 0, 0.46100235, -24.980587, 0.46777865, 36.024837)
+
+[node name="bush235" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1581612746 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100235, 0, 0.8873988, 0, 0.79218304, 0, -0.8873988, 0, 0.46100235, -29.248508, 0.4677784, 36.209213)
+
+[node name="bush236" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1563526062 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.36950696, 0, 0.71127635, 0, 0.8015297, 0, -0.71127635, 0, 0.36950696, -71.05686, 0.4677785, -5.236231)
+
+[node name="bush237" parent="Stage/Nature/Florest Avenue/Bush" unique_id=791655305 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100232, 0, 0.8873987, 0, 0.89094394, 0, -0.8873987, 0, 0.46100232, -72.3389, 0.46777746, -1.5033493)
+
+[node name="bush238" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1913588785 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.06279647, 0, -0.7990658, 0, 0.8015296, 0, 0.7990658, 0, 0.06279647, -61.523098, 0.4677785, 14.426192)
+
+[node name="bush239" parent="Stage/Nature/Florest Avenue/Bush" unique_id=765084616 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.06279647, 0, -0.7990658, 0, 0.8015296, 0, 0.7990658, 0, 0.06279647, -64.91954, 0.4677785, 12.111559)
+
+[node name="bush240" parent="Stage/Nature/Florest Avenue/Bush" unique_id=366565717 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -62.79567, 0.46777746, 10.285019)
+
+[node name="bush241" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1051373244 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -65.80676, 0.46777746, 8.265673)
+
+[node name="bush242" parent="Stage/Nature/Florest Avenue/Bush" unique_id=571350408 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -59.624115, 0.46777746, 11.34491)
+
+[node name="bush243" parent="Stage/Nature/Florest Avenue/Bush" unique_id=921624880 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -57.735085, 0.46777746, 14.502022)
+
+[node name="bush244" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1363191096 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.06279647, 0, -0.7990658, 0, 0.8015296, 0, 0.7990658, 0, 0.06279647, -66.58316, 0.4677785, 9.384523)
+
+[node name="bush245" parent="Stage/Nature/Florest Avenue/Bush" unique_id=541823809 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.06279647, 0, -0.7990658, 0, 0.8015296, 0, 0.7990658, 0, 0.06279647, -69.9796, 0.4677785, 7.069892)
+
+[node name="bush246" parent="Stage/Nature/Florest Avenue/Bush" unique_id=701341720 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -67.855736, 0.46777746, 5.243351)
+
+[node name="bush247" parent="Stage/Nature/Florest Avenue/Bush" unique_id=862670003 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -70.86682, 0.46777746, 3.2240105)
+
+[node name="bush248" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1928842487 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -64.68418, 0.46777746, 6.3032513)
+
+[node name="bush249" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1292446597 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.07834576, 0, -0.9969261, 0, 0.89094394, 0, 0.9969261, 0, 0.07834576, -62.795155, 0.46777746, 9.460356)
+
+[node name="bush250" parent="Stage/Nature/Florest Avenue/Bush" unique_id=532361180 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.7641213, 0, -0.2420086, 0, 0.8015296, 0, 0.2420086, 0, 0.7641213, -71.40429, 0.4677785, 3.2333574)
+
+[node name="bush251" parent="Stage/Nature/Florest Avenue/Bush" unique_id=924684325 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.7641213, 0, -0.2420086, 0, 0.8015296, 0, 0.2420086, 0, 0.7641213, -74.82538, 0.4677785, 5.511388)
+
+[node name="bush252" parent="Stage/Nature/Florest Avenue/Bush" unique_id=694416829 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.953329, 0, -0.30193347, 0, 0.89094424, 0, 0.30193347, 0, 0.953329, -75.720184, 0.46777746, 2.8568878)
+
+[node name="bush253" parent="Stage/Nature/Florest Avenue/Bush" unique_id=982211925 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.953329, 0, -0.30193347, 0, 0.89094424, 0, 0.30193347, 0, 0.953329, -78.722855, 0.46777746, 4.8887424)
+
+[node name="bush254" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2078027884 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.953329, 0, -0.30193347, 0, 0.89094424, 0, 0.30193347, 0, 0.953329, -73.5464, 0.46777746, 0.31586647)
+
+[node name="bush255" parent="Stage/Nature/Florest Avenue/Bush" unique_id=847816182 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.953329, 0, -0.30193347, 0, 0.89094424, 0, 0.30193347, 0, 0.953329, -69.91087, 0.46777746, -0.24866676)
+
+[node name="bush256" parent="Stage/Nature/Florest Avenue/Bush" unique_id=186180162 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.44325864, 0, 0.6678106, 0, 0.80152935, 0, -0.6678106, 0, -0.44325864, -54.923805, 0.4677785, 15.183489)
+
+[node name="bush257" parent="Stage/Nature/Florest Avenue/Bush" unique_id=545600746 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.44325864, 0, 0.6678106, 0, 0.80152935, 0, -0.6678106, 0, -0.44325864, -50.83053, 0.4677785, 15.555519)
+
+[node name="bush258" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2055038837 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.5530163, 0, 0.8331707, 0, 0.89094424, 0, -0.8331707, 0, -0.5530163, -51.79888, 0.46777746, 18.18408)
+
+[node name="bush259" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2030676366 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.5530163, 0, 0.8331707, 0, 0.89094424, 0, -0.8331707, 0, -0.5530163, -48.185894, 0.46777746, 18.485352)
+
+[node name="bush260" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1889953750 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.5530163, 0, 0.8331707, 0, 0.89094424, 0, -0.8331707, 0, -0.5530163, -55.085766, 0.46777746, 18.799313)
+
+[node name="bush261" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1393992860 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.5530163, 0, 0.8331707, 0, 0.89094424, 0, -0.8331707, 0, -0.5530163, -58.271145, 0.46777746, 16.95834)
+
+[node name="bush262" parent="Stage/Nature/Florest Avenue/Bush" unique_id=10244255 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.36950696, 0, 0.71127635, 0, 0.8015297, 0, -0.71127635, 0, 0.36950696, -27.354353, 0.4677785, 26.775036)
+
+[node name="bush263" parent="Stage/Nature/Florest Avenue/Bush" unique_id=2023849460 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.36950696, 0, 0.71127635, 0, 0.8015297, 0, -0.71127635, 0, 0.36950696, -30.572464, 0.4677785, 24.728655)
+
+[node name="bush264" parent="Stage/Nature/Florest Avenue/Bush" unique_id=899458693 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.36950696, 0, 0.71127635, 0, 0.8015297, 0, -0.71127635, 0, 0.36950696, -30.962223, 0.4677785, 33.047073)
+
+[node name="bush265" parent="Stage/Nature/Florest Avenue/Bush" unique_id=351755208 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(0.36950696, 0, 0.71127635, 0, 0.8015297, 0, -0.71127635, 0, 0.36950696, -27.785347, 0.4677785, 29.640835)
+
+[node name="bush266" parent="Stage/Nature/Florest Avenue/Bush" unique_id=117025101 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100232, 0, 0.8873987, 0, 0.89094394, 0, -0.8873987, 0, 0.46100232, -34.54857, 0.46777746, 29.813831)
+
+[node name="bush267" parent="Stage/Nature/Florest Avenue/Bush" unique_id=924044746 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100232, 0, 0.8873987, 0, 0.89094394, 0, -0.8873987, 0, 0.46100232, -36.93032, 0.46777746, 26.012646)
+
+[node name="bush268" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1945702375 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100232, 0, 0.8873987, 0, 0.89094394, 0, -0.8873987, 0, 0.46100232, -33.41433, 0.46777746, 23.547619)
+
+[node name="bush269" parent="Stage/Nature/Florest Avenue/Bush" unique_id=165110328 instance=ExtResource("8_pm21f")]
+transform = Transform3D(0.46100232, 0, 0.8873987, 0, 0.89094394, 0, -0.8873987, 0, 0.46100232, -31.29198, 0.46777746, 28.907188)
+
+[node name="bush270" parent="Stage/Nature/Florest Avenue/Bush" unique_id=775391399 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.79962754, 0, 0.05518277, 0, 0.80152947, 0, -0.05518277, 0, -0.79962754, -44.673332, 0.46777898, 17.366154)
+
+[node name="bush271" parent="Stage/Nature/Florest Avenue/Bush" unique_id=282321707 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.79962754, 0, 0.05518277, 0, 0.80152947, 0, -0.05518277, 0, -0.79962754, -45.2665, 0.46777898, 21.133385)
+
+[node name="bush272" parent="Stage/Nature/Florest Avenue/Bush" unique_id=31352484 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.79962754, 0, 0.05518277, 0, 0.80152947, 0, -0.05518277, 0, -0.79962754, -37.482803, 0.46777898, 18.17331)
+
+[node name="bush273" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1103381583 instance=ExtResource("9_2lf6f")]
+transform = Transform3D(-0.79962754, 0, 0.05518277, 0, 0.80152947, 0, -0.05518277, 0, -0.79962754, -41.873425, 0.46777898, 16.61847)
+
+[node name="bush274" parent="Stage/Nature/Florest Avenue/Bush" unique_id=659232852 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.99762714, 0, 0.06884661, 0, 0.8909441, 0, -0.06884661, 0, -0.99762714, -39.0175, 0.46777794, 22.751562)
+
+[node name="bush275" parent="Stage/Nature/Florest Avenue/Bush" unique_id=349464148 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.99762714, 0, 0.06884661, 0, 0.8909441, 0, -0.06884661, 0, -0.99762714, -41.553436, 0.46777794, 26.451668)
+
+[node name="bush276" parent="Stage/Nature/Florest Avenue/Bush" unique_id=407276108 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.99762714, 0, 0.06884661, 0, 0.8909441, 0, -0.06884661, 0, -0.99762714, -45.21617, 0.46777794, 24.210487)
+
+[node name="bush277" parent="Stage/Nature/Florest Avenue/Bush" unique_id=1671685538 instance=ExtResource("8_pm21f")]
+transform = Transform3D(-0.99762714, 0, 0.06884661, 0, 0.8909441, 0, -0.06884661, 0, -0.99762714, -41.147697, 0.46777794, 20.126757)
 
 [node name="Plants" type="Node" parent="Stage/Nature/Florest Avenue" unique_id=1384523908]
 
@@ -1427,6 +2030,213 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.608253, 0.4714128, 146.675
 [node name="plant_tall4" parent="Stage/Nature/Florest Avenue/Plants" unique_id=251131926 instance=ExtResource("10_oo54l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.354147, 0.6156601, 143.68515)
 
+[node name="plant_small23" parent="Stage/Nature/Florest Avenue/Plants" unique_id=297568058 instance=ExtResource("12_ctatt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.846666, 0.5787071, 24.710884)
+
+[node name="plant_tall94" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1487185424 instance=ExtResource("10_oo54l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.860981, 0.61565864, 24.057976)
+
+[node name="plant_tall95" parent="Stage/Nature/Florest Avenue/Plants" unique_id=435325899 instance=ExtResource("10_oo54l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3114033, 0.6156591, 27.790642)
+
+[node name="plant_fern69" parent="Stage/Nature/Florest Avenue/Plants" unique_id=944432057 instance=ExtResource("11_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.96236, 0.47141328, 20.589699)
+
+[node name="plant_fern70" parent="Stage/Nature/Florest Avenue/Plants" unique_id=940634500 instance=ExtResource("11_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1216297, 0.47141328, 22.225685)
+
+[node name="plant_fern71" parent="Stage/Nature/Florest Avenue/Plants" unique_id=450222180 instance=ExtResource("11_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.950306, 0.4714128, 25.916191)
+
+[node name="plant_tall96" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1343289899 instance=ExtResource("10_oo54l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.696199, 0.6156601, 22.925743)
+
+[node name="plant_small24" parent="Stage/Nature/Florest Avenue/Plants" unique_id=167353893 instance=ExtResource("12_ctatt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.89865, 0.5787071, 29.88148)
+
+[node name="plant_tall97" parent="Stage/Nature/Florest Avenue/Plants" unique_id=614978786 instance=ExtResource("10_oo54l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.912964, 0.61565864, 29.22857)
+
+[node name="plant_tall98" parent="Stage/Nature/Florest Avenue/Plants" unique_id=947977743 instance=ExtResource("10_oo54l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.363386, 0.6156591, 32.961235)
+
+[node name="plant_fern72" parent="Stage/Nature/Florest Avenue/Plants" unique_id=37856783 instance=ExtResource("11_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.014343, 0.47141328, 25.760294)
+
+[node name="plant_fern73" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1604148004 instance=ExtResource("11_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.173613, 0.47141328, 27.39628)
+
+[node name="plant_fern74" parent="Stage/Nature/Florest Avenue/Plants" unique_id=961508152 instance=ExtResource("11_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.002289, 0.4714128, 31.086786)
+
+[node name="plant_tall99" parent="Stage/Nature/Florest Avenue/Plants" unique_id=173434702 instance=ExtResource("10_oo54l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.748182, 0.6156601, 28.096338)
+
+[node name="plant_small25" parent="Stage/Nature/Florest Avenue/Plants" unique_id=212549796 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 1, 0, -0.73484665, 0, 0.6782333, -10.767305, 0.5787071, 27.295362)
+
+[node name="plant_tall100" parent="Stage/Nature/Florest Avenue/Plants" unique_id=808394027 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 1, 0, -0.73484665, 0, 0.6782333, -15.985018, 0.61565864, 31.985947)
+
+[node name="plant_tall101" parent="Stage/Nature/Florest Avenue/Plants" unique_id=560886586 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 1, 0, -0.73484665, 0, 0.6782333, -10.901891, 0.6156591, 31.982033)
+
+[node name="plant_fern75" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1041893611 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 1, 0, -0.73484665, 0, 0.6782333, -13.039044, 0.47141328, 23.680374)
+
+[node name="plant_fern76" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1626966350 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 1, 0, -0.73484665, 0, 0.6782333, -16.476456, 0.47141328, 29.816843)
+
+[node name="plant_fern77" parent="Stage/Nature/Florest Avenue/Plants" unique_id=906474233 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 1, 0, -0.73484665, 0, 0.6782333, -13.202465, 0.4714128, 31.710917)
+
+[node name="plant_tall102" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1582385492 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.6782333, 0, 0.73484665, 0, 1, 0, -0.73484665, 0, 0.6782333, -13.537629, 0.6156601, 27.664885)
+
+[node name="plant_small26" parent="Stage/Nature/Florest Avenue/Plants" unique_id=479112119 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -17.619205, 0.5787071, 40.044304)
+
+[node name="plant_tall103" parent="Stage/Nature/Florest Avenue/Plants" unique_id=658276811 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -11.904382, 0.61565864, 35.97406)
+
+[node name="plant_tall104" parent="Stage/Nature/Florest Avenue/Plants" unique_id=696520554 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -16.955324, 0.6156591, 35.402943)
+
+[node name="plant_fern78" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1006252518 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -15.770978, 0.47141328, 43.893074)
+
+[node name="plant_fern79" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1956126426 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -11.6614685, 0.47141328, 38.184837)
+
+[node name="plant_fern80" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1888503484 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -14.700186, 0.4714128, 35.932564)
+
+[node name="plant_tall105" parent="Stage/Nature/Florest Avenue/Plants" unique_id=825838515 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -14.8248625, 0.6156601, 39.990536)
+
+[node name="plant_small27" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1596602663 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -17.619205, 0.5787071, 50.99816)
+
+[node name="plant_tall106" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1904285089 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -11.904382, 0.61565864, 46.927917)
+
+[node name="plant_tall107" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1620804393 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -16.955324, 0.6156591, 46.3568)
+
+[node name="plant_fern81" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1159146008 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -15.770978, 0.47141328, 54.84693)
+
+[node name="plant_fern82" parent="Stage/Nature/Florest Avenue/Plants" unique_id=13329397 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -11.6614685, 0.47141328, 49.138695)
+
+[node name="plant_fern83" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1148494259 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -14.700186, 0.4714128, 46.88642)
+
+[node name="plant_tall108" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1693397162 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -14.8248625, 0.6156601, 50.944393)
+
+[node name="plant_small28" parent="Stage/Nature/Florest Avenue/Plants" unique_id=445612230 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -20.191887, 0.5787071, 17.903572)
+
+[node name="plant_tall109" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1367049335 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -14.477062, 0.61565864, 13.833328)
+
+[node name="plant_tall110" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1527476918 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -19.528004, 0.6156591, 13.262211)
+
+[node name="plant_fern84" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1617552293 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -18.343658, 0.47141328, 21.752342)
+
+[node name="plant_fern85" parent="Stage/Nature/Florest Avenue/Plants" unique_id=838694478 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -14.234149, 0.47141328, 16.044106)
+
+[node name="plant_fern86" parent="Stage/Nature/Florest Avenue/Plants" unique_id=549355225 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -17.272865, 0.4714128, 13.791832)
+
+[node name="plant_tall111" parent="Stage/Nature/Florest Avenue/Plants" unique_id=960438333 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.7570063, 0, -0.65340763, 0, 1, 0, 0.65340763, 0, -0.7570063, -17.397543, 0.6156601, 17.849804)
+
+[node name="plant_small20" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1137746768 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, -0.19888353, 0.5787071, 47.127586)
+
+[node name="plant_tall85" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1242265415 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 6.0743055, 0.61565864, 43.985424)
+
+[node name="plant_tall86" parent="Stage/Nature/Florest Avenue/Plants" unique_id=937706289 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 1.1714482, 0.6156591, 42.643707)
+
+[node name="plant_fern60" parent="Stage/Nature/Florest Avenue/Plants" unique_id=206578674 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 1.0349478, 0.47141328, 51.21496)
+
+[node name="plant_fern61" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1173651801 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 5.9740586, 0.47141328, 46.207245)
+
+[node name="plant_fern62" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1338827857 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 3.318202, 0.4714128, 43.51411)
+
+[node name="plant_tall87" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1174009375 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 2.570437, 0.6156601, 47.504543)
+
+[node name="plant_small21" parent="Stage/Nature/Florest Avenue/Plants" unique_id=892083822 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 1.9423823, 0.5787071, 40.313072)
+
+[node name="plant_tall88" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1498543892 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 8.215571, 0.61565864, 37.17091)
+
+[node name="plant_tall89" parent="Stage/Nature/Florest Avenue/Plants" unique_id=172003312 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 3.312714, 0.6156591, 35.829193)
+
+[node name="plant_fern63" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1112710081 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 3.1762137, 0.47141328, 44.400444)
+
+[node name="plant_fern64" parent="Stage/Nature/Florest Avenue/Plants" unique_id=912864062 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 8.115324, 0.47141328, 39.39273)
+
+[node name="plant_fern65" parent="Stage/Nature/Florest Avenue/Plants" unique_id=358933269 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 5.459468, 0.4714128, 36.699596)
+
+[node name="plant_tall90" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1677820081 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.84855366, 0, -0.52910936, 0, 1, 0, 0.52910936, 0, -0.84855366, 4.711703, 0.6156601, 40.69003)
+
+[node name="plant_small22" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2044434455 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.1715515, 0, -0.98517513, 0, 1, 0, 0.98517513, 0, 0.1715515, 4.529657, 0.5787071, 35.298428)
+
+[node name="plant_tall91" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1160309370 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.1715515, 0, -0.98517513, 0, 1, 0, 0.98517513, 0, 0.1715515, 3.9744828, 0.61565864, 28.304296)
+
+[node name="plant_tall92" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2085656987 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.1715515, 0, -0.98517513, 0, 1, 0, 0.98517513, 0, 0.1715515, 0.88907766, 0.6156591, 32.34391)
+
+[node name="plant_fern66" parent="Stage/Nature/Florest Avenue/Plants" unique_id=927397243 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.1715515, 0, -0.98517513, 0, 1, 0, 0.98517513, 0, 0.1715515, 8.781146, 0.47141328, 35.690586)
+
+[node name="plant_fern67" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1705107199 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.1715515, 0, -0.98517513, 0, 1, 0, 0.98517513, 0, 0.1715515, 5.995878, 0.47141328, 29.231928)
+
+[node name="plant_fern68" parent="Stage/Nature/Florest Avenue/Plants" unique_id=646450013 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.1715515, 0, -0.98517513, 0, 1, 0, 0.98517513, 0, 0.1715515, 2.5022426, 0.4714128, 30.681429)
+
+[node name="plant_tall93" parent="Stage/Nature/Florest Avenue/Plants" unique_id=343617840 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.1715515, 0, -0.98517513, 0, 1, 0, 0.98517513, 0, 0.1715515, 5.9194183, 0.6156601, 32.8736)
+
+[node name="plant_small19" parent="Stage/Nature/Florest Avenue/Plants" unique_id=261711647 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 1, 0, -0.8748395, 0, 0.4844129, 5.227643, 0.5787071, 55.602505)
+
+[node name="plant_tall82" parent="Stage/Nature/Florest Avenue/Plants" unique_id=551806920 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 1, 0, -0.8748395, 0, 0.4844129, 1.2724969, 0.61565864, 61.397583)
+
+[node name="plant_tall83" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1913390884 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 1, 0, -0.8748395, 0, 0.4844129, 6.2094097, 0.6156591, 60.18717)
+
+[node name="plant_fern58" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1279922470 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 1, 0, -0.8748395, 0, 0.4844129, 0.2802112, 0.47141328, 59.40713)
+
+[node name="plant_fern59" parent="Stage/Nature/Florest Avenue/Plants" unique_id=941720709 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 1, 0, -0.8748395, 0, 0.4844129, 3.910233, 0.4714128, 60.469902)
+
+[node name="plant_tall84" parent="Stage/Nature/Florest Avenue/Plants" unique_id=638715611 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.4844129, 0, 0.8748395, 0, 1, 0, -0.8748395, 0, 0.4844129, 2.6242173, 0.6156601, 56.619072)
+
 [node name="plant_tall5" parent="Stage/Nature/Florest Avenue/Plants" unique_id=938917729 instance=ExtResource("10_oo54l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.116585, 0.6156591, 150.03706)
 
@@ -1534,6 +2344,408 @@ transform = Transform3D(-0.3988141, 0, 0.91703176, 0, 1, 0, -0.91703176, 0, -0.3
 
 [node name="plant_tall62" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1292744647 instance=ExtResource("10_oo54l")]
 transform = Transform3D(-0.3988141, 0, 0.91703176, 0, 1, 0, -0.91703176, 0, -0.3988141, 3.4529877, 0.6156596, 65.70657)
+
+[node name="plant_tall112" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1679567744 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 4.872324, 0.61565924, 12.5251)
+
+[node name="plant_fern87" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2006465353 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 2.7317696, 0.47141376, 11.252983)
+
+[node name="plant_small29" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1831696630 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 10.715767, 0.5787071, 17.330788)
+
+[node name="plant_tall113" parent="Stage/Nature/Florest Avenue/Plants" unique_id=184799280 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 12.902742, 0.61565864, 20.040724)
+
+[node name="plant_tall114" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1998293691 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 8.504892, 0.6156591, 21.465403)
+
+[node name="plant_tall115" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1992016704 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 17.725014, 0.6156591, 16.210241)
+
+[node name="plant_fern88" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1382919894 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 16.57895, 0.47141328, 15.569742)
+
+[node name="plant_fern89" parent="Stage/Nature/Florest Avenue/Plants" unique_id=495157762 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 10.294941, 0.47141328, 13.082043)
+
+[node name="plant_fern90" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1674623103 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 11.383091, 0.47141328, 18.350471)
+
+[node name="plant_fern91" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1991588838 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 10.917082, 0.4714128, 23.834549)
+
+[node name="plant_tall116" parent="Stage/Nature/Florest Avenue/Plants" unique_id=156226260 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 9.073269, 0.6156601, 16.231638)
+
+[node name="plant_tall117" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1036917259 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 17.583862, 0.6156591, 19.606518)
+
+[node name="plant_tall118" parent="Stage/Nature/Florest Avenue/Plants" unique_id=944454050 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9347969, 0, 0.35518268, 0, 1, 0, -0.35518268, 0, 0.9347969, 14.818544, 0.6156591, 18.768293)
+
+[node name="plant_fern92" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2135383280 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 11.974142, 0.47141328, 36.534336)
+
+[node name="plant_small30" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1966645537 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 64.12833, 0.5787071, 1.7852054)
+
+[node name="plant_tall119" parent="Stage/Nature/Florest Avenue/Plants" unique_id=689777225 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 61.680435, 0.61565864, -4.7900443)
+
+[node name="plant_tall120" parent="Stage/Nature/Florest Avenue/Plants" unique_id=801445882 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 59.81822, 0.6156591, -0.060316086)
+
+[node name="plant_fern93" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1910300711 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 60.91488, 0.4714128, -2.1007767)
+
+[node name="plant_small31" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1973372072 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 41.165565, 0.5787071, -6.1183)
+
+[node name="plant_tall121" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1933426878 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 46.721756, 0.61565864, -1.8340487)
+
+[node name="plant_tall122" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1601101769 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 45.799408, 0.6156591, -6.8327956)
+
+[node name="plant_fern94" parent="Stage/Nature/Florest Avenue/Plants" unique_id=246132292 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 38.020576, 0.47141328, -3.230742)
+
+[node name="plant_fern95" parent="Stage/Nature/Florest Avenue/Plants" unique_id=596490851 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 44.67716, 0.47141328, -0.9587498)
+
+[node name="plant_fern96" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1701652009 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 45.948456, 0.4714128, -4.5210986)
+
+[node name="plant_tall123" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1713435494 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 42.029594, 0.6156601, -3.4603515)
+
+[node name="plant_small32" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1813969716 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 48.233482, 0.5787071, -7.151344)
+
+[node name="plant_tall124" parent="Stage/Nature/Florest Avenue/Plants" unique_id=461131875 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 53.789677, 0.61565864, -2.8670926)
+
+[node name="plant_tall125" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2129542598 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 52.867325, 0.6156591, -7.8658414)
+
+[node name="plant_fern97" parent="Stage/Nature/Florest Avenue/Plants" unique_id=259809286 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 45.088493, 0.47141328, -4.263786)
+
+[node name="plant_fern98" parent="Stage/Nature/Florest Avenue/Plants" unique_id=745775614 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 51.74508, 0.47141328, -1.9917955)
+
+[node name="plant_fern99" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1085045682 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 53.016373, 0.4714128, -5.5541453)
+
+[node name="plant_tall126" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2132218558 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8453046, 0, 0.53428483, 0, 1, 0, -0.53428483, 0, -0.8453046, 49.097507, 0.6156601, -4.4933944)
+
+[node name="plant_small33" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1356581104 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.8127213, 0, -0.58265245, 0, 1, 0, 0.58265245, 0, -0.8127213, 53.87422, 0.5787071, -7.0004935)
+
+[node name="plant_tall127" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1787450678 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8127213, 0, -0.58265245, 0, 1, 0, 0.58265245, 0, -0.8127213, 59.932053, 0.61565864, -10.540091)
+
+[node name="plant_tall128" parent="Stage/Nature/Florest Avenue/Plants" unique_id=618521259 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8127213, 0, -0.58265245, 0, 1, 0, 0.58265245, 0, -0.8127213, 54.952976, 0.6156591, -11.563309)
+
+[node name="plant_fern100" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1740208309 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8127213, 0, -0.58265245, 0, 1, 0, 0.58265245, 0, -0.8127213, 55.36869, 0.47141328, -3.0010543)
+
+[node name="plant_fern101" parent="Stage/Nature/Florest Avenue/Plants" unique_id=166548623 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8127213, 0, -0.58265245, 0, 1, 0, 0.58265245, 0, -0.8127213, 59.97508, 0.47141328, -8.316423)
+
+[node name="plant_fern102" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1639856012 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8127213, 0, -0.58265245, 0, 1, 0, 0.58265245, 0, -0.8127213, 57.15132, 0.4714128, -10.832949)
+
+[node name="plant_tall129" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1073894183 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8127213, 0, -0.58265245, 0, 1, 0, 0.58265245, 0, -0.8127213, 56.662064, 0.6156601, -6.8026443)
+
+[node name="plant_small34" parent="Stage/Nature/Florest Avenue/Plants" unique_id=294198031 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.9984264, 0, -0.056078196, 0, 1, 0, 0.056078196, 0, 0.9984264, 35.89114, 0.5787071, 2.4521031)
+
+[node name="plant_tall130" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1430202863 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9984264, 0, -0.056078196, 0, 1, 0, 0.056078196, 0, 0.9984264, 28.95306, 0.61565864, 1.4084806)
+
+[node name="plant_tall131" parent="Stage/Nature/Florest Avenue/Plants" unique_id=439698427 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9984264, 0, -0.056078196, 0, 1, 0, 0.056078196, 0, 0.9984264, 32.18873, 0.6156591, 5.328762)
+
+[node name="plant_fern103" parent="Stage/Nature/Florest Avenue/Plants" unique_id=495608517 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.9984264, 0, -0.056078196, 0, 1, 0, 0.056078196, 0, 0.9984264, 30.314478, 0.47141328, -0.350235)
+
+[node name="plant_fern104" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1296105088 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.9984264, 0, -0.056078196, 0, 1, 0, 0.056078196, 0, 0.9984264, 30.934893, 0.4714128, 3.380935)
+
+[node name="plant_tall132" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1015050161 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.9984264, 0, -0.056078196, 0, 1, 0, 0.056078196, 0, 0.9984264, 33.844166, 0.6156601, 0.5491786)
+
+[node name="plant_small35" parent="Stage/Nature/Florest Avenue/Plants" unique_id=615257079 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 13.757977, 0.5787071, 10.568005)
+
+[node name="plant_tall133" parent="Stage/Nature/Florest Avenue/Plants" unique_id=380653959 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 11.247051, 0.61565864, 12.980854)
+
+[node name="plant_tall134" parent="Stage/Nature/Florest Avenue/Plants" unique_id=485188349 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 9.447868, 0.6156591, 8.722487)
+
+[node name="plant_tall135" parent="Stage/Nature/Florest Avenue/Plants" unique_id=625190088 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 15.479706, 0.6156591, 17.454283)
+
+[node name="plant_fern105" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1835849120 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 16.018831, 0.47141328, 16.257185)
+
+[node name="plant_fern106" parent="Stage/Nature/Florest Avenue/Plants" unique_id=261981720 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 17.954502, 0.47141328, 9.781797)
+
+[node name="plant_fern107" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2133250310 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 12.799744, 0.47141328, 11.3209)
+
+[node name="plant_fern108" parent="Stage/Nature/Florest Avenue/Plants" unique_id=247484380 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 7.295904, 0.4714128, 11.330278)
+
+[node name="plant_tall136" parent="Stage/Nature/Florest Avenue/Plants" unique_id=695195441 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 14.711164, 0.6156601, 8.836716)
+
+[node name="plant_tall137" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1276769633 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 12.083925, 0.6156591, 17.606977)
+
+[node name="plant_tall138" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1442911523 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.43459117, 0, -0.90062785, 0, 1, 0, 0.90062785, 0, 0.43459117, 12.680189, 0.6156591, 14.779608)
+
+[node name="plant_small36" parent="Stage/Nature/Florest Avenue/Plants" unique_id=958331519 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 21.72787, 0.5787076, 5.936221)
+
+[node name="plant_tall139" parent="Stage/Nature/Florest Avenue/Plants" unique_id=723627992 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 24.941925, 0.6156591, 7.2765436)
+
+[node name="plant_tall140" parent="Stage/Nature/Florest Avenue/Plants" unique_id=281694667 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 21.754406, 0.6156596, 10.62475)
+
+[node name="plant_tall141" parent="Stage/Nature/Florest Avenue/Plants" unique_id=621109850 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 27.356157, 0.6156596, 1.6109962)
+
+[node name="plant_fern109" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1249360153 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 26.043373, 0.47141376, 1.5940208)
+
+[node name="plant_fern110" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1649893147 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 19.333263, 0.47141376, 2.4014263)
+
+[node name="plant_fern111" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1774396808 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 22.80046, 0.47141376, 6.5146885)
+
+[node name="plant_fern112" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1273595884 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 25.004074, 0.47141328, 11.55814)
+
+[node name="plant_tall142" parent="Stage/Nature/Florest Avenue/Plants" unique_id=409612335 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 19.760082, 0.61566055, 5.7525797)
+
+[node name="plant_tall143" parent="Stage/Nature/Florest Avenue/Plants" unique_id=89100559 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 28.850475, 0.6156596, 4.6641355)
+
+[node name="plant_tall144" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1810088535 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.65258324, 0, 0.757717, 0, 1, 0, -0.757717, 0, 0.65258324, 26.019886, 0.6156596, 5.244939)
+
+[node name="plant_tall145" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1487234252 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -26.785221, 0.61565924, 32.7156)
+
+[node name="plant_fern113" parent="Stage/Nature/Florest Avenue/Plants" unique_id=841234958 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -26.52208, 0.47141376, 35.19169)
+
+[node name="plant_small37" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1717432306 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -26.436056, 0.5787071, 25.157917)
+
+[node name="plant_tall146" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1682615989 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -25.57552, 0.61565864, 21.78359)
+
+[node name="plant_tall147" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1565371042 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -21.800829, 0.6156591, 24.452402)
+
+[node name="plant_tall148" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1502450558 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -31.531057, 0.6156591, 20.215641)
+
+[node name="plant_fern114" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1390644355 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -31.357656, 0.47141328, 21.517038)
+
+[node name="plant_fern115" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1237365626 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -29.586634, 0.47141328, 28.039375)
+
+[node name="plant_fern116" parent="Stage/Nature/Florest Avenue/Plants" unique_id=630835739 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -26.019083, 0.47141328, 24.012836)
+
+[node name="plant_fern117" parent="Stage/Nature/Florest Avenue/Plants" unique_id=611970816 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -21.348095, 0.4714128, 21.101795)
+
+[node name="plant_tall149" parent="Stage/Nature/Florest Avenue/Plants" unique_id=237085900 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -26.332666, 0.6156601, 27.131554)
+
+[node name="plant_tall150" parent="Stage/Nature/Florest Avenue/Plants" unique_id=45547519 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -28.72663, 0.6156591, 18.294758)
+
+[node name="plant_tall151" parent="Stage/Nature/Florest Avenue/Plants" unique_id=838058775 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.8442676, 0, 0.53592193, 0, 1, 0, -0.53592193, 0, -0.8442676, -27.741854, 0.6156591, 21.011345)
+
+[node name="plant_fern118" parent="Stage/Nature/Florest Avenue/Plants" unique_id=533232917 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -11.810543, 0.47141328, 12.649748)
+
+[node name="plant_small38" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1164189101 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -70.872795, 0.5787071, -8.30763)
+
+[node name="plant_tall152" parent="Stage/Nature/Florest Avenue/Plants" unique_id=211205355 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -74.6726, 0.61565864, -2.4095306)
+
+[node name="plant_tall153" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1170966906 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -69.76959, 0.6156591, -3.7506638)
+
+[node name="plant_fern119" parent="Stage/Nature/Florest Avenue/Plants" unique_id=81348028 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -72.06044, 0.4714128, -3.4069538)
+
+[node name="plant_small39" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1476535181 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -63.450623, 0.5787071, 14.815199)
+
+[node name="plant_tall154" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1305001221 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -63.347015, 0.61565864, 7.799835)
+
+[node name="plant_tall155" parent="Stage/Nature/Florest Avenue/Plants" unique_id=861210409 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -66.79788, 0.6156591, 11.532088)
+
+[node name="plant_fern120" parent="Stage/Nature/Florest Avenue/Plants" unique_id=575568706 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -59.254692, 0.47141328, 15.604588)
+
+[node name="plant_fern121" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2112070800 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -61.421593, 0.47141328, 8.913056)
+
+[node name="plant_fern122" parent="Stage/Nature/Florest Avenue/Plants" unique_id=13320118 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -65.03583, 0.4714128, 10.02832)
+
+[node name="plant_tall156" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1283777605 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -61.839447, 0.6156601, 12.531483)
+
+[node name="plant_small40" parent="Stage/Nature/Florest Avenue/Plants" unique_id=735731227 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -68.51068, 0.5787071, 9.773535)
+
+[node name="plant_tall157" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1156654739 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -68.40708, 0.61565864, 2.7581673)
+
+[node name="plant_tall158" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1900462507 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -71.85795, 0.6156591, 6.490423)
+
+[node name="plant_fern123" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2057006616 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -64.31476, 0.47141328, 10.5629225)
+
+[node name="plant_fern124" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1005138015 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -66.48166, 0.47141328, 3.8713903)
+
+[node name="plant_fern125" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1910525138 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -70.095894, 0.4714128, 4.986658)
+
+[node name="plant_tall159" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2026077247 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.078345776, 0, -0.99692625, 0, 1, 0, 0.99692625, 0, 0.078345776, -66.899506, 0.6156601, 7.4898186)
+
+[node name="plant_small41" parent="Stage/Nature/Florest Avenue/Plants" unique_id=457234839 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.953329, 0, -0.3019335, 0, 1, 0, 0.3019335, 0, 0.953329, -71.76794, 0.5787071, 5.165824)
+
+[node name="plant_tall160" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1505073075 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.953329, 0, -0.3019335, 0, 1, 0, 0.3019335, 0, 0.953329, -78.23046, 0.61565864, 2.4341793)
+
+[node name="plant_tall161" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1154697635 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.953329, 0, -0.3019335, 0, 1, 0, 0.3019335, 0, 0.953329, -76.068085, 0.6156591, 7.0344315)
+
+[node name="plant_fern126" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2132866850 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.953329, 0, -0.3019335, 0, 1, 0, 0.3019335, 0, 0.953329, -69.459984, 0.47141328, 1.573843)
+
+[node name="plant_fern127" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1065607650 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.953329, 0, -0.3019335, 0, 1, 0, 0.3019335, 0, 0.953329, -76.47541, 0.47141328, 1.068037)
+
+[node name="plant_fern128" parent="Stage/Nature/Florest Avenue/Plants" unique_id=984738897 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.953329, 0, -0.3019335, 0, 1, 0, 0.3019335, 0, 0.953329, -76.7997, 0.4714128, 4.836504)
+
+[node name="plant_tall162" parent="Stage/Nature/Florest Avenue/Plants" unique_id=50308175 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.953329, 0, -0.3019335, 0, 1, 0, 0.3019335, 0, 0.953329, -73.27904, 0.6156601, 2.814703)
+
+[node name="plant_small42" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1435876468 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.55301607, 0, 0.8331706, 0, 1, 0, -0.8331706, 0, -0.55301607, -53.42835, 0.5787071, 13.906663)
+
+[node name="plant_tall163" parent="Stage/Nature/Florest Avenue/Plants" unique_id=133780550 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.55301607, 0, 0.8331706, 0, 1, 0, -0.8331706, 0, -0.55301607, -50.109135, 0.61565864, 20.087997)
+
+[node name="plant_tall164" parent="Stage/Nature/Florest Avenue/Plants" unique_id=588903777 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.55301607, 0, 0.8331706, 0, 1, 0, -0.8331706, 0, -0.55301607, -48.907326, 0.6156591, 15.148989)
+
+[node name="plant_fern129" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1295573764 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.55301607, 0, 0.8331706, 0, 1, 0, -0.8331706, 0, -0.55301607, -52.3329, 0.47141328, 20.050953)
+
+[node name="plant_fern130" parent="Stage/Nature/Florest Avenue/Plants" unique_id=244386153 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.55301607, 0, 0.8331706, 0, 1, 0, -0.8331706, 0, -0.55301607, -49.716354, 0.4714128, 17.319614)
+
+[node name="plant_tall165" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1156603345 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.55301607, 0, 0.8331706, 0, 1, 0, -0.8331706, 0, -0.55301607, -53.726433, 0.6156601, 16.68558)
+
+[node name="plant_small43" parent="Stage/Nature/Florest Avenue/Plants" unique_id=813905424 instance=ExtResource("12_ctatt")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -33.673897, 0.5787071, 26.771591)
+
+[node name="plant_tall166" parent="Stage/Nature/Florest Avenue/Plants" unique_id=251658111 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -30.237856, 0.61565864, 27.337479)
+
+[node name="plant_tall167" parent="Stage/Nature/Florest Avenue/Plants" unique_id=103301769 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -32.570683, 0.6156591, 31.328552)
+
+[node name="plant_tall168" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1434395604 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -29.190126, 0.6156591, 21.268772)
+
+[node name="plant_fern131" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1044997076 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -30.471684, 0.47141328, 21.55392)
+
+[node name="plant_fern132" parent="Stage/Nature/Florest Avenue/Plants" unique_id=686942291 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -36.816692, 0.47141328, 23.881649)
+
+[node name="plant_fern133" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1020879965 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -32.497086, 0.47141328, 27.088104)
+
+[node name="plant_fern134" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1569785531 instance=ExtResource("11_kpybi")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -29.1935, 0.4714128, 31.49022)
+
+[node name="plant_tall169" parent="Stage/Nature/Florest Avenue/Plants" unique_id=890747157 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -35.631233, 0.6156601, 27.045044)
+
+[node name="plant_tall170" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2138772759 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -27.034216, 0.6156591, 23.896832)
+
+[node name="plant_tall171" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1220827645 instance=ExtResource("10_oo54l")]
+transform = Transform3D(0.46100247, 0, 0.8873989, 0, 1, 0, -0.8873989, 0, 0.46100247, -29.655592, 0.6156591, 25.112535)
+
+[node name="plant_small44" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1902826775 instance=ExtResource("12_ctatt")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -42.156166, 0.5787076, 23.16275)
+
+[node name="plant_tall172" parent="Stage/Nature/Florest Avenue/Plants" unique_id=2124435192 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -43.00757, 0.6156591, 19.786106)
+
+[node name="plant_tall173" parent="Stage/Nature/Florest Avenue/Plants" unique_id=114791124 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -38.41726, 0.6156596, 20.333687)
+
+[node name="plant_tall174" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1595094334 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -48.990612, 0.6156596, 21.245598)
+
+[node name="plant_fern135" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1680407398 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -48.218025, 0.47141376, 22.307098)
+
+[node name="plant_fern136" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1956203186 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -43.55294, 0.47141376, 27.197342)
+
+[node name="plant_fern137" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1383023027 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -42.335243, 0.47141376, 21.957344)
+
+[node name="plant_fern138" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1395816066 instance=ExtResource("11_kpybi")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -39.615883, 0.47141328, 17.172222)
+
+[node name="plant_tall175" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1392319497 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -41.12479, 0.61566055, 24.848627)
+
+[node name="plant_tall176" parent="Stage/Nature/Florest Avenue/Plants" unique_id=1067174642 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -47.440414, 0.6156596, 18.220444)
+
+[node name="plant_tall177" parent="Stage/Nature/Florest Avenue/Plants" unique_id=998434454 instance=ExtResource("10_oo54l")]
+transform = Transform3D(-0.99762726, 0, 0.0688467, 0, 1, 0, -0.0688467, 0, -0.99762726, -45.28013, 0.6156596, 20.139488)
 
 [node name="Plants" type="Node" parent="Stage/Nature" unique_id=2138271799]
 

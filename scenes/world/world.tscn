@@ -3537,7 +3537,6 @@ offset_bottom = 965.0
 metadata/_edit_use_anchors_ = true
 
 [node name="shader" type="MeshInstance3D" parent="Environment/Game_Effects" unique_id=140858374]
-visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_l6p5f")
 

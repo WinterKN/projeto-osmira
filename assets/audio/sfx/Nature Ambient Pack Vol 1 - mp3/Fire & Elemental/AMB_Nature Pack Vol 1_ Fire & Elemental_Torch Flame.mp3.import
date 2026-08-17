@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cf1ahshb2biox"
+path="res://.godot/imported/AMB_Nature Pack Vol 1_ Fire & Elemental_Torch Flame.mp3-1a5ca6be8a13fc3f854712f53db88836.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Nature Ambient Pack Vol 1 - mp3/Fire & Elemental/AMB_Nature Pack Vol 1_ Fire & Elemental_Torch Flame.mp3"
+dest_files=["res://.godot/imported/AMB_Nature Pack Vol 1_ Fire & Elemental_Torch Flame.mp3-1a5ca6be8a13fc3f854712f53db88836.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

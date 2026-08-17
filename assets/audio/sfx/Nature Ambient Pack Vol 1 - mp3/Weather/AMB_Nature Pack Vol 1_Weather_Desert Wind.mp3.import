@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdxl0qxnehukd"
+path="res://.godot/imported/AMB_Nature Pack Vol 1_Weather_Desert Wind.mp3-2199afdceee319e47d36b1daeb114615.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/Nature Ambient Pack Vol 1 - mp3/Weather/AMB_Nature Pack Vol 1_Weather_Desert Wind.mp3"
+dest_files=["res://.godot/imported/AMB_Nature Pack Vol 1_Weather_Desert Wind.mp3-2199afdceee319e47d36b1daeb114615.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

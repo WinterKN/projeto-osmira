@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://fxmxv6osob4l"]
 
-[ext_resource type="Script" uid="uid://mvkmn7p6yhcs" path="res://scripts/player/fixedCamera.gd" id="1_ckl76"]
+[ext_resource type="Script" uid="uid://mvkmn7p6yhcs" path="res://scripts/camera/fixedCamera.gd" id="1_ckl76"]
 
 [node name="fixedCamera" type="Camera3D" unique_id=1346389857]
 script = ExtResource("1_ckl76")

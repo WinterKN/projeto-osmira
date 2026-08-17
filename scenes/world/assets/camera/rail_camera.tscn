@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhnoqlprtjelk"]
 
-[ext_resource type="Script" uid="uid://bisrax48850y6" path="res://scripts/player/rail_camera.gd" id="1_ls3sc"]
+[ext_resource type="Script" uid="uid://bisrax48850y6" path="res://scripts/camera/rail_camera.gd" id="1_ls3sc"]
 [ext_resource type="PackedScene" uid="uid://fxmxv6osob4l" path="res://scenes/world/assets/camera/fixed_camera.tscn" id="2_ews17"]
 
 [sub_resource type="Curve3D" id="Curve3D_dscsl"]

@@ -19,6 +19,7 @@ var idle_state := 0
 
 const GRAVITY = -9.81
 var is_quick_turning := false
+var controls_enabled := true
 
 func handle_turn(delta):
 	var turn_dir = Input.get_axis("turn_left", "turn_right")
@@ -57,6 +58,13 @@ func quick_turn():
 	tween.finished.connect(func():
 		is_quick_turning = false
 	)
+	
+func set_controls_enabled(value: bool) -> void:
+	controls_enabled = value
+
+	if not controls_enabled:
+		velocity.x = 0.0
+		velocity.z = 0.0
 	
 func handle_animation(delta):
 	var input_vector = Input.get_vector(
@@ -159,6 +167,21 @@ func handle_idle(delta):
 				idle_state = 1
 	
 func _physics_process(delta: float) -> void:
+	handle_gravity(delta)
+
+	# =====================================================
+	# CUTSCENE
+	# =====================================================
+	if not controls_enabled:
+		velocity.x = 0.0
+		velocity.z = 0.0
+
+		move_and_slide()
+		return
+
+	# =====================================================
+	# GAMEPLAY NORMAL
+	# =====================================================
 	handle_turn(delta)
 	
 	if Input.is_action_pressed("run"):
@@ -175,5 +198,8 @@ func _physics_process(delta: float) -> void:
 	handle_animation(delta)
 	
 func _unhandled_input(event: InputEvent) -> void:
+	if not controls_enabled:
+		return
+
 	if Input.is_action_just_pressed("quick_turn") and not is_quick_turning:
 		quick_turn()

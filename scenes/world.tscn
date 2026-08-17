@@ -22,12 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://0tn5t0ebns2w" path="res://scenes/world/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_navra"]
 [ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://shaders/crt.gdshader" id="16_fh13f"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cd2m8pqo8ck76" path="res://scenes/world.occ" id="22_oo54l"]
+[ext_resource type="PackedScene" uid="uid://bjyb7sfnbro22" path="res://scenes/world/assets/interactable/block.tscn" id="23_kpybi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t5mc"]
 size = Vector3(15.000123, 0.84399414, 16.709229)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpybi"]
-size = Vector3(15.000123, 0.84399414, 16.709229)
+size = Vector3(19.44928, 0.84399414, 17.546204)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6p5f"]
 size = Vector3(13.115631, 1.8438721, 9.850983)
@@ -167,13 +168,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3204689, -0.84606934, -11.2
 shape = SubResource("BoxShape3D_7t5mc")
 
 [node name="fixedCamera12" parent="Stage/Cameras/fixedCamera" unique_id=1346389857 instance=ExtResource("1_lakw3")]
-transform = Transform3D(0.9722259, 0, 0.23404503, 0, 1, 0, -0.23404503, 0, 0.9722259, -14.007965, -1.6616607, 223.00473)
+transform = Transform3D(0.9722258, 0, 0.23404497, 0, 1, 0, -0.23404497, 0, 0.9722258, -15.460541, -1.6616607, 227.185)
 
 [node name="Trigger" parent="Stage/Cameras/fixedCamera/fixedCamera12" index="0" unique_id=942678734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera/fixedCamera12/Trigger" index="0" unique_id=101527046]
-transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -7.1412354, 0.70567036, -0.5477524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.916649, 0.70567036, -0.9662399)
 shape = SubResource("BoxShape3D_kpybi")
 
 [node name="fixedCamera2" parent="Stage/Cameras" unique_id=999320916 instance=ExtResource("1_lakw3")]
@@ -2262,6 +2263,9 @@ mesh = SubResource("QuadMesh_l6p5f")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=103404073]
 occluder = ExtResource("22_oo54l")
+
+[node name="Node3D" parent="." unique_id=826261821 instance=ExtResource("23_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 115)
 
 [editable path="Player"]
 [editable path="Player/model"]

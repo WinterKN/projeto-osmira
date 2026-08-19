@@ -1,7 +1,9 @@
 class_name fixedCamera extends Camera3D
 
 @export var follow_player := false
+
 var player: Player = null
+
 
 func _physics_process(delta: float) -> void:
 	if follow_player and player:

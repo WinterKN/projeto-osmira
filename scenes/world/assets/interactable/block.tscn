@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjyb7sfnbro22"]
 
 [ext_resource type="Script" uid="uid://b7la3y1jl6e11" path="res://scripts/interactable/interaction.gd" id="1_tsql6"]
+[ext_resource type="PackedScene" uid="uid://l0a5nwr6k3xn" path="res://scenes/world/assets/interactable/interaction.tscn" id="2_ad5vq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0i88t"]
 
@@ -25,6 +26,8 @@ collision_mask = 5
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Trigger" unique_id=1230424624]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_tsql6")
+
+[node name="Interaction" parent="." unique_id=738883378 instance=ExtResource("2_ad5vq")]
 
 [connection signal="body_entered" from="StaticBody3D/Trigger" to="." method="_on_trigger_body_entered"]
 [connection signal="body_exited" from="StaticBody3D/Trigger" to="." method="_on_trigger_body_exited"]

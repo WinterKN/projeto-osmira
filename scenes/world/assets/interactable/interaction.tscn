@@ -7,6 +7,8 @@ script/source = "extends Node
 
 # Como o label está dentro de UI, usamos o caminho completo ou o % se for nome único
 @onready var label: Label = %InteractionLabel
+func _ready() -> void:
+	add_to_group(\"ui_interacao\")
 
 func set_text(text: String) -> void:
 	label.text = text
@@ -32,6 +34,24 @@ func update_item_icon(item_data: Node) -> void:
 			$TextureRect.texture = load(path)
 "
 
+[sub_resource type="GDScript" id="GDScript_iyju6"]
+script/source = "extends Label
+
+@onready var label: Label = %InteractionLabel
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func alternar_visibilidade(is_visible: bool) -> void:
+	label.visible = is_visible
+"
+
 [node name="Interaction" type="Node" unique_id=738883378]
 script = SubResource("GDScript_nucce")
 
@@ -51,4 +71,4 @@ offset_right = 57.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 6
-text = "[E] INTERAÇÃO"
+script = SubResource("GDScript_iyju6")

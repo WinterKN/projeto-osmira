@@ -2264,7 +2264,7 @@ mesh = SubResource("QuadMesh_l6p5f")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=103404073]
 occluder = ExtResource("22_oo54l")
 
-[node name="Node3D" parent="." unique_id=826261821 instance=ExtResource("23_kpybi")]
+[node name="bloco teste" parent="." unique_id=826261821 instance=ExtResource("23_kpybi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 115)
 
 [editable path="Player"]

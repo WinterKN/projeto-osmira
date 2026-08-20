@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://l0a5nwr6k3xn" path="res://scenes/world/assets/interactable/interaction.tscn" id="2_ad5vq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpybi"]
+size = Vector3(1, 0.61572266, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0i88t"]
 
@@ -16,7 +17,7 @@ script = ExtResource("1_tsql6")
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=523257831]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.576416, 0)
 shape = SubResource("BoxShape3D_kpybi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1218422527]

@@ -1,15 +1,26 @@
 class_name fixedCamera extends Camera3D
 
 @export var follow_player := false
-
+@export var follow_object := false
+@export var object: interactable = null
 var player: Player = null
+
 
 
 func _physics_process(delta: float) -> void:
 	if follow_player and player:
 		look_at(player.global_position)
+	elif follow_object and object:
+		look_at(object.global_position)
 
 func _on_trigger_body_entered(body: Node3D) -> void:
 	if body is Player:
+		print("================================")
+		print("CÂMERA ATIVADA: ", name)
+		print("PATH: ", get_path())
+		print("POSIÇÃO: ", global_position)
+		print("================================")
+
 		player = body
 		current = true
+	

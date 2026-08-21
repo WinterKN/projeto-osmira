@@ -27,17 +27,17 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t5mc"]
 size = Vector3(15.000123, 0.84399414, 16.709229)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kpybi"]
-size = Vector3(19.44928, 0.84399414, 17.546204)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6p5f"]
 size = Vector3(13.115631, 1.8438721, 9.850983)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_48euw"]
 size = Vector3(12.021912, 1, 13.645752)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kpybi"]
+size = Vector3(8.130859, 2.0925446, 18.601654)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_pwhxm"]
-size = Vector3(7.9539948, 2.0925446, 18.601654)
+size = Vector3(6.245117, 2.0925446, 18.601654)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oo54l"]
 size = Vector3(16.062412, 2.0925446, 18.601654)
@@ -167,19 +167,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3204689, -0.84606934, -11.253281)
 shape = SubResource("BoxShape3D_7t5mc")
 
-[node name="fixedCamera12" parent="Stage/Cameras/fixedCamera" unique_id=1346389857 instance=ExtResource("1_lakw3")]
-transform = Transform3D(0.9722258, 0, 0.23404497, 0, 1, 0, -0.23404497, 0, 0.9722258, -15.460541, -1.6616607, 227.185)
-
-[node name="Trigger" parent="Stage/Cameras/fixedCamera/fixedCamera12" index="0" unique_id=942678734]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.338769, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera/fixedCamera12/Trigger" index="0" unique_id=101527046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.916649, 0.70567036, -0.9662399)
-shape = SubResource("BoxShape3D_kpybi")
-
 [node name="fixedCamera2" parent="Stage/Cameras" unique_id=999320916 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.17364821, 0, 0.9848078, 0, 1, 0, -0.9848078, 0, -0.17364821, -72.60021, 2.2096124, -120.10991)
-follow_player = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera2/Trigger" parent_id_path=PackedInt32Array(999320916, 942678734) index="0" unique_id=519502786]
 transform = Transform3D(0.99999905, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.99999905, 3.4269257, -0.9500656, -7.0302544)
@@ -187,7 +176,6 @@ shape = SubResource("BoxShape3D_l6p5f")
 
 [node name="fixedCamera3" parent="Stage/Cameras" unique_id=524709011 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.17364813, 0, -0.9848078, 0, 1, 0, 0.9848078, 0, -0.17364813, -101.394554, 3.581318, -122.890656)
-follow_player = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera3/Trigger" parent_id_path=PackedInt32Array(524709011, 942678734) index="0" unique_id=1192085696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34535217, -2.6327362, -7.840561)
@@ -197,8 +185,8 @@ shape = SubResource("BoxShape3D_48euw")
 transform = Transform3D(-0.27241212, -0.3484811, 0.8968571, 0.0073598805, 0.93132687, 0.36411005, -0.9621526, 0.1057887, -0.25114003, -1.0027995, 3.127688, 105.29527)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera4/Trigger" parent_id_path=PackedInt32Array(1843497047, 942678734) index="0" unique_id=757105353]
-transform = Transform3D(0.9960124, 0.0175526, -0.08726643, -0.04841222, 0.92949206, -0.36558685, 0.074693576, 0.3683596, 0.92666173, -0.3390274, -0.96167374, -5.3041344)
-shape = SubResource("BoxShape3D_pwhxm")
+transform = Transform3D(0.99600524, 0.01755247, -0.0872671, -0.048412208, 0.9294847, -0.3655839, 0.07469252, 0.36835667, 0.92665726, 0.7860718, -1.0163603, -5.219757)
+shape = SubResource("BoxShape3D_kpybi")
 
 [node name="fixedCamera5" parent="Stage/Cameras" unique_id=621240304 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.5727579, 0.30240035, -0.7619071, 0.0073598665, 0.93132687, 0.36411017, 0.8196915, 0.20293947, -0.53565043, -10.04024, 3.127688, 93.22075)
@@ -230,7 +218,6 @@ shape = SubResource("BoxShape3D_pwhxm")
 
 [node name="fixedCamera9" parent="Stage/Cameras" unique_id=1807088245 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.9968982, 0.035365757, -0.07030849, 0.007359872, 0.93132687, 0.36411014, 0.07835722, 0.36246327, -0.9286984, -7.951439, 3.1276886, 46.74764)
-follow_player = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera9/Trigger" parent_id_path=PackedInt32Array(1807088245, 942678734) index="0" unique_id=823001521]
 transform = Transform3D(0.072833076, 0.004419709, -0.9973207, -0.3734587, 0.9273344, -0.023159448, 0.92476356, 0.3741467, 0.06919047, 1.2287941, 2.1077347, -13.186775)
@@ -2270,7 +2257,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 115)
 [editable path="Player"]
 [editable path="Player/model"]
 [editable path="Stage/Cameras/fixedCamera"]
-[editable path="Stage/Cameras/fixedCamera/fixedCamera12"]
 [editable path="Stage/Cameras/fixedCamera2"]
 [editable path="Stage/Cameras/fixedCamera3"]
 [editable path="Stage/Cameras/fixedCamera4"]

@@ -17,7 +17,7 @@ script = ExtResource("1_tsql6")
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=523257831]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.576416, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.8469115, 0)
 shape = SubResource("BoxShape3D_kpybi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1218422527]

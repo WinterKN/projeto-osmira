@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://0tn5t0ebns2w" path="res://scenes/world/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_navra"]
 [ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://shaders/crt.gdshader" id="16_fh13f"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cd2m8pqo8ck76" path="res://scenes/world.occ" id="22_oo54l"]
+[ext_resource type="PackedScene" uid="uid://bjyb7sfnbro22" path="res://scenes/world/assets/interactable/block.tscn" id="23_kpybi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t5mc"]
 size = Vector3(15.000123, 0.84399414, 16.709229)
@@ -40,6 +41,9 @@ size = Vector3(6.245117, 2.0925446, 18.601654)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oo54l"]
 size = Vector3(16.062412, 2.0925446, 18.601654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctatt"]
+size = Vector3(8.130859, 2.0925446, 18.601654)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_48euw"]
 albedo_color = Color(0.5729883, 0.5729883, 0.5729883, 1)
@@ -235,6 +239,13 @@ transform = Transform3D(0.99996984, 0.005351954, 0.005641586, -0.0071211844, 0.9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCamera11/Trigger" parent_id_path=PackedInt32Array(1356132025, 942678734) index="0" unique_id=1878574196]
 transform = Transform3D(0.09983715, -0.027843019, -0.9945938, -0.40043718, 0.9139368, -0.06577659, 0.9108489, 0.40484446, 0.08009513, -0.71510077, -4.54378, -4.4616356)
 shape = SubResource("BoxShape3D_pwhxm")
+
+[node name="fixedCameraTest" parent="Stage/Cameras" unique_id=1346389857 instance=ExtResource("1_lakw3")]
+transform = Transform3D(-0.27241224, -0.34848118, 0.896857, 0.00735983, 0.9313268, 0.36411017, -0.96215254, 0.10578879, -0.25114003, -0.22110331, 2.8442566, 113.93107)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Cameras/fixedCameraTest/Trigger" parent_id_path=PackedInt32Array(1346389857, 942678734) index="0" unique_id=1568141765]
+transform = Transform3D(0.9960053, 0.017552473, -0.087267086, -0.0484122, 0.9294847, -0.3655839, 0.0746925, 0.36835665, 0.92665726, 0.791275, -0.3579445, -4.962343)
+shape = SubResource("BoxShape3D_ctatt")
 
 [node name="Buildings" type="Node" parent="Stage" unique_id=1101660273]
 
@@ -2250,6 +2261,10 @@ mesh = SubResource("QuadMesh_l6p5f")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=103404073]
 occluder = ExtResource("22_oo54l")
 
+[node name="Node3D" parent="." unique_id=826261821 node_paths=PackedStringArray("fixed_camera") instance=ExtResource("23_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.505, 1.023, 103.098)
+fixed_camera = NodePath("../Stage/Cameras/fixedCamera4")
+
 [editable path="Player"]
 [editable path="Player/model"]
 [editable path="Stage/Cameras/fixedCamera"]
@@ -2263,4 +2278,5 @@ occluder = ExtResource("22_oo54l")
 [editable path="Stage/Cameras/fixedCamera9"]
 [editable path="Stage/Cameras/fixedCamera10"]
 [editable path="Stage/Cameras/fixedCamera11"]
+[editable path="Stage/Cameras/fixedCameraTest"]
 [editable path="Stage/Nature/Trees/tree27"]

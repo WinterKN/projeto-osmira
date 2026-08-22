@@ -10,12 +10,13 @@ var interagivel: bool = true
 var original_camera_transform: Transform3D
 
 func _ready() -> void:
-	var uis = get_tree().get_nodes_in_group("ui_interacao")
-	if uis.size() == 1:
-		print("ui_interacao encrontrado")
-		interaction_ui = uis[0]
-		interaction_ui.alternar_visibilidade(false)
-		ui_esta_visivel = false # Atualiza o estado para invisível
+	if interaction_ui == null:
+		var uis = get_tree().get_nodes_in_group("ui_interacao")
+		if uis.size() == 1:
+			print("ui_interacao encrontrado")
+			interaction_ui = uis[0]
+			interaction_ui.alternar_visibilidade(false)
+			ui_esta_visivel = false # Atualiza o estado para invisível
 
 	if fixed_camera:
 		original_camera_transform = fixed_camera.global_transform
@@ -44,7 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 		
 		
-func _on_trigger_body_entered(body: Node3D) -> void:
+func _on_trigger_body_entered(body: CharacterBody3D) -> void:
 	print("enter")
 	# --------Codigo antigo---------
 	#if interaction_ui == null:
@@ -68,7 +69,7 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 	
 
 
-func _on_trigger_body_exited(body: Node3D) -> void:
+func _on_trigger_body_exited(body: CharacterBody3D) -> void:
 	print("leave")
 	if interaction_ui != null:
 		interaction_ui.alternar_visibilidade(false)

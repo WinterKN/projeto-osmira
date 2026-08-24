@@ -116,6 +116,7 @@ var last_footstep_index := -1
 
 func _ready() -> void:
 	footstep_player.volume_db = footstep_volume_db
+	add_to_group("player")
 
 
 # =========================================================

@@ -15587,10 +15587,10 @@ data = PackedVector3Array(-5, 0, 5, -5, 0, 1, -1, 0, 5, -1, 0, 5, 5, 0, 1, 3, 0,
 transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.745, 0.4, 12.336606)
 collision_layer = 5
 
-[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=315128016]
+[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=1856116332]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)
 
-[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=1051373252]
+[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=1659125940]
 bones/2/rotation = Quaternion(-0.06359446, -0.0036651148, 0.011258639, 0.9979056)
 bones/3/rotation = Quaternion(0.085057385, -0.0046582986, 0.0035399038, 0.996359)
 bones/4/rotation = Quaternion(-0.002165822, -0.0043975, 0.0038591037, 0.9999806)
@@ -15662,7 +15662,6 @@ shape = SubResource("BoxShape3D_pwhxm")
 
 [node name="fixedCamera6" parent="Cameras/Fixed Cameras" unique_id=1807088245 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.9968982, 0.035365757, -0.07030849, 0.007359872, 0.93132687, 0.36411014, 0.07835722, 0.36246327, -0.9286984, -7.951439, 3.1276886, 46.74764)
-follow_player = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Fixed Cameras/fixedCamera6/Trigger" parent_id_path=PackedInt32Array(1807088245, 942678734) index="0" unique_id=823001521]
 transform = Transform3D(0.072833076, 0.004419688, -0.9973223, -0.3734587, 0.927337, -0.023159422, 0.92476356, 0.37414768, 0.06919047, 1.2296658, 2.2904358, -13.11306)
@@ -15771,7 +15770,6 @@ debug_color = Color(0.93333334, 0.22745098, 0.30980393, 1)
 
 [node name="fixedCamera20" parent="Cameras/Fixed Cameras" unique_id=1336213441 instance=ExtResource("1_lakw3")]
 transform = Transform3D(0.9999998, -0.00036383042, 0.0004919342, 0, 0.8039988, 0.59463084, -0.0006118593, -0.5946307, 0.8039987, -2.1630313, 4.865906, -79.67954)
-follow_player = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Fixed Cameras/fixedCamera20/Trigger" parent_id_path=PackedInt32Array(1336213441, 942678734) index="0" unique_id=514452877]
 transform = Transform3D(0.1250215, 0.0071552233, -0.9920479, -0.59123796, 0.8035349, -0.068711974, 0.7967235, 0.59516937, 0.10469886, 0.45286667, 1.1952095, -7.9708138)
@@ -18972,7 +18970,7 @@ transform = Transform3D(0.98622674, 0, -0.16539904, 0, 1, 0, 0.16539904, 0, 0.98
 [node name="tree225" parent="Stage/Nature/Trees" unique_id=1272352657 instance=ExtResource("5_7iits")]
 transform = Transform3D(0.9775307, 0, -0.21079323, 0, 1, 0, 0.21079323, 0, 0.9775307, -52.156773, 0.5000045, -77.42345)
 
-[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=1409720786]
+[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=64680381]
 transform = Transform3D(0.99999994, 0, -1.4901161e-08, 0, 1, 1.6292067e-07, 1.4901161e-08, -1.6292066e-07, 0.99999994, -1.0855865, 0, 0.06829834)
 
 [node name="tree226" parent="Stage/Nature/Trees" unique_id=841867185 instance=ExtResource("5_7iits")]

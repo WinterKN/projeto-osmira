@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://l0a5nwr6k3xn"]
+
+[sub_resource type="GDScript" id="GDScript_nucce"]
+resource_name = "interaction"
+script/source = "extends Node
+
+
+# Como o label está dentro de UI, usamos o caminho completo ou o % se for nome único
+@onready var label: Label = %InteractionLabel
+func _ready() -> void:
+	add_to_group(\"ui_interacao\")
+
+func set_text(text: String) -> void:
+	label.text = text
+
+func alternar_visibilidade(is_visible: bool) -> void:
+	label.visible = is_visible
+
+func update_item_icon(item_data: Node) -> void:
+	# 1. Get the name of the object node itself
+	var node_name: String = item_data.name 
+	
+	# 2. Extract properties from your custom ItemData fields
+	var custom_name: String = item_data.item_name
+	var custom_icon: Texture2D = item_data.item_icon # Godot 4 texture type
+	
+	# 3. Assign the pre-loaded icon directly (Most efficient)
+	if custom_icon != null:
+		$TextureRect.texture = custom_icon
+	else:
+		# Fallback: try loading via string if the resource reference is missing
+		var path = \"res://assets/icons/\" + custom_name + \".png\"
+		if ResourceLoader.exists(path):
+			$TextureRect.texture = load(path)
+"
+
+[sub_resource type="GDScript" id="GDScript_iyju6"]
+script/source = "extends Label
+
+@onready var label: Label = %InteractionLabel
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+func alternar_visibilidade(is_visible: bool) -> void:
+	label.visible = is_visible
+"
+
+[node name="Interaction" type="Node" unique_id=738883378]
+script = SubResource("GDScript_nucce")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2084965314]
+
+[node name="InteractionLabel" type="Label" parent="UI" unique_id=1720401860]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -23.0
+offset_right = 57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 6
+script = SubResource("GDScript_iyju6")

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cr1qvo8337c24"]
+
+[ext_resource type="PackedScene" uid="uid://dhtporfg4bkkc" path="res://game_assets/world/buildings/OCA/seila bro.fbx" id="1_3alpj"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_f5fut"]
+[ext_resource type="Texture2D" uid="uid://bm1vexexrk5b6" path="res://game_assets/world/buildings/OCA/images.jpg" id="3_hfspb"]
+[ext_resource type="Texture2D" uid="uid://cjeyuw43kw4q4" path="res://game_assets/world/buildings/OCA/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png" id="4_kc5mk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnfe8"]
+render_priority = 0
+shader = ExtResource("2_f5fut")
+shader_parameter/color_texture = ExtResource("3_hfspb")
+shader_parameter/vertex_wobble = 1.0
+shader_parameter/affine_mapping = 0.02999999932944
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvqm4"]
+render_priority = 0
+shader = ExtResource("2_f5fut")
+shader_parameter/color_texture = ExtResource("4_kc5mk")
+shader_parameter/vertex_wobble = 1.0
+shader_parameter/affine_mapping = 0.02999999932944
+
+[node name="seila bro" unique_id=750509154 instance=ExtResource("1_3alpj")]
+
+[node name="Cylinder_002" parent="." index="0" unique_id=1333038667]
+material_override = SubResource("ShaderMaterial_xnfe8")
+
+[node name="HUt" parent="." index="1" unique_id=1818707224]
+material_override = SubResource("ShaderMaterial_cvqm4")

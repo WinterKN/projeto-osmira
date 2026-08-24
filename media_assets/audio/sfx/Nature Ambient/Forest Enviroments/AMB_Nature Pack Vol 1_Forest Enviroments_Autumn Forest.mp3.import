@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd0vcmoo3vygu"
+path="res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Autumn Forest.mp3-0e41514eb63f2e7497e54d5dd5898c3d.mp3str"
+
+[deps]
+
+source_file="res://media_assets/audio/sfx/Nature Ambient/Forest Enviroments/AMB_Nature Pack Vol 1_Forest Enviroments_Autumn Forest.mp3"
+dest_files=["res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Autumn Forest.mp3-0e41514eb63f2e7497e54d5dd5898c3d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

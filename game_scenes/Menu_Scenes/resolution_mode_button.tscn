@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c6pm8utiq7b0r"]
+
+[ext_resource type="PackedScene" uid="uid://dkx1ph32u74ie" path="res://game_scenes/Menu_Scenes/option_display_button.tscn" id="1_mc7ms"]
+[ext_resource type="Script" uid="uid://dogefudytdcjr" path="res://scripts/ui/Menu/resolution_mode_button.gd" id="2_d7ac7"]
+
+[node name="Resolution_Mode_Button" unique_id=841151006 instance=ExtResource("1_mc7ms")]
+script = ExtResource("2_d7ac7")
+
+[node name="Label" parent="HBoxContainer" parent_id_path=PackedInt32Array(119465614) index="0" unique_id=1770606318]
+text = "Resolution"

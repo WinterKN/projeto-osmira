@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cruol6487jerm"]
+
+[ext_resource type="Script" uid="uid://cu1p2tm7574gw" path="res://scripts/ui/Menu/acessibility_check_button.gd" id="1_1v8dr"]
+
+[node name="Acessibility_check_button" type="Control" unique_id=1598311314]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_1v8dr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1804530394]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 64
+
+[node name="Name_Label" type="Label" parent="HBoxContainer" unique_id=1912421650]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "OPTION NAME"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=567222888]
+layout_mode = 2
+theme_override_constants/separation = 124
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=1368596200]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer/CenterContainer" unique_id=1083723767]
+layout_mode = 2
+button_pressed = true
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=1903727800]
+layout_mode = 2
+theme_override_constants/separation = 124
+
+[node name="State_Label" type="Label" parent="HBoxContainer" unique_id=1167964184]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "ON"
+vertical_alignment = 1

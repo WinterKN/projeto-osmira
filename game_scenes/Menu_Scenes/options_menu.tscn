@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ce05eygrp1awi"]
+
+[ext_resource type="Script" uid="uid://d4kkncey1yqpi" path="res://scripts/ui/Menu/options_menu.gd" id="1_a4uof"]
+[ext_resource type="PackedScene" uid="uid://r2xpmok8gsqj" path="res://game_scenes/Menu_Scenes/settings_tab_container.tscn" id="2_wdnow"]
+
+[node name="Options_Menu" type="Control" unique_id=780487390]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a4uof")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=511360268]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=921883437]
+layout_mode = 2
+theme_override_constants/separation = -48
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=543312436]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings_Tab_Container" parent="MarginContainer/VBoxContainer" unique_id=968520800 instance=ExtResource("2_wdnow")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1790358260]
+custom_minimum_size = Vector2(1000, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 20
+text = "Exit"

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ch151hpc7yc6c"]
+
+[ext_resource type="PackedScene" uid="uid://dpp7lcl7htgpf" path="res://game_assets/world/nature/trees/models/tree13.fbx" id="1_12ib3"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_ip6qt"]
+[ext_resource type="Texture2D" uid="uid://cx05r2qcjgrlv" path="res://game_assets/world/nature/trees/textures/tree13.png" id="3_tw4i6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv825"]
+render_priority = 0
+shader = ExtResource("2_ip6qt")
+shader_parameter/color_texture = ExtResource("3_tw4i6")
+shader_parameter/vertex_wobble = 0.63999998569472
+shader_parameter/affine_mapping = 0.0499999988824
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.65999996289568
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[node name="tree13" unique_id=41777382 instance=ExtResource("1_12ib3")]
+
+[node name="tree13" parent="." index="0" unique_id=1023424537]
+material_override = SubResource("ShaderMaterial_kv825")

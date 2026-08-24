@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://upm7qro1psa2"]
+
+[ext_resource type="PackedScene" uid="uid://dcnbh3s4x2web" path="res://game_assets/world/nature/trees/models/tree18.fbx" id="1_i0dxd"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_xmdki"]
+[ext_resource type="Texture2D" uid="uid://bb1gi27k3fm4b" path="res://game_assets/world/nature/trees/textures/tree18.png" id="3_g5i8j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aj2ol"]
+render_priority = 0
+shader = ExtResource("2_xmdki")
+shader_parameter/color_texture = ExtResource("3_g5i8j")
+shader_parameter/vertex_wobble = 0.83999998122432
+shader_parameter/affine_mapping = 0.07999999821184
+shader_parameter/wind_strength = 0.08999999798832
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[node name="tree18" unique_id=1404377780 instance=ExtResource("1_i0dxd")]
+
+[node name="tree18" parent="." index="0" unique_id=213877226]
+material_override = SubResource("ShaderMaterial_aj2ol")

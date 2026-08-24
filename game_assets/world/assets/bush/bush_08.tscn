@@ -1,0 +1,60 @@
+[gd_scene format=4 uid="uid://c7eon8kr4fvia"]
+
+[ext_resource type="PackedScene" uid="uid://djqhdwrule0sx" path="res://game_assets/world/nature/bush/models/bush08.fbx" id="1_5qqfv"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_4imy6"]
+[ext_resource type="Texture2D" uid="uid://b80gs10128ap0" path="res://game_assets/world/nature/bush/textures/bush08.png" id="3_hhucj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jueii"]
+render_priority = 0
+shader = ExtResource("2_4imy6")
+shader_parameter/color_texture = ExtResource("3_hhucj")
+shader_parameter/vertex_wobble = 1.0
+shader_parameter/affine_mapping = 0.0
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5ure"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("3_hhucj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hm3t4"]
+_surfaces = [{
+"aabb": AABB(-4.368, 0, -4.368, 8.736, 7.5, 8.736),
+"format": 34359742465,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAQADAAIABAAFAAYABQAHAAYACAAJAAoACQALAAoADAANAA4ADQAPAA4AEAARABIAEQATABIAFAAVABYAFQAXABYAGAAZABoAGQAbABoAHAAdAB4AHQAfAB4A"),
+"name": "bush08",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("qMaLQAAAAACbjm68qMaLQAAA8EAjj268qMaLwAAAAABmi268qMaLwAAA8EDxi268qMaLwAAAAADNj248qMaLwAAA8EBTkG48qMaLQAAAAABjiW48qMaLQAAA8EDtiW4884luPAAAAACpxotAaItuPAAA8ECoxotAnY5uPAAAADWoxovAEpBuPAAA8ECoxovAaItuvAAAADWoxovA3YxuvAAA8ECoxovAKI1uvAAAAACpxotAnY5uvAAA8ECoxotA/1RGwAAAAACjA0XAAVVGwAAA8ECjA0XAowNFQAAAADUAVUZAowNFQAAA8EADVUZAAVVGQAAAADWlA0VAAVVGQAAA8ECjA0VApQNFwAAAAAD9VEbAowNFwAAA8EAAVUbAowNFQAAAADX9VEbApQNFQP3/70ABVUbA/1RGwAAAADWlA0VAA1VGwAAA8ECjA0VApQNFwAAAADUDVUZAowNFwAAA8EAAVUZA/VRGQAAAADWjA0XA/1RGQP3/70CjA0XA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lpuo4"]
+resource_name = "bush08"
+_surfaces = [{
+"aabb": AABB(-4.368, 0, -4.368, 8.736, 7.5, 8.736),
+"attribute_data": PackedByteArray("gK0wPD1zZj+ArTA84K3fPedqfT89c2Y/52p9P+Ct3z3VW30/PXNmP9VbfT8Art89wHE0PD1zZj/AcTQ8AK7fPYCtMDw9c2Y/gK0wPOCt3z3nan0/PXNmP+dqfT/grd891Vt9Pz1zZj/VW30/AK7fPcBxNDw9c2Y/wHE0PACu3z2ArTA8PXNmP4CtMDzgrd8952p9Pz1zZj/nan0/4K3fPdVbfT89c2Y/1Vt9PwCu3z3AcTQ8PXNmP8BxNDwArt89gK0wPD1zZj+ArTA84K3fPedqfT89c2Y/52p9P+Ct3z3VW30/PXNmP9VbfT8Art89wHE0PD1zZj/AcTQ8AK7fPQ=="),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAQADAAIABAAFAAYABQAHAAYACAAJAAoACQALAAoADAANAA4ADQAPAA4AEAARABIAEQATABIAFAAVABYAFQAXABYAGAAZABoAGQAbABoAHAAdAB4AHQAfAB4A"),
+"material": SubResource("StandardMaterial3D_p5ure"),
+"name": "bush08",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("qMaLQAAAAACbjm68qMaLQAAA8EAjj268qMaLwAAAAABmi268qMaLwAAA8EDxi268qMaLwAAAAADNj248qMaLwAAA8EBTkG48qMaLQAAAAABjiW48qMaLQAAA8EDtiW4884luPAAAAACpxotAaItuPAAA8ECoxotAnY5uPAAAADWoxovAEpBuPAAA8ECoxovAaItuvAAAADWoxovA3YxuvAAA8ECoxovAKI1uvAAAAACpxotAnY5uvAAA8ECoxotA/1RGwAAAAACjA0XAAVVGwAAA8ECjA0XAowNFQAAAADUAVUZAowNFQAAA8EADVUZAAVVGQAAAADWlA0VAAVVGQAAA8ECjA0VApQNFwAAAAAD9VEbAowNFwAAA8EAAVUbAowNFQAAAADX9VEbApQNFQP3/70ABVUbA/1RGwAAAADWlA0VAA1VGwAAA8ECjA0VApQNFwAAAADUDVUZAowNFwAAA8EAAVUZA/VRGQAAAADWjA0XA/1RGQP3/70CjA0XAAAAAAAAA/78AAAAAAAD/vwAAAAAAAP+/AAAAAAAA/7//f/9/AAD/P/9//38AAP8//3//fwAA/z//f/9/AAD/P/7//3///////v//f//////+//9///////7//3///wCAAAD/f///AAAAAP9///8AAAAA/3///wAAAAD/f///AAD/P/9//7//v/8//3//v/+//z//f/+//7//P/9//7//v////z//v/8/////P/+//z////8//7//P////z//v/8/AAD/P/8//78AAP8//z//vwAA/z//P/+/AAD/P/8//7//v/9//z//P/+//3//P/8//7//f/8//z//v/9//z//Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hm3t4")
+
+[node name="bush08" unique_id=430934104 instance=ExtResource("1_5qqfv")]
+
+[node name="bush08" parent="." index="0" unique_id=43111896]
+transform = Transform3D(0.33476502, 0, 0, 0, 0.33476502, 5.454014e-08, 0, -5.454014e-08, 0.33476502, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_jueii")
+lod_bias = 0.4
+mesh = SubResource("ArrayMesh_lpuo4")

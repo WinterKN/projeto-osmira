@@ -19,10 +19,12 @@ data = PackedVector3Array(0, 2.5193, -0.24499999, -0.23249999, 2.5193, -0.122499
 
 [node name="tree20" unique_id=1614733008 instance=ExtResource("1_hdy64")]
 
-[node name="tree20" parent="." index="0" unique_id=1805792276]
+[node name="tree20" parent="." index="0" unique_id=1703831750]
 material_override = SubResource("ShaderMaterial_hfo6f")
+visibility_range_end = 120.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree20" index="0" unique_id=1174590334]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree20/StaticBody3D" index="0" unique_id=112283992]
+transform = Transform3D(1, 0, 0, 0, 1.9343016, 0, 0, 0, 1.0000001, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_hdy64")

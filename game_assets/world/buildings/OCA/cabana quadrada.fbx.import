@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://du7xf5yimvpxv"
-path="res://.godot/imported/oca_principal.fbx-1ab1dce5ffab1906e7c8ddfe82be282a.scn"
+uid="uid://dwxxud7dhvp38"
+path="res://.godot/imported/cabana quadrada.fbx-4c94ae0690422c6b254aa9a80243f2e0.scn"
 
 [deps]
 
-source_file="res://game_assets/world/buildings/OCA/oca_principal.fbx"
-dest_files=["res://.godot/imported/oca_principal.fbx-1ab1dce5ffab1906e7c8ddfe82be282a.scn"]
+source_file="res://game_assets/world/buildings/OCA/cabana quadrada.fbx"
+dest_files=["res://.godot/imported/cabana quadrada.fbx-4c94ae0690422c6b254aa9a80243f2e0.scn"]
 
 [params]
 

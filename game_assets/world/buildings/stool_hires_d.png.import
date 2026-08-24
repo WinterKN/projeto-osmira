@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6u8rporeo1k6"
-path.s3tc="res://.godot/imported/pngfind.com-roof-png-1091585.001.png-b14f3302a4c2d680a6482bf26b7309fa.s3tc.ctex"
+uid="uid://cwyvmmdv5el1r"
+path.s3tc="res://.godot/imported/stool_hires_d.png-6c1539c4bfc985e85692a3fc5873c064.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game_assets/characters/assets/textures/pngfind.com-roof-png-1091585.001.png"
-dest_files=["res://.godot/imported/pngfind.com-roof-png-1091585.001.png-b14f3302a4c2d680a6482bf26b7309fa.s3tc.ctex"]
+source_file="res://game_assets/world/buildings/stool_hires_d.png"
+dest_files=["res://.godot/imported/stool_hires_d.png-6c1539c4bfc985e85692a3fc5873c064.s3tc.ctex"]
 
 [params]
 

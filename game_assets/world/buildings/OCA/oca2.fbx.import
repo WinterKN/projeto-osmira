@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bipjicrvhefxi"
-path="res://.godot/imported/oca_pequena.fbx-2694155d2fd2aeafdc14fe91c3c47bc0.scn"
+uid="uid://bjfhewjv7vjew"
+path="res://.godot/imported/oca2.fbx-f7ba92fc689f885ef67fad53c2eba63c.scn"
 
 [deps]
 
-source_file="res://game_assets/world/buildings/OCA/oca_pequena.fbx"
-dest_files=["res://.godot/imported/oca_pequena.fbx-2694155d2fd2aeafdc14fe91c3c47bc0.scn"]
+source_file="res://game_assets/world/buildings/OCA/oca2.fbx"
+dest_files=["res://.godot/imported/oca2.fbx-f7ba92fc689f885ef67fad53c2eba63c.scn"]
 
 [params]
 

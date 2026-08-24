@@ -19,8 +19,9 @@ data = PackedVector3Array(-0.2122, 2, -0.122499995, -0.3464, 0, -0.19999999, 0, 
 
 [node name="tree15" unique_id=1847168837 instance=ExtResource("1_oydet")]
 
-[node name="tree15" parent="." index="0" unique_id=509885641]
+[node name="tree15" parent="." index="0" unique_id=1397547642]
 material_override = SubResource("ShaderMaterial_rfajw")
+visibility_range_end = 120.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree15" index="0" unique_id=1631196488]
 

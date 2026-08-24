@@ -53,8 +53,9 @@ shadow_mesh = SubResource("ArrayMesh_fu4fe")
 
 [node name="bush04" unique_id=902136107 instance=ExtResource("1_eb8ni")]
 
-[node name="bush04" parent="." index="0" unique_id=295516637]
+[node name="bush04" parent="." index="0" unique_id=363106752]
 transform = Transform3D(0.30353922, 0, 0, 0, 0.30353922, 4.945281e-08, 0, -4.945281e-08, 0.30353922, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_attm5")
 lod_bias = 0.4
+visibility_range_end = 120.0
 mesh = SubResource("ArrayMesh_4krvl")

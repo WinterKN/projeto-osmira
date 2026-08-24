@@ -60,14 +60,18 @@ data = PackedVector3Array(0.1414, -0.1065, 0.017199999, 0.1399, -0.0857, 0.0131,
 
 [node name="cabana quadrada" unique_id=1030294279 instance=ExtResource("1_yrdi8")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" parent_id_path=PackedInt32Array(810234436) index="0" unique_id=713223371]
+[node name="Cylinder" parent="." index="0" unique_id=1299458488]
+visibility_range_end = 130.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" index="0" unique_id=713223371]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D" index="0" unique_id=2010631400]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, -7.1054274e-15, 0, 1.4210855e-14, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_yrdi8")
 
-[node name="HUt" parent="." index="1" unique_id=1585028651]
+[node name="HUt" parent="." index="1" unique_id=108287722]
 material_override = SubResource("ShaderMaterial_afyox")
+visibility_range_end = 130.0
 mesh = SubResource("ArrayMesh_la324")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="HUt" index="0" unique_id=877074724]

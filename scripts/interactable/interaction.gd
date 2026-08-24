@@ -3,6 +3,7 @@ class_name interactable extends Node
 
 
 @export var fixed_camera: fixedCamera
+@export var dialog : Array[PackedScene]
 
 @export var player: Player
 var ui_esta_visivel: bool = false
@@ -20,12 +21,15 @@ func _ready() -> void:
 
 	if fixed_camera:
 		original_camera_transform = fixed_camera.global_transform
+		
+
+	
 	
 func _unhandled_input(event: InputEvent) -> void:
 	# Só permite interagir com a tecla "E" (ação "interact") se a UI estiver visível
 	if event.is_action_pressed("interact") and ui_esta_visivel:
 		print("Interagiu com o objeto!")
-		#olhar para o objeto
+		#olhar para o objeto e zoom
 		var tween = create_tween().set_parallel(true)
 		if interagivel == false:
 			fixed_camera.follow_object = false
@@ -39,8 +43,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			fixed_camera.follow_object = true
 			fixed_camera.object = self
 			tween.tween_property(fixed_camera, "fov", 35.0, 0.3).set_trans(Tween.TRANS_SINE)
+			#Mostrar dialogo
+			#Mudar estado da booleano para fechar o dialogo
 			interagivel = false
 			
+		
+		
 		
 			
 		

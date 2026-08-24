@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://0tn5t0ebns2w" path="res://scenes/world/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_navra"]
 [ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://shaders/crt.gdshader" id="16_fh13f"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cd2m8pqo8ck76" path="res://scenes/world.occ" id="22_oo54l"]
+[ext_resource type="PackedScene" uid="uid://bjyb7sfnbro22" path="res://scenes/world/assets/interactable/block.tscn" id="23_kpybi"]
+[ext_resource type="PackedScene" uid="uid://mrcodm1x0e0a" path="res://scenes/world/assets/dialogs/dialog1.tscn" id="24_ctatt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7t5mc"]
 size = Vector3(15.000123, 0.84399414, 16.709229)
@@ -2249,6 +2251,11 @@ mesh = SubResource("QuadMesh_l6p5f")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=103404073]
 occluder = ExtResource("22_oo54l")
+
+[node name="Node3D" parent="." unique_id=826261821 node_paths=PackedStringArray("fixed_camera") instance=ExtResource("23_kpybi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2020884, 0.9677782, 96.44929)
+fixed_camera = NodePath("../Stage/Cameras/fixedCamera5")
+dialog = Array[PackedScene]([ExtResource("24_ctatt")])
 
 [editable path="Player"]
 [editable path="Player/model"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://urnipa0orx34"
+path="res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Rainforest Canopy.mp3-9e2f265eb647ac41a6545a2afd078a84.mp3str"
+
+[deps]
+
+source_file="res://media_assets/audio/sfx/Nature Ambient/Forest Enviroments/AMB_Nature Pack Vol 1_Forest Enviroments_Rainforest Canopy.mp3"
+dest_files=["res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Rainforest Canopy.mp3-9e2f265eb647ac41a6545a2afd078a84.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://0lve1x4wlqpw"]
+
+[ext_resource type="PackedScene" uid="uid://cfout7t7dcsyb" path="res://game_assets/characters/model/Player.fbx" id="1_ii234"]
+
+[node name="Player" unique_id=572633973 instance=ExtResource("1_ii234")]
+
+[node name="Armature" parent="." index="0" unique_id=2052385024]
+transform = Transform3D(100, 0, 0, 0, -4.3711384e-06, 99.99999, 0, -99.99999, -4.3711384e-06, 0, 0, 0)

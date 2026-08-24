@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://6n8c5hs1lqnt"]
+
+[ext_resource type="Script" uid="uid://dmy2fxhlro3nq" path="res://scripts/ui/Menu/hotkey_rebind_button.gd" id="1_qlhnl"]
+
+[node name="Hotkey_Rebind_Button" type="Control" unique_id=2135745530 groups=["hotkey_button"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qlhnl")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=255884413]
+layout_mode = 1
+offset_right = 808.0
+offset_bottom = 58.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=884208732]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "ACTION"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1024662695]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 200
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=375824283]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "ACTION_KEY"
+
+[connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

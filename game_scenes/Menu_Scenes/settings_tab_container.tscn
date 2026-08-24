@@ -1,0 +1,181 @@
+[gd_scene format=3 uid="uid://r2xpmok8gsqj"]
+
+[ext_resource type="PackedScene" uid="uid://btsvfli134np1" path="res://game_scenes/Menu_Scenes/window_mode_button.tscn" id="1_5i3gu"]
+[ext_resource type="PackedScene" uid="uid://6n8c5hs1lqnt" path="res://game_scenes/Menu_Scenes/hotkey_rebind_button.tscn" id="1_umlia"]
+[ext_resource type="PackedScene" uid="uid://c6pm8utiq7b0r" path="res://game_scenes/Menu_Scenes/resolution_mode_button.tscn" id="2_oqv5h"]
+[ext_resource type="PackedScene" uid="uid://b5b4tbbg28ghl" path="res://game_scenes/Menu_Scenes/audio_slider_settings.tscn" id="4_yidbj"]
+[ext_resource type="PackedScene" uid="uid://cruol6487jerm" path="res://game_scenes/Menu_Scenes/acessibility_check_button.tscn" id="5_i8v1o"]
+
+[node name="Settings_Tab_Container" type="Control" unique_id=968520800]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=790373798]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 60.0
+offset_right = -100.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 3
+
+[node name="Graphics" type="TabBar" parent="TabContainer" unique_id=1025351019]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics" unique_id=1889735117]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer" unique_id=688977774]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer" unique_id=389677176]
+layout_mode = 2
+theme_override_constants/separation = 128
+
+[node name="Window_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" unique_id=841151006 instance=ExtResource("1_5i3gu")]
+layout_mode = 2
+
+[node name="Resolution_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" unique_id=69906216 instance=ExtResource("2_oqv5h")]
+layout_mode = 2
+
+[node name="Controls" type="TabBar" parent="TabContainer" unique_id=585005283]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls" unique_id=1162571533]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer" unique_id=1506531613]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer" unique_id=955334345]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Hotkey_Rebind_Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=596979881 instance=ExtResource("1_umlia")]
+layout_mode = 2
+action_name = "interact"
+
+[node name="Hotkey_Rebind_Button2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2135745530 instance=ExtResource("1_umlia")]
+layout_mode = 2
+
+[node name="Hotkey_Rebind_Button3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1240868560 instance=ExtResource("1_umlia")]
+layout_mode = 2
+action_name = "move_backward"
+
+[node name="Hotkey_Rebind_Button4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=8455565 instance=ExtResource("1_umlia")]
+layout_mode = 2
+action_name = "turn_left"
+
+[node name="Hotkey_Rebind_Button5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1301885390 instance=ExtResource("1_umlia")]
+layout_mode = 2
+action_name = "turn_right"
+
+[node name="Hotkey_Rebind_Button6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=825286549 instance=ExtResource("1_umlia")]
+layout_mode = 2
+action_name = "run"
+
+[node name="Sound" type="TabBar" parent="TabContainer" unique_id=532246045]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound" unique_id=1139623714]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer" unique_id=1557029671]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer" unique_id=193635570]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Audio_Slider_Settings" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=804341132 instance=ExtResource("4_yidbj")]
+layout_mode = 2
+
+[node name="Audio_Slider_Settings2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1461530623 instance=ExtResource("4_yidbj")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Audio_Slider_Settings3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1679387475 instance=ExtResource("4_yidbj")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="Accessibility" type="TabBar" parent="TabContainer" unique_id=2124851860]
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Accessibility" unique_id=1186766213]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Accessibility/MarginContainer" unique_id=355359096]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Acessibility_check_button" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer" unique_id=1598311314 instance=ExtResource("5_i8v1o")]
+layout_mode = 2
+setting_name = &"film_grain"
+display_name = "Film Grain"
+
+[node name="Acessibility_check_button2" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer" unique_id=1514513000 instance=ExtResource("5_i8v1o")]
+layout_mode = 2
+setting_name = &"chromatic_aberration"
+display_name = "Chromatic Aberration"
+
+[node name="Acessibility_check_button3" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer" unique_id=267787560 instance=ExtResource("5_i8v1o")]
+layout_mode = 2
+setting_name = &"dithering"
+display_name = "Dithering"
+
+[node name="Acessibility_check_button4" parent="TabContainer/Accessibility/MarginContainer/VBoxContainer" unique_id=1705167190 instance=ExtResource("5_i8v1o")]
+layout_mode = 2
+setting_name = &"screen_distortion"
+display_name = "Screen Distortion"

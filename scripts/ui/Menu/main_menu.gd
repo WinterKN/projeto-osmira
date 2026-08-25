@@ -1,11 +1,11 @@
 class_name MainMenu
 extends Control
 
-@onready var start_button = $MarginContainer/HBoxContainer/VBoxContainer/Start_Button as Button
-@onready var exit_button = $MarginContainer/HBoxContainer/VBoxContainer/Exit_Button as Button
-@onready var options_button = $MarginContainer/HBoxContainer/VBoxContainer/Options_Button as Button
-@onready var options_menu = $Options_Menu as OptionsMenu
-@onready var margin_container = $MarginContainer as MarginContainer
+@onready var start_button = $InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/Start_Button as Button
+@onready var exit_button = $InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/Exit_Button as Button
+@onready var options_button = $InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/Options_Button as Button
+@onready var options_menu = $InterfaceLayer/Options_Menu as OptionsMenu
+@onready var margin_container = $InterfaceLayer/MarginContainer as MarginContainer
 
 
 @onready var start_level = preload("res://game_scenes/Main_Scene/world.tscn") as PackedScene

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6n8c5hs1lqnt"]
 
 [ext_resource type="Script" uid="uid://dmy2fxhlro3nq" path="res://scripts/ui/Menu/hotkey_rebind_button.gd" id="1_qlhnl"]
+[ext_resource type="FontFile" uid="uid://biuoltj113hcn" path="res://media_assets/ui/Menu/Fonts/Cinzel/Cinzel-VariableFont_wght.ttf" id="2_la8be"]
 
 [node name="Hotkey_Rebind_Button" type="Control" unique_id=2135745530 groups=["hotkey_button"]]
 layout_mode = 3
@@ -20,6 +21,7 @@ alignment = 1
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=884208732]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_la8be")
 theme_override_font_sizes/font_size = 32
 text = "ACTION"
 vertical_alignment = 1
@@ -32,6 +34,7 @@ theme_override_constants/separation = 200
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=375824283]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_la8be")
 theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "ACTION_KEY"

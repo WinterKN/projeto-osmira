@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://prwskqrmucx2"
-path="res://.godot/imported/caixa_de_dialogo.png-0e770747283cd9fda40278ea9d46bbbf.ctex"
+uid="uid://b3qypj6yef2vp"
+path="res://.godot/imported/Controls.png-24939d25729d0f3065f7ea75c7f96eab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://media_assets/UI/caixa_de_dialogo.png"
-dest_files=["res://.godot/imported/caixa_de_dialogo.png-0e770747283cd9fda40278ea9d46bbbf.ctex"]
+source_file="res://media_assets/ui/Menu/Settings Tab/Buttons/Selected/Controls.png"
+dest_files=["res://.godot/imported/Controls.png-24939d25729d0f3065f7ea75c7f96eab.ctex"]
 
 [params]
 

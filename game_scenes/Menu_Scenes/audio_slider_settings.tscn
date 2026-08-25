@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b5b4tbbg28ghl"]
 
 [ext_resource type="Script" uid="uid://b1ovd6nxmrbu2" path="res://scripts/ui/Menu/audio_slider_settings.gd" id="1_5wjuf"]
+[ext_resource type="FontFile" uid="uid://biuoltj113hcn" path="res://media_assets/ui/Menu/Fonts/Cinzel/Cinzel-VariableFont_wght.ttf" id="2_kebwp"]
 
 [node name="Audio_Slider_Settings" type="Control" unique_id=804341132]
 layout_mode = 3
@@ -21,6 +22,7 @@ theme_override_constants/separation = 42
 [node name="Audio_Name_Lbl" type="Label" parent="HBoxContainer" unique_id=1832539552]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kebwp")
 theme_override_font_sizes/font_size = 32
 text = "Master Volume"
 
@@ -40,5 +42,6 @@ layout_mode = 2
 [node name="Audio_Num_Lbl" type="Label" parent="HBoxContainer" unique_id=825093840]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_kebwp")
 theme_override_font_sizes/font_size = 32
 text = "100"

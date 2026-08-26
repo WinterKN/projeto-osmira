@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sqb68k0w7d6c"
-valid=false
+uid="uid://c0ope35gxj54t"
+path="res://.godot/imported/barbage_container_red.png-87ca68a74153cdf76c5bc951488de7b6.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://scenes/world/nature/ground/forrest_sand_01_nor_gl_1k.exr"
+source_file="res://game_assets/world/buildings/OBRA/barbage_container_red.png"
+dest_files=["res://.godot/imported/barbage_container_red.png-87ca68a74153cdf76c5bc951488de7b6.ctex"]
 
 [params]
 

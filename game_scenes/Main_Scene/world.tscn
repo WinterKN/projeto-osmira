@@ -34,6 +34,8 @@
 [ext_resource type="Script" uid="uid://cfbwrsktd32g1" path="res://scripts/acessibility_effects/game_effects.gd" id="25_k3ap7"]
 [ext_resource type="Shader" uid="uid://dq4udl5a5fk1e" path="res://addons/lowpolyterrain/shader/terrain_paint_overlay.gdshader" id="26_rwifv"]
 [ext_resource type="Texture2D" uid="uid://q0s8sv8jfkf" path="res://game_assets/world/nature/ground/forrest_sand_01_diff_1k.jpg" id="28_2x71e"]
+[ext_resource type="PackedScene" uid="uid://ds463euj042jr" path="res://game_scenes/Ui_scenes/dialog1.tscn" id="35_p2083"]
+[ext_resource type="PackedScene" uid="uid://bjyb7sfnbro22" path="res://game_assets/world/assets/interactables/block.tscn" id="36_fdcuy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pwhxm"]
 size = Vector3(7.9764576, 2.48658, 18.601654)
@@ -55448,6 +55450,16 @@ collision_mask = 0
 
 [node name="Chunk_59_59_Col" type="CollisionShape3D" parent="chao/LowPolyTerrainManager_Collisions/Static_Chunk_59_59" unique_id=1703901576]
 shape = SubResource("ConcavePolygonShape3D_llx4u")
+
+[node name="Dialogues" type="Node" parent="." unique_id=291050720]
+
+[node name="Dialog1" parent="Dialogues" unique_id=1872024788 instance=ExtResource("35_p2083")]
+
+[node name="Node3D" parent="Dialogues" unique_id=826261821 node_paths=PackedStringArray("fixed_camera", "dialogues") instance=ExtResource("36_fdcuy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4401674, 1.1699991, 3.071391)
+fixed_camera = NodePath("../../Cameras/Fixed Cameras/fixedCamera8")
+dialogues = NodePath("../Dialog1")
+arquivo_dialogo_txt = "res://game_text/dialog2.txt"
 
 [editable path="Player"]
 [editable path="Player/model"]

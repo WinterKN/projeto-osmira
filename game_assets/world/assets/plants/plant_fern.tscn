@@ -55,6 +55,7 @@ shadow_mesh = SubResource("ArrayMesh_m7548")
 
 [node name="plant_fern" unique_id=35575151 instance=ExtResource("1_1suhk")]
 
-[node name="plant_fern" parent="." index="0" unique_id=1364679695]
+[node name="plant_fern" parent="." index="0" unique_id=118180954]
 material_override = SubResource("ShaderMaterial_ttpin")
+visibility_range_end = 120.0
 mesh = SubResource("ArrayMesh_hpnjq")

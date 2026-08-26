@@ -1,9 +1,45 @@
 [gd_scene format=3 uid="uid://b51y3ouu5f0br"]
 
-[ext_resource type="Texture2D" uid="uid://b36yb4uxc6r7h" path="res://ui/Menu/Images/menu-background.jpg" id="1_06t4h"]
 [ext_resource type="Script" uid="uid://cp22ayfgur0jr" path="res://scripts/ui/Menu/main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Shader" uid="uid://d3cn6jjcnaigh" path="res://shaders/crt.gdshader" id="2_lkil4"]
 [ext_resource type="PackedScene" uid="uid://ce05eygrp1awi" path="res://game_scenes/Menu_Scenes/options_menu.tscn" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://cjju3dfxalo2u" path="res://media_assets/ui/Menu/Images/Artwork Titulo.png" id="3_lkil4"]
 [ext_resource type="AudioStream" uid="uid://ddq7t2787lma7" path="res://media_assets/audio/music/menu/MenuSoundtrack.ogg" id="4_4dvv7"]
+[ext_resource type="FontFile" uid="uid://dfl0gdngpbhyr" path="res://media_assets/ui/Menu/Fonts/Cinzel/static/Cinzel-Black.ttf" id="4_gnt31"]
+[ext_resource type="FontFile" uid="uid://bkcpyka82eu08" path="res://media_assets/ui/Menu/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="6_1qut5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1qut5"]
+shader = ExtResource("2_lkil4")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0400000019
+shader_parameter/scanlines_width = 0.01600000076
+shader_parameter/grille_opacity = 0.0330000015675
+shader_parameter/resolution = Vector2(1280, 960)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.5000000679901202
+shader_parameter/distort_intensity = 0.0090000004275
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.10000000475
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.2
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0550000026125
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.3
+shader_parameter/vignette_opacity = 0.6800000323
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gnt31"]
+load_path = "res://.godot/imported/Background1.jpg-73ed683937d22991986d6c8ef1304102.ctex"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnt31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6cc6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qut5"]
 
 [node name="Main_Menu" type="Control" unique_id=418046002]
 layout_mode = 3
@@ -18,8 +54,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7vrkn")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=523842458]
-layout_mode = 1
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=489516778]
+layer = 0
+
+[node name="CRT" type="ColorRect" parent="BackgroundLayer" unique_id=742100743]
+z_index = 1
+material = SubResource("ShaderMaterial_1qut5")
+anchors_preset = -1
+anchor_left = -0.00703125
+anchor_top = -0.003125
+anchor_right = 1.0015625
+anchor_bottom = 1.0166668
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="BackgroundLayer" unique_id=523842458]
+modulate = Color(0.4351923, 0.43519226, 0.43519226, 1)
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.998
@@ -29,10 +80,25 @@ offset_right = 4.0
 offset_bottom = 19.919983
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_06t4h")
+texture = SubResource("CompressedTexture2D_gnt31")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2059590148]
-layout_mode = 1
+[node name="Title Artwork" type="TextureRect" parent="BackgroundLayer" unique_id=1932616550]
+custom_maximum_size = Vector2(800, 300)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 240.0
+offset_top = 50.0
+offset_right = -240.0
+offset_bottom = 350.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_lkil4")
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="." unique_id=1827708157]
+
+[node name="MarginContainer" type="MarginContainer" parent="InterfaceLayer" unique_id=2059590148]
+z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -43,55 +109,115 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=841493031]
+[node name="VBoxContainer" type="VBoxContainer" parent="InterfaceLayer/MarginContainer" unique_id=841493031]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=364557613]
+[node name="Separator" type="Control" parent="InterfaceLayer/MarginContainer/VBoxContainer" unique_id=364557613]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1203015042]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/outline_size = 24
-theme_override_font_sizes/font_size = 64
-text = "GAME TITLE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1094633408]
+[node name="HBoxContainer" type="HBoxContainer" parent="InterfaceLayer/MarginContainer" unique_id=1094633408]
 layout_mode = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1705643472]
+[node name="VBoxContainer" type="VBoxContainer" parent="InterfaceLayer/MarginContainer/HBoxContainer" unique_id=1705643472]
 layout_mode = 2
 theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1414638757]
+[node name="Separator" type="Control" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1414638757]
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
+size_flags_vertical = 4
 
-[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=279099980]
-custom_minimum_size = Vector2(120, 32)
+[node name="Start_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=279099980]
+custom_minimum_size = Vector2(480, 78)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Start Game"
+theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
+theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
+theme_override_fonts/font = ExtResource("4_gnt31")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
+text = "Iniciar novo jogo"
 
-[node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1970852205]
-custom_minimum_size = Vector2(120, 32)
+[node name="Load_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1222044531]
+custom_minimum_size = Vector2(480, 78)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Options"
+theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
+theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
+theme_override_fonts/font = ExtResource("4_gnt31")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
+text = "carregar jogo salvo"
 
-[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=867707371]
-custom_minimum_size = Vector2(120, 32)
+[node name="Options_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1970852205]
+custom_minimum_size = Vector2(480, 78)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Exit Game"
+theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
+theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
+theme_override_fonts/font = ExtResource("4_gnt31")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
+text = "configurações"
 
-[node name="Options_Menu" parent="." unique_id=780487390 instance=ExtResource("3_fu7sn")]
+[node name="Exit_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=867707371]
+custom_minimum_size = Vector2(480, 78)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
+theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
+theme_override_fonts/font = ExtResource("4_gnt31")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
+text = "sair do jogo"
+
+[node name="Options_Menu" parent="InterfaceLayer" unique_id=780487390 instance=ExtResource("3_fu7sn")]
 visible = false
-layout_mode = 1
+
+[node name="LoadingLayer" type="CanvasLayer" parent="." unique_id=356402903]
+unique_name_in_owner = true
+layer = 100
+
+[node name="Background" type="ColorRect" parent="LoadingLayer" unique_id=179491168]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="LoadingLayer/Background" unique_id=1550945479]
+layout_mode = 0
+offset_right = 1287.0
+offset_bottom = 975.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoadingLayer/Background/CenterContainer" unique_id=194515039]
+layout_mode = 2
+alignment = 1
+
+[node name="LoadingLabel" type="Label" parent="LoadingLayer/Background/CenterContainer/VBoxContainer" unique_id=715949682]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_1qut5")
+theme_override_font_sizes/font_size = 48
+text = "CARREGANDO..."
+
+[node name="ProgressBar" type="ProgressBar" parent="LoadingLayer/Background/CenterContainer/VBoxContainer" unique_id=1365776209]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=616953130]
 stream = ExtResource("4_4dvv7")

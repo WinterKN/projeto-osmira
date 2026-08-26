@@ -16,5 +16,6 @@ shader_parameter/wind_direction = Vector2(1, 0.35)
 
 [node name="plant_tall" unique_id=506697369 instance=ExtResource("1_f1ium")]
 
-[node name="plant_tall" parent="." index="0" unique_id=497916754]
+[node name="plant_tall" parent="." index="0" unique_id=1120245539]
 material_override = SubResource("ShaderMaterial_8mi20")
+visibility_range_end = 120.0

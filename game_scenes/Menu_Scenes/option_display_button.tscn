@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dkx1ph32u74ie"]
 
+[ext_resource type="FontFile" uid="uid://biuoltj113hcn" path="res://media_assets/ui/Menu/Fonts/Cinzel/Cinzel-VariableFont_wght.ttf" id="1_ear5p"]
+
 [node name="Option_Display_Button" type="Control" unique_id=841151006]
 layout_mode = 3
 anchors_preset = 15
@@ -17,6 +19,7 @@ theme_override_constants/separation = 160
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1770606318]
 custom_minimum_size = Vector2(264, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ear5p")
 theme_override_font_sizes/font_size = 32
 text = "BASE_LABEL"
 vertical_alignment = 1

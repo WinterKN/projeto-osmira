@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cu1p2tm7574gw" path="res://scripts/ui/Menu/acessibility_check_button.gd" id="1_1v8dr"]
 [ext_resource type="FontFile" uid="uid://biuoltj113hcn" path="res://media_assets/ui/Menu/Fonts/Cinzel/Cinzel-VariableFont_wght.ttf" id="2_5yaf8"]
+[ext_resource type="Texture2D" uid="uid://byfsp2m3ukk87" path="res://media_assets/ui/Menu/Settings Tab/sliderGrabb.png" id="3_r1og0"]
+[ext_resource type="Texture2D" uid="uid://dxcvjwm436ibo" path="res://media_assets/ui/Menu/Settings Tab/sliderGrabbHighlight.png" id="4_48ky7"]
 
 [node name="Acessibility_check_button" type="Control" unique_id=1598311314]
 layout_mode = 3
@@ -24,6 +26,7 @@ theme_override_constants/separation = 64
 [node name="Name_Label" type="Label" parent="HBoxContainer" unique_id=1912421650]
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.7882353, 0.69803923, 1)
 theme_override_fonts/font = ExtResource("2_5yaf8")
 theme_override_font_sizes/font_size = 32
 text = "OPTION NAME"
@@ -38,6 +41,8 @@ layout_mode = 2
 
 [node name="CheckButton" type="CheckButton" parent="HBoxContainer/CenterContainer" unique_id=1083723767]
 layout_mode = 2
+theme_override_icons/checked = ExtResource("3_r1og0")
+theme_override_icons/unchecked = ExtResource("4_48ky7")
 button_pressed = true
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer" unique_id=1903727800]
@@ -46,6 +51,7 @@ theme_override_constants/separation = 124
 
 [node name="State_Label" type="Label" parent="HBoxContainer" unique_id=1167964184]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.84705883, 0.7882353, 0.69803923, 1)
 theme_override_fonts/font = ExtResource("2_5yaf8")
 theme_override_font_sizes/font_size = 32
 text = "ON"

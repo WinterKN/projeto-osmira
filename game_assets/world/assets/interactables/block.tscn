@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bjyb7sfnbro22"]
+
+[ext_resource type="Script" uid="uid://b7la3y1jl6e11" path="res://scripts/interact/interaction.gd" id="1_tsql6"]
+[ext_resource type="PackedScene" uid="uid://l0a5nwr6k3xn" path="res://game_assets/world/assets/interactables/interaction.tscn" id="2_ad5vq"]
+[ext_resource type="PackedScene" uid="uid://ds463euj042jr" path="res://game_scenes/Ui_scenes/dialog1.tscn" id="3_ejllx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kpybi"]
+size = Vector3(1, 0.6496582, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0i88t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0i88t"]
+
+[node name="Node3D" type="Node3D" unique_id=826261821]
+script = ExtResource("1_tsql6")
+
+[node name="Trigger" type="Area3D" parent="." unique_id=887153514]
+collision_layer = 0
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=523257831]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.8536239, 0)
+shape = SubResource("BoxShape3D_kpybi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1218422527]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=702810685]
+mesh = SubResource("BoxMesh_0i88t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1629047473]
+shape = SubResource("BoxShape3D_0i88t")
+
+[node name="Interaction" parent="." unique_id=738883378 instance=ExtResource("2_ad5vq")]
+
+[node name="Dialog1" parent="." unique_id=1872024788 instance=ExtResource("3_ejllx")]
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_exited" from="Trigger" to="." method="_on_trigger_body_exited"]

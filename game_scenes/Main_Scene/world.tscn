@@ -53,10 +53,10 @@ size = Vector3(16.695427, 2.9759598, 18.219994)
 size = Vector3(8.921502, 2.9759598, 18.601654)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2x71e"]
-size = Vector3(14.290344, 2.9759598, 18.601654)
+size = Vector3(14.865997, 2.9759598, 18.601654)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnndm"]
-size = Vector3(11.233391, 2.7498207, 14.514654)
+size = Vector3(11.448727, 2.7498207, 14.514654)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_75uq0"]
 size = Vector3(16.132446, 2.2500324, 17.871965)
@@ -15730,11 +15730,20 @@ transform = Transform3D(-0.073751464, -0.030760422, -0.9967937, -0.40245882, 0.9
 shape = SubResource("BoxShape3D_2x71e")
 debug_color = Color(0.21331847, 0.44123748, 1, 1)
 
+[node name="fixedCamera15" parent="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras" unique_id=758652826 instance=ExtResource("1_lakw3")]
+transform = Transform3D(0.9996832, 0.015949598, -0.019472048, 0, 0.7736082, 0.6336642, 0.025170425, -0.63346344, 0.7733631, -3.041498, 5.3817134, -79.85473)
+follow_player = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera15/Trigger" parent_id_path=PackedInt32Array(758652826, 942678734) index="0" unique_id=1844439620]
+transform = Transform3D(-0.07344212, 0.00946209, -0.99724615, -0.64475274, 0.7624314, 0.054716192, 0.7608552, 0.64700055, -0.04989403, -1.8004737, 0.16762543, -9.873001)
+shape = SubResource("BoxShape3D_2x71e")
+debug_color = Color(0.21331847, 0.44123748, 1, 1)
+
 [node name="fixedCamera14" parent="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras" unique_id=60356630 instance=ExtResource("1_lakw3")]
 transform = Transform3D(-0.25107858, -0.24018586, 0.9376942, -0.029696286, 0.970181, 0.24055569, -0.9675111, 0.03255234, -0.2507243, 3.1159475, 2.1047544, -75.51162)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera14/Trigger" parent_id_path=PackedInt32Array(60356630, 942678734) index="0" unique_id=1656775512]
-transform = Transform3D(0.9760096, -0.035506994, -0.214746, -0.016284844, 0.9719067, -0.23470335, 0.21704318, 0.23258199, 0.9480192, -0.9721527, -0.083902836, -7.3709993)
+transform = Transform3D(0.9760096, -0.035506994, -0.21474677, -0.016284844, 0.9719067, -0.23470291, 0.21704318, 0.23258199, 0.94801986, -0.8670654, -0.08565664, -7.3476295)
 shape = SubResource("BoxShape3D_wnndm")
 
 [node name="Superior Right Side Camera" type="Node" parent="Cameras/Fixed Cameras/Outside Spaces" unique_id=1068083504]
@@ -55758,6 +55767,7 @@ shape = SubResource("ConcavePolygonShape3D_8nuhn")
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera11"]
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera12"]
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera13"]
+[editable path="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera15"]
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera14"]
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Inferior Right Side Avenue Cameras/fixedCamera"]
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Inferior Right Side Avenue Cameras/fixedCamera1_2"]

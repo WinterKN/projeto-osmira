@@ -14,12 +14,12 @@ script = ExtResource("1_qlhnl")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=255884413]
 layout_mode = 1
-offset_right = 808.0
-offset_bottom = 58.0
+offset_right = 1004.0
+offset_bottom = 64.0
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=884208732]
-custom_minimum_size = Vector2(400, 0)
+custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_la8be")
 theme_override_font_sizes/font_size = 32
@@ -27,12 +27,13 @@ text = "ACTION"
 vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=1024662695]
+custom_minimum_size = Vector2(1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 200
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=375824283]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_la8be")
 theme_override_font_sizes/font_size = 24

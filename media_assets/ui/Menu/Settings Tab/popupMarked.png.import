@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmohohdogmpni"
-path="res://.godot/imported/Controls.png-915e96bdc0c3621f045846e1532d07f9.ctex"
+uid="uid://b48s56wmyewwy"
+path="res://.godot/imported/popupMarked.png-d71f54c149cce7217619e816d9c064e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://media_assets/ui/Menu/Settings Tab/Buttons/Non-Selected/Controls.png"
-dest_files=["res://.godot/imported/Controls.png-915e96bdc0c3621f045846e1532d07f9.ctex"]
+source_file="res://media_assets/ui/Menu/Settings Tab/popupMarked.png"
+dest_files=["res://.godot/imported/popupMarked.png-d71f54c149cce7217619e816d9c064e0.ctex"]
 
 [params]
 

@@ -17,19 +17,19 @@ func set_action_name() -> void:
 	
 	match action_name:
 		"move_forward":
-			label.text = "Forward"
+			label.text = "Frente"
 		"turn_left":
-			label.text = "Left"
+			label.text = "Esquerda"
 		"move_backward":
-			label.text = "Backward"
+			label.text = "Trás"
 		"turn_right":
-			label.text = "Right"
+			label.text = "Direita"
 		"interact":
-			label.text = "Interact"
+			label.text = "Interagir"
 		"run":
-			label.text = "Sprint"
+			label.text = "Correr"
 		"quick_turn":
-			label.text = "Turn"
+			label.text = "Virar"
 			
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
@@ -41,7 +41,7 @@ func set_text_for_key() -> void:
 
 func _on_button_toggled(button_pressed):
 	if button_pressed:
-		button.text = "Press any key..."
+		button.text = "Pressisone um botão..."
 		set_process_unhandled_key_input(button_pressed)
 		
 		for i in get_tree().get_nodes_in_group("hotkey_button"):

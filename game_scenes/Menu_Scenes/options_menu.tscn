@@ -44,14 +44,8 @@ button_group = SubResource("ButtonGroup_eddpt")
 button_group = SubResource("ButtonGroup_eddpt")
 
 [node name="Bottom_Tab_Buttons" parent="MarginContainer/VBoxContainer/Settings_Tab_Container" index="3" unique_id=744858486]
-visible = false
-
-[node name="Exit_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1790358260]
-custom_minimum_size = Vector2(1000, 54)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 20
-text = "Exit"
+offset_left = 90.0
+offset_top = -92.890015
+offset_right = -90.0
 
 [editable path="MarginContainer/VBoxContainer/Settings_Tab_Container"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ceo8d8cy3seh1"
-path="res://.godot/imported/Graphics.png-b10ff94bb32f63155977454e658d2cdf.ctex"
+uid="uid://byfsp2m3ukk87"
+path="res://.godot/imported/sliderGrabb.png-660d8d254014a21d1f986142f71bd9a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://media_assets/ui/Menu/Settings Tab/Buttons/Non-Selected/Graphics.png"
-dest_files=["res://.godot/imported/Graphics.png-b10ff94bb32f63155977454e658d2cdf.ctex"]
+source_file="res://media_assets/ui/Menu/Settings Tab/sliderGrabb.png"
+dest_files=["res://.godot/imported/sliderGrabb.png-660d8d254014a21d1f986142f71bd9a3.ctex"]
 
 [params]
 

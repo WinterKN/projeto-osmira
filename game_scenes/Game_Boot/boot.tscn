@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://f2ymi1by4y3f"]
+
+[ext_resource type="Script" uid="uid://bh8r5y2cpa0xw" path="res://scripts/boot/boot.gd" id="1_0u377"]
+[ext_resource type="PackedScene" uid="uid://b51y3ouu5f0br" path="res://game_scenes/Menu_Scenes/main_menu.tscn" id="2_txngd"]
+[ext_resource type="Texture2D" uid="uid://rhfavnptx2w1" path="res://icon.svg" id="3_txngd"]
+[ext_resource type="AudioStream" uid="uid://dpw135my5824m" path="res://media_assets/audio/sfx/boot/vhsTape.ogg" id="4_txngd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0u377"]
+load_path = "res://.godot/imported/logocrede10.png-bda45658621b743ba183928408bb419f.ctex"
+
+[sub_resource type="Animation" id="Animation_ls4nb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WarningLayer:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameLogoLayer/GameLogo:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FadeTransition:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmiwh"]
+_data = {
+&"RESET": SubResource("Animation_ls4nb")
+}
+
+[sub_resource type="Animation" id="Animation_0u377"]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeTransition:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_r5wnf"]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameLogoLayer/GameLogo:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 3.1, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_adgid"]
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StudioLayer/StudioLogo:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.50000006, 2.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_eqi5x"]
+resource_name = "warning"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WarningLayer:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.5, 4.2, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jcm4m"]
+_data = {
+&"fade_to_menu": SubResource("Animation_0u377"),
+&"game_logo": SubResource("Animation_r5wnf"),
+&"studio_logo": SubResource("Animation_adgid"),
+&"warning": SubResource("Animation_eqi5x")
+}
+
+[node name="BootScene" type="Control" unique_id=1659179284]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0u377")
+main_menu_scene = ExtResource("2_txngd")
+
+[node name="Background" type="ColorRect" parent="." unique_id=162541593]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="WarningLayer" type="CenterContainer" parent="." unique_id=799364525]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WarningText" type="Label" parent="WarningLayer" unique_id=989770461]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Este jogo contém representações de violência,
+perseguição e acontecimentos inspirados em fatos históricos."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StudioLayer" type="CenterContainer" parent="." unique_id=947172272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StudioLogo" type="TextureRect" parent="StudioLayer" unique_id=238571152]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(600, 125)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_0u377")
+
+[node name="GameLogoLayer" type="CenterContainer" parent="." unique_id=708685144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameLogo" type="TextureRect" parent="GameLogoLayer" unique_id=539456790]
+layout_mode = 2
+texture = ExtResource("3_txngd")
+
+[node name="BootAudio" type="AudioStreamPlayer" parent="." unique_id=1176043105]
+stream = ExtResource("4_txngd")
+volume_db = -8.0
+autoplay = true
+
+[node name="FadeTransition" type="ColorRect" parent="." unique_id=1347070121]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1445698666]
+libraries/ = SubResource("AnimationLibrary_cmiwh")
+libraries/Boot = SubResource("AnimationLibrary_jcm4m")

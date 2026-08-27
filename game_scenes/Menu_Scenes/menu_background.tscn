@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://7fivtffvrc2q"]
+
+[ext_resource type="PackedScene" uid="uid://byl0u6kyhcn6j" path="res://game_assets/world/assets/furniture/candle.tscn" id="1_h1gw0"]
+[ext_resource type="Texture2D" uid="uid://dh1hga0nka32u" path="res://game_assets/world/buildings/floor/wood_plank_charred.jpg" id="1_hpj7q"]
+[ext_resource type="PackedScene" uid="uid://c4hd5yu0b625s" path="res://game_assets/world/assets/furniture/chair.tscn" id="2_wodh5"]
+[ext_resource type="PackedScene" uid="uid://b20jyfkjjyo1j" path="res://game_assets/world/assets/furniture/table_03.tscn" id="3_h1gw0"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://shaders/psx_camera_shader.gdshader" id="4_t866u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7hk8"]
+render_priority = 0
+shader = ExtResource("4_t866u")
+shader_parameter/dither_amount = 0.5
+shader_parameter/enable_fog = false
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 100.0
+shader_parameter/fog_fade_range = 50.0
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 256
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.3250000154375
+
+[sub_resource type="QuadMesh" id="QuadMesh_48euw"]
+material = SubResource("ShaderMaterial_q7hk8")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jqch"]
+albedo_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+albedo_texture = ExtResource("1_hpj7q")
+metallic = 0.1
+metallic_specular = 0.26
+uv1_scale = Vector3(2, 2, 2)
+grow_amount = -3.265
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wodh5"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_hpj7q")
+metallic = 0.1
+metallic_specular = 0.26
+uv1_scale = Vector3(2, 2, 2)
+grow_amount = -3.265
+
+[sub_resource type="Environment" id="Environment_wodh5"]
+background_mode = 1
+background_color = Color(0.019607844, 0.019607844, 0.019607844, 1)
+ambient_light_source = 2
+ambient_light_energy = 0.02
+fog_light_energy = 0.51
+fog_height = -773.22
+adjustment_contrast = 0.8
+
+[node name="menu_background" type="Node3D" unique_id=40186117]
+
+[node name="scenarious" type="Node3D" parent="." unique_id=576057434]
+
+[node name="Candles" type="Node" parent="scenarious" unique_id=272891579]
+
+[node name="CANDLE" parent="scenarious/Candles" unique_id=760694377 instance=ExtResource("1_h1gw0")]
+transform = Transform3D(0.32852316, 0, 0, 0, 0.2736915, 0, 0, 0, 0.3398203, -0.60154486, 0.7061096, -1.9541184)
+
+[node name="CANDLE2" parent="scenarious/Candles" unique_id=1429927613 instance=ExtResource("1_h1gw0")]
+transform = Transform3D(0.3458941, 0, 0, 0, 0.38300762, 0, 0, 0, 0.3398203, -0.60154486, 0.7061096, -1.975986)
+
+[node name="CANDLE3" parent="scenarious/Candles" unique_id=1678663981 instance=ExtResource("1_h1gw0")]
+transform = Transform3D(0.30707595, 0, 0, 0, 0.3429139, 0, 0, 0, 0.3214929, -0.5817334, 0.7061096, -1.963238)
+
+[node name="chair" parent="scenarious" unique_id=785903246 instance=ExtResource("2_wodh5")]
+transform = Transform3D(0.3499581, 0, 0.9367654, 0, 1, 0, -0.9367654, 0, 0.3499581, -0.001523912, 0, -1.0436728)
+
+[node name="table03" parent="scenarious" unique_id=799584975 instance=ExtResource("3_h1gw0")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.0044133216, 0, -2.105416)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="scenarious/table03" unique_id=2003024550]
+mesh = SubResource("QuadMesh_48euw")
+
+[node name="Floor" type="CSGBox3D" parent="scenarious" unique_id=174374165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07006884, 0)
+lod_bias = 0.4
+size = Vector3(8, 0.07675781, 8)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Wall1" type="CSGBox3D" parent="scenarious" unique_id=2034922458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2881495, -4.762802)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 3.2173157)
+material = SubResource("StandardMaterial3D_wodh5")
+
+[node name="Wall2" type="CSGBox3D" parent="scenarious" unique_id=1981425850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2881495, 3.806456)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 0.3577881)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Wall3" type="CSGBox3D" parent="scenarious" unique_id=228617816]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 1.2881495, 0.014680386)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 0.3577881)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Wall4" type="CSGBox3D" parent="scenarious" unique_id=1963754680]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9007998, 1.2881495, 0.014680386)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 0.3577881)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Roof" type="CSGBox3D" parent="scenarious" unique_id=467545544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6573496, 0)
+lod_bias = 0.4
+size = Vector3(8, 0.122851565, 8)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=624787978]
+environment = SubResource("Environment_wodh5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=753534194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5865384, 0.8768779, -1.9596056)
+light_color = Color(1, 0.827451, 0.60784316, 1)
+light_energy = 1.941
+light_indirect_energy = 5.078
+light_volumetric_fog_energy = 1.981
+light_size = 0.039
+shadow_enabled = true
+omni_range = 7.0
+omni_attenuation = 0.604
+
+[node name="MenuCamera" type="Camera3D" parent="." unique_id=2137914027]
+transform = Transform3D(1, 0, 0, 0, 0.99809796, 0.061647877, 0, -0.061647877, 0.99809796, 0.3412115, 1.1746664, 0.0671505)
+current = true
+fov = 60.0
+
+[editable path="scenarious/chair"]
+[editable path="scenarious/table03"]

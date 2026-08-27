@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bcstr0v3gmb1w" path="res://game_assets/world/nature/bush/models/bush06.fbx" id="1_em4vn"]
 [ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_26i8a"]
-[ext_resource type="Texture2D" uid="uid://cj21gpyh3sn1b" path="res://game_assets/world/nature/bush/textures/bush06.png" id="3_04sqm"]
+[ext_resource type="Texture2D" uid="uid://cj21gpyh3sn1b" path="res://game_assets/world/nature/bush/textures/bush03.png" id="3_04sqm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0qqwp"]
 render_priority = 0

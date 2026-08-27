@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b20jyfkjjyo1j"]
+
+[ext_resource type="PackedScene" uid="uid://dctpviali3ph4" path="res://game_assets/world/furniture/tables/table03.fbx" id="1_qeltc"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_csona"]
+[ext_resource type="Texture2D" uid="uid://cho7qbv2ruwkq" path="res://game_assets/world/furniture/chair/chair128x128.png" id="3_qeltc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0lkjc"]
+render_priority = 0
+shader = ExtResource("2_csona")
+shader_parameter/color_texture = ExtResource("3_qeltc")
+shader_parameter/vertex_wobble = 0.499999988824
+shader_parameter/affine_mapping = 0.1999999955296
+
+[node name="table03" unique_id=799584975 instance=ExtResource("1_qeltc")]
+
+[node name="wood_table03" parent="." index="0" unique_id=515942715]
+material_override = SubResource("ShaderMaterial_0lkjc")

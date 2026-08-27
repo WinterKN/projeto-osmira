@@ -114,11 +114,10 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_iw7rp")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_iw7rp")
 tab_alignment = 1
-current_tab = 3
+current_tab = 0
 tabs_visible = false
 
 [node name="Graphics" type="TabBar" parent="TabContainer" unique_id=1025351019]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iw7rp")
 theme_override_font_sizes/font_size = 18
@@ -258,6 +257,7 @@ layout_mode = 2
 bus_name = "Sfx"
 
 [node name="Accessibility" type="TabBar" parent="TabContainer" unique_id=2124851860]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iw7rp")
 theme_override_font_sizes/font_size = 18

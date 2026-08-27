@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c4hd5yu0b625s"]
+
+[ext_resource type="PackedScene" uid="uid://b1oy12ciub3u" path="res://game_assets/world/furniture/chair/chair.fbx" id="1_qbljj"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_2utus"]
+[ext_resource type="Texture2D" uid="uid://cho7qbv2ruwkq" path="res://game_assets/world/furniture/chair/chair128x128.png" id="3_vloyd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xj248"]
+render_priority = 0
+shader = ExtResource("2_2utus")
+shader_parameter/color_texture = ExtResource("3_vloyd")
+shader_parameter/vertex_wobble = 0.2999999932944
+shader_parameter/affine_mapping = 0.0999999977648
+
+[node name="chair" unique_id=785903246 instance=ExtResource("1_qbljj")]
+
+[node name="Chair" parent="." index="0" unique_id=1870417856]
+material_override = SubResource("ShaderMaterial_xj248")

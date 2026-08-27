@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ds463euj042jr"]
+
+[ext_resource type="Script" uid="uid://bvcqjcu42tb1y" path="res://scripts/ui/Dialog/dialogues.gd" id="1_1yasy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3g3a"]
+bg_color = Color(0, 0, 0, 0.19607843)
+
+[node name="Dialog1" type="Control" unique_id=1872024788]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1yasy")
+
+[node name="Label" type="Label" parent="." unique_id=196343620]
+custom_minimum_size = Vector2(1000, 50)
+custom_maximum_size = Vector2(1920, 1620)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -179.0
+offset_right = 500.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_v3g3a")
+text = "alwawfawfawfçawfçafawf"
+
+[node name="Timer" type="Timer" parent="." unique_id=229759]
+wait_time = 0.1

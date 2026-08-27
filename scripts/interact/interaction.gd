@@ -10,6 +10,7 @@ class_name interactable extends Node
 var ui_esta_visivel: bool = false
 var em_interacao: bool = false
 var original_camera_transform: Transform3D
+var camera_estava_seguindo: bool = false
 
 func _ready() -> void:
 	var player_group = get_tree().get_nodes_in_group("player")
@@ -23,6 +24,8 @@ func _ready() -> void:
 		
 	if fixed_camera:
 		original_camera_transform = fixed_camera.global_transform
+	if fixed_camera.follow_player:
+		camera_estava_seguindo = true
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and ui_esta_visivel:
@@ -39,6 +42,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			if fixed_camera:
 				var tween = create_tween().set_parallel(true)
+				if fixed_camera.follow_player == true:
+					fixed_camera.follow_player = false
+					
 				fixed_camera.follow_object = true
 				fixed_camera.object = self
 				tween.tween_property(fixed_camera, "fov", 35.0, 0.3).set_trans(Tween.TRANS_SINE)
@@ -52,16 +58,29 @@ func _unhandled_input(event: InputEvent) -> void:
 			encerrar_interacao()
 func encerrar_interacao() -> void:
 	em_interacao = false
-	player.set_controls_enabled(true)
+	if player:
+		player.set_controls_enabled(true)
 	
+	#if camera_estava_seguindo == true:
+		#fixed_camera.follow_player = true
+		
 	if fixed_camera:
+		# 1. Desliga o foco no objeto
 		fixed_camera.follow_object = false
 		fixed_camera.object = null
 		
-		var tween = create_tween().set_parallel(true)
+		# 2. O Tween cuida APENAS do FOV (zoom) abrindo de volta
+		var tween = create_tween()
 		tween.tween_property(fixed_camera, "fov", 75.0, 0.3).set_trans(Tween.TRANS_SINE)
-		tween.tween_property(fixed_camera, "global_transform", original_camera_transform, 0.3).set_trans(Tween.TRANS_SINE)
 		
+		# 3. Se ela acompanhava o player, reativa o acompanhamento DE IMEDIATO
+		if camera_estava_seguindo:
+			fixed_camera.follow_player = true
+		else:
+			# Se era uma câmera estática, aí sim fazemos o Tween para a posição original
+			var tween_pos = create_tween()
+			tween_pos.tween_property(fixed_camera, "global_transform", original_camera_transform, 0.3).set_trans(Tween.TRANS_SINE)
+	
 func _on_trigger_body_entered(body: CharacterBody3D) -> void:
 	print("enter")
 	# --------Codigo antigo (deixar) ---------

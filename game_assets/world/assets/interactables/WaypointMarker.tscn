@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dqb5xa7o7q3ns"]
+
+[ext_resource type="Script" uid="uid://d1uf4rp6pufxd" path="res://scripts/interact/marker.gd" id="1_a2xqd"]
+[ext_resource type="Texture2D" uid="uid://cf7fhpldj6quf" path="res://addons/lowpolyterrain/icons/activate.svg" id="2_bgj1j"]
+
+[node name="WaypointMarker" type="Marker3D" unique_id=2055290910]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1166621662]
+
+[node name="UIControl" type="Control" parent="CanvasLayer" unique_id=1942032644]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_a2xqd")
+
+[node name="Icon" type="TextureRect" parent="CanvasLayer/UIControl" unique_id=1558463163]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bgj1j")

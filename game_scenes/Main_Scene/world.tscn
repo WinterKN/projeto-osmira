@@ -40,12 +40,7 @@
 [ext_resource type="Shader" uid="uid://dq4udl5a5fk1e" path="res://addons/lowpolyterrain/shader/terrain_paint_overlay.gdshader" id="26_rwifv"]
 [ext_resource type="Texture2D" uid="uid://q0s8sv8jfkf" path="res://game_assets/world/nature/ground/forrest_sand_01_diff_1k.jpg" id="28_2x71e"]
 [ext_resource type="PackedScene" uid="uid://cacwvj4rnugt5" path="res://game_assets/world/assets/objetcs/barril_podre.tscn" id="38_v0unt"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://bjyb7sfnbro22" path="res://game_assets/world/assets/interactables/block.tscn" id="39_75uq0"]
-[ext_resource type="PackedScene" uid="uid://ds463euj042jr" path="res://game_scenes/Ui_scenes/dialog1.tscn" id="40_7qp4b"]
-=======
 [ext_resource type="PackedScene" uid="uid://b3pfgtlcxcfci" path="res://game_assets/world/assets/objetcs/machado.tscn" id="40_7qp4b"]
->>>>>>> 611c03d04f7971173730d8a2c7442cafe3ec6503
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pwhxm"]
 size = Vector3(7.9764576, 2.48658, 18.601654)
@@ -57245,25 +57240,11 @@ transform = Transform3D(0.5287078, 0, 0, 0, 0.5287078, 0, 0, 0, 0.5287078, -49.6
 [node name="PSX Barrels Pack4" parent="." unique_id=776502989 instance=ExtResource("38_v0unt")]
 transform = Transform3D(0.5287078, 0, 0, 0, -0.049735766, 0.52636325, 0, -0.52636325, -0.049735766, -51.585903, 0.9931053, -216.26764)
 
-<<<<<<< HEAD
-[node name="Dialogues" type="Node" parent="." unique_id=1225920539]
-
-[node name="Dialog1" parent="Dialogues" unique_id=1872024788 instance=ExtResource("40_7qp4b")]
-
-[node name="NPCS" type="Node" parent="." unique_id=1551021110]
-
-[node name="NPC1" parent="NPCS" unique_id=826261821 node_paths=PackedStringArray("fixed_camera", "dialogues") instance=ExtResource("39_75uq0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.310152, 1.1700001, -13.20786)
-fixed_camera = NodePath("../../Cameras/Fixed Cameras/Outside Spaces/Inferior Right Side Avenue Cameras/fixedCamera")
-dialogues = NodePath("../../Dialogues/Dialog1")
-arquivo_dialogo_txt = "res://game_text/dialog1.txt"
-=======
 [node name="PSX_Axe" parent="." unique_id=1670832286 instance=ExtResource("40_7qp4b")]
 transform = Transform3D(0.4356213, -0.333566, 1.132566, 0.5033478, 1.1444633, 0.14346631, -1.0679948, 0.40333027, 0.52957493, -82.97437, 0.6700001, -140.6932)
 
 [node name="PSX_Axe2" parent="." unique_id=527238170 instance=ExtResource("40_7qp4b")]
 transform = Transform3D(0.021268012, 1.1815093, 0.60505205, -1.3273784, 0.023893757, 0, -0.010889607, -0.6049541, 1.1817005, -87.25931, 2.1971605, -145.8808)
->>>>>>> 611c03d04f7971173730d8a2c7442cafe3ec6503
 
 [editable path="Player"]
 [editable path="Player/model"]

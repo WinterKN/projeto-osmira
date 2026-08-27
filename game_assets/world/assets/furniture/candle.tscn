@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byl0u6kyhcn6j"]
+
+[ext_resource type="PackedScene" uid="uid://bbtd1ajlx74ee" path="res://game_assets/world/furniture/candle/CANDLE.fbx" id="1_6uqcp"]
+
+[node name="CANDLE" unique_id=760694377 instance=ExtResource("1_6uqcp")]
+
+[node name="Cylinder" parent="." index="0" unique_id=336801796]
+transform = Transform3D(3, 0, 0, 0, -1.266756e-07, 8.925, 0, -2.898, -3.9012414e-07, 0, 0.08988674, 0)

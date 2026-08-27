@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://i4ctwpskl2y"]
 
 [ext_resource type="Script" uid="uid://cgrhkuaitqmea" path="res://scripts/cutscene/opening_cutscene.gd" id="1_1po8u"]
-[ext_resource type="VideoStream" uid="uid://wmxgul8mnu7k" path="res://media_assets/videos/Opening Cutscene/Golpe 64.ogv" id="2_brsu7"]
 
 [node name="OpeningScene" type="Node3D" unique_id=575309141 node_paths=PackedStringArray("cutscene_camera", "video_player", "fade")]
 script = ExtResource("1_1po8u")
@@ -23,7 +22,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-stream = ExtResource("2_brsu7")
 expand = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=387994865]

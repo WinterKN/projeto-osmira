@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d05nb620w2f18"]
 
 [ext_resource type="PackedScene" uid="uid://dpaa6heuj6rs4" path="res://game_assets/characters/assets/player.tscn" id="1_7t5mc"]
+[ext_resource type="Script" uid="uid://hoejk8nxl8dv" path="res://scripts/cutscene/world_fade.gd" id="1_grhdw"]
 [ext_resource type="PackedScene" uid="uid://fxmxv6osob4l" path="res://game_assets/world/assets/camera/fixed_camera.tscn" id="1_lakw3"]
 [ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://shaders/psx_camera_shader.gdshader" id="2_lakw3"]
 [ext_resource type="AudioStream" uid="uid://hvgifsmy25wh" path="res://media_assets/audio/sfx/Nature Ambient/Forest Enviroments/AMB_Nature Pack Vol 1_Forest Enviroments_Forest Day.mp3" id="2_qo3ij"]
@@ -15554,15 +15555,16 @@ albedo_color = Color(0.91940624, 0.5091403, 0, 1)
 albedo_texture = ExtResource("28_2x71e")
 
 [node name="World" type="Node3D" unique_id=1464760528]
+script = ExtResource("1_grhdw")
 
 [node name="Player" parent="." unique_id=1372736054 instance=ExtResource("1_7t5mc")]
 transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.745, 0.4, 106.92224)
 collision_layer = 5
 
-[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=738434517]
+[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=583764902]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)
 
-[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=596315508]
+[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=2129592938]
 bones/2/rotation = Quaternion(-0.06359446, -0.0036651148, 0.011258639, 0.9979056)
 bones/3/rotation = Quaternion(0.085057385, -0.0046582986, 0.0035399038, 0.996359)
 bones/4/rotation = Quaternion(-0.002165822, -0.0043975, 0.0038591037, 0.9999806)
@@ -18758,7 +18760,7 @@ transform = Transform3D(0.98622674, 0, -0.16539904, 0, 1, 0, 0.16539904, 0, 0.98
 [node name="tree225" parent="Stage/Nature/Trees" unique_id=1272352657 instance=ExtResource("5_7iits")]
 transform = Transform3D(0.9775307, 0, -0.21079323, 0, 1, 0, 0.21079323, 0, 0.9775307, -52.156773, 0.5000045, -77.42345)
 
-[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=783260477]
+[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=648088832]
 transform = Transform3D(0.99999994, 0, -1.4901161e-08, 0, 1, 1.6292067e-07, 1.4901161e-08, -1.6292066e-07, 0.99999994, -1.0855865, 0, 0.06829834)
 
 [node name="tree226" parent="Stage/Nature/Trees" unique_id=841867185 instance=ExtResource("5_7iits")]
@@ -20902,6 +20904,18 @@ metadata/_edit_use_anchors_ = true
 [node name="shader" type="MeshInstance3D" parent="Environment/Game_Effects" unique_id=140858374]
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_l6p5f")
+
+[node name="WorldTransition" type="CanvasLayer" parent="Environment" unique_id=298565414]
+layer = 100
+
+[node name="Fade" type="ColorRect" parent="Environment/WorldTransition" unique_id=798233422]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=103404073]
 occluder = ExtResource("22_oo54l")

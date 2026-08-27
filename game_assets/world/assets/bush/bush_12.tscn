@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://n71l6g8k570j"]
+
+[ext_resource type="PackedScene" uid="uid://pegbkk0peqy4" path="res://game_assets/world/nature/bush/models/bush11.fbx" id="1_o5r8o"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_vns8q"]
+[ext_resource type="Texture2D" uid="uid://bupaek8xs2l3r" path="res://game_assets/world/nature/bush/textures/bush_03.png" id="3_mf4qo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjwpy"]
+render_priority = 0
+shader = ExtResource("2_vns8q")
+shader_parameter/color_texture = ExtResource("3_mf4qo")
+shader_parameter/vertex_wobble = 0.2999999932944
+shader_parameter/affine_mapping = 0.02999999932944
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6nnf"]
+render_priority = 0
+shader = ExtResource("2_vns8q")
+shader_parameter/color_texture = ExtResource("3_mf4qo")
+shader_parameter/vertex_wobble = 0.2999999932944
+shader_parameter/affine_mapping = 0.02999999932944
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2eyo"]
+render_priority = 0
+shader = ExtResource("2_vns8q")
+shader_parameter/color_texture = ExtResource("3_mf4qo")
+shader_parameter/vertex_wobble = 0.2999999932944
+shader_parameter/affine_mapping = 0.02999999932944
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[node name="bush11" unique_id=580656717 instance=ExtResource("1_o5r8o")]
+
+[node name="leaf" parent="." index="0" unique_id=224391052]
+material_override = SubResource("ShaderMaterial_mjwpy")
+
+[node name="branches" parent="leaf" index="0" unique_id=404762072]
+material_override = SubResource("ShaderMaterial_k6nnf")
+
+[node name="flower" parent="leaf" index="1" unique_id=517632705]
+material_override = SubResource("ShaderMaterial_c2eyo")

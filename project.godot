@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://ogw38ilqk7mu"
 
+[autoload]
+
+GameManager="*uid://bymotria152lg"
+
 [display]
 
 window/size/viewport_width=1280

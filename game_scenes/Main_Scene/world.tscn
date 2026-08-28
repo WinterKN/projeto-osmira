@@ -41,6 +41,10 @@
 [ext_resource type="Texture2D" uid="uid://q0s8sv8jfkf" path="res://game_assets/world/nature/ground/forrest_sand_01_diff_1k.jpg" id="28_2x71e"]
 [ext_resource type="PackedScene" uid="uid://cacwvj4rnugt5" path="res://game_assets/world/assets/objetcs/barril_podre.tscn" id="38_v0unt"]
 [ext_resource type="PackedScene" uid="uid://b3pfgtlcxcfci" path="res://game_assets/world/assets/objetcs/machado.tscn" id="40_7qp4b"]
+[ext_resource type="PackedScene" uid="uid://bjyb7sfnbro22" path="res://game_assets/world/assets/interactables/block.tscn" id="42_bybnw"]
+[ext_resource type="PackedScene" uid="uid://ds463euj042jr" path="res://game_scenes/Ui_scenes/dialog1.tscn" id="43_iv73i"]
+[ext_resource type="Script" uid="uid://c2iwc2jw31n0l" path="res://scripts/quests/quest_resource.gd" id="44_4sra5"]
+[ext_resource type="Resource" uid="uid://dxvobf4qdb35d" path="res://game_text/quests/quest1.tres" id="45_785m8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pwhxm"]
 size = Vector3(7.9764576, 2.48658, 18.601654)
@@ -15572,10 +15576,10 @@ script = ExtResource("1_grhdw")
 transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.745, 0.4, 106.92224)
 collision_layer = 5
 
-[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=583764902]
+[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=1856116332]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)
 
-[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=2129592938]
+[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=1659125940]
 bones/2/rotation = Quaternion(-0.06359446, -0.0036651148, 0.011258639, 0.9979056)
 bones/3/rotation = Quaternion(0.085057385, -0.0046582986, 0.0035399038, 0.996359)
 bones/4/rotation = Quaternion(-0.002165822, -0.0043975, 0.0038591037, 0.9999806)
@@ -18852,7 +18856,7 @@ transform = Transform3D(0.98622674, 0, -0.16539904, 0, 1, 0, 0.16539904, 0, 0.98
 [node name="tree225" parent="Stage/Nature/Trees" unique_id=1272352657 instance=ExtResource("5_7iits")]
 transform = Transform3D(0.9775307, 0, -0.21079323, 0, 1, 0, 0.21079323, 0, 0.9775307, -52.156773, 0.5000045, -77.42345)
 
-[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=648088832]
+[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=64680381]
 transform = Transform3D(0.99999994, 0, -1.4901161e-08, 0, 1, 1.6292067e-07, 1.4901161e-08, -1.6292066e-07, 0.99999994, -1.0855865, 0, 0.06829834)
 
 [node name="tree226" parent="Stage/Nature/Trees" unique_id=841867185 instance=ExtResource("5_7iits")]
@@ -57245,6 +57249,17 @@ transform = Transform3D(0.4356213, -0.333566, 1.132566, 0.5033478, 1.1444633, 0.
 
 [node name="PSX_Axe2" parent="." unique_id=527238170 instance=ExtResource("40_7qp4b")]
 transform = Transform3D(0.021268012, 1.1815093, 0.60505205, -1.3273784, 0.023893757, 0, -0.010889607, -0.6049541, 1.1817005, -87.25931, 2.1971605, -145.8808)
+
+[node name="Node3D" parent="." unique_id=826261821 node_paths=PackedStringArray("fixed_camera", "dialogues") instance=ExtResource("42_bybnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1375356, 0.9799999, 104.748856)
+fixed_camera = NodePath("../Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera1")
+dialogues = NodePath("../Node/Dialog1")
+arquivo_dialogo_txt = "res://game_text/dialogues/dialog1.txt"
+
+[node name="Node" type="Node" parent="." unique_id=832497117]
+
+[node name="Dialog1" parent="Node" unique_id=1872024788 instance=ExtResource("43_iv73i")]
+quests = Array[ExtResource("44_4sra5")]([ExtResource("45_785m8")])
 
 [editable path="Player"]
 [editable path="Player/model"]

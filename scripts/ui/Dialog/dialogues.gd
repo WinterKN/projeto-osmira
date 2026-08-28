@@ -1,6 +1,8 @@
 extends Control
 class_name Dialogues 
 
+@export var quests: Array[Quest]
+
 @onready var label: Label = $Label
 @onready var timer: Timer = $Timer
 
@@ -77,3 +79,12 @@ func encerrar_dialogo() -> void:
 	label.text = ""
 	index = 0
 	timer.stop()
+	if not quests.is_empty():
+		_get_quest()
+
+	
+	
+func _get_quest():
+	var Pick = quests.front()
+	GameManager.add_quest(Pick)
+	quests.erase(Pick)

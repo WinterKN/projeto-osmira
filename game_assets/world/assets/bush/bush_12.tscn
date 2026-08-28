@@ -36,11 +36,12 @@ shader_parameter/wind_direction = Vector2(1, 0.35)
 
 [node name="bush11" unique_id=580656717 instance=ExtResource("1_o5r8o")]
 
-[node name="leaf" parent="." index="0" unique_id=224391052]
+[node name="leaf" parent="." index="0" unique_id=1808617298]
 material_override = SubResource("ShaderMaterial_mjwpy")
+visibility_range_end = 120.0
 
-[node name="branches" parent="leaf" index="0" unique_id=404762072]
+[node name="branches" parent="leaf" index="0" unique_id=982209104]
 material_override = SubResource("ShaderMaterial_k6nnf")
 
-[node name="flower" parent="leaf" index="1" unique_id=517632705]
+[node name="flower" parent="leaf" index="1" unique_id=665708280]
 material_override = SubResource("ShaderMaterial_c2eyo")

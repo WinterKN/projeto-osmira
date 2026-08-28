@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d064r2ud0tdyh"
-path.s3tc="res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"
+uid="uid://c5l38bb8dyd3i"
+path.s3tc="res://.godot/imported/Construction_cone_0.png-6b094b98927f7865f90659f01c45ff2f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "319c91b72f0ba8e5eafec21a2112fcf5"
+}
 
 [deps]
 
-source_file="res://game_assets/world/furniture/shelf/shelf256x256.png"
-dest_files=["res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"]
+source_file="res://game_assets/world/buildings/br_itens/Construction_cone_0.png"
+dest_files=["res://.godot/imported/Construction_cone_0.png-6b094b98927f7865f90659f01c45ff2f.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d064r2ud0tdyh"
-path.s3tc="res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"
+uid="uid://cjeyuw43kw4q4"
+path.s3tc="res://.godot/imported/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png-36bbbc791158504af2bf20662120e22a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game_assets/world/furniture/shelf/shelf256x256.png"
-dest_files=["res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"]
+source_file="res://game_assets/world/buildings/Hut/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png"
+dest_files=["res://.godot/imported/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png-36bbbc791158504af2bf20662120e22a.s3tc.ctex"]
 
 [params]
 

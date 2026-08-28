@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d064r2ud0tdyh"
-path.s3tc="res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"
+uid="uid://cdl0craymn23j"
+path.s3tc="res://.godot/imported/concrete_retro_bollard_0.png-f055216fb197f437ad692077f703c102.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "105b19134d21c4897a0dca56b1c980d2"
+}
 
 [deps]
 
-source_file="res://game_assets/world/furniture/shelf/shelf256x256.png"
-dest_files=["res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"]
+source_file="res://game_assets/world/buildings/br_itens/concrete_retro_bollard_0.png"
+dest_files=["res://.godot/imported/concrete_retro_bollard_0.png-f055216fb197f437ad692077f703c102.s3tc.ctex"]
 
 [params]
 

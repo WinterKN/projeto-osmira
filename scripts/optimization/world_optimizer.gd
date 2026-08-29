@@ -9,7 +9,7 @@ extends Node
 @export_group("World")
 
 # Pode deixar vazio.
-# Se vazio, o script escaneia o World inteiro.
+# Se vazio, escaneia a cena inteira.
 @export var scan_root: Node
 
 @export var world_environment: WorldEnvironment
@@ -22,8 +22,8 @@ extends Node
 
 @export_group("Vegetation Detection")
 
-# Se a cena da mesh estiver dentro de uma dessas pastas,
-# será considerada vegetação.
+# Qualquer cena cujo caminho contenha um desses valores
+# será considerada vegetação original.
 @export var vegetation_paths: PackedStringArray = [
 	"/trees/",
 	"/plants/",
@@ -65,12 +65,11 @@ extends Node
 
 @export var show_performance_in_output := true
 
-# De quanto em quanto tempo imprime os dados no Output.
 @export var performance_update_interval := 2.0
 
 
 # ============================================================
-# CACHE DOS OBJETOS
+# OBJETOS DETECTADOS
 # ============================================================
 
 var foliage_nodes: Array[GeometryInstance3D] = []
@@ -99,15 +98,22 @@ var original_directional_shadow_distance := 100.0
 
 
 # ============================================================
-# ESTATÍSTICAS DA VEGETAÇÃO
+# ESTATÍSTICAS DE VEGETAÇÃO
 # ============================================================
 
-# Quantidade de instâncias de cada .tscn de árvore.
+# Quantidade de instâncias .tscn existentes na SceneTree.
+#
+# Os bushes antigos convertidos continuam entrando aqui,
+# porque continuam fisicamente presentes na cena.
 var vegetation_scene_count: Dictionary = {}
 
-# Quantidade de GeometryInstance3D encontrados
-# pertencentes a cada cena.
+
+# GeometryInstances originais ainda não convertidos.
 var vegetation_mesh_count: Dictionary = {}
+
+
+# Quantidade de MultiMeshInstance3D gerados.
+var generated_foliage_count := 0
 
 
 # ============================================================
@@ -132,35 +138,39 @@ func _ready() -> void:
 
 
 	# --------------------------------------------------------
-	# REGISTRA NO SISTEMA DE QUALIDADE
+	# SISTEMA DE QUALIDADE
 	# --------------------------------------------------------
 
-	add_to_group("optimization_quality")
-
-
-	# --------------------------------------------------------
-	# ESCANEIA O WORLD
-	# --------------------------------------------------------
-
-	scan_world(scan_root)
+	add_to_group(
+		"optimization_quality"
+	)
 
 
 	# --------------------------------------------------------
-	# SALVA CONFIGURAÇÕES ORIGINAIS
+	# ESCANEAR MUNDO
+	# --------------------------------------------------------
+
+	scan_world(
+		scan_root
+	)
+
+
+	# --------------------------------------------------------
+	# SALVAR CONFIGURAÇÕES ORIGINAIS
 	# --------------------------------------------------------
 
 	cache_environment()
 
 
 	# --------------------------------------------------------
-	# RELATÓRIO
+	# DEBUG
 	# --------------------------------------------------------
 
 	print_optimization_report()
 
 
 	# --------------------------------------------------------
-	# APLICA QUALIDADE ATUAL
+	# APLICAR QUALIDADE ATUAL
 	# --------------------------------------------------------
 
 	call_deferred(
@@ -199,7 +209,7 @@ func _process(delta: float) -> void:
 func scan_world(node: Node) -> void:
 
 	# --------------------------------------------------------
-	# CONTA INSTÂNCIAS DAS CENAS DE VEGETAÇÃO
+	# CONTAR CENAS DE VEGETAÇÃO
 	# --------------------------------------------------------
 
 	var node_scene_path := node.scene_file_path
@@ -207,7 +217,9 @@ func scan_world(node: Node) -> void:
 
 	if not node_scene_path.is_empty():
 
-		var lower_scene_path := node_scene_path.to_lower()
+		var lower_scene_path := (
+			node_scene_path.to_lower()
+		)
 
 
 		for vegetation_path in vegetation_paths:
@@ -227,22 +239,92 @@ func scan_world(node: Node) -> void:
 
 
 	# --------------------------------------------------------
-	# GEOMETRY INSTANCE / VEGETAÇÃO
+	# VEGETAÇÃO / GEOMETRY INSTANCE
 	# --------------------------------------------------------
 
 	if node is GeometryInstance3D:
 
-		var vegetation_source := (
-			get_vegetation_source(node)
+		var geometry := (
+			node as GeometryInstance3D
 		)
 
 
-		if not vegetation_source.is_empty():
+		# Caminho da cena original,
+		# por exemplo:
+		#
+		# res://.../bush/bush_09.tscn
+		var vegetation_source := (
+			get_vegetation_source(
+				node
+			)
+		)
 
-			var geometry := (
-				node as GeometryInstance3D
+
+		# ----------------------------------------------------
+		# VEGETAÇÃO GERADA
+		# ----------------------------------------------------
+
+		var generated_foliage := (
+			geometry.is_in_group(
+				"opt_foliage"
+			)
+			or
+			is_generated_foliage(
+				geometry
+			)
+		)
+
+
+		# ----------------------------------------------------
+		# VEGETAÇÃO ORIGINAL
+		# ----------------------------------------------------
+
+		var original_foliage := (
+			not vegetation_source.is_empty()
+		)
+
+
+		# ----------------------------------------------------
+		# VERIFICAR SE FOI CONVERTIDA
+		# ----------------------------------------------------
+
+		var converted_original := (
+			is_converted_original(
+				geometry
+			)
+		)
+
+
+		# ----------------------------------------------------
+		# MULTIMESH GERADO
+		# ----------------------------------------------------
+
+		if generated_foliage:
+
+			foliage_nodes.append(
+				geometry
 			)
 
+
+			original_foliage_shadow[geometry] = (
+				geometry.cast_shadow
+			)
+
+
+			if geometry is MultiMeshInstance3D:
+
+				generated_foliage_count += 1
+
+
+		# ----------------------------------------------------
+		# VEGETAÇÃO ORIGINAL NÃO CONVERTIDA
+		# ----------------------------------------------------
+
+		elif (
+			original_foliage
+			and
+			not converted_original
+		):
 
 			foliage_nodes.append(
 				geometry
@@ -320,6 +402,72 @@ func scan_world(node: Node) -> void:
 
 
 # ============================================================
+# VEGETAÇÃO GERADA POR MULTIMESH
+# ============================================================
+
+func is_generated_foliage(
+	node: Node
+) -> bool:
+
+	var current: Node = node
+
+
+	while current != null:
+
+		# Conversor atual.
+		if current.name == "Generated_Bush_MultiMeshes":
+
+			return true
+
+
+		# Já deixamos suporte para o conversor universal
+		# que poderemos usar depois.
+		if current.name == "Generated_Vegetation_MultiMeshes":
+
+			return true
+
+
+		current = current.get_parent()
+
+
+	return false
+
+
+# ============================================================
+# ORIGINAL JÁ CONVERTIDO PARA MULTIMESH
+# ============================================================
+
+func is_converted_original(
+	node: Node
+) -> bool:
+
+	var current: Node = node
+
+
+	while current != null:
+
+		if current.has_meta(
+			"converted_to_multimesh"
+		):
+
+			var converted := bool(
+				current.get_meta(
+					"converted_to_multimesh"
+				)
+			)
+
+
+			if converted:
+				return true
+
+
+		current = current.get_parent()
+
+
+	return false
+
+
+# ============================================================
 # DESCOBRIR DE QUAL CENA A VEGETAÇÃO VEIO
 # ============================================================
 
@@ -388,7 +536,9 @@ func cache_environment() -> void:
 		return
 
 
-	var env := world_environment.environment
+	var env := (
+		world_environment.environment
+	)
 
 
 	original_ssao = (
@@ -559,6 +709,7 @@ func apply_foliage(
 		if not is_instance_valid(
 			foliage
 		):
+
 			continue
 
 
@@ -589,6 +740,7 @@ func apply_foliage(
 				)
 			)
 
+
 		else:
 
 			foliage.cast_shadow = (
@@ -609,6 +761,7 @@ func apply_particles(
 		if not is_instance_valid(
 			particles
 		):
+
 			continue
 
 
@@ -621,7 +774,9 @@ func apply_particles(
 
 
 		particles.amount_ratio = (
-			original * ratio
+			original
+			*
+			ratio
 		)
 
 
@@ -636,11 +791,13 @@ func apply_local_lights_low() -> void:
 		if not is_instance_valid(
 			light
 		):
+
 			continue
 
 
 		# LOW:
-		# nenhuma Omni/Spot projeta sombra dinâmica.
+		# nenhuma OmniLight3D ou SpotLight3D
+		# mantém sombra dinâmica.
 
 		light.shadow_enabled = false
 
@@ -656,6 +813,7 @@ func apply_local_lights_medium() -> void:
 		if not is_instance_valid(
 			light
 		):
+
 			continue
 
 
@@ -667,16 +825,20 @@ func apply_local_lights_medium() -> void:
 		)
 
 
-		# Se a luz originalmente nem tinha sombra,
-		# continua sem.
+		# ----------------------------------------------------
+		# ORIGINALMENTE NÃO TINHA SOMBRA
+		# ----------------------------------------------------
+
 		if not originally_had_shadow:
 
 			light.shadow_enabled = false
+
 			continue
 
 
-		# Em MEDIUM apenas as luzes do grupo
-		# opt_important_shadow mantêm sombra.
+		# ----------------------------------------------------
+		# SOMBRA IMPORTANTE
+		# ----------------------------------------------------
 
 		light.shadow_enabled = (
 			light.is_in_group(
@@ -696,6 +858,7 @@ func restore_local_lights() -> void:
 		if not is_instance_valid(
 			light
 		):
+
 			continue
 
 
@@ -730,19 +893,15 @@ func apply_environment(
 	)
 
 
-	env.ssao_enabled = (
-		ssao
-	)
+	env.ssao_enabled = ssao
 
 
-	env.ssil_enabled = (
-		ssil
-	)
+	env.ssil_enabled = ssil
 
 
 	env.volumetric_fog_enabled = (
 		volumetric_fog
-	)
+		)
 
 
 # ============================================================
@@ -772,14 +931,21 @@ func apply_directional_shadow_distance(
 func print_optimization_report() -> void:
 
 	print("")
+
 	print("========================================")
 	print("========== WORLD OPTIMIZER =============")
 	print("========================================")
 
 
 	print(
-		"Vegetação detectada: ",
+		"Vegetação ativa detectada: ",
 		foliage_nodes.size()
+	)
+
+
+	print(
+		"MultiMeshes de vegetação: ",
+		generated_foliage_count
 	)
 
 
@@ -796,7 +962,10 @@ func print_optimization_report() -> void:
 
 
 	print("")
-	print("--------- MODELOS DE VEGETAÇÃO ----------")
+
+	print(
+		"--------- MODELOS DE VEGETAÇÃO ----------"
+	)
 
 
 	var paths := (
@@ -806,6 +975,7 @@ func print_optimization_report() -> void:
 
 	paths.sort_custom(
 		func(a, b):
+
 			return (
 				vegetation_scene_count[a]
 				>
@@ -814,13 +984,21 @@ func print_optimization_report() -> void:
 	)
 
 
-	var total_tree_instances := 0
+	var total_scene_instances := 0
 
 
-	for path in paths:
+	for path_variant in paths:
+
+		var path := String(
+			path_variant
+		)
+
 
 		var instance_count: int = (
-			vegetation_scene_count[path]
+			vegetation_scene_count.get(
+				path,
+				0
+			)
 		)
 
 
@@ -832,30 +1010,47 @@ func print_optimization_report() -> void:
 		)
 
 
-		total_tree_instances += (
+		total_scene_instances += (
 			instance_count
 		)
 
 
 		print(
 			path.get_file(),
-			" | Instâncias: ",
+			" | Instâncias na SceneTree: ",
 			instance_count,
-			" | GeometryInstances: ",
+			" | GeometryInstances originais ativos: ",
 			mesh_count
 		)
 
 
 	print("")
+
+
 	print(
-		"Total de cenas de vegetação: ",
-		total_tree_instances
+		"Total de cenas de vegetação na SceneTree: ",
+		total_scene_instances
 	)
 
 
 	print(
-		"Total de GeometryInstance3D: ",
+		"MultiMeshInstance3D gerados: ",
+		generated_foliage_count
+	)
+
+
+	print(
+		"Total de GeometryInstance3D administrados: ",
 		foliage_nodes.size()
+	)
+
+
+	print("")
+
+	print(
+		"OBS: vegetação original já convertida continua "
+		+ "existindo na SceneTree, mas é ignorada pelo "
+		+ "WorldOptimizer."
 	)
 
 

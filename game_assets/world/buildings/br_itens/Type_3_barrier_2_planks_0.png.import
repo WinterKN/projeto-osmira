@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d064r2ud0tdyh"
-path.s3tc="res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"
+uid="uid://mrvcfqjkggbe"
+path.s3tc="res://.godot/imported/Type_3_barrier_2_planks_0.png-762e18ff3e2dd10f688a052cd23e1a48.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a3bbd0c85a072be5d2f1e8f4d5e4a199"
+}
 
 [deps]
 
-source_file="res://game_assets/world/furniture/shelf/shelf256x256.png"
-dest_files=["res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"]
+source_file="res://game_assets/world/buildings/br_itens/Type_3_barrier_2_planks_0.png"
+dest_files=["res://.godot/imported/Type_3_barrier_2_planks_0.png-762e18ff3e2dd10f688a052cd23e1a48.s3tc.ctex"]
 
 [params]
 

@@ -16,5 +16,6 @@ shader_parameter/wind_direction = Vector2(1, 0.35)
 
 [node name="bush09" unique_id=997792129 instance=ExtResource("1_ettaa")]
 
-[node name="bush_01" parent="." index="0" unique_id=1821833239]
+[node name="bush_01" parent="." index="0" unique_id=1051146197]
 material_override = SubResource("ShaderMaterial_swqmj")
+visibility_range_end = 120.0

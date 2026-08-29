@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dsxt0b73qlglm"]
 
-[ext_resource type="PackedScene" uid="uid://bttnsp8lkd50p" path="res://game_assets/world/buildings/OCA/casa.fbx" id="1_gurlh"]
+[ext_resource type="PackedScene" uid="uid://bttnsp8lkd50p" path="res://game_assets/world/buildings/Hut/casa.fbx" id="1_gurlh"]
 [ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_mj3np"]
-[ext_resource type="Texture2D" uid="uid://bivn60crqhs1x" path="res://game_assets/world/buildings/OCA/portão.png" id="3_vmx6h"]
-[ext_resource type="Texture2D" uid="uid://bm1vexexrk5b6" path="res://game_assets/world/buildings/OCA/images.jpg" id="4_xgjwj"]
-[ext_resource type="Texture2D" uid="uid://cjeyuw43kw4q4" path="res://game_assets/world/buildings/OCA/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png" id="5_paihg"]
+[ext_resource type="Texture2D" uid="uid://bivn60crqhs1x" path="res://game_assets/world/buildings/Hut/portão.png" id="3_vmx6h"]
+[ext_resource type="Texture2D" uid="uid://rn7fhi8ylerh" path="res://game_assets/world/buildings/Hut/images.jpg" id="4_xgjwj"]
+[ext_resource type="Texture2D" uid="uid://cjeyuw43kw4q4" path="res://game_assets/world/buildings/Hut/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png" id="5_paihg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1yqdi"]
 render_priority = 0

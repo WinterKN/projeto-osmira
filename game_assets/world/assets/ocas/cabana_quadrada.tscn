@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c1n4n8ajdgyo8"]
 
-[ext_resource type="PackedScene" uid="uid://dwxxud7dhvp38" path="res://game_assets/world/buildings/OCA/cabana quadrada.fbx" id="1_yrdi8"]
+[ext_resource type="PackedScene" uid="uid://dwxxud7dhvp38" path="res://game_assets/world/buildings/Hut/cabana quadrada.fbx" id="1_yrdi8"]
 [ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_7vpur"]
 [ext_resource type="Texture2D" uid="uid://6u8rporeo1k6" path="res://game_assets/characters/assets/textures/pngfind.com-roof-png-1091585.001.png" id="3_8gg2q"]
 

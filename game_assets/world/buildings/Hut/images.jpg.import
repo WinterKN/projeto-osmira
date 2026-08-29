@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d064r2ud0tdyh"
-path.s3tc="res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"
+uid="uid://rn7fhi8ylerh"
+path.s3tc="res://.godot/imported/images.jpg-d541c6ecafb6eb2f82fe2f565596a668.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game_assets/world/furniture/shelf/shelf256x256.png"
-dest_files=["res://.godot/imported/shelf256x256.png-d5e466fef399d23c4f609222c4e1ddb0.s3tc.ctex"]
+source_file="res://game_assets/world/buildings/Hut/images.jpg"
+dest_files=["res://.godot/imported/images.jpg-d541c6ecafb6eb2f82fe2f565596a668.s3tc.ctex"]
 
 [params]
 

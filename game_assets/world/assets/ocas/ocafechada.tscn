@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yml8q3bm7epv"]
 
-[ext_resource type="PackedScene" uid="uid://bjfhewjv7vjew" path="res://game_assets/world/buildings/OCA/oca2.fbx" id="1_6lv72"]
+[ext_resource type="PackedScene" uid="uid://bjfhewjv7vjew" path="res://game_assets/world/buildings/Hut/oca2.fbx" id="1_6lv72"]
 [ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_r61c1"]
 [ext_resource type="Texture2D" uid="uid://nr30cgdxe2ci" path="res://game_assets/world/buildings/objetcs/T_Wood.jpeg" id="3_lkqln"]
 [ext_resource type="Texture2D" uid="uid://6u8rporeo1k6" path="res://game_assets/characters/assets/textures/pngfind.com-roof-png-1091585.001.png" id="4_675pg"]

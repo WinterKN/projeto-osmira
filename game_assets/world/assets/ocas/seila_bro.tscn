@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cr1qvo8337c24"]
 
-[ext_resource type="PackedScene" uid="uid://dhtporfg4bkkc" path="res://game_assets/world/buildings/OCA/seila bro.fbx" id="1_3alpj"]
+[ext_resource type="PackedScene" uid="uid://dhtporfg4bkkc" path="res://game_assets/world/buildings/Hut/seila bro.fbx" id="1_3alpj"]
 [ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_f5fut"]
-[ext_resource type="Texture2D" uid="uid://bm1vexexrk5b6" path="res://game_assets/world/buildings/OCA/images.jpg" id="3_hfspb"]
-[ext_resource type="Texture2D" uid="uid://cjeyuw43kw4q4" path="res://game_assets/world/buildings/OCA/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png" id="4_kc5mk"]
+[ext_resource type="Texture2D" uid="uid://rn7fhi8ylerh" path="res://game_assets/world/buildings/Hut/images.jpg" id="3_hfspb"]
+[ext_resource type="Texture2D" uid="uid://cjeyuw43kw4q4" path="res://game_assets/world/buildings/Hut/relebook.com_ffaeh564689_Light_yellow_thatched_roof_decoration-removebg-preview.png" id="4_kc5mk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xnfe8"]
 render_priority = 0

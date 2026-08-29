@@ -55,15 +55,16 @@ shadow_mesh = SubResource("ArrayMesh_iccu6")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_48euw"]
 height = 3.8496094
+radius = 0.5307617
 
 [node name="tree08" unique_id=882389425 instance=ExtResource("1_bklr0")]
 
-[node name="tree08" parent="." index="0" unique_id=273214113]
+[node name="tree08" parent="." index="0" unique_id=1963876328]
 material_override = SubResource("ShaderMaterial_n4r3b")
 mesh = SubResource("ArrayMesh_1aa0p")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="tree08" index="0" unique_id=1193710693]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree08/StaticBody3D" index="0" unique_id=51992106]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 2.1172853, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8991809, -3.553373e-08)
 shape = SubResource("CylinderShape3D_48euw")

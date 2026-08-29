@@ -51,7 +51,8 @@ data = PackedVector3Array(-0.015199999, -0.6289, -0.0156, -0.015199999, 0.0122, 
 
 [node name="PSX_Axe" unique_id=1670832286 instance=ExtResource("1_xnr0r")]
 
-[node name="Cube" parent="." index="0" unique_id=1263322579]
+[node name="Cube" parent="." index="0" unique_id=1765524366]
+visibility_range_end = 110.0
 mesh = SubResource("ArrayMesh_e0apr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0" unique_id=686057535]

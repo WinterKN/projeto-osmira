@@ -41,7 +41,7 @@ data = PackedVector3Array(-1.1306763, -1.3145447, 0.14398193, -1.1306763, -1.314
 
 [node name="oca2" unique_id=904801381 instance=ExtResource("1_6lv72")]
 
-[node name="Cylinder" parent="." index="0" unique_id=1903395412]
+[node name="Cylinder" parent="." index="0" unique_id=30169892]
 material_override = SubResource("ShaderMaterial_53ttq")
 visibility_range_end = 130.0
 
@@ -51,7 +51,7 @@ visibility_range_end = 130.0
 transform = Transform3D(1.0000001, 0, 0, 0, 1, -1.7763568e-15, 0, 5.684342e-14, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_btro4")
 
-[node name="Cylinder_001" parent="." index="1" unique_id=1526850866]
+[node name="Cylinder_001" parent="." index="1" unique_id=841768749]
 visibility_range_end = 130.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cylinder_001" index="0" unique_id=291883103]
@@ -60,7 +60,7 @@ visibility_range_end = 130.0
 transform = Transform3D(0.99999994, 9.313226e-10, -1.7763568e-15, 0, 0.99999994, 5.684342e-14, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_8w0vv")
 
-[node name="HUt" parent="." index="2" unique_id=1967242522]
+[node name="HUt" parent="." index="2" unique_id=1113076101]
 material_override = SubResource("ShaderMaterial_ih7q8")
 visibility_range_end = 130.0
 
@@ -73,6 +73,7 @@ shape = SubResource("ConcavePolygonShape3D_7h4ot")
 [node name="CSGBox3D" type="CSGBox3D" parent="." index="3" unique_id=621223731]
 transform = Transform3D(1.0000006, 0, 2.682209e-07, 0, 1, 0, -2.682209e-07, 0, 1.0000006, 0.7899999, 0.34386432, 6.552908)
 material_override = SubResource("ShaderMaterial_lkqln")
+visibility_range_end = 130.0
 size = Vector3(2.2613525, 2.6290894, 0.28796387)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="CSGBox3D" index="0" unique_id=83783855]

@@ -7,7 +7,10 @@ data = PackedVector3Array(0.0122, 0.0002, 0.012499999, 0.0122, 0.0002, 0.0148, -
 
 [node name="Type_3_barrier_2_planks" unique_id=1683714101 instance=ExtResource("1_nnnvn")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Type_3_barrier_2_planks" parent_id_path=PackedInt32Array(260175032) index="0" unique_id=1562509049]
+[node name="Type_3_barrier_2_planks" parent="." index="0" unique_id=1696766702]
+visibility_range_end = 105.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Type_3_barrier_2_planks" index="0" unique_id=1562509049]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Type_3_barrier_2_planks/StaticBody3D" index="0" unique_id=525817153]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0, 0, 0)

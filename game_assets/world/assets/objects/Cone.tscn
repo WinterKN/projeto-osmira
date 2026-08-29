@@ -7,7 +7,10 @@ data = PackedVector3Array(0.0021, -0.0011999999, 0.0074, 0.0021, 0.0011999999, 0
 
 [node name="Construction_cone__thin" unique_id=1762310234 instance=ExtResource("1_hafsh")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Construction_cone__thin" parent_id_path=PackedInt32Array(258821059) index="0" unique_id=818898733]
+[node name="Construction_cone__thin" parent="." index="0" unique_id=1712192445]
+visibility_range_end = 110.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Construction_cone__thin" index="0" unique_id=818898733]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Construction_cone__thin/StaticBody3D" index="0" unique_id=1960303784]

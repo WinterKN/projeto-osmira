@@ -16,6 +16,7 @@ shader_parameter/wind_direction = Vector2(1, 0.35)
 
 [node name="bush10" unique_id=298135455 instance=ExtResource("1_txwge")]
 
-[node name="bush_04" parent="." index="0" unique_id=153147911]
+[node name="bush_04" parent="." index="0" unique_id=1302543312]
 material_override = SubResource("ShaderMaterial_effke")
+lod_bias = 0.2
 visibility_range_end = 120.0

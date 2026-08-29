@@ -20,5 +20,7 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 	if body is Player:
 		if not body.controls_enabled:
 			return
+
 		player = body
+
 		make_current()

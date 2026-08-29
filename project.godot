@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://ogw38ilqk7mu"
 [autoload]
 
 GameManager="*uid://bymotria152lg"
+OptimizationManager="*uid://bhn6gdqjt0eyr"
 
 [display]
 

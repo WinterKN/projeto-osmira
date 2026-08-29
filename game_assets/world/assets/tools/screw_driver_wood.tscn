@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://btq4ldj5nklam"]
+
+[ext_resource type="PackedScene" uid="uid://cxvc5xns87tgs" path="res://game_assets/world/tools/Screwdriver/ScrewDriverWood.fbx" id="1_wmd6y"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_42s4a"]
+[ext_resource type="Texture2D" uid="uid://cxtipwrh4aybi" path="res://game_assets/world/tools/Screwdriver/ScrewDriverWoodTexture.jpg" id="3_mj8r2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xwhk0"]
+render_priority = 0
+shader = ExtResource("2_42s4a")
+shader_parameter/color_texture = ExtResource("3_mj8r2")
+shader_parameter/vertex_wobble = 0.499999988824
+shader_parameter/affine_mapping = 0.0999999977648
+
+[node name="ScrewDriverWood" unique_id=274827273 instance=ExtResource("1_wmd6y")]
+
+[node name="ScrewDriver" parent="." index="0" unique_id=414001504]
+material_override = SubResource("ShaderMaterial_xwhk0")

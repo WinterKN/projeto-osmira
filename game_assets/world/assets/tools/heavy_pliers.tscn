@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dfaujl8xte5r"]
+
+[ext_resource type="PackedScene" uid="uid://4b5mt4qlkor6" path="res://game_assets/world/tools/Pliers/HeavyPliers.fbx" id="1_tp3co"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_shtm7"]
+[ext_resource type="Texture2D" uid="uid://b3mawbxbcrrev" path="res://game_assets/world/tools/Pliers/HeavyPliresTextures.jpg" id="3_8y76y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_24a86"]
+render_priority = 0
+shader = ExtResource("2_shtm7")
+shader_parameter/color_texture = ExtResource("3_8y76y")
+shader_parameter/vertex_wobble = 0.499999988824
+shader_parameter/affine_mapping = 0.0999999977648
+
+[node name="HeavyPliers" unique_id=1684250425 instance=ExtResource("1_tp3co")]
+
+[node name="Plires" parent="." index="0" unique_id=422351099]
+material_override = SubResource("ShaderMaterial_24a86")

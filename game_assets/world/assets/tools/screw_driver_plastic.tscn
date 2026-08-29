@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://idjq4fdsnwib"]
+
+[ext_resource type="PackedScene" uid="uid://bpavsw7k7cm3d" path="res://game_assets/world/tools/Screwdriver/ScrewDriverPlastic.fbx" id="1_dtbwx"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_ya4b2"]
+[ext_resource type="Texture2D" uid="uid://bt6ul8m5fon1f" path="res://game_assets/world/tools/Screwdriver/ScrewDriverPlasticTexture.jpg" id="3_u540o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7iiqe"]
+render_priority = 0
+shader = ExtResource("2_ya4b2")
+shader_parameter/color_texture = ExtResource("3_u540o")
+shader_parameter/vertex_wobble = 0.499999988824
+shader_parameter/affine_mapping = 0.0999999977648
+
+[node name="ScrewDriverPlastic" unique_id=1439189438 instance=ExtResource("1_dtbwx")]
+
+[node name="ScrewDriverPlastic" parent="." index="0" unique_id=349944159]
+material_override = SubResource("ShaderMaterial_7iiqe")

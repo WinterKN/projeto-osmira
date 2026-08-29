@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cnyxt1d56xriq"]
+
+[ext_resource type="PackedScene" uid="uid://dpg7jekkgxxoj" path="res://game_assets/world/tools/Tool Box/ToolBoxClosed.fbx" id="1_82jhe"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_lmcd5"]
+[ext_resource type="Texture2D" uid="uid://0tsgnu7s3soc" path="res://game_assets/world/tools/Tool Box/Tool_Box.png" id="3_jpd10"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyw32"]
+render_priority = 0
+shader = ExtResource("2_lmcd5")
+shader_parameter/color_texture = ExtResource("3_jpd10")
+shader_parameter/vertex_wobble = 0.499999988824
+shader_parameter/affine_mapping = 0.0999999977648
+
+[node name="ToolBoxClosed" unique_id=576829153 instance=ExtResource("1_82jhe")]
+
+[node name="ToolBox" parent="." index="0" unique_id=1871547523]
+material_override = SubResource("ShaderMaterial_oyw32")

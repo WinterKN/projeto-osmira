@@ -119,9 +119,9 @@ occlusion_culling/use_occlusion_culling=true
 
 resolution={
 "type": "vec2",
-"value": Vector2(640, 360)
+"value": Vector2(1280, 960)
 }
 color_depth={
 "type": "float",
-"value": 48.0
+"value": 128.0
 }

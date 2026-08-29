@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://ogw38ilqk7mu"
 [autoload]
 
 GameManager="*uid://bymotria152lg"
+OptimizationManager="*uid://bhn6gdqjt0eyr"
 
 [display]
 
@@ -118,9 +119,9 @@ occlusion_culling/use_occlusion_culling=true
 
 resolution={
 "type": "vec2",
-"value": Vector2(1280, 960)
+"value": Vector2(640, 360)
 }
 color_depth={
 "type": "float",
-"value": 128.0
+"value": 48.0
 }

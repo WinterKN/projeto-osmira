@@ -11,10 +11,20 @@ shader_parameter/color_texture = ExtResource("3_mh2rn")
 shader_parameter/vertex_wobble = 0.6999999843536
 shader_parameter/affine_mapping = 0.0499999988824
 shader_parameter/wind_strength = 0.08
-shader_parameter/wind_speed = 1.4399999678131201
+shader_parameter/wind_speed = 1.43999996781312
 shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l6p5f"]
+height = 3.6674805
+radius = 0.58203125
 
 [node name="tree21" unique_id=1369361132 instance=ExtResource("1_r1jem")]
 
-[node name="tree21" parent="." index="0" unique_id=1960239465]
+[node name="tree21" parent="." index="0" unique_id=558685214]
 material_override = SubResource("ShaderMaterial_kxvhn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree21" index="0" unique_id=1473198138]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree21/StaticBody3D" index="0" unique_id=1473572528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8337402, 1.6292068e-07)
+shape = SubResource("CylinderShape3D_l6p5f")

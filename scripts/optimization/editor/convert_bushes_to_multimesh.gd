@@ -6,14 +6,36 @@ extends EditorScript
 # CONFIGURAÇÃO
 # ============================================================
 
-const TARGET_SCENE := "bush_09.tscn"
-
-# Com vegetação muito densa eu prefiro 20m.
+# MODELOS QUE SERÃO CONVERTIDOS NESTA EXECUÇÃO.
 #
-# Isso gera mais MultiMeshes do que 30m,
-# mas permite culling muito melhor.
+# AGORA:
+# somente bush_10.
+#
+# Depois, para converter bush_12:
+#
+# const TARGET_SCENES: PackedStringArray = [
+#     "bush_12.tscn"
+# ]
+#
+# Esta versão suporta múltiplas MeshInstance3D
+# dentro da mesma cena.
+const TARGET_SCENES: PackedStringArray = [
+	"bush_10.tscn"
+]
+
+
+# Tamanho dos blocos espaciais.
+#
+# Mantemos 20x20 m porque funcionou bem
+# com o bush_09.
 const CELL_SIZE := 20.0
 
+
+# IMPORTANTE:
+# mesmo nome usado na conversão anterior.
+#
+# A V3 vai APROVEITAR esse node existente,
+# e não vai apagar o bush_09.
 const GENERATED_ROOT_NAME := "Generated_Bush_MultiMeshes"
 
 
@@ -31,222 +53,467 @@ func _run() -> void:
 	if scene_root == null:
 
 		push_error(
-			"Nenhuma cena aberta."
-		)
-
-		return
-
-
-	# --------------------------------------------------------
-	# PROTEÇÃO
-	# --------------------------------------------------------
-
-	if (
-		scene_root.get_node_or_null(
-			GENERATED_ROOT_NAME
-		)
-		!= null
-	):
-
-		push_error(
-			"Já existe "
-			+ GENERATED_ROOT_NAME
-			+ ". Restaure/remova a conversão anterior primeiro."
-		)
-
-		return
-
-
-	# --------------------------------------------------------
-	# ENCONTRAR BUSHES
-	# --------------------------------------------------------
-
-	var bushes: Array[Node3D] = []
-
-
-	collect_bushes(
-		scene_root,
-		bushes
-	)
-
-
-	if bushes.is_empty():
-
-		push_error(
-			"Nenhum "
-			+ TARGET_SCENE
-			+ " encontrado."
+			"Nenhuma cena está aberta no editor."
 		)
 
 		return
 
 
 	print("")
-	print("======================================")
-	print("BUSH MULTIMESH CONVERTER V2")
-	print("======================================")
+	print("============================================")
+	print("VEGETATION MULTIMESH CONVERTER V3")
+	print("============================================")
 
-	print(
-		"Bushes encontrados: ",
-		bushes.size()
+
+	# ========================================================
+	# ENCONTRAR OU CRIAR ROOT DOS MULTIMESHES
+	# ========================================================
+
+	var generated_root := (
+		scene_root.get_node_or_null(
+			GENERATED_ROOT_NAME
+		)
+		as Node3D
 	)
 
 
-	# ========================================================
-	# TEMPLATE
-	# ========================================================
+	if generated_root == null:
 
-	var template_mesh_node := (
-		find_first_mesh(
-			bushes[0]
-		)
-	)
+		generated_root = Node3D.new()
 
-
-	if template_mesh_node == null:
-
-		push_error(
-			"O bush não possui MeshInstance3D."
+		generated_root.name = (
+			GENERATED_ROOT_NAME
 		)
 
-		return
 
-
-	if template_mesh_node.mesh == null:
-
-		push_error(
-			"A MeshInstance3D não possui Mesh."
+		scene_root.add_child(
+			generated_root
 		)
 
-		return
 
-
-	# --------------------------------------------------------
-	# MESH COMPARTILHADA
-	# --------------------------------------------------------
-
-	var shared_mesh := (
-		create_shared_mesh(
-			template_mesh_node
-		)
-	)
-
-
-	if shared_mesh == null:
-
-		push_error(
-			"Falha ao criar/acessar Mesh."
+		generated_root.owner = (
+			scene_root
 		)
 
-		return
+
+		print(
+			"Container criado: ",
+			GENERATED_ROOT_NAME
+		)
+
+	else:
+
+		print(
+			"Container existente encontrado: ",
+			GENERATED_ROOT_NAME
+		)
 
 
 	# ========================================================
-	# SEPARAR EM CÉLULAS
+	# VERIFICAR QUAIS MODELOS AINDA PODEM SER CONVERTIDOS
 	# ========================================================
 
-	var cells: Dictionary = {}
+	var active_targets: PackedStringArray = []
 
 
-	for bush in bushes:
+	for target_scene in TARGET_SCENES:
 
-		var cell := (
-			get_cell(
-				bush.global_position
+		var model_name := (
+			target_scene.get_basename()
+		)
+
+
+		var existing_model := (
+			generated_root.get_node_or_null(
+				model_name
 			)
 		)
 
 
-		if not cells.has(
-			cell
-		):
+		if existing_model != null:
 
-			cells[cell] = []
+			push_warning(
+				target_scene
+				+ " já possui MultiMeshes gerados. "
+				+ "Será ignorado."
+			)
+
+			continue
 
 
-		cells[cell].append(
-			bush
+		active_targets.append(
+			target_scene
 		)
 
 
-	# ========================================================
-	# ROOT GERADO
-	# ========================================================
+	if active_targets.is_empty():
 
-	var generated_root := Node3D.new()
+		print(
+			"Nenhum modelo novo para converter."
+		)
 
-	generated_root.name = (
-		GENERATED_ROOT_NAME
-	)
+		print("============================================")
+		print("")
 
-
-	scene_root.add_child(
-		generated_root
-	)
-
-	generated_root.owner = (
-		scene_root
-	)
+		return
 
 
 	# ========================================================
+	# ENCONTRAR INSTÂNCIAS
+	# ========================================================
+
+	var target_instances: Array[Node3D] = []
+
+
+	collect_target_instances(
+		scene_root,
+		active_targets,
+		target_instances
+	)
+
+
+	if target_instances.is_empty():
+
+		push_error(
+			"Nenhuma instância dos modelos selecionados "
+			+ "foi encontrada."
+		)
+
+		return
+
+
+	print(
+		"Instâncias encontradas: ",
+		target_instances.size()
+	)
+
+
+	# ========================================================
+	# BUCKETS
+	#
+	# Cada bucket representa:
+	#
 	# MODELO
+	# +
+	# CÉLULA
+	# +
+	# MESH INTERNA
+	#
+	# Exemplo para bush_12:
+	#
+	# bush_12
+	# Cell 3,4
+	# Mesh_01
+	#
+	# bush_12
+	# Cell 3,4
+	# Mesh_02
+	#
+	# bush_12
+	# Cell 3,4
+	# Mesh_03
+	#
 	# ========================================================
 
-	var model_root := Node3D.new()
-
-	model_root.name = (
-		TARGET_SCENE.get_basename()
-	)
+	var buckets: Dictionary = {}
 
 
-	generated_root.add_child(
-		model_root
-	)
+	# Roots que serão escondidos ao final.
+	var roots_to_hide: Array[Node3D] = []
 
-	model_root.owner = (
-		scene_root
-	)
+
+	for instance_root in target_instances:
+
+		var scene_name := (
+			instance_root.scene_file_path.get_file()
+		)
+
+
+		var cell := (
+			get_cell(
+				instance_root.global_position
+			)
+		)
+
+
+		var mesh_nodes: Array[MeshInstance3D] = []
+
+
+		collect_mesh_instances(
+			instance_root,
+			mesh_nodes
+		)
+
+
+		if mesh_nodes.is_empty():
+
+			push_warning(
+				"Sem MeshInstance3D em: "
+				+ str(instance_root.get_path())
+			)
+
+			continue
+
+
+		roots_to_hide.append(
+			instance_root
+		)
+
+
+		# ----------------------------------------------------
+		# CADA MESH INTERNA GANHA SEU PRÓPRIO BUCKET
+		# ----------------------------------------------------
+
+		for mesh_node in mesh_nodes:
+
+			if mesh_node.mesh == null:
+				continue
+
+
+			var relative_path := (
+				instance_root.get_path_to(
+					mesh_node
+				)
+			)
+
+
+			var bucket_key := (
+				scene_name
+				+ "|"
+				+ str(cell.x)
+				+ "|"
+				+ str(cell.y)
+				+ "|"
+				+ str(relative_path)
+			)
+
+
+			if not buckets.has(
+				bucket_key
+			):
+
+				buckets[bucket_key] = {
+					"scene_name": scene_name,
+					"cell": cell,
+					"relative_path": relative_path,
+					"meshes": []
+				}
+
+
+			var bucket_meshes: Array = (
+				buckets[bucket_key]["meshes"]
+			)
+
+
+			bucket_meshes.append(
+				mesh_node
+			)
+
+
+			buckets[bucket_key]["meshes"] = (
+				bucket_meshes
+			)
+
+
+	# ========================================================
+	# CACHE DE MESHES COMPARTILHADAS
+	# ========================================================
+
+	var shared_mesh_cache: Dictionary = {}
+
+
+	# ========================================================
+	# CACHE DOS PARENTS DOS MODELOS
+	# ========================================================
+
+	var model_parents: Dictionary = {}
+
+
+	# ========================================================
+	# ESTATÍSTICAS
+	# ========================================================
+
+	var total_multimeshes := 0
+
+	var total_render_instances := 0
+
+
+	var model_multimesh_count: Dictionary = {}
+
+	var model_render_instance_count: Dictionary = {}
 
 
 	# ========================================================
 	# GERAR MULTIMESHES
 	# ========================================================
 
-	var total_multimeshes := 0
+	for bucket_key in buckets:
 
-	var total_instances := 0
-
-
-	for cell in cells.keys():
-
-		var cell_bushes: Array = (
-			cells[cell]
+		var data: Dictionary = (
+			buckets[bucket_key]
 		)
 
 
-		if cell_bushes.is_empty():
+		var scene_name: String = (
+			data["scene_name"]
+		)
+
+
+		var cell: Vector2i = (
+			data["cell"]
+		)
+
+
+		var relative_path: NodePath = (
+			data["relative_path"]
+		)
+
+
+		var meshes: Array = (
+			data["meshes"]
+		)
+
+
+		if meshes.is_empty():
 			continue
 
 
-		# ----------------------------------------------------
-		# POSIÇÃO REAL DA CÉLULA
-		#
-		# MUITO IMPORTANTE:
-		# agora o MultiMesh não fica mais em 0,0,0.
-		# ----------------------------------------------------
+		# ====================================================
+		# TEMPLATE
+		# ====================================================
 
-		var cell_origin := (
-			get_cell_origin(
-				cell,
-				cell_bushes
-			)
+		var template := (
+			meshes[0]
+			as MeshInstance3D
 		)
 
 
-		# ----------------------------------------------------
+		if template == null:
+			continue
+
+
+		if template.mesh == null:
+			continue
+
+
+		# ====================================================
+		# MODEL ROOT
+		#
+		# Generated_Bush_MultiMeshes
+		# ├── bush_09
+		# └── bush_10
+		# ====================================================
+
+		var model_name := (
+			scene_name.get_basename()
+		)
+
+
+		var model_parent: Node3D
+
+
+		if model_parents.has(
+			model_name
+		):
+
+			model_parent = (
+				model_parents[model_name]
+			)
+
+
+		else:
+
+			var existing_parent := (
+				generated_root.get_node_or_null(
+					model_name
+				)
+				as Node3D
+			)
+
+
+			if existing_parent != null:
+
+				model_parent = (
+					existing_parent
+				)
+
+
+			else:
+
+				model_parent = Node3D.new()
+
+				model_parent.name = (
+					model_name
+				)
+
+
+				generated_root.add_child(
+					model_parent
+				)
+
+
+				model_parent.owner = (
+					scene_root
+				)
+
+
+			model_parents[model_name] = (
+				model_parent
+			)
+
+
+		# ====================================================
+		# MESH COMPARTILHADA
+		# ====================================================
+
+		var mesh_cache_key := (
+			scene_name
+				+ "|"
+				+ str(relative_path)
+		)
+
+
+		var shared_mesh: Mesh
+
+
+		if shared_mesh_cache.has(
+			mesh_cache_key
+		):
+
+			shared_mesh = (
+				shared_mesh_cache[
+					mesh_cache_key
+				]
+			)
+
+
+		else:
+
+			shared_mesh = (
+				create_shared_mesh(
+					template
+				)
+			)
+
+
+			if shared_mesh == null:
+
+				push_warning(
+					"Falha ao criar Mesh compartilhada: "
+					+ mesh_cache_key
+				)
+
+				continue
+
+
+			shared_mesh_cache[
+				mesh_cache_key
+			] = shared_mesh
+
+
+		# ====================================================
 		# MULTIMESH INSTANCE
-		# ----------------------------------------------------
+		# ====================================================
 
 		var multi_instance := (
 			MultiMeshInstance3D.new()
@@ -258,10 +525,14 @@ func _run() -> void:
 			+ str(cell.x)
 			+ "_"
 			+ str(cell.y)
+			+ "_"
+			+ sanitize_name(
+				str(relative_path)
+			)
 		)
 
 
-		model_root.add_child(
+		model_parent.add_child(
 			multi_instance
 		)
 
@@ -271,82 +542,38 @@ func _run() -> void:
 		)
 
 
-		# ----------------------------------------------------
-		# POSICIONAR O NODE NA PRÓPRIA CÉLULA
-		# ----------------------------------------------------
+		# ====================================================
+		# POSIÇÃO DO BLOCO
+		#
+		# O node fica realmente na própria célula.
+		#
+		# Isso é essencial para:
+		#
+		# Visibility Range
+		# Frustum Culling
+		# Occlusion Culling
+		# ====================================================
+
+		var cell_origin := (
+			get_bucket_origin(
+				cell,
+				meshes
+			)
+		)
+
 
 		multi_instance.global_position = (
 			cell_origin
 		)
 
 
-		# ----------------------------------------------------
+		# ====================================================
 		# CONFIGURAÇÕES VISUAIS
-		# ----------------------------------------------------
+		# ====================================================
 
-		multi_instance.layers = (
-			template_mesh_node.layers
-		)
-
-
-		multi_instance.cast_shadow = (
-			template_mesh_node.cast_shadow
-		)
-
-
-		multi_instance.gi_mode = (
-			template_mesh_node.gi_mode
-		)
-
-
-		multi_instance.material_override = (
-			template_mesh_node.material_override
-		)
-
-
-		multi_instance.material_overlay = (
-			template_mesh_node.material_overlay
-		)
-
-
-		multi_instance.ignore_occlusion_culling = (
-			template_mesh_node.ignore_occlusion_culling
-		)
-
-
-		multi_instance.extra_cull_margin = (
-			template_mesh_node.extra_cull_margin
-		)
-
-
-		# ----------------------------------------------------
-		# VISIBILITY RANGE ORIGINAL
-		#
-		# O WorldOptimizer pode substituir depois.
-		# ----------------------------------------------------
-
-		multi_instance.visibility_range_begin = (
-			template_mesh_node.visibility_range_begin
-		)
-
-
-		multi_instance.visibility_range_begin_margin = (
-			template_mesh_node.visibility_range_begin_margin
-		)
-
-
-		multi_instance.visibility_range_end = (
-			template_mesh_node.visibility_range_end
-		)
-
-
-		multi_instance.visibility_range_end_margin = (
-			template_mesh_node.visibility_range_end_margin
-		)
-
-
-		multi_instance.visibility_range_fade_mode = (
-			template_mesh_node.visibility_range_fade_mode
+		copy_geometry_settings(
+			template,
+			multi_instance
 		)
 
 
@@ -359,8 +586,8 @@ func _run() -> void:
 		)
 
 
-		# Formato precisa ser definido ANTES
-		# do instance_count.
+		# IMPORTANTE:
+		# deve ser definido antes do instance_count.
 		multimesh.transform_format = (
 			MultiMesh.TRANSFORM_3D
 		)
@@ -371,15 +598,13 @@ func _run() -> void:
 		multimesh.use_custom_data = false
 
 
-		# IMPORTANTE:
-		# mesma Mesh compartilhada por todas as células.
 		multimesh.mesh = (
 			shared_mesh
 		)
 
 
 		multimesh.instance_count = (
-			cell_bushes.size()
+			meshes.size()
 		)
 
 
@@ -389,7 +614,7 @@ func _run() -> void:
 
 
 		# ====================================================
-		# TRANSFORMS
+		# COPIAR TRANSFORMS
 		# ====================================================
 
 		var inverse_multi := (
@@ -400,23 +625,12 @@ func _run() -> void:
 
 
 		for index in range(
-			cell_bushes.size()
+			meshes.size()
 		):
 
-			var bush := (
-				cell_bushes[index]
-				as Node3D
-			)
-
-
-			if bush == null:
-				continue
-
-
 			var old_mesh := (
-				find_first_mesh(
-					bush
-				)
+				meshes[index]
+				as MeshInstance3D
 			)
 
 
@@ -458,7 +672,7 @@ func _run() -> void:
 
 
 		# ====================================================
-		# GROUP
+		# GROUP DO WORLD OPTIMIZER
 		# ====================================================
 
 		multi_instance.add_to_group(
@@ -467,19 +681,49 @@ func _run() -> void:
 		)
 
 
-		total_multimeshes += 1
+		# ====================================================
+		# METADADOS
+		# ====================================================
 
-		total_instances += (
-			cell_bushes.size()
+		multi_instance.set_meta(
+			"generated_multimesh",
+			true
 		)
 
 
-		print(
-			"Cell ",
-			cell,
-			" | ",
-			cell_bushes.size(),
-			" instâncias"
+		multi_instance.set_meta(
+			"source_scene",
+			scene_name
+		)
+
+
+		# ====================================================
+		# ESTATÍSTICAS
+		# ====================================================
+
+		total_multimeshes += 1
+
+
+		total_render_instances += (
+			meshes.size()
+		)
+
+
+		model_multimesh_count[model_name] = (
+			model_multimesh_count.get(
+				model_name,
+				0
+			) + 1
+		)
+
+
+		model_render_instance_count[model_name] = (
+			model_render_instance_count.get(
+				model_name,
+				0
+			)
+			+
+			meshes.size()
 		)
 
 
@@ -487,61 +731,99 @@ func _run() -> void:
 	# ESCONDER ORIGINAIS
 	# ========================================================
 
-	for bush in bushes:
-
-		bush.visible = false
+	var hidden_roots := 0
 
 
-		bush.set_meta(
+	for instance_root in roots_to_hide:
+
+		if not is_instance_valid(
+			instance_root
+		):
+			continue
+
+
+		instance_root.visible = false
+
+
+		instance_root.set_meta(
 			"converted_to_multimesh",
 			true
 		)
 
 
+		hidden_roots += 1
+
+
 	# ========================================================
-	# FINAL
+	# RELATÓRIO
 	# ========================================================
 
 	print("")
-	print("--------------------------------------")
+	print("--------------------------------------------")
+	print("CONVERSÃO FINALIZADA")
+	print("--------------------------------------------")
+
 
 	print(
-		"Bushes originais: ",
-		bushes.size()
+		"Objetos originais convertidos: ",
+		hidden_roots
 	)
 
 
 	print(
-		"MultiMeshes criados: ",
+		"MultiMeshes criados nesta execução: ",
 		total_multimeshes
 	)
 
 
 	print(
-		"Instâncias: ",
-		total_instances
+		"Instâncias visuais adicionadas: ",
+		total_render_instances
 	)
 
-	print("--------------------------------------")
+
+	print("")
+
+
+	for model_name in model_multimesh_count.keys():
+
+		print(
+			model_name,
+			" | MultiMeshes: ",
+			model_multimesh_count[
+				model_name
+			],
+			" | Instâncias visuais: ",
+			model_render_instance_count[
+				model_name
+			]
+		)
+
+
+	print("--------------------------------------------")
+
 
 	print(
-		"Conversão V2 concluída."
+		"Conversões anteriores foram preservadas."
 	)
+
 
 	print(
-		"Verifique visualmente antes de salvar."
+		"Verifique visualmente antes de salvar a cena."
 	)
 
-	print("======================================")
+
+	print("============================================")
 	print("")
 
 
 # ============================================================
-# ENCONTRAR BUSHES
+# ENCONTRAR INSTÂNCIAS ALVO
 # ============================================================
 
-func collect_bushes(
+func collect_target_instances(
 	node: Node,
+	targets: PackedStringArray,
 	output: Array[Node3D]
 ) -> void:
 
@@ -549,61 +831,81 @@ func collect_bushes(
 		node is Node3D
 		and
 		not node.scene_file_path.is_empty()
-		and
-		node.scene_file_path.get_file()
-		==
-		TARGET_SCENE
 	):
 
-		output.append(
-			node as Node3D
+		var scene_name := (
+			node.scene_file_path.get_file()
 		)
 
-		return
+
+		if targets.has(
+			scene_name
+		):
+
+			# ------------------------------------------------
+			# JÁ FOI CONVERTIDO?
+			# ------------------------------------------------
+
+			if (
+				node.has_meta(
+					"converted_to_multimesh"
+				)
+				and
+				bool(
+					node.get_meta(
+						"converted_to_multimesh"
+					)
+				)
+			):
+
+				return
+
+
+			output.append(
+				node as Node3D
+			)
+
+
+			# Não precisa procurar dentro desta
+			# instância de cena.
+			return
 
 
 	for child in node.get_children():
 
-		collect_bushes(
+		collect_target_instances(
 			child,
+			targets,
 			output
 		)
 
 
 # ============================================================
-# ENCONTRAR PRIMEIRA MESH
+# COLETAR TODAS AS MESHES DO MODELO
 # ============================================================
 
-func find_first_mesh(
-	node: Node
-) -> MeshInstance3D:
+func collect_mesh_instances(
+	node: Node,
+	output: Array[MeshInstance3D]
+) -> void:
 
 	if node is MeshInstance3D:
 
-		return (
+		output.append(
 			node as MeshInstance3D
 		)
 
 
 	for child in node.get_children():
 
-		var found := (
-			find_first_mesh(
-				child
-			)
+		collect_mesh_instances(
+			child,
+			output
 		)
 
 
-		if found != null:
-
-			return found
-
-
-	return null
-
-
 # ============================================================
-# CRIAR MESH COMPARTILHADA
+# MESH COMPARTILHADA
 # ============================================================
 
 func create_shared_mesh(
@@ -614,39 +916,42 @@ func create_shared_mesh(
 		return null
 
 
-	var has_override := false
+	var has_surface_override := false
 
 
-	for index in range(
+	for surface_index in range(
 		template.get_surface_override_material_count()
 	):
 
-		if (
+		var override_material := (
 			template.get_surface_override_material(
-				index
+				surface_index
 			)
-			!= null
-		):
+		)
 
-			has_override = true
+
+		if override_material != null:
+
+			has_surface_override = true
 			break
 
 
 	# --------------------------------------------------------
-	# SEM OVERRIDE:
-	# usa diretamente a Mesh original.
+	# SEM OVERRIDE
 	#
-	# Não duplica nada.
+	# Usa diretamente a Mesh original.
 	# --------------------------------------------------------
 
-	if not has_override:
+	if not has_surface_override:
 
 		return template.mesh
 
 
 	# --------------------------------------------------------
-	# COM OVERRIDE:
-	# cria UMA ÚNICA cópia compartilhada.
+	# COM OVERRIDE
+	#
+	# Cria apenas UMA cópia para esse tipo de mesh,
+	# compartilhada por todas as células.
 	# --------------------------------------------------------
 
 	var mesh_copy := (
@@ -655,30 +960,108 @@ func create_shared_mesh(
 	)
 
 
-	for index in range(
+	if mesh_copy == null:
+		return null
+
+
+	for surface_index in range(
 		template.get_surface_override_material_count()
 	):
 
-		if index >= mesh_copy.get_surface_count():
+		if (
+			surface_index
+			>=
+			mesh_copy.get_surface_count()
+		):
+
 			continue
 
 
-		var material := (
+		var override_material := (
 			template.get_surface_override_material(
-				index
+				surface_index
 			)
 		)
 
 
-		if material != null:
+		if override_material != null:
 
 			mesh_copy.surface_set_material(
-				index,
-				material
+				surface_index,
+				override_material
 			)
 
 
 	return mesh_copy
+
+
+# ============================================================
+# COPIAR CONFIGURAÇÕES VISUAIS
+# ============================================================
+
+func copy_geometry_settings(
+	source: MeshInstance3D,
+	target: MultiMeshInstance3D
+) -> void:
+
+	target.layers = (
+		source.layers
+	)
+
+
+	target.cast_shadow = (
+		source.cast_shadow
+	)
+
+
+	target.gi_mode = (
+		source.gi_mode
+	)
+
+
+	target.material_override = (
+		source.material_override
+	)
+
+
+	target.material_overlay = (
+		source.material_overlay
+	)
+
+
+	target.extra_cull_margin = (
+		source.extra_cull_margin
+	)
+
+
+	target.ignore_occlusion_culling = (
+		source.ignore_occlusion_culling
+	)
+
+
+	target.visibility_range_begin = (
+		source.visibility_range_begin
+	)
+
+
+	target.visibility_range_begin_margin = (
+		source.visibility_range_begin_margin
+	)
+
+
+	target.visibility_range_end = (
+		source.visibility_range_end
+	)
+
+
+	target.visibility_range_end_margin = (
+		source.visibility_range_end_margin
+	)
+
+
+	target.visibility_range_fade_mode = (
+		source.visibility_range_fade_mode
+	)
 
 
 # ============================================================
@@ -691,22 +1074,26 @@ func get_cell(
 
 	return Vector2i(
 		floori(
-			position.x / CELL_SIZE
+			position.x
+			/
+			CELL_SIZE
 		),
 
 		floori(
-			position.z / CELL_SIZE
+			position.z
+			/
+			CELL_SIZE
 		)
 	)
 
 
 # ============================================================
-# ORIGEM DA CÉLULA
+# ORIGEM DO MULTIMESH
 # ============================================================
 
-func get_cell_origin(
+func get_bucket_origin(
 	cell: Vector2i,
-	bushes: Array
+	meshes: Array
 ) -> Vector3:
 
 	# Centro X/Z da célula.
@@ -725,33 +1112,39 @@ func get_cell_origin(
 
 
 	# --------------------------------------------------------
-	# Média da altura dos bushes.
+	# Y MÉDIO
 	# --------------------------------------------------------
 
 	var y := 0.0
 
-	var count := 0
+	var valid_count := 0
 
 
-	for bush_variant in bushes:
+	for mesh_variant in meshes:
 
-		var bush := (
-			bush_variant as Node3D
+		var mesh_node := (
+			mesh_variant
+			as MeshInstance3D
 		)
 
 
-		if bush == null:
+		if mesh_node == null:
 			continue
 
 
-		y += bush.global_position.y
+		y += (
+			mesh_node.global_position.y
+		)
 
-		count += 1
+
+		valid_count += 1
 
 
-	if count > 0:
+	if valid_count > 0:
 
-		y /= float(count)
+		y /= float(
+			valid_count
+		)
 
 
 	return Vector3(
@@ -759,3 +1152,46 @@ func get_cell_origin(
 		y,
 		z
 	)
+
+
+# ============================================================
+# LIMPAR NOMES
+# ============================================================
+
+func sanitize_name(
+	value: String
+) -> String:
+
+	var result := value
+
+
+	result = result.replace(
+		"/",
+		"_"
+	)
+
+
+	result = result.replace(
+		":",
+		"_"
+	)
+
+
+	result = result.replace(
+		".",
+		"_"
+	)
+
+
+	result = result.replace(
+		"@",
+		"_"
+	)
+
+
+	if result.is_empty():
+
+		result = "Mesh"
+
+
+	return result

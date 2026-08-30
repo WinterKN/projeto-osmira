@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dqyyh21kvumgq" path="res://game_assets/world/assets/objects/barril_vermei.tscn" id="13_7qp4b"]
 [ext_resource type="PackedScene" uid="uid://lf2p8kxt0lib" path="res://game_assets/world/assets/trees/tree_20.tscn" id="13_jyr8v"]
 [ext_resource type="Texture2D" uid="uid://0tn5t0ebns2w" path="res://game_assets/world/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="14_navra"]
+[ext_resource type="PackedScene" uid="uid://4xxueaaqiuqs" path="res://game_scenes/Quest_scenes/quest_area.tscn" id="18_7qp4b"]
 [ext_resource type="PackedScene" uid="uid://i4ctwpskl2y" path="res://game_assets/cutscenes/Opening/opening_scene.tscn" id="23_ues17"]
 [ext_resource type="Script" uid="uid://dxq4p56omxx80" path="res://addons/lowpolyterrain/LowPolyTerrainManager.gd" id="24_xq18t"]
 [ext_resource type="Script" uid="uid://cfbwrsktd32g1" path="res://scripts/acessibility_effects/game_effects.gd" id="25_k3ap7"]
@@ -36,8 +37,10 @@
 [ext_resource type="PackedScene" uid="uid://ds463euj042jr" path="res://game_scenes/Ui_scenes/dialog1.tscn" id="38_75uq0"]
 [ext_resource type="Texture2D" uid="uid://cvlycuxuvyxaq" path="res://game_assets/world/nature/bush/textures/bush_05.png" id="38_grhdw"]
 [ext_resource type="PackedScene" uid="uid://cacwvj4rnugt5" path="res://game_assets/world/assets/objects/barril_podre.tscn" id="38_v0unt"]
+[ext_resource type="Script" uid="uid://c2iwc2jw31n0l" path="res://scripts/quests/quest_resource.gd" id="39_75uq0"]
 [ext_resource type="Texture2D" uid="uid://bd0ilrsvy0b35" path="res://game_assets/world/nature/bush/textures/bush_01.png" id="39_grhdw"]
 [ext_resource type="PackedScene" uid="uid://b3pfgtlcxcfci" path="res://game_assets/world/assets/objects/machado.tscn" id="40_7qp4b"]
+[ext_resource type="Resource" uid="uid://dxvobf4qdb35d" path="res://game_text/quests/quest1.tres" id="40_v0unt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dne8e"]
 resource_name = "AnimeChar"
@@ -20564,10 +20567,10 @@ script = ExtResource("1_grhdw")
 transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.745, 0.4, 106.92224)
 collision_layer = 5
 
-[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=583764902]
+[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=1856116332]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)
 
-[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=2129592938]
+[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=1659125940]
 bones/1/position = Vector3(0, 0.008500578, 0.00013502735)
 bones/1/rotation = Quaternion(0.04863141, 1.19068226e-07, 5.7973115e-09, 0.9988168)
 bones/1/scale = Vector3(1, 0.99999994, 0.9999999)
@@ -20646,15 +20649,15 @@ bones/36/rotation = Quaternion(0.019486291, 0.7068382, 0.70683825, 0.019486288)
 bones/37/position = Vector3(-1.8849231e-11, 0.0020999473, -3.4160513e-10)
 bones/37/rotation = Quaternion(-2.2737376e-15, -3.5981199e-19, 4.135903e-25, 1)
 
-[node name="PlayerBody" parent="Player/model/Armature/Skeleton3D" index="0" unique_id=923867030]
+[node name="PlayerBody" parent="Player/model/Armature/Skeleton3D" index="0" unique_id=1363970805]
 mesh = SubResource("ArrayMesh_ye3kk")
 skin = SubResource("Skin_yro70")
 
-[node name="PlayerHead" parent="Player/model/Armature/Skeleton3D" index="1" unique_id=1079892035]
+[node name="PlayerHead" parent="Player/model/Armature/Skeleton3D" index="1" unique_id=1068382759]
 mesh = SubResource("ArrayMesh_22huf")
 skin = SubResource("Skin_yro70")
 
-[node name="PlayerLegs" parent="Player/model/Armature/Skeleton3D" index="2" unique_id=729583522]
+[node name="PlayerLegs" parent="Player/model/Armature/Skeleton3D" index="2" unique_id=1359260915]
 mesh = SubResource("ArrayMesh_h2ekw")
 skin = SubResource("Skin_yro70")
 
@@ -20731,6 +20734,7 @@ transform = Transform3D(0.99996984, 0.005351954, 0.005641586, -0.0071211844, 0.9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera8/Trigger" parent_id_path=PackedInt32Array(1356132025, 942678734) index="0" unique_id=1878574196]
 transform = Transform3D(0.09983775, -0.027843472, -0.9946237, -0.4004444, 0.91395676, -0.065781906, 0.9108659, 0.40485534, 0.080098726, -2.7921493, -0.95750666, -11.72646)
+visible = false
 shape = SubResource("BoxShape3D_rwifv")
 
 [node name="fixedCamera9" parent="Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras" unique_id=940047923 instance=ExtResource("1_lakw3")]
@@ -21226,6 +21230,9 @@ transform = Transform3D(0.4356213, -0.333566, 1.132566, 0.5033478, 1.1444633, 0.
 [node name="PSX_Axe2" parent="Stage/Buildings/Construction" unique_id=527238170 instance=ExtResource("40_7qp4b")]
 transform = Transform3D(0.021268012, 1.1815093, 0.60505205, -1.3273784, 0.023893757, 0, -0.010889607, -0.6049541, 1.1817005, -87.25931, 2.1971605, -145.8808)
 
+[node name="area1" parent="Stage/Buildings" unique_id=1323974764 instance=ExtResource("18_7qp4b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5682914, 1.611855, -75.91178)
+
 [node name="Nature" type="Node" parent="Stage" unique_id=1412965896]
 
 [node name="Campfire" type="Node" parent="Stage/Nature" unique_id=1731474509]
@@ -21254,7 +21261,7 @@ transform = Transform3D(0.98622674, 0, -0.16539904, 0, 1, 0, 0.16539904, 0, 0.98
 [node name="tree225" parent="Stage/Nature/Trees" unique_id=1272352657 instance=ExtResource("5_7iits")]
 transform = Transform3D(0.9775307, 0, -0.21079323, 0, 1, 0, 0.21079323, 0, 0.9775307, -52.156773, 0.5000045, -77.42345)
 
-[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=648088832]
+[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=64680381]
 transform = Transform3D(0.99999994, 0, -1.4901161e-08, 0, 1, 1.6292067e-07, 1.4901161e-08, -1.6292066e-07, 0.99999994, -1.0855865, 0, 0.06829834)
 
 [node name="tree226" parent="Stage/Nature/Trees" unique_id=841867185 instance=ExtResource("5_7iits")]
@@ -64765,15 +64772,18 @@ collision_mask = 0
 [node name="Chunk_9_9_Col" type="CollisionShape3D" parent="chao/br-174_Collisions/Static_Chunk_9_9" unique_id=157488201]
 shape = SubResource("ConcavePolygonShape3D_fn47m")
 
-[node name="Node3D" parent="." unique_id=826261821 node_paths=PackedStringArray("interaction_ui", "fixed_camera", "dialogues", "player") instance=ExtResource("37_grhdw")]
-transform = Transform3D(0.88930434, 0, 0.4573159, 0, 1, 0, -0.4573159, 0, 0.88930434, -5.3587265, 0.6700001, -57.074642)
-interaction_ui = NodePath("Interaction")
-fixed_camera = NodePath("../Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera13")
-dialogues = NodePath("../Dialog1")
-player = NodePath("../Player")
-arquivo_dialogo_txt = "res://game_text/dialogues/dialog1.txt"
+[node name="Dialogos" type="Node" parent="." unique_id=393063406]
 
-[node name="Dialog1" parent="." unique_id=1872024788 instance=ExtResource("38_75uq0")]
+[node name="Dialog1" parent="Dialogos" unique_id=1872024788 instance=ExtResource("38_75uq0")]
+quests = Array[ExtResource("39_75uq0")]([ExtResource("40_v0unt")])
+
+[node name="NPCS" type="Node" parent="." unique_id=456204015]
+
+[node name="Node3D" parent="NPCS" unique_id=826261821 node_paths=PackedStringArray("fixed_camera", "dialogues") instance=ExtResource("37_grhdw")]
+transform = Transform3D(0.88930434, 0, 0.4573159, 0, 1, 0, -0.4573159, 0, 0.88930434, -5.3587265, 0.6700001, -57.074642)
+fixed_camera = NodePath("../../Cameras/Fixed Cameras/Outside Spaces/Main Avenue Cameras/fixedCamera13")
+dialogues = NodePath("../../Dialogos/Dialog1")
+arquivo_dialogo_txt = "res://game_text/dialogues/dialog1.txt"
 
 [editable path="Player"]
 [editable path="Player/model"]
@@ -64818,6 +64828,6 @@ arquivo_dialogo_txt = "res://game_text/dialogues/dialog1.txt"
 [editable path="Stage/Nature/Trees/tree225"]
 [editable path="Stage/Nature/Trees/tree227"]
 [editable path="Stage/Nature/Trees/tree253"]
-[editable path="Node3D"]
-[editable path="Node3D/Npc1"]
-[editable path="Node3D/Npc1/model"]
+[editable path="NPCS/Node3D"]
+[editable path="NPCS/Node3D/Npc1"]
+[editable path="NPCS/Node3D/Npc1/model"]

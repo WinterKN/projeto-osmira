@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 		look_at(object.global_position)
 
 func _on_trigger_body_entered(body: Node3D) -> void:
+
 	if body is Player:
 		if not body.controls_enabled:
 			return

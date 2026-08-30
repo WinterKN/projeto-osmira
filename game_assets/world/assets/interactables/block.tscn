@@ -15,7 +15,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Trigger" unique_id=523257831]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.8536239, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.3017073, 0)
 shape = SubResource("BoxShape3D_kpybi")
 
 [node name="Npc1" parent="." unique_id=401003803 instance=ExtResource("2_ejllx")]

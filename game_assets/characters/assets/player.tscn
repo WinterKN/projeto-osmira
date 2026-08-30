@@ -17,9 +17,9 @@
 [ext_resource type="Animation" uid="uid://dc7wgau0uxwki" path="res://game_assets/characters/animations/player_run.anim" id="12_5el3j"]
 [ext_resource type="Animation" uid="uid://rv8037m1vp8a" path="res://game_assets/characters/animations/player_sit_idle.anim" id="16_ucvq2"]
 [ext_resource type="Animation" uid="uid://by200i1oxbmg5" path="res://game_assets/characters/animations/player_stand_up.anim" id="17_3cst3"]
-[ext_resource type="PackedScene" uid="uid://dmx6lq358jvbv" path="res://game_scenes/Quest_scenes/QuestView.tscn" id="18_e278h"]
+[ext_resource type="PackedScene" uid="uid://dmx6lq358jvbv" path="res://game_scenes/Quest_scenes/questView.tscn" id="18_e278h"]
 [ext_resource type="Script" uid="uid://myg3r2ixuiti" path="res://scripts/quests/quest_view.gd" id="19_0an68"]
-[ext_resource type="PackedScene" uid="uid://w36vq0ck8h45" path="res://game_scenes/Quest_scenes/questbox.tscn" id="20_5afug"]
+[ext_resource type="PackedScene" uid="uid://w36vq0ck8h45" path="res://game_scenes/Quest_scenes/questBox.tscn" id="20_5afug"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_48euw"]
 height = 1.9
@@ -76,10 +76,10 @@ shape = SubResource("CapsuleShape3D_48euw")
 
 [node name="model" parent="." unique_id=1372736054 instance=ExtResource("2_67d6n")]
 
-[node name="Armature" parent="model" index="0" unique_id=583764902]
+[node name="Armature" parent="model" index="0" unique_id=1856116332]
 transform = Transform3D(99.0679, -6.23116, 12.113143, -11.377509, 11.047677, 98.73449, -7.490526, -99.19237, 10.235745, -0.117979735, -0.024898157, -0.10523802)
 
-[node name="Skeleton3D" parent="model/Armature" index="0" unique_id=2129592938]
+[node name="Skeleton3D" parent="model/Armature" index="0" unique_id=1659125940]
 bones/2/rotation = Quaternion(-0.06902326, -0.05767009, 0.06984488, 0.9934947)
 bones/3/rotation = Quaternion(0.106647395, -0.0048515396, 0.0027908923, 0.9942812)
 bones/4/rotation = Quaternion(0.019523384, -0.0046430053, 0.0031255642, 0.9997938)
@@ -103,13 +103,13 @@ bones/25/rotation = Quaternion(0.03545713, -0.076004095, 0.07681999, 0.99351144)
 bones/30/rotation = Quaternion(-0.019486329, 0.70683825, 0.7068382, -0.019486325)
 bones/33/rotation = Quaternion(0.013670929, 0.7069746, -0.7069746, -0.013670929)
 
-[node name="PlayerBody" parent="model/Armature/Skeleton3D" index="0" unique_id=923867030]
+[node name="PlayerBody" parent="model/Armature/Skeleton3D" index="0" unique_id=1363970805]
 material_override = SubResource("ShaderMaterial_lwdpm")
 
-[node name="PlayerHead" parent="model/Armature/Skeleton3D" index="1" unique_id=1079892035]
+[node name="PlayerHead" parent="model/Armature/Skeleton3D" index="1" unique_id=1068382759]
 material_override = SubResource("ShaderMaterial_5el3j")
 
-[node name="PlayerLegs" parent="model/Armature/Skeleton3D" index="2" unique_id=729583522]
+[node name="PlayerLegs" parent="model/Armature/Skeleton3D" index="2" unique_id=1359260915]
 material_override = SubResource("ShaderMaterial_0lw2k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="model" unique_id=617200732]

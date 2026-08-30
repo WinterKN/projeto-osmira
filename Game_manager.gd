@@ -9,6 +9,13 @@ enum PERSON {BEN, ANNA}
 enum AREA {OCA_PRINCIPAL}
 var activeQuests: Array[Quest] = []
 
+func _physics_process(delta: float) -> void:
+	for quest: Quest in activeQuests:
+		var questDone =  quest.quantityCollected >= quest.quantityGoal
+		
+		if questDone:
+			quest_done(quest)
+
 func add_quest(quest:Quest):
 	activeQuests.append(quest.duplicate())
 	quest_changed.emit()
@@ -20,6 +27,8 @@ func enter_area(area: AREA, quantity):
 			
 	quest_changed.emit()
 	area_entered.emit()
+	
+
 
 func talk_with(person: PERSON):
 	for quest: Quest in activeQuests:
@@ -33,7 +42,7 @@ func own_quest_done(person:PERSON):
 	for quest: Quest in activeQuests:
 		var questDone =  quest.quantityCollected >= quest.quantityGoal
 		
-		if quest.to == person and questDone:
+		if questDone:
 			return quest
 			
 func quest_done(quest:Quest):

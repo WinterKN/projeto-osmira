@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cfout7t7dcsyb" path="res://game_assets/characters/model/Player.fbx" id="1_bbunr"]
 [ext_resource type="Animation" uid="uid://dbg6rmheeo45k" path="res://game_assets/npcs/waimiri/animations/waimiri_idle1.anim" id="2_ifldu"]
-[ext_resource type="PackedScene" uid="uid://dmx6lq358jvbv" path="res://game_scenes/Quest_scenes/QuestView.tscn" id="3_xjijh"]
+[ext_resource type="PackedScene" uid="uid://dmx6lq358jvbv" path="res://game_scenes/Quest_scenes/questView.tscn" id="3_xjijh"]
 [ext_resource type="Script" uid="uid://myg3r2ixuiti" path="res://scripts/quests/quest_view.gd" id="4_n4xfl"]
-[ext_resource type="PackedScene" uid="uid://w36vq0ck8h45" path="res://game_scenes/Quest_scenes/questbox.tscn" id="5_3fu0w"]
+[ext_resource type="PackedScene" uid="uid://w36vq0ck8h45" path="res://game_scenes/Quest_scenes/questBox.tscn" id="5_3fu0w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1e3d0"]
 height = 1.9

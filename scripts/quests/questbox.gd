@@ -10,4 +10,4 @@ func _ready() -> void:
 	
 func _refresh():
 	title_label.text = quest.name
-	brief_description_label.text = quest.brief_description
+	brief_description_label.text = quest.get_brief_description()

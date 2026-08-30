@@ -81,25 +81,26 @@ func encerrar_interacao() -> void:
 			var tween_pos = create_tween()
 			tween_pos.tween_property(fixed_camera, "global_transform", original_camera_transform, 0.3).set_trans(Tween.TRANS_SINE)
 	
-func _on_trigger_body_entered(body: CharacterBody3D) -> void:
+func _on_trigger_body_entered(body: Node3D) -> void:
 	print("enter")
-	# --------Codigo antigo (deixar) ---------
-	if interaction_ui == null:
-		var uis = get_tree().get_nodes_in_group("ui_interacao")
-		if uis.size() == 1:
-			print("ao")
-			interaction_ui = uis[0]
-			interaction_ui.alternar_visibilidade(false)
-			ui_esta_visivel = false
+	if body == player:
+		# --------Codigo antigo (deixar) ---------
+		if interaction_ui == null:
+			var uis = get_tree().get_nodes_in_group("ui_interacao")
+			if uis.size() == 1:
+				print("ao")
+				interaction_ui = uis[0]
+				interaction_ui.alternar_visibilidade(false)
+				ui_esta_visivel = false
 			
 # --- BUSCA A UI DE INTERAÇÃO PELO GRUPO ---
-	if interaction_ui != null:
+		if interaction_ui != null:
 			print("oi")
 			interaction_ui.set_text("[E] INTERAGIR")
 			interaction_ui.alternar_visibilidade(true)
 			ui_esta_visivel = true # Atualiza o estado para visível
 
-	else:
+		else:
 			push_error("ERRO: UI de interação não foi encontrada no grupo 'ui_interacao'!")
 	
 

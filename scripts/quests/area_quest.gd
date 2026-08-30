@@ -4,9 +4,8 @@ extends StaticBody3D
 
 var inRange
 
-func _input(_event: InputEvent) -> void:
-	if inRange:
-		_enter()
+
+
 		
 func _enter():
 	GameManager.enter_area(area, 1)
@@ -15,7 +14,8 @@ func _enter():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		inRange = true
-
+	if inRange:
+		_enter()
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):

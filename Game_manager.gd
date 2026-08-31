@@ -5,7 +5,7 @@ signal area_entered(area: AREA)
 signal person_talked(person: PERSON)
 
 enum  QUEST_TYPE {ENTER, TALK_WITH}
-enum PERSON {BEN, ANNA}
+enum PERSON {PAJE, MILITAR}
 enum AREA {OCA_PRINCIPAL}
 var activeQuests: Array[Quest] = []
 

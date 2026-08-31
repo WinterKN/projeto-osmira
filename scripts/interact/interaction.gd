@@ -4,6 +4,7 @@ class_name interactable extends Node
 @export var fixed_camera: fixedCamera
 @export var dialogues : Dialogues
 @export var player: Player
+@export var person: GameManager.PERSON
 
 @export_file("*.txt") var arquivo_dialogo_txt: String
 
@@ -29,10 +30,11 @@ func _ready() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and ui_esta_visivel:
-		
+		_talk()
 		# Primeira interação: carrega o arquivo TXT, ajusta câmera e trava o player
 		if not em_interacao:
 			em_interacao = true
+			
 			if player:
 				player.set_controls_enabled(false)
 			
@@ -80,6 +82,15 @@ func encerrar_interacao() -> void:
 			# Se era uma câmera estática, aí sim fazemos o Tween para a posição original
 			var tween_pos = create_tween()
 			tween_pos.tween_property(fixed_camera, "global_transform", original_camera_transform, 0.3).set_trans(Tween.TRANS_SINE)
+
+func _talk():
+	var ownDoneQuest = GameManager.own_quest_done(person)
+	if ownDoneQuest:
+		# Quest done dialog
+		GameManager.quest_done(ownDoneQuest)
+	else:
+		# start normal Dialog
+		GameManager.talk_with(person)
 	
 func _on_trigger_body_entered(body: Node3D) -> void:
 	print("enter")

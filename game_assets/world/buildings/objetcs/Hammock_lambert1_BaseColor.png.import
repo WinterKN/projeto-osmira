@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwyvmmdv5el1r"
-path.s3tc="res://.godot/imported/stool_hires_d.png-6c1539c4bfc985e85692a3fc5873c064.s3tc.ctex"
+uid="uid://dvt7k7dhjj8co"
+path.s3tc="res://.godot/imported/Hammock_lambert1_BaseColor.png-4cd928c10d0b08f465910141ef32e7ed.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game_assets/world/buildings/stool_hires_d.png"
-dest_files=["res://.godot/imported/stool_hires_d.png-6c1539c4bfc985e85692a3fc5873c064.s3tc.ctex"]
+source_file="res://game_assets/world/buildings/objetcs/Hammock_lambert1_BaseColor.png"
+dest_files=["res://.godot/imported/Hammock_lambert1_BaseColor.png-4cd928c10d0b08f465910141ef32e7ed.s3tc.ctex"]
 
 [params]
 

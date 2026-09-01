@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cbgxy1kkjk4ge"]
+
+[ext_resource type="PackedScene" uid="uid://vdwkohvbndcc" path="res://game_assets/world/nature/trees/models/tree_trunk.blend" id="1_4vp4e"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_oif07"]
+[ext_resource type="Texture2D" uid="uid://dycha5vfeka41" path="res://game_assets/world/nature/trees/textures/trunk_cut.png" id="3_m1mjx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3vse"]
+render_priority = 0
+shader = ExtResource("2_oif07")
+shader_parameter/color_texture = ExtResource("3_m1mjx")
+shader_parameter/vertex_wobble = 0.2999999932944
+shader_parameter/affine_mapping = 0.02999999932944
+
+[node name="tree_trunk" unique_id=145100009 instance=ExtResource("1_4vp4e")]
+
+[node name="nature_tree_trunk" parent="." index="0" unique_id=1400519209]
+material_override = SubResource("ShaderMaterial_w3vse")

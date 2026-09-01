@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cjju3dfxalo2u" path="res://media_assets/ui/Menu/Images/Artwork Titulo.png" id="3_lkil4"]
 [ext_resource type="AudioStream" uid="uid://ddq7t2787lma7" path="res://media_assets/audio/music/menu/MenuSoundtrack.ogg" id="4_4dvv7"]
 [ext_resource type="FontFile" uid="uid://dfl0gdngpbhyr" path="res://media_assets/ui/Menu/Fonts/Cinzel/static/Cinzel-Black.ttf" id="4_gnt31"]
+[ext_resource type="Texture2D" uid="uid://ckxy83b023cox" path="res://media_assets/ui/Menu/Main Menu/arrow.png" id="4_v7204"]
 [ext_resource type="FontFile" uid="uid://bkcpyka82eu08" path="res://media_assets/ui/Menu/Fonts/Special_Elite/SpecialElite-Regular.ttf" id="6_1qut5"]
 
 [sub_resource type="Shader" id="Shader_v7204"]
@@ -273,6 +274,8 @@ shader_parameter/vignette_opacity = 0.6800000323
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7204"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_08gd2"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j6cc6"]
 shader = ExtResource("2_lkil4")
 shader_parameter/overlay = true
@@ -312,6 +315,7 @@ script = ExtResource("1_7vrkn")
 
 [node name="FadeLayer" type="CanvasLayer" parent="." unique_id=1650338701]
 layer = 2
+visible = false
 
 [node name="MenuFade" type="ColorRect" parent="FadeLayer" unique_id=1181567206]
 unique_name_in_owner = true
@@ -396,17 +400,42 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="InterfaceLayer/MarginContainer/HBoxContainer" unique_id=1705643472]
 layout_mode = 2
-theme_override_constants/separation = 32
-alignment = 1
+theme_override_constants/separation = 40
+alignment = 2
 
-[node name="Separator" type="Control" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1414638757]
-custom_minimum_size = Vector2(0, 300)
+[node name="StartContainer" type="Control" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=707038739]
+custom_minimum_size = Vector2(600, 80)
 layout_mode = 2
-size_flags_vertical = 4
 
-[node name="Start_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=279099980]
+[node name="StartArrow" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/StartContainer" unique_id=1956385134]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 17.0
+offset_right = 114.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+
+[node name="Start_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/StartContainer" unique_id=279099980]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(480, 78)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -39.0
+offset_right = 240.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../../ExitContainer/Exit_Button")
+focus_neighbor_bottom = NodePath("../../LoadContainer/Load_Button")
 theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
 theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
@@ -417,11 +446,55 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v7204")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_08gd2")
 text = "Iniciar novo jogo"
 
-[node name="Load_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1222044531]
-custom_minimum_size = Vector2(480, 78)
+[node name="StartArrow2" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/StartContainer" unique_id=537151538]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 485.0
+offset_top = 17.0
+offset_right = 549.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+flip_h = true
+
+[node name="LoadContainer" type="Control" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=845594190]
+custom_minimum_size = Vector2(600, 80)
 layout_mode = 2
+
+[node name="LoadArrow" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/LoadContainer" unique_id=513020639]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 17.0
+offset_right = 92.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+
+[node name="Load_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/LoadContainer" unique_id=1222044531]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 78)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -39.0
+offset_right = 240.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../../StartContainer/Start_Button")
+focus_neighbor_bottom = NodePath("../../OptionsContainer/Options_Button")
 theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
 theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
@@ -432,11 +505,55 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v7204")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_08gd2")
 text = "carregar jogo salvo"
 
-[node name="Options_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1970852205]
-custom_minimum_size = Vector2(480, 78)
+[node name="LoadArrow2" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/LoadContainer" unique_id=1644727950]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 508.0
+offset_top = 17.0
+offset_right = 572.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+flip_h = true
+
+[node name="OptionsContainer" type="Control" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1702638893]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+
+[node name="OptionsArrow" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/OptionsContainer" unique_id=1483980926]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 75.0
+offset_top = 17.0
+offset_right = 139.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+
+[node name="Options_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/OptionsContainer" unique_id=1970852205]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 78)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -39.0
+offset_right = 240.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../../LoadContainer/Load_Button")
+focus_neighbor_bottom = NodePath("../../ExitContainer/Exit_Button")
 theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
 theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
@@ -447,11 +564,55 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v7204")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_08gd2")
 text = "configurações"
 
-[node name="Exit_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=867707371]
-custom_minimum_size = Vector2(480, 78)
+[node name="OptionsArrow2" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/OptionsContainer" unique_id=1629397360]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 17.0
+offset_right = 524.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+flip_h = true
+
+[node name="ExitContainer" type="Control" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1546521995]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
+
+[node name="ExitArrow" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitContainer" unique_id=1553759698]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 110.0
+offset_top = 17.0
+offset_right = 174.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+
+[node name="Exit_Button" type="Button" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitContainer" unique_id=867707371]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(480, 78)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -39.0
+offset_right = 240.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../../OptionsContainer/Options_Button")
+focus_neighbor_bottom = NodePath("../../StartContainer/Start_Button")
 theme_override_colors/font_color = Color(0.9019608, 0.84313726, 0.74509805, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.9647059, 0.9098039, 1)
 theme_override_colors/font_hover_color = Color(1, 0.9411765, 0.84705883, 1)
@@ -462,7 +623,24 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_gnt31")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_j6cc6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1qut5")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v7204")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_08gd2")
 text = "sair do jogo"
+
+[node name="ExitArrow2" type="TextureRect" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer/ExitContainer" unique_id=861124835]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 18)
+layout_mode = 0
+offset_left = 428.0
+offset_top = 17.0
+offset_right = 492.0
+offset_bottom = 60.0
+mouse_filter = 2
+texture = ExtResource("4_v7204")
+stretch_mode = 5
+flip_h = true
+
+[node name="Separator" type="Control" parent="InterfaceLayer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=211451643]
+layout_mode = 2
 
 [node name="Options_Menu" parent="InterfaceLayer" unique_id=780487390 instance=ExtResource("3_fu7sn")]
 visible = false
@@ -470,6 +648,7 @@ visible = false
 [node name="LoadingLayer" type="CanvasLayer" parent="." unique_id=1928140085]
 unique_name_in_owner = true
 layer = 100
+visible = false
 
 [node name="Background" type="ColorRect" parent="LoadingLayer" unique_id=1601446487]
 anchors_preset = 15

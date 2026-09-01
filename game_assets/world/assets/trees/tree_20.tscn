@@ -19,8 +19,9 @@ height = 3.4213867
 radius = 0.44628906
 
 [node name="tree20" unique_id=1614733008 instance=ExtResource("1_hdy64")]
+metadata/converted_to_multimesh = true
 
-[node name="tree20" parent="." index="0" unique_id=1703831750]
+[node name="tree20" parent="." index="0" unique_id=1512102462]
 material_override = SubResource("ShaderMaterial_hfo6f")
 visibility_range_end = 120.0
 

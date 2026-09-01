@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://5dyh3636kn2d"]
+
+[ext_resource type="PackedScene" uid="uid://ne22kd4bx5gh" path="res://game_assets/world/nature/rocks/rock_handpainted_2.blend" id="1_j7q7v"]
+[ext_resource type="Shader" uid="uid://kxwu864eola6" path="res://shaders/default_object.gdshader" id="2_txtjo"]
+[ext_resource type="Texture2D" uid="uid://bf7ikwfp6vvpn" path="res://game_assets/world/nature/rocks/rock2.png" id="3_w84u0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bphh3"]
+render_priority = 0
+shader = ExtResource("2_txtjo")
+shader_parameter/color_texture = ExtResource("3_w84u0")
+shader_parameter/vertex_wobble = 0.2999999932944
+shader_parameter/affine_mapping = 0.02999999932944
+
+[node name="rock_handpainted_2" unique_id=1822853905 instance=ExtResource("1_j7q7v")]
+
+[node name="rock_2" parent="." index="0" unique_id=2085040215]
+material_override = SubResource("ShaderMaterial_bphh3")

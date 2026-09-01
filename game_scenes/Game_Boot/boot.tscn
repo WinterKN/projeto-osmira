@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bh8r5y2cpa0xw" path="res://scripts/boot/boot.gd" id="1_0u377"]
 [ext_resource type="PackedScene" uid="uid://b51y3ouu5f0br" path="res://game_scenes/Menu_Scenes/main_menu.tscn" id="2_txngd"]
-[ext_resource type="Texture2D" uid="uid://rhfavnptx2w1" path="res://icon.svg" id="3_txngd"]
+[ext_resource type="Texture2D" uid="uid://cwtkr00rbybis" path="res://media_assets/boot/logoOsmira.png" id="3_txngd"]
 [ext_resource type="AudioStream" uid="uid://dpw135my5824m" path="res://media_assets/audio/sfx/boot/vhsTape.ogg" id="4_txngd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0u377"]
@@ -179,6 +179,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameLogo" type="TextureRect" parent="GameLogoLayer" unique_id=539456790]
+custom_maximum_size = Vector2(300, 300)
 layout_mode = 2
 texture = ExtResource("3_txngd")
 

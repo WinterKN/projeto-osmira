@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i5rl2jeouosd"
-path.s3tc="res://.godot/imported/fridge256x256.png-5a73e0c3f46c1c9f84a2bc9fd36e0d11.s3tc.ctex"
+uid="uid://dvet4a85t4lx6"
+path.s3tc="res://.godot/imported/rock1.png-b91dfac0b9d048837184e9eaa12bcd23.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://game_assets/world/furniture/fridge/fridge256x256.png"
-dest_files=["res://.godot/imported/fridge256x256.png-5a73e0c3f46c1c9f84a2bc9fd36e0d11.s3tc.ctex"]
+source_file="res://game_assets/world/nature/rocks/rock1.png"
+dest_files=["res://.godot/imported/rock1.png-b91dfac0b9d048837184e9eaa12bcd23.s3tc.ctex"]
 
 [params]
 

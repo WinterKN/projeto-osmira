@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_xxiin")
-name = "Investigar Oca Principal"
-description = "Investigue a oca principal no centro da vila"
-brief_description = "Verificar a oca no centro da vila"
+name = "Investigação do Kamña"
+description = "Investigue a nova construção kamña"
+brief_description = "Busque pistas atrás da Mydy Taha"
 metadata/_custom_type_script = "uid://c2iwc2jw31n0l"

@@ -1,6 +1,8 @@
 extends Control
 class_name Dialogues 
 
+signal orador_alterado(orador: String)
+
 @export var quests: Array[Quest]
 
 @onready var label: Label = $Label
@@ -8,9 +10,7 @@ class_name Dialogues
 
 var dialogues: Array = [
 ]
-#____EM TESTE_______
 
-#___________________
 var index: int = 0
 var is_dialogue_active: bool = false
 
@@ -62,9 +62,24 @@ func avançar_dialogo() -> bool:
 		encerrar_dialogo()
 		return false
 func mostrar_fala_atual() -> void:
-	label.text = dialogues[index]
-	label.visible_characters = 0
-	timer.start()
+	if index < dialogues.size():
+		var linha_bruta: String = dialogues[index]
+		var texto_final: String = linha_bruta
+
+		# Identifica quem está falando com base no primeiro caractere
+		if linha_bruta.begins_with("*"):
+			orador_alterado.emit("npc")
+			texto_final = linha_bruta.substr(1).strip_edges() # Remove o '*' do texto
+		elif linha_bruta.begins_with("#"):
+			orador_alterado.emit("player")
+			texto_final = linha_bruta.substr(1).strip_edges() # Remove o '#' do texto
+		else:
+			# Se não tiver caractere especial, mantém o padrão como NPC
+			orador_alterado.emit("npc")
+
+		label.text = texto_final
+		label.visible_characters = 0
+		timer.start()
 
 func animate_label() -> void:
 	if label.visible_ratio < 1.0:

@@ -1,4 +1,4 @@
-class_name interactable extends Node
+class_name interactable extends Node3D
 
 @export var interaction_ui: Node
 @export var fixed_camera: fixedCamera
@@ -39,8 +39,13 @@ func _unhandled_input(event: InputEvent) -> void:
 				player.set_controls_enabled(false)
 			
 			# Carrega o TXT no array ANTES de avançar o diálogo
-			if dialogues and arquivo_dialogo_txt != "":
-				dialogues.carregar_dialogo_txt(arquivo_dialogo_txt)
+			if dialogues:
+				if not dialogues.orador_alterado.is_connected(_on_orador_alterado):
+					dialogues.orador_alterado.connect(_on_orador_alterado)
+				
+				# CARREGA O TXT APENAS AQUI (1 ÚNICA VEZ)
+				if arquivo_dialogo_txt != "":
+					dialogues.carregar_dialogo_txt(arquivo_dialogo_txt)
 			
 			if fixed_camera:
 				var tween = create_tween().set_parallel(true)
@@ -54,14 +59,32 @@ func _unhandled_input(event: InputEvent) -> void:
 		var dialogo_ativo: bool = false
 		if dialogues:
 			dialogo_ativo = dialogues.avançar_dialogo()
+		if not dialogo_ativo:
+			encerrar_interacao()
 
 		# Se o diálogo acabou (retornou false), encerra a interação
 		if not dialogo_ativo:
 			encerrar_interacao()
+			
+func _on_orador_alterado(orador: String) -> void:
+	if not fixed_camera:
+		return
+
+	if orador == "npc":
+		fixed_camera.follow_player = false
+		fixed_camera.follow_object = true
+		fixed_camera.object = self
+	elif orador == "player":
+		fixed_camera.follow_object = false
+		fixed_camera.follow_player = true
+
 func encerrar_interacao() -> void:
 	em_interacao = false
 	if player:
 		player.set_controls_enabled(true)
+	
+	if dialogues and dialogues.orador_alterado.is_connected(_on_orador_alterado):
+		dialogues.orador_alterado.disconnect(_on_orador_alterado)
 	
 	#if camera_estava_seguindo == true:
 		#fixed_camera.follow_player = true

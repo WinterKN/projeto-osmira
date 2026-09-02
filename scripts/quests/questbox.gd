@@ -9,5 +9,13 @@ func _ready() -> void:
 	_refresh()
 	
 func _refresh():
+		
 	title_label.text = quest.name
 	brief_description_label.text = quest.get_brief_description()
+
+
+
+	
+
+	
+	

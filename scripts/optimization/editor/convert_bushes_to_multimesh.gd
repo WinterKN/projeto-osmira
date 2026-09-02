@@ -20,7 +20,7 @@ extends EditorScript
 # Esta versão suporta múltiplas MeshInstance3D
 # dentro da mesma cena.
 const TARGET_SCENES: PackedStringArray = [
-	"bush_11.tscn"
+	"tree_27.tscn"
 ]
 
 

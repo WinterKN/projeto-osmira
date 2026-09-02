@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cje5onyet3qsn"]
+
+[ext_resource type="PackedScene" uid="uid://cftnv3phvckqg" path="res://game_assets/world/nature/trunks/trunks.fbx" id="1_4vcmt"]
+
+[node name="trunks" unique_id=2141690455 instance=ExtResource("1_4vcmt")]
+
+[node name="Trunk" parent="." index="0" unique_id=2121731041]
+visible = false
+
+[node name="Trunk_001" parent="." index="1" unique_id=2102770801]
+visible = false
+
+[node name="Trunk_01" parent="." index="2" unique_id=496646736]
+visible = false
+
+[node name="Trunk_01_V" parent="." index="3" unique_id=924707912]
+visible = false
+
+[node name="Trunk_02" parent="." index="4" unique_id=974144015]
+transform = Transform3D(144.24466, 28.809872, -2.0355484, -28.874628, 144.08005, -6.9190116, 0.638621, 7.183893, 146.93085, 0, 0.4, 0)
+
+[node name="Trunk_02_V" parent="." index="5" unique_id=333324716]
+visible = false
+
+[node name="Trunk_P" parent="." index="6" unique_id=691089386]
+visible = false
+
+[node name="Trunk_V" parent="." index="7" unique_id=1101691041]
+visible = false
+
+[node name="Trunk_V_001" parent="." index="8" unique_id=1008250998]
+visible = false

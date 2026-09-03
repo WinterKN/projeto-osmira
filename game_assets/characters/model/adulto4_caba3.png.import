@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtkr00rbybis"
-path.s3tc="res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"
+uid="uid://cynni76ehcwxj"
+path.s3tc="res://.godot/imported/adulto4_caba3.png-11bb1ce2f49737fd3f42f4b0d8210854.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f69e7fe72e44b8befe54cff9cc6c9cb2"
+}
 
 [deps]
 
-source_file="res://media_assets/boot/logoOsmira.png"
-dest_files=["res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"]
+source_file="res://game_assets/characters/model/adulto4_caba3.png"
+dest_files=["res://.godot/imported/adulto4_caba3.png-11bb1ce2f49737fd3f42f4b0d8210854.s3tc.ctex"]
 
 [params]
 

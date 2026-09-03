@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtkr00rbybis"
-path.s3tc="res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"
+uid="uid://c2rtam3rcf0e3"
+path.s3tc="res://.godot/imported/velho_velho.png-b156a34625759bed64b0074ee1784283.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "0a64dc6916eac19aa5b07aee3cd461b8"
+}
 
 [deps]
 
-source_file="res://media_assets/boot/logoOsmira.png"
-dest_files=["res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"]
+source_file="res://game_assets/characters/model/velho_velho.png"
+dest_files=["res://.godot/imported/velho_velho.png-b156a34625759bed64b0074ee1784283.s3tc.ctex"]
 
 [params]
 

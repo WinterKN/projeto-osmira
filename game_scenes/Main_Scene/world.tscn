@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://bd0ilrsvy0b35" path="res://game_assets/world/nature/bush/textures/bush_01.png" id="39_grhdw"]
 [ext_resource type="PackedScene" uid="uid://b3pfgtlcxcfci" path="res://game_assets/world/assets/objects/machado.tscn" id="40_7qp4b"]
 [ext_resource type="PackedScene" uid="uid://dejg2jfx2cv4v" path="res://game_assets/world/assets/trunks/trunk_001.tscn" id="40_bnvti"]
+[ext_resource type="PackedScene" uid="uid://ct0achq515103" path="res://game_assets/npcs/waimiri/assets/Adulto2_coletor.tscn" id="45_nu4ba"]
 [ext_resource type="Script" uid="uid://c2iwc2jw31n0l" path="res://scripts/quests/quest_resource.gd" id="53_bnvti"]
 [ext_resource type="Resource" uid="uid://b1blbn32yu2s1" path="res://game_text/quests/np1_quest.tres" id="54_sk21j"]
 [ext_resource type="Resource" uid="uid://cf540y65vvffa" path="res://game_text/quests/manoa_quest.tres" id="55_nu4ba"]
@@ -5033,7 +5034,7 @@ shader_parameter/overlay = true
 shader_parameter/scanlines_opacity = 0.0800000038
 shader_parameter/scanlines_width = 0.5
 shader_parameter/grille_opacity = 0.02000000095
-shader_parameter/resolution = Vector2(960, 540)
+shader_parameter/resolution = Vector2(1024, 768)
 shader_parameter/pixelate = false
 shader_parameter/roll = false
 shader_parameter/roll_speed = 5.0
@@ -20719,7 +20720,7 @@ data = PackedVector3Array(-5, 0, 5, -5, 0, 1, -1, 0, 5, -1, 0, 5, 5, 0, 1, 3, 0,
 script = ExtResource("1_grhdw")
 
 [node name="Player" parent="." unique_id=1372736054 instance=ExtResource("1_7t5mc")]
-transform = Transform3D(-0.08694896, 0, -0.9962128, 0, 1, 0, 0.9962128, 0, -0.08694896, -21.0835, 0.39999953, -245.72609)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.4350052, 0.39999953, -0.5882492)
 collision_layer = 5
 
 [node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=837774341]
@@ -29740,13 +29741,21 @@ debug_color = Color(1, 1, 1, 1)
 
 [node name="NPCS" type="Node" parent="Stage" unique_id=300001028]
 
-[node name="Kurumana" parent="Stage/NPCS" unique_id=826261821 node_paths=PackedStringArray("interaction_ui", "fixed_camera", "dialogues", "player") instance=ExtResource("37_grhdw")]
+[node name="Kurumana" parent="Stage/NPCS" unique_id=826261821 node_paths=PackedStringArray("interaction_ui", "fixed_camera", "dialogues", "player", "npc", "npc_animation_player") instance=ExtResource("37_grhdw")]
 transform = Transform3D(-0.050780546, 0, -0.99870986, 0, 1, 0, 0.99870986, 0, -0.050780546, 18.542736, 0.6699996, -14.395994)
 interaction_ui = NodePath("Interaction")
 fixed_camera = NodePath("../../../Cameras/Fixed Cameras/Outside Spaces/Inferior Right Side Avenue Cameras/fixedCamera")
 dialogues = NodePath("../../../Dialogos/Dialog1")
 player = NodePath("../../../Player")
 arquivo_dialogo_txt = "res://game_text/dialogues/NPC1.txt"
+npc = NodePath("Adulto2")
+npc_animation_player = NodePath("Adulto2/model/AnimationPlayer")
+idle_animation = &"Adulto2/AdultosIdle"
+talk_animation = &"Adulto2/AdultosTalking"
+talk_animation_2 = &"Adulto2/AdultosTalking2Hands"
+npc_forward_offset = 90.0
+
+[node name="Adulto2" parent="Stage/NPCS/Kurumana" unique_id=401003803 instance=ExtResource("45_nu4ba")]
 
 [node name="Manoa" parent="Stage/NPCS" unique_id=277052111 node_paths=PackedStringArray("interaction_ui", "fixed_camera", "dialogues", "player") instance=ExtResource("37_grhdw")]
 transform = Transform3D(0.88930434, 0, 0.4573159, 0, 1, 0, -0.4573159, 0, 0.88930434, -3.756566, 0.6700001, -58.187492)
@@ -66396,11 +66405,6 @@ quests = Array[ExtResource("53_bnvti")]([ExtResource("56_5mvj6")])
 [editable path="Stage/Nature/Trees/tree253"]
 [editable path="Stage/Nature/fuga/tree253"]
 [editable path="Stage/NPCS/Kurumana"]
-[editable path="Stage/NPCS/Kurumana/Npc1"]
-[editable path="Stage/NPCS/Kurumana/Npc1/model"]
+[editable path="Stage/NPCS/Kurumana/Adulto2"]
 [editable path="Stage/NPCS/Manoa"]
-[editable path="Stage/NPCS/Manoa/Npc1"]
-[editable path="Stage/NPCS/Manoa/Npc1/model"]
 [editable path="Stage/NPCS/Baba Kinja"]
-[editable path="Stage/NPCS/Baba Kinja/Npc1"]
-[editable path="Stage/NPCS/Baba Kinja/Npc1/model"]

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do6e86t1w6glw"
-path.s3tc="res://.godot/imported/adulto1_caba4.png-b763da41beab6c82a40daca470f52ca9.s3tc.ctex"
+uid="uid://bvbe8uwi8ii5i"
+path.s3tc="res://.godot/imported/adulto2_coletor.png-c6d24c0cca84dc2efe7f081c39a970a2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "9497ff96640ec238bd7c504f0a6681c4"
+"md5": "1aac63cb41f746d15794e02ef86509e7"
 }
 
 [deps]
 
-source_file="res://game_assets/characters/model/adulto1_caba4.png"
-dest_files=["res://.godot/imported/adulto1_caba4.png-b763da41beab6c82a40daca470f52ca9.s3tc.ctex"]
+source_file="res://game_assets/npcs/waimiri/models/adulto2_coletor.png"
+dest_files=["res://.godot/imported/adulto2_coletor.png-c6d24c0cca84dc2efe7f081c39a970a2.s3tc.ctex"]
 
 [params]
 

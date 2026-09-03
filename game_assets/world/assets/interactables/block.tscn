@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b7la3y1jl6e11" path="res://scripts/interact/interaction.gd" id="1_tsql6"]
 [ext_resource type="PackedScene" uid="uid://l0a5nwr6k3xn" path="res://game_assets/world/assets/interactables/interaction.tscn" id="2_ad5vq"]
-[ext_resource type="PackedScene" uid="uid://4vy83x7ofcj6" path="res://game_assets/npcs/waimiri/models/npc.tscn" id="2_ejllx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpybi"]
 size = Vector3(1, 0.6496582, 1)
@@ -18,12 +17,7 @@ collision_mask = 5
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1.3017073, 0)
 shape = SubResource("BoxShape3D_kpybi")
 
-[node name="Npc1" parent="." unique_id=401003803 instance=ExtResource("2_ejllx")]
-
 [node name="Interaction" parent="." unique_id=738883378 instance=ExtResource("2_ad5vq")]
 
 [connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
 [connection signal="body_exited" from="Trigger" to="." method="_on_trigger_body_exited"]
-
-[editable path="Npc1"]
-[editable path="Npc1/model"]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bmmnmxm5hcuit"
-path="res://.godot/imported/adulto2.glb-06f847fa5802abefbb8a9982b8ec9a94.scn"
+uid="uid://diadvlnqqy54x"
+path="res://.godot/imported/velho.glb-3ce9896ed0e6378bf8f6c0f1f6cac951.scn"
 
 [deps]
 
-source_file="res://game_assets/characters/model/adulto2.glb"
-dest_files=["res://.godot/imported/adulto2.glb-06f847fa5802abefbb8a9982b8ec9a94.scn"]
+source_file="res://game_assets/npcs/waimiri/models/velho.glb"
+dest_files=["res://.godot/imported/velho.glb-3ce9896ed0e6378bf8f6c0f1f6cac951.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://kguejbyhojw1"
-path="res://.godot/imported/adulto4.glb-48abf017a84c9e77cfa21db69264e80b.scn"
+uid="uid://obvqffcu0bip"
+path="res://.godot/imported/adulto3.glb-642f27bd41de7ca6f64bef09d6e8a8f9.scn"
 
 [deps]
 
-source_file="res://game_assets/characters/model/adulto4.glb"
-dest_files=["res://.godot/imported/adulto4.glb-48abf017a84c9e77cfa21db69264e80b.scn"]
+source_file="res://game_assets/npcs/waimiri/models/adulto3.glb"
+dest_files=["res://.godot/imported/adulto3.glb-642f27bd41de7ca6f64bef09d6e8a8f9.scn"]
 
 [params]
 

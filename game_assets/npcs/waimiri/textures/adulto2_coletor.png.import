@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t411mc20nf66"
-path.s3tc="res://.godot/imported/crianca_criança.png-edeab3ae3c9db4b32b318bc1f211a772.s3tc.ctex"
+uid="uid://cr4nl2fajb8vg"
+path.s3tc="res://.godot/imported/adulto2_coletor.png-b62a1ed911ba5b32a7420fabe16865be.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "c4cd01b021c400c5b207b488c1e98b88"
+"md5": "1aac63cb41f746d15794e02ef86509e7"
 }
 
 [deps]
 
-source_file="res://game_assets/characters/model/crianca_criança.png"
-dest_files=["res://.godot/imported/crianca_criança.png-edeab3ae3c9db4b32b318bc1f211a772.s3tc.ctex"]
+source_file="res://game_assets/npcs/waimiri/textures/adulto2_coletor.png"
+dest_files=["res://.godot/imported/adulto2_coletor.png-b62a1ed911ba5b32a7420fabe16865be.s3tc.ctex"]
 
 [params]
 

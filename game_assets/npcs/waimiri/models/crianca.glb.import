@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://df0epfjww525n"
-path="res://.godot/imported/adulto1.glb-ec00ab961b0268bc99ad889a0aedd0f4.scn"
+uid="uid://4kc2bn1asnm4"
+path="res://.godot/imported/crianca.glb-df073c4804ad158c0adae9f4562226ef.scn"
 
 [deps]
 
-source_file="res://game_assets/characters/model/adulto1.glb"
-dest_files=["res://.godot/imported/adulto1.glb-ec00ab961b0268bc99ad889a0aedd0f4.scn"]
+source_file="res://game_assets/npcs/waimiri/models/crianca.glb"
+dest_files=["res://.godot/imported/crianca.glb-df073c4804ad158c0adae9f4562226ef.scn"]
 
 [params]
 

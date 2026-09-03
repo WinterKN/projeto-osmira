@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cynni76ehcwxj"
-path.s3tc="res://.godot/imported/adulto4_caba3.png-11bb1ce2f49737fd3f42f4b0d8210854.s3tc.ctex"
+path.s3tc="res://.godot/imported/adulto4_caba3.png-cb7d9b1fc27b6698ba36b41f53b83d3e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://game_assets/characters/model/adulto4_caba3.png"
-dest_files=["res://.godot/imported/adulto4_caba3.png-11bb1ce2f49737fd3f42f4b0d8210854.s3tc.ctex"]
+source_file="res://game_assets/npcs/waimiri/textures/adulto4_caba3.png"
+dest_files=["res://.godot/imported/adulto4_caba3.png-cb7d9b1fc27b6698ba36b41f53b83d3e.s3tc.ctex"]
 
 [params]
 

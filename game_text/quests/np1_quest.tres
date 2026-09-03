@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_ms8j1")
 questType = 1
+questPerson = 1
 name = "Manoa, o guerreiro"
 description = "Busque informações com Manoa"
 brief_description = "Em Frente a Mydy Taha"

@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bkb54vd4db6xi" path="res://game_assets/world/assets/objects/vaso.tscn" id="6_v0unt"]
 [ext_resource type="PackedScene" uid="uid://c3c1755jq7vxo" path="res://game_assets/world/assets/objects/vaso_2.tscn" id="7_bybnw"]
 [ext_resource type="PackedScene" uid="uid://b3kw08jitw1c1" path="res://game_assets/world/assets/trees/tree_25.tscn" id="7_kpybi"]
-[ext_resource type="PackedScene" uid="uid://4xxueaaqiuqs" path="res://game_scenes/Quest_scenes/quest_area.tscn" id="7_sk21j"]
 [ext_resource type="PackedScene" uid="uid://c1n4n8ajdgyo8" path="res://game_assets/world/assets/ocas/cabana_quadrada.tscn" id="7_ueq8k"]
 [ext_resource type="PackedScene" uid="uid://ca5mfmrpsjnnc" path="res://game_assets/world/assets/objects/wood_table.tscn" id="7_wnndm"]
 [ext_resource type="PackedScene" uid="uid://bfiq1xjde87fe" path="res://game_assets/world/assets/trees/tree_02.tscn" id="8_ctatt"]
@@ -21523,11 +21522,10 @@ shape = SubResource("BoxShape3D_grhdw")
 
 [node name="corre logo djabo" type="Node" parent="Cameras" unique_id=740083166]
 
-[node name="RailCamera" type="Path3D" parent="Cameras/corre logo djabo" unique_id=1734662816 node_paths=PackedStringArray("camera")]
+[node name="RailCamera" type="Path3D" parent="Cameras/corre logo djabo" unique_id=1734662816]
 transform = Transform3D(0.10550549, -0.38402456, 0.9172753, 0.04388139, 0.92332304, 0.3815092, -0.99345016, 0, 0.11426716, -37.549667, 2.8271003, -250.37561)
 curve = SubResource("Curve3D_ssmnl")
 script = ExtResource("5_orru7")
-camera = NodePath("PathFollow3D/fixedCamera")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cameras/corre logo djabo/RailCamera" unique_id=658375121]
 transform = Transform3D(0.99980533, 0.0072761974, 0.017993378, 4.656584e-10, 0.927069, -0.37488934, -0.019408783, 0.37481907, 0.92689353, 0.13070679, 0.8605404, -0.8359451)
@@ -21543,13 +21541,6 @@ collision_mask = 5
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/corre logo djabo/RailCamera/PathFollow3D/fixedCamera/Trigger" unique_id=1048606372]
 transform = Transform3D(0.9999376, 0.010821838, 0.003512159, -0.007806275, 0.8771554, -0.48014006, -0.008278072, 0.48008105, 0.877184, -1.4545135, 0.5643883, -7.938286)
 shape = SubResource("BoxShape3D_hv15h")
-
-[node name="Area_quest" parent="Cameras/corre logo djabo" unique_id=1323974764 instance=ExtResource("7_sk21j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.042635, -9.536743e-07, -214.30573)
-area = 1
-
-[node name="CollisionShape3D" parent="Cameras/corre logo djabo/Area_quest/Area3D" parent_id_path=PackedInt32Array(1323974764, 652749434) index="0" unique_id=411272933]
-transform = Transform3D(18.87, 0, 0, 0, 3, 0, 0, 0, 19.380003, 1, 0, 0)
 
 [node name="Cutscenes" type="Node3D" parent="." unique_id=601020666]
 
@@ -66387,7 +66378,6 @@ quests = Array[ExtResource("53_bnvti")]([ExtResource("56_5mvj6")])
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Inferior Right Side Avenue Cameras/fixedCamera3_1"]
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Inferior Right Side Avenue Cameras/fixedCamera4"]
 [editable path="Cameras/Fixed Cameras/Outside Spaces/Inferior Right Side Avenue Cameras/fixedCamera5"]
-[editable path="Cameras/corre logo djabo/Area_quest"]
 [editable path="Cutscenes/OpeningScene"]
 [editable path="Stage/Nature/Trees/tree27"]
 [editable path="Stage/Nature/Trees/tree223"]

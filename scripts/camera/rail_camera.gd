@@ -9,4 +9,4 @@ func _physics_process(delta: float) -> void:
 		
 	if camera.player != null:
 		var player_position = camera.player.global_position
-A		$PathFollow3D.progress = curve.get_closest_offset(player_position)
+		$PathFollow3D.progress = curve.get_closest_offset(player_position)

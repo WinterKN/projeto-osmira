@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dddvjdys7inhf" path="res://scripts/cutscene/Manager/cutscene_manager.gd" id="7_62hg1"]
 [ext_resource type="PackedScene" uid="uid://i4ctwpskl2y" path="res://game_assets/cutscenes/Opening/opening_scene.tscn" id="8_xpo5e"]
 [ext_resource type="PackedScene" uid="uid://bkb54vd4db6xi" path="res://game_assets/world/assets/objects/vaso.tscn" id="9_75rb0"]
+[ext_resource type="Script" uid="uid://dyb81ynwtu85k" path="res://game_scenes/Main_Scene/ending_scene.gd" id="9_l5llo"]
 [ext_resource type="PackedScene" uid="uid://c3c1755jq7vxo" path="res://game_assets/world/assets/objects/vaso_2.tscn" id="10_q7vuk"]
 [ext_resource type="PackedScene" uid="uid://26k1mnh7s7os" path="res://game_assets/world/assets/objects/vaso_3.tscn" id="11_7o60k"]
 [ext_resource type="PackedScene" uid="uid://b01e12ybmu1ac" path="res://game_assets/world/assets/ocas/oca_oca_oca.tscn" id="12_26r1x"]
@@ -21276,6 +21277,7 @@ libraries/ = SubResource("AnimationLibrary_x0nq1")
 libraries/OpeningCutsceneAnimation = SubResource("AnimationLibrary_xq18t")
 
 [node name="EndingScene" type="Node3D" parent="Cutscenes" unique_id=1902566689]
+script = ExtResource("9_l5llo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cutscenes/EndingScene" unique_id=1642509651]
 libraries/ = SubResource("AnimationLibrary_7hnwm")

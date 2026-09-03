@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://djk2jj2kcobyt"]
+
+[ext_resource type="PackedScene" uid="uid://ci3b5pw7mwqw3" path="res://game_assets/world/buildings/carro/model.glb" id="1_324v4"]
+
+[node name="AuxScene" unique_id=1659743888 instance=ExtResource("1_324v4")]

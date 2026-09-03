@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cdl0b8pjhqjrm"]
+
+[ext_resource type="PackedScene" uid="uid://bvhgt43hpqcub" path="res://game_assets/world/buildings/easter/Transformer_Mech_Hero_0105125718_texture.glb" id="1_pbraf"]
+
+[node name="Transformer_Mech_Hero_0105125718_texture" unique_id=878218067 instance=ExtResource("1_pbraf")]

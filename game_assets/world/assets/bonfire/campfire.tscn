@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c7jf7v40gohcw"]
+
+[ext_resource type="PackedScene" uid="uid://1gkkx8v3exhs" path="res://game_assets/world/buildings/bonfire/Campfire.fbx" id="1_fsmls"]
+
+[node name="Campfire" unique_id=403174239 instance=ExtResource("1_fsmls")]
+
+[node name="Ash" parent="." index="0" unique_id=1437417565]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log" parent="." index="1" unique_id=227563553]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log_001" parent="." index="2" unique_id=323023494]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log_002" parent="." index="3" unique_id=1121731833]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log_003" parent="." index="4" unique_id=1331678836]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log_004" parent="." index="5" unique_id=213060834]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log_005" parent="." index="6" unique_id=779456036]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log_006" parent="." index="7" unique_id=129762127]
+lod_bias = 0.05
+visibility_range_end = 110.0
+
+[node name="Log_007" parent="." index="8" unique_id=1760969619]
+lod_bias = 0.05
+visibility_range_end = 110.0

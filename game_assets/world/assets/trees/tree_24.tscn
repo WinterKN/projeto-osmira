@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dajslhodrun5v"]
+
+[ext_resource type="PackedScene" uid="uid://ddytdaqlpjhp1" path="res://game_assets/world/nature/trees/models/tree24.fbx" id="1_aboe7"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_2kmt2"]
+[ext_resource type="Texture2D" uid="uid://xgc58jv6ih8i" path="res://game_assets/world/nature/trees/textures/tree24.png" id="3_ban3i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxnvv"]
+render_priority = 0
+shader = ExtResource("2_2kmt2")
+shader_parameter/color_texture = ExtResource("3_ban3i")
+shader_parameter/vertex_wobble = 0.6999999843536
+shader_parameter/affine_mapping = 0.02999999932944
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.3999999687072
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_okv2x"]
+height = 3.791504
+radius = 0.98535156
+
+[node name="tree24" unique_id=519050805 instance=ExtResource("1_aboe7")]
+
+[node name="tree24" parent="." index="0" unique_id=860249307]
+material_override = SubResource("ShaderMaterial_jxnvv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tree24" index="0" unique_id=673809628]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree24/StaticBody3D" index="0" unique_id=1927271341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.900599, 1.6371034e-07)
+shape = SubResource("CylinderShape3D_okv2x")

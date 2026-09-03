@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dkx1ph32u74ie"]
+
+[ext_resource type="FontFile" uid="uid://biuoltj113hcn" path="res://media_assets/ui/Menu/Fonts/Cinzel/Cinzel-VariableFont_wght.ttf" id="1_ear5p"]
+
+[node name="Option_Display_Button" type="Control" unique_id=841151006]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=119465614]
+layout_mode = 0
+offset_right = 844.0
+offset_bottom = 64.0
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1770606318]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ear5p")
+theme_override_font_sizes/font_size = 32
+text = "BASE_LABEL"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer" unique_id=887698995]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer" unique_id=1950681640]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2

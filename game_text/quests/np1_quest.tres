@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://b1blbn32yu2s1"]
+
+[ext_resource type="Script" uid="uid://c2iwc2jw31n0l" path="res://scripts/quests/quest_resource.gd" id="1_ms8j1"]
+
+[resource]
+script = ExtResource("1_ms8j1")
+questType = 1
+questPerson = 1
+name = "Manoa, o guerreiro"
+description = "Busque informações com Manoa"
+brief_description = "Em Frente a Mydy Taha"
+metadata/_custom_type_script = "uid://c2iwc2jw31n0l"

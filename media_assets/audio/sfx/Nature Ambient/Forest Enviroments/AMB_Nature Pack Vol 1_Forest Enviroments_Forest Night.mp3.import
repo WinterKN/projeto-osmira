@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kj4x0q1hpol1"
+path="res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Forest Night.mp3-055a9ec657f47c1a3945c543da924934.mp3str"
+
+[deps]
+
+source_file="res://media_assets/audio/sfx/Nature Ambient/Forest Enviroments/AMB_Nature Pack Vol 1_Forest Enviroments_Forest Night.mp3"
+dest_files=["res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Forest Night.mp3-055a9ec657f47c1a3945c543da924934.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

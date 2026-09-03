@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://e87o3b6fkkn0"]
+
+[ext_resource type="PackedScene" uid="uid://br17jsayc18ap" path="res://game_assets/world/nature/bush/models/bush09.fbx" id="1_ettaa"]
+[ext_resource type="Shader" uid="uid://b5ewi1s8obd4v" path="res://shaders/vegetation.gdshader" id="2_4ml6y"]
+[ext_resource type="Texture2D" uid="uid://bd0ilrsvy0b35" path="res://game_assets/world/nature/bush/textures/bush_01.png" id="3_xmlw7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swqmj"]
+render_priority = 0
+shader = ExtResource("2_4ml6y")
+shader_parameter/color_texture = ExtResource("3_xmlw7")
+shader_parameter/vertex_wobble = 0.2999999932944
+shader_parameter/affine_mapping = 0.02999999932944
+shader_parameter/wind_strength = 0.08
+shader_parameter/wind_speed = 1.5
+shader_parameter/wind_direction = Vector2(1, 0.35)
+
+[node name="bush09" unique_id=997792129 instance=ExtResource("1_ettaa")]
+
+[node name="bush_01" parent="." index="0" unique_id=1051146197]
+material_override = SubResource("ShaderMaterial_swqmj")
+visibility_range_end = 120.0

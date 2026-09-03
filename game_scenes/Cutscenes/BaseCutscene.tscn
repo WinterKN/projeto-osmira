@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bnh2qswnc71lr"]
+
+[ext_resource type="Script" uid="uid://cgweu56b51pdc" path="res://scripts/cutscene/Base Cutscene/base_cutscene.gd" id="1_72oo0"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tjnkc"]
+
+[node name="BaseCutscene" type="Node3D" unique_id=1782215960]
+script = ExtResource("1_72oo0")
+
+[node name="CutsceneCamera" type="Camera3D" parent="." unique_id=1000950817]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1762094346]
+libraries/Cutscene002 = SubResource("AnimationLibrary_tjnkc")
+
+[node name="Trigger" type="Area3D" parent="." unique_id=1283034247]
+collision_layer = 0
+collision_mask = 5

@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://byl0u6kyhcn6j"]
+
+[ext_resource type="PackedScene" uid="uid://bbtd1ajlx74ee" path="res://game_assets/world/furniture/candle/CANDLE.fbx" id="1_6uqcp"]
+[ext_resource type="Texture2D" uid="uid://bninpufiivpyp" path="res://game_assets/world/furniture/candle/Candle Fire.png" id="2_bydim"]
+
+[sub_resource type="Gradient" id="Gradient_y0s3u"]
+offsets = PackedFloat32Array(0, 0.2170088, 0.5542522, 0.82697946, 1)
+colors = PackedColorArray(1, 0.972549, 0.7529412, 1, 1, 0.972549, 0.7529412, 1, 1, 0.5411765, 0.14117648, 0.8627451, 0.9098039, 0.25882354, 0.08627451, 0.54901963, 0.5411765, 0.08627451, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7u3y0"]
+gradient = SubResource("Gradient_y0s3u")
+
+[sub_resource type="Curve" id="Curve_5s1cd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.14713895, 1), 0.0, 0.0, 0, 0, Vector2(0.65, 0.85), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ykf73"]
+curve = SubResource("Curve_5s1cd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l6p5f"]
+direction = Vector3(0, 1, 0)
+spread = 12.0
+initial_velocity_min = 0.02
+initial_velocity_max = 0.04
+gravity = Vector3(0, 0.015, 0)
+scale_curve = SubResource("CurveTexture_ykf73")
+color_ramp = SubResource("GradientTexture1D_7u3y0")
+turbulence_noise_strength = 0.8
+turbulence_noise_scale = 1.077
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0s3u"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.84766555, 0.6623331, 0.50569177, 1)
+albedo_texture = ExtResource("2_bydim")
+texture_filter = 2
+billboard_mode = 3
+particles_anim_h_frames = 6
+particles_anim_v_frames = 6
+particles_anim_loop = true
+distance_fade_min_distance = 20.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_48euw"]
+material = SubResource("StandardMaterial3D_y0s3u")
+size = Vector2(0.025, 0.065)
+
+[node name="CANDLE" unique_id=760694377 instance=ExtResource("1_6uqcp")]
+
+[node name="Cylinder" parent="." index="0" unique_id=336801796]
+transform = Transform3D(3, 0, 0, 0, -1.266756e-07, 8.925, 0, -2.898, -3.9012414e-07, 0, 0.08988674, 0)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="2" unique_id=1508782167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18236049, 0)
+amount = 12
+lifetime = 0.45
+randomness = 0.35
+process_material = SubResource("ParticleProcessMaterial_l6p5f")
+draw_pass_1 = SubResource("QuadMesh_48euw")

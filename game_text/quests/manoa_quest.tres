@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://cf540y65vvffa"]
+
+[ext_resource type="Script" uid="uid://c2iwc2jw31n0l" path="res://scripts/quests/quest_resource.gd" id="1_p3utx"]
+
+[resource]
+script = ExtResource("1_p3utx")
+questType = 1
+questPerson = 2
+name = "Baba Kinja, O Ancião"
+brief_description = "Fale com o Ancião"
+metadata/_custom_type_script = "uid://c2iwc2jw31n0l"

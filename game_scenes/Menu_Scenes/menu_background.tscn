@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://7fivtffvrc2q"]
+
+[ext_resource type="PackedScene" uid="uid://byl0u6kyhcn6j" path="res://game_assets/world/assets/furniture/candle.tscn" id="1_h1gw0"]
+[ext_resource type="Texture2D" uid="uid://dh1hga0nka32u" path="res://game_assets/world/buildings/floor/wood_plank_charred.jpg" id="1_hpj7q"]
+[ext_resource type="PackedScene" uid="uid://c4hd5yu0b625s" path="res://game_assets/world/assets/furniture/chair.tscn" id="2_wodh5"]
+[ext_resource type="PackedScene" uid="uid://b20jyfkjjyo1j" path="res://game_assets/world/assets/furniture/table_03.tscn" id="3_h1gw0"]
+[ext_resource type="Shader" uid="uid://dwu4gyk502p7t" path="res://shaders/psx_camera_shader.gdshader" id="4_t866u"]
+[ext_resource type="PackedScene" uid="uid://bl6vi0o2ct0ig" path="res://game_assets/world/assets/tools/tool_box_empty.tscn" id="6_k2wnu"]
+[ext_resource type="PackedScene" uid="uid://idjq4fdsnwib" path="res://game_assets/world/assets/tools/screw_driver_plastic.tscn" id="7_wq12t"]
+[ext_resource type="PackedScene" uid="uid://ygxhdt42pj80" path="res://game_assets/world/assets/tools/hammer.tscn" id="8_73iy4"]
+[ext_resource type="PackedScene" uid="uid://bcl2ug44a8xfh" path="res://game_assets/world/assets/tools/awl.tscn" id="9_kknvl"]
+[ext_resource type="PackedScene" uid="uid://bh0mi8ppm6a3r" path="res://game_assets/world/assets/tools/back_saw.tscn" id="10_3iwpi"]
+[ext_resource type="PackedScene" uid="uid://hjvmiab1o5cw" path="res://game_assets/world/assets/tools/rope.tscn" id="11_wq12t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7hk8"]
+render_priority = 0
+shader = ExtResource("4_t866u")
+shader_parameter/dither_amount = 0.5
+shader_parameter/enable_fog = true
+shader_parameter/fog_color = Color(0, 0, 0, 1)
+shader_parameter/noise_color = Color(0, 0, 0, 1)
+shader_parameter/fog_distance = 90.0000042275
+shader_parameter/fog_fade_range = 90.0000042275
+shader_parameter/enable_noise = true
+shader_parameter/noise_time_fac = 4.0
+shader_parameter/enable_color_limitation = true
+shader_parameter/color_levels = 256
+shader_parameter/enable_dithering = true
+shader_parameter/dither_strength = 0.3250000154375
+
+[sub_resource type="QuadMesh" id="QuadMesh_48euw"]
+material = SubResource("ShaderMaterial_q7hk8")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jqch"]
+albedo_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+albedo_texture = ExtResource("1_hpj7q")
+metallic = 0.1
+metallic_specular = 0.26
+uv1_scale = Vector3(2, 2, 2)
+grow_amount = -3.265
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wodh5"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_hpj7q")
+metallic = 0.1
+metallic_specular = 0.26
+uv1_scale = Vector3(2, 2, 2)
+grow_amount = -3.265
+
+[sub_resource type="Environment" id="Environment_wodh5"]
+background_mode = 1
+background_color = Color(0.019607844, 0.019607844, 0.019607844, 1)
+ambient_light_source = 2
+ambient_light_energy = 0.02
+fog_light_energy = 0.51
+fog_height = -773.22
+adjustment_contrast = 0.8
+
+[node name="menu_background" type="Node3D" unique_id=40186117]
+
+[node name="scenarious" type="Node3D" parent="." unique_id=576057434]
+
+[node name="Candles" type="Node" parent="scenarious" unique_id=272891579]
+
+[node name="CANDLE" parent="scenarious/Candles" unique_id=760694377 instance=ExtResource("1_h1gw0")]
+transform = Transform3D(0.32852316, 0, 0, 0, 0.2736915, 0, 0, 0, 0.3398203, -0.60154486, 0.7061096, -1.9541184)
+
+[node name="CANDLE2" parent="scenarious/Candles" unique_id=1429927613 instance=ExtResource("1_h1gw0")]
+transform = Transform3D(0.3458941, 0, 0, 0, 0.38300762, 0, 0, 0, 0.3398203, -0.60154486, 0.7061096, -1.975986)
+
+[node name="CANDLE3" parent="scenarious/Candles" unique_id=1678663981 instance=ExtResource("1_h1gw0")]
+transform = Transform3D(0.30707595, 0, 0, 0, 0.3429139, 0, 0, 0, 0.3214929, -0.5817334, 0.7061096, -1.963238)
+
+[node name="chair" parent="scenarious" unique_id=785903246 instance=ExtResource("2_wodh5")]
+transform = Transform3D(0.3499581, 0, 0.9367654, 0, 1, 0, -0.9367654, 0, 0.3499581, -0.001523912, 0, -1.0436728)
+
+[node name="table03" parent="scenarious" unique_id=799584975 instance=ExtResource("3_h1gw0")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0.0044133216, 0, -2.105416)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="scenarious/table03" unique_id=2003024550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21485515, 0)
+mesh = SubResource("QuadMesh_48euw")
+
+[node name="Floor" type="CSGBox3D" parent="scenarious" unique_id=174374165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07006884, 0)
+lod_bias = 0.4
+size = Vector3(8, 0.07675781, 8)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Wall1" type="CSGBox3D" parent="scenarious" unique_id=2034922458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2881495, -4.762802)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 3.2173157)
+material = SubResource("StandardMaterial3D_wodh5")
+
+[node name="Wall2" type="CSGBox3D" parent="scenarious" unique_id=1981425850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2881495, 3.806456)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 0.3577881)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Wall3" type="CSGBox3D" parent="scenarious" unique_id=228617816]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 1.2881495, 0.014680386)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 0.3577881)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Wall4" type="CSGBox3D" parent="scenarious" unique_id=1963754680]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9007998, 1.2881495, 0.014680386)
+lod_bias = 0.4
+size = Vector3(8, 2.7931945, 0.3577881)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="Roof" type="CSGBox3D" parent="scenarious" unique_id=467545544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6573496, 0)
+lod_bias = 0.4
+size = Vector3(8, 0.122851565, 8)
+material = SubResource("StandardMaterial3D_0jqch")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=624787978]
+environment = SubResource("Environment_wodh5")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=753534194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5865384, 0.8768779, -1.9596056)
+light_color = Color(1, 0.827451, 0.60784316, 1)
+light_energy = 1.941
+light_indirect_energy = 5.078
+light_volumetric_fog_energy = 1.981
+light_size = 0.039
+shadow_enabled = true
+omni_range = 7.0
+omni_attenuation = 0.604
+
+[node name="MenuCamera" type="Camera3D" parent="." unique_id=2137914027]
+transform = Transform3D(1, 0, 0, 0, 0.99809796, 0.061647877, 0, -0.061647877, 0.99809796, 0.3412115, 1.1746664, 0.0671505)
+current = true
+fov = 60.0
+
+[node name="ToolBoxEmpty" parent="." unique_id=1606869142 instance=ExtResource("6_k2wnu")]
+transform = Transform3D(-0.5660593, 0, -0.5653113, 0, 0.8, 0, 0.5653113, 0, -0.5660593, -0.5156797, 0.47429496, -2.1951947)
+
+[node name="ScrewDriverPlastic" parent="." unique_id=1439189438 instance=ExtResource("7_wq12t")]
+transform = Transform3D(0.0011301633, 0.043515597, -0.054818902, 0.06997853, 0.00032620432, 0.001701643, 0.0013132893, -0.054829594, -0.043496996, 0.26980332, 0.7107698, -2.0474591)
+
+[node name="Hammer" parent="." unique_id=1504301188 instance=ExtResource("8_73iy4")]
+transform = Transform3D(0.03802306, 0.03244049, 0.0013644448, -0.006787029, 0.0058862125, 0.049186263, 0.031751905, -0.037589453, 0.008879727, 0.04506658, 0.7128267, -1.9685018)
+
+[node name="Awl" parent="." unique_id=336161658 instance=ExtResource("9_kknvl")]
+transform = Transform3D(0.08796363, -0.047398213, -0.0039757215, 0.0018890987, -0.00487059, 0.099863455, -0.047527134, -0.08791861, -0.0033889497, 0.3746297, 0.71941024, -2.0035038)
+
+[node name="BackSaw" parent="." unique_id=711187134 instance=ExtResource("10_3iwpi")]
+transform = Transform3D(-0.078693524, 0.061703585, 7.289698e-10, -3.2330307e-09, -2.941832e-09, -0.100000024, -0.061703585, -0.078693524, 4.3099266e-09, 0.16798702, 0.71954817, -2.0105867)
+
+[node name="corda" parent="." unique_id=1210226886 instance=ExtResource("11_wq12t")]
+transform = Transform3D(-0.234968, 0, 0.08538168, 0, 0.25, 0, -0.08538168, 0, -0.234968, 0.52222884, 0.7135538, -2.095991)
+
+[editable path="scenarious/chair"]
+[editable path="scenarious/table03"]

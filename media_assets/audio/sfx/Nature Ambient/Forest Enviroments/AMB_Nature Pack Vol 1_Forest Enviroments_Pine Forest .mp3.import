@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4430o7taohjn"
+path="res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Pine Forest .mp3-b4a64dc1fa250d913fd2807712bcf523.mp3str"
+
+[deps]
+
+source_file="res://media_assets/audio/sfx/Nature Ambient/Forest Enviroments/AMB_Nature Pack Vol 1_Forest Enviroments_Pine Forest .mp3"
+dest_files=["res://.godot/imported/AMB_Nature Pack Vol 1_Forest Enviroments_Pine Forest .mp3-b4a64dc1fa250d913fd2807712bcf523.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

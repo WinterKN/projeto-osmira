@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dbervo2smvmoc"]
+
+[ext_resource type="PackedScene" uid="uid://csx16rt7yy31p" path="res://game_assets/world/buildings/carro/caprice.glb" id="1_2eye0"]
+
+[node name="caprice" unique_id=1959694098 instance=ExtResource("1_2eye0")]

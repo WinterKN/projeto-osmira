@@ -5,8 +5,8 @@ signal area_entered(area: AREA)
 signal person_talked(person: PERSON)
 
 enum  QUEST_TYPE {ENTER, TALK_WITH}
-enum PERSON {PAJE, MILITAR}
-enum AREA {OCA_PRINCIPAL}
+enum PERSON {KURUMANA, MANOA, ANCIÃO, MILITAR}
+enum AREA {OCA_PRINCIPAL, CONSTRUÇÃO}
 var activeQuests: Array[Quest] = []
 
 func _physics_process(delta: float) -> void:

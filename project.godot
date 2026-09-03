@@ -35,6 +35,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/lowpolyterrain/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 camera=""

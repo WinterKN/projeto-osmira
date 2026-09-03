@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://dxvobf4qdb35d"]
+
+[ext_resource type="Script" uid="uid://c2iwc2jw31n0l" path="res://scripts/quests/quest_resource.gd" id="1_xxiin"]
+
+[resource]
+script = ExtResource("1_xxiin")
+name = "Investigação do Kamña"
+description = "Investigue a nova construção kamña"
+brief_description = "Busque pistas atrás da Mydy Taha"
+metadata/_custom_type_script = "uid://c2iwc2jw31n0l"

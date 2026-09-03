@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtkr00rbybis"
-path.s3tc="res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"
+uid="uid://cr4nl2fajb8vg"
+path.s3tc="res://.godot/imported/adulto2_coletor.png-c96e5335cddc3e23727207467481da5a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "1aac63cb41f746d15794e02ef86509e7"
+}
 
 [deps]
 
-source_file="res://media_assets/boot/logoOsmira.png"
-dest_files=["res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"]
+source_file="res://game_assets/characters/model/adulto2_coletor.png"
+dest_files=["res://.godot/imported/adulto2_coletor.png-c96e5335cddc3e23727207467481da5a.s3tc.ctex"]
 
 [params]
 

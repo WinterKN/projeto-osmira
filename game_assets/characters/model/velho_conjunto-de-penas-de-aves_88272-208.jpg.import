@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtkr00rbybis"
-path.s3tc="res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"
+uid="uid://cy4ke0ekqanr"
+path.s3tc="res://.godot/imported/velho_conjunto-de-penas-de-aves_88272-208.jpg-f50c4b878732ee2cae80c309ea8dd4f8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f1f4f4c02d9ed69b5f71ac0da18ea4dc"
+}
 
 [deps]
 
-source_file="res://media_assets/boot/logoOsmira.png"
-dest_files=["res://.godot/imported/logoOsmira.png-3a8120468ff8eeae91c380dd96d82dd1.s3tc.ctex"]
+source_file="res://game_assets/characters/model/velho_conjunto-de-penas-de-aves_88272-208.jpg"
+dest_files=["res://.godot/imported/velho_conjunto-de-penas-de-aves_88272-208.jpg-f50c4b878732ee2cae80c309ea8dd4f8.s3tc.ctex"]
 
 [params]
 

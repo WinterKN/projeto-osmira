@@ -4,8 +4,7 @@
 
 [resource]
 script = ExtResource("1_xxiin")
-questArea = 1
-name = "Investigue a construção atrás da vila"
+name = "Investigação do Kamña"
 description = "Investigue a nova construção kamña"
 brief_description = "Busque pistas atrás da Mydy Taha"
 metadata/_custom_type_script = "uid://c2iwc2jw31n0l"

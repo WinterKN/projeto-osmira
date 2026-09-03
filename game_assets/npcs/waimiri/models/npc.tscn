@@ -22,10 +22,10 @@ shape = SubResource("CapsuleShape3D_1e3d0")
 
 [node name="model" parent="." unique_id=1182691306 instance=ExtResource("1_bbunr")]
 
-[node name="Armature" parent="model" index="0" unique_id=583764902]
+[node name="Armature" parent="model" index="0" unique_id=1856116332]
 transform = Transform3D(99.35942, 9.0830145, 6.723499, -6.1438265, -6.5177093, 99.598045, 9.484729, -99.373116, -5.9179134, -0.065183476, 0.08801811, 0.038964726)
 
-[node name="Skeleton3D" parent="model/Armature" index="0" unique_id=2129592938]
+[node name="Skeleton3D" parent="model/Armature" index="0" unique_id=1659125940]
 bones/2/rotation = Quaternion(-0.077276535, 0.01250375, 0.025308322, 0.99661005)
 bones/3/rotation = Quaternion(0.10822936, 0.0012691135, 0.008720912, 0.994087)
 bones/4/rotation = Quaternion(0.021116277, 0.00187999, 0.008609939, 0.9997383)

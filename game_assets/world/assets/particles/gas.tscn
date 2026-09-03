@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dcfkvq37mamnn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hv15h"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id="Gradient_5qmat"]
+offsets = PackedFloat32Array(0, 0.48039216, 1)
+colors = PackedColorArray(0, 0.4862745, 0, 0.44313726, 0.1882353, 0.61960787, 0, 0.27058825, 0, 0.7647059, 0, 0.03529412)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uohx5"]
+gradient = SubResource("Gradient_5qmat")
+
+[sub_resource type="Curve" id="Curve_y8yhg"]
+_data = [Vector2(0, 0.5178572), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gnuwy"]
+curve = SubResource("Curve_y8yhg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yc26v"]
+direction = Vector3(0, 0.1, 0)
+spread = 97.642
+initial_velocity_min = 1.0
+initial_velocity_max = 1.1
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_gnuwy")
+color_ramp = SubResource("GradientTexture1D_uohx5")
+
+[sub_resource type="SphereMesh" id="SphereMesh_pwhxm"]
+radius = 1.0
+height = 2.0
+
+[node name="Gas" type="Node3D" unique_id=627004339]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1425013549]
+material_override = SubResource("StandardMaterial3D_hv15h")
+amount = 300
+lifetime = 7.43
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_yc26v")
+draw_pass_1 = SubResource("SphereMesh_pwhxm")

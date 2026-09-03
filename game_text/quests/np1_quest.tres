@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_ms8j1")
 questType = 1
-name = "Maiká, o guerreiro"
-description = "Busque informações com Maiká"
+name = "Manoa, o guerreiro"
+description = "Busque informações com Manoa"
 brief_description = "Em Frente a Mydy Taha"
 metadata/_custom_type_script = "uid://c2iwc2jw31n0l"

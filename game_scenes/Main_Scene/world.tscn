@@ -394,7 +394,7 @@ size = Vector3(22.664364, 3.6362019, 3.5338583)
 size = Vector3(16.642288, 2.993516, 13.609381)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bcscc"]
-size = Vector3(10.999733, 2.993516, 13.609381)
+size = Vector3(15.116566, 2.993516, 13.609381)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_75uq0"]
 size = Vector3(16.132446, 2.2500324, 17.871965)
@@ -422,13 +422,13 @@ size = Vector3(23.77582, 1.0639648, 10.98783)
 
 [sub_resource type="Curve3D" id="Curve3D_ssmnl"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.13070679, 0.8605404, -0.8359451, 0, 0, 0, 0, 0, 0, -1.4764252, 34.344894, -83.62419),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.06567383, 1.0972824, -1.4014206, 0, 0, 0, 0, 0, 0, -1.4764252, 34.344894, -83.62419),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hv15h"]
-size = Vector3(15.557678, 2.961914, 11.765137)
+size = Vector3(15.557678, 2.961914, 6.338135)
 
 [sub_resource type="Animation" id="Animation_xq18t"]
 length = 0.001
@@ -20719,13 +20719,13 @@ data = PackedVector3Array(-5, 0, 5, -5, 0, 1, -1, 0, 5, -1, 0, 5, 5, 0, 1, 3, 0,
 script = ExtResource("1_grhdw")
 
 [node name="Player" parent="." unique_id=1372736054 instance=ExtResource("1_7t5mc")]
-transform = Transform3D(-0.99836427, 0, -0.05717314, 0, 1, 0, 0.05717314, 0, -0.99836427, -4.6925406, 0.39999953, 108.11516)
+transform = Transform3D(-0.08694896, 0, -0.9962128, 0, 1, 0, 0.9962128, 0, -0.08694896, -21.0835, 0.39999953, -245.72609)
 collision_layer = 5
 
-[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=1856116332]
+[node name="Armature" parent="Player/model" parent_id_path=PackedInt32Array(1372736054, 1372736054) index="0" unique_id=837774341]
 transform = Transform3D(99.3672, -10.762296, 3.2152457, -3.9867184, -7.031616, 99.67278, -10.500999, -99.17018, -7.4161825, -0.037603647, 0.08863724, 0.05928768)
 
-[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=1659125940]
+[node name="Skeleton3D" parent="Player/model/Armature" index="0" unique_id=1042696717]
 bones/1/position = Vector3(0, 0.008500578, 0.00013502735)
 bones/1/rotation = Quaternion(0.04863141, 1.19068226e-07, 5.7973115e-09, 0.9988168)
 bones/1/scale = Vector3(1, 0.99999994, 0.9999999)
@@ -20804,15 +20804,15 @@ bones/36/rotation = Quaternion(0.019486291, 0.7068382, 0.70683825, 0.019486288)
 bones/37/position = Vector3(-1.8849231e-11, 0.0020999473, -3.4160513e-10)
 bones/37/rotation = Quaternion(-2.2737376e-15, -3.5981199e-19, 4.135903e-25, 1)
 
-[node name="PlayerBody" parent="Player/model/Armature/Skeleton3D" index="0" unique_id=1363970805]
+[node name="PlayerBody" parent="Player/model/Armature/Skeleton3D" index="0" unique_id=192805749]
 mesh = SubResource("ArrayMesh_ye3kk")
 skin = SubResource("Skin_yro70")
 
-[node name="PlayerHead" parent="Player/model/Armature/Skeleton3D" index="1" unique_id=1068382759]
+[node name="PlayerHead" parent="Player/model/Armature/Skeleton3D" index="1" unique_id=27474268]
 mesh = SubResource("ArrayMesh_22huf")
 skin = SubResource("Skin_yro70")
 
-[node name="PlayerLegs" parent="Player/model/Armature/Skeleton3D" index="2" unique_id=1359260915]
+[node name="PlayerLegs" parent="Player/model/Armature/Skeleton3D" index="2" unique_id=1895677432]
 mesh = SubResource("ArrayMesh_h2ekw")
 skin = SubResource("Skin_yro70")
 
@@ -21445,7 +21445,7 @@ shape = SubResource("BoxShape3D_5xylk")
 debug_color = Color(0.21331847, 0.44123748, 1, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Cameras/Fixed Cameras/Outside Spaces/br-174 Camera/fixedCamera44/Trigger" parent_id_path=PackedInt32Array(1068854037, 942678734) index="1" unique_id=1337668146]
-transform = Transform3D(0.8575524, -0.006038716, 0.51434875, 0.28450388, 0.83864105, -0.46447337, -0.42855677, 0.54465884, 0.7208739, 5.0534515, -1.2999954, -8.612549)
+transform = Transform3D(0.8575524, -0.006038716, 0.51434875, 0.28450388, 0.83864105, -0.46447337, -0.42855677, 0.54465884, 0.7208739, 6.8186493, -0.7143707, -9.49469)
 shape = SubResource("BoxShape3D_bcscc")
 debug_color = Color(0.21331847, 0.44123748, 1, 1)
 
@@ -21528,9 +21528,10 @@ transform = Transform3D(0.10550549, -0.38402456, 0.9172753, 0.04388139, 0.923323
 curve = SubResource("Curve3D_ssmnl")
 script = ExtResource("5_orru7")
 camera = NodePath("PathFollow3D/fixedCamera")
+follow_offset = 2.5
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Cameras/corre logo djabo/RailCamera" unique_id=658375121]
-transform = Transform3D(0.99980533, 0.0072761974, 0.017993378, 4.656584e-10, 0.927069, -0.37488934, -0.019408783, 0.37481907, 0.92689353, 0.13070679, 0.8605404, -0.8359451)
+transform = Transform3D(0.99981695, 0.007028488, 0.01738479, -2.3282896e-10, 0.9270988, -0.3748156, -0.018751701, 0.37475005, 0.926935, 0.06567383, 1.0972824, -1.4014206)
 
 [node name="fixedCamera" type="Camera3D" parent="Cameras/corre logo djabo/RailCamera/PathFollow3D" unique_id=439912378]
 transform = Transform3D(0.9945264, 0.049475208, -0.09207805, 9.3212236e-08, 0.88089097, 0.47331977, 0.10452792, -0.47072718, 0.8760659, 0, 0, 0)
@@ -21541,7 +21542,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/corre logo djabo/RailCamera/PathFollow3D/fixedCamera/Trigger" unique_id=1048606372]
-transform = Transform3D(0.9999376, 0.010821838, 0.003512159, -0.007806275, 0.8771554, -0.48014006, -0.008278072, 0.48008105, 0.877184, -1.4545135, 0.5643883, -7.938286)
+transform = Transform3D(0.9999381, 0.010821866, 0.0035123527, -0.007806044, 0.8771561, -0.48014042, -0.008278072, 0.48008204, 0.8771847, -1.4449615, -0.738472, -5.5580444)
 shape = SubResource("BoxShape3D_hv15h")
 
 [node name="Area_quest" parent="Cameras/corre logo djabo" unique_id=1323974764 instance=ExtResource("7_sk21j")]
@@ -21920,7 +21921,7 @@ transform = Transform3D(0.98622674, 0, -0.16539904, 0, 1, 0, 0.16539904, 0, 0.98
 [node name="tree225" parent="Stage/Nature/Trees" unique_id=1272352657 instance=ExtResource("5_7iits")]
 transform = Transform3D(0.9775307, 0, -0.21079323, 0, 1, 0, 0.21079323, 0, 0.9775307, -52.156773, 0.5000045, -77.42345)
 
-[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=64680381]
+[node name="tree27" parent="Stage/Nature/Trees/tree225" index="0" unique_id=825275244]
 transform = Transform3D(0.99999994, 0, -1.4901161e-08, 0, 1, 1.6292067e-07, 1.4901161e-08, -1.6292066e-07, 0.99999994, -1.0855865, 0, 0.06829834)
 
 [node name="tree226" parent="Stage/Nature/Trees" unique_id=841867185 instance=ExtResource("5_7iits")]
@@ -29795,7 +29796,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="shader" type="MeshInstance3D" parent="Environment/Game_Effects" unique_id=140858374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.955475, -66.28136)
-visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_l6p5f")
 

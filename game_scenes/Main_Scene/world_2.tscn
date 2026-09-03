@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dddvjdys7inhf" path="res://scripts/cutscene/Manager/cutscene_manager.gd" id="7_62hg1"]
 [ext_resource type="PackedScene" uid="uid://i4ctwpskl2y" path="res://game_assets/cutscenes/Opening/opening_scene.tscn" id="8_xpo5e"]
 [ext_resource type="PackedScene" uid="uid://bkb54vd4db6xi" path="res://game_assets/world/assets/objects/vaso.tscn" id="9_75rb0"]
+[ext_resource type="PackedScene" uid="uid://cdl0b8pjhqjrm" path="res://game_assets/world/assets/easter/armatur.tscn" id="9_l5llo"]
 [ext_resource type="PackedScene" uid="uid://c3c1755jq7vxo" path="res://game_assets/world/assets/objects/vaso_2.tscn" id="10_q7vuk"]
 [ext_resource type="PackedScene" uid="uid://26k1mnh7s7os" path="res://game_assets/world/assets/objects/vaso_3.tscn" id="11_7o60k"]
 [ext_resource type="PackedScene" uid="uid://b01e12ybmu1ac" path="res://game_assets/world/assets/ocas/oca_oca_oca.tscn" id="12_26r1x"]
@@ -21295,6 +21296,9 @@ fov = 97.85016
 [node name="CutsceneCamera4" type="Camera3D" parent="Cutscenes/EndingScene" unique_id=1649808279]
 transform = Transform3D(-0.9971271, -0.044711683, 0.06114279, 0, 0.80719984, 0.59027827, -0.07574679, 0.58858246, -0.8048808, -39.26085, -0.02586937, -202.54218)
 fov = 97.85016
+
+[node name="Transformer_Mech_Hero_0105125718_texture" parent="Cutscenes" unique_id=878218067 instance=ExtResource("9_l5llo")]
+transform = Transform3D(-0.52726066, 0, 1.5927304, 0, 1.6777346, 0, -1.5927304, 0, -0.52726066, -189.94807, 0.82564735, -88.87356)
 
 [node name="Stage" type="Node3D" parent="." unique_id=156095015]
 

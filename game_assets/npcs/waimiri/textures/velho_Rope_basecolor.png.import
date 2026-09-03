@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b28pdxd3uxu07"
-path.s3tc="res://.godot/imported/velho_Rope_basecolor.png-f7768f77bad568b977c39b3a8436ed50.s3tc.ctex"
+path.s3tc="res://.godot/imported/velho_Rope_basecolor.png-c583ce485884ffb1d4082d9448c92543.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://game_assets/characters/model/velho_Rope_basecolor.png"
-dest_files=["res://.godot/imported/velho_Rope_basecolor.png-f7768f77bad568b977c39b3a8436ed50.s3tc.ctex"]
+source_file="res://game_assets/npcs/waimiri/textures/velho_Rope_basecolor.png"
+dest_files=["res://.godot/imported/velho_Rope_basecolor.png-c583ce485884ffb1d4082d9448c92543.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5g1trcu1ttms"
-path.s3tc="res://.godot/imported/adulto3_caba2.png-3b0ec36616a0554cf604d2db73ffedf1.s3tc.ctex"
+uid="uid://t411mc20nf66"
+path.s3tc="res://.godot/imported/crianca_criança.png-87b4a840699bf5cc61ad3951ac809238.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "67415fe1a7757b3f9484d47a6d3cfc85"
+"md5": "c4cd01b021c400c5b207b488c1e98b88"
 }
 
 [deps]
 
-source_file="res://game_assets/characters/model/adulto3_caba2.png"
-dest_files=["res://.godot/imported/adulto3_caba2.png-3b0ec36616a0554cf604d2db73ffedf1.s3tc.ctex"]
+source_file="res://game_assets/npcs/waimiri/textures/crianca_criança.png"
+dest_files=["res://.godot/imported/crianca_criança.png-87b4a840699bf5cc61ad3951ac809238.s3tc.ctex"]
 
 [params]
 
